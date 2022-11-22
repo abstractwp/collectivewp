@@ -1,0 +1,56 @@
+# https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
+# Glob Help: https://globster.xyz/
+
+pre-commit:
+  commands:
+    # format-php-theme:
+    #   root: "./wp-content/themes/<theme-name>/"
+    #   glob: "*.php"
+    #   run: ./vendor/bin/phpcbf --standard=./wp-content/themes/<theme-name>/phpcs.xml {staged_files}
+    # format-php-plugin:
+    #   root: "./wp-content/plugins/<theme-name>-functions/"
+    #   glob: "*.php"
+    #   run: ./vendor/bin/phpcbf --standard=./wp-content/themes/<theme-name>/phpcs.xml {staged_files}
+    # lint-php-theme:
+    #   root: "./wp-content/themes/<theme-name>/"
+    #   glob: "*.php"
+    #   run: ./vendor/bin/phpcs --standard=./wp-content/themes/<theme-name>/phpcs.xml {staged_files}
+    # lint-php-plugin:
+    #   root: "./wp-content/plugins/<theme-name>-functions/"
+    #   glob: "*.php"
+    #   run: ./vendor/bin/phpcs --standard=./wp-content/themes/<theme-name>/phpcs.xml {staged_files}
+    # format-style-theme:
+    #   root: "wp-content/themes/<theme-name>/"
+    #   glob: "*.{css,scss}"
+    #   run: npx prettier {staged_files} --write
+    # lint-style-theme:
+    #   root: "wp-content/themes/<theme-name>/"
+    #   glob: "*.{css,scss}"
+    #   run: npx stylelint {staged_files} --fix
+    # format-js-theme:
+    #   root: "wp-content/themes/<theme-name>/"
+    #   glob: "*.{js,ts,tsx}"
+    #   run: npx prettier {staged_files} --write
+    # format-js-plugin:
+    #   root: "wp-content/plugins/<theme-name>-functions/"
+    #   glob: "*.{js,ts,tsx}"
+    #   run: npx prettier {staged_files} --write
+    # lint-js-theme:
+    #   root: "wp-content/themes/<theme-name>/"
+    #   glob: "*.{js,ts,tsx}"
+    #   run: npx eslint {staged_files} --fix
+    # lint-js-plugin:
+    #   root: "wp-content/plugins/<theme-name>-functions/"
+    #   glob: "*.{js,ts,tsx}"
+    #   run: npx eslint {staged_files} --fix
+    lint-markdown-project:
+      glob: "*.{md}"
+      run: npx markdownlint-cli {staged_files} --disable MD013 --fix
+    # lint-markdown-theme:
+    #   root: "wp-content/themes/<theme-name>/"
+    #   glob: "*.{md}"
+    #   run: npx markdownlint-cli {staged_files} --fix
+    # other-theme:
+    #   root: "wp-content/themes/<theme-name>/"
+    #   glob: "*.{yml,json,html}"
+    #   run: npx prettier {staged_files} --write

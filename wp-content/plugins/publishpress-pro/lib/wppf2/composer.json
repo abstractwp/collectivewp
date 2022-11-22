@@ -1,0 +1,27 @@
+{
+  "name": "publishpress/wordpress-plugin-framework",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "PublishPress",
+      "email": "help@publishpress.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPPF2\\": "src/"
+    },
+    "files": [
+      "defines.php"
+    ]
+  },
+  "require": {
+    "pimple/pimple": "~3.0"
+  },
+  "minimum-stability": "stable",
+  "description": "A framework for creating WordPress Plugins"
+}

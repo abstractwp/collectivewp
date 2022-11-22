@@ -1,0 +1,42 @@
+{
+    "name": "abstractwp/workandplace",
+    "description": "Plugins for www.workandplace.com",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Thong Dang",
+            "email": "thong@anabastractny.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+        }
+    ],
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "wp-coding-standards/wpcs": "^2.3",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "require": {
+        "wpackagist-plugin/fluent-smtp":"2.2.0",
+        "wpackagist-plugin/worker":"4.9.14",
+        "pronamic/gravityforms": "^2.6.7",
+        "wpackagist-plugin/redirection":"5.3.4",
+        "wpackagist-plugin/twentig": "1.4.8",
+        "johnbillion/user-switching": "^1.7",
+        "wpackagist-plugin/wp-security-audit-log": "4.4.2.1",
+        "wpackagist-plugin/activity-log-gravity-forms": "1.2.1",
+        "wpackagist-plugin/activity-log-wp-seo": "^1.3",
+        "wpackagist-plugin/duplicate-page":"4.4.9",
+        "wpackagist-plugin/instant-images": "^4.6.2",
+        "wpackagist-plugin/insert-headers-and-footers": "2.0.3",
+        "wpackagist-plugin/wordpress-importer":"0.8",
+        "wpackagist-plugin/custom-post-type-ui":"1.13.1",
+        "wpackagist-plugin/wordpress-seo":"19.9",
+        "wpackagist-plugin/so-clean-up-wp-seo":"3.14.8"
+    }
+}

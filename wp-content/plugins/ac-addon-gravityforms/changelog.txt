@@ -1,0 +1,41 @@
+== Changelog ==
+
+= 1.2 =
+Release Date: March 22nd, 2022
+
+* [Dependency] Requires Admin Columns Pro 5.7
+
+= 1.1.1 =
+Release Date: October 6th, 2021
+
+* [Fixed] Many pro features on the Entry screen did not work consistently when having users with different languages
+
+= 1.1 =
+Release Date: September 21st, 2021
+
+* [Improved] Add inactive forms as manageable tables
+* [Improved] Refactor of the editing codebase
+* [Dependency] Requires Admin Columns Pro 5.6
+
+= 1.0.2 =
+Release Date: June 25th, 2021
+
+* [Fixed] The Javascript was preventing to export more than 1000 items
+
+= 1.0.1 =
+Release Date: June 18th, 2021
+
+* [Added] New User column for Entries that allows more display options
+* [Added] Hook `acp/gravityforms/create_default_set` added to disable the default column set creation
+* [Improved] When no settings are found, we store a default column set with the columns managed by Gravity Forms instead of adding all the available columns
+* [Fixed] The columns did not work for other languages than English
+
+= 1.0 =
+Release Date: June 7th, 2021
+
+* [Added] UI feature like hide on screen implemented for Form Entry pages
+* [Added] Export for the Form Entry pages
+* [Added] Editing for the Form Entry pages
+* [Added] Smart Filtering for the Form Entry pages
+* [Added] Column management for the Form Entry pages
+* [Added] Initial release of the Gravity Forms integration, works with Admin Columns Pro version 5.5 and higher

@@ -1,0 +1,34 @@
+== Changelog ==
+
+= 1.2 =
+Release Date: March 22nd, 2022
+
+* [Added] New social related columns for Facebook and Twitter fields (Image, Title, and Description)
+* [Dependency] Requires Admin Columns Pro 5.7
+
+= 1.1 =
+Release Date: September 21st, 2021
+
+* [Dependency] Requires Admin Columns Pro 5.6
+
+= 1.0.3 =
+Release Date: February 26th, 2021
+
+* [Added] New Taxonomy SEO columns: SEO Title, Meta Description, Canonical URL, Noindex, Used in Sitemap, and Focus Keyword
+
+= 1.0.2 =
+Release Date: December 15th, 2020
+
+* [Improved] Only allows to hide the Yoast filters on supported post types only
+* [Dependency] Requires Admin Columns Pro 5.3
+
+= 1.0.1 =
+Release Date: July 24th, 2020
+
+* [Fixed] The Primary Taxonomy column was given an error when adding it to the overview
+* [Added] Added the option to disable the filter dropdowns for SEO Scores and Readability Scores on the posts list table.
+
+= 1.0 =
+Release Date: July 21st, 2020
+
+* [Added] Moved all Yoast Column logic from Admin Columns Pro to a separate add-on
