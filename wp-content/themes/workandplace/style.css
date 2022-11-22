@@ -1,0 +1,18 @@
+/*
+ Theme Name:   WorkAndPlace Child Theme
+ Theme URI:    https://github.com/abstractwp/abstractwp-2021.git
+ Description:  A child theme of Twenty Twenty-One WordPress theme.
+ Author:       AbstractWP
+ Author URI:   https://github.com/abstractwp/abstractwp-2021.git
+ Template:     twentytwentyone
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+.wp-block-quote.is-large:not(.is-style-plain) cite,
+.wp-block-quote.is-large:not(.is-style-plain) footer,
+.wp-block-quote.is-style-large:not(.is-style-plain) cite,
+.wp-block-quote.is-style-large:not(.is-style-plain) footer {
+  display: block;
+}

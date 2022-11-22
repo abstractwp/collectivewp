@@ -27,7 +27,6 @@ wp-content/plugins/**
 *.log
 *.sql
 *.sqlite
-.DS_Store
 ._*
 .Spotlight-V100
 .Trashes
@@ -224,4 +223,14 @@ Thumbs.db
 !wp-content/plugins/publishpress-series-pro/
 !wp-content/plugins/publishpress-series-pro/**
 
+# Theme
+
+!wp-content/themes/workandplace/
+!wp-content/themes/workandplace/**
+
 # Stop editing!
+
+
+# Ignore Mac DS_Store files
+.DS_Store
+**/.DS_Store
