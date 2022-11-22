@@ -1,0 +1,147 @@
+# Copyright (C) 2022 block-unit-test
+# This file is distributed under the same license as the block-unit-test package.
+msgid ""
+msgstr ""
+"Project-Id-Version: block-unit-test\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-11-22 10:14+0000\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: class-block-unit-test.php:431
+msgid "Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla."
+msgstr ""
+
+#: class-block-unit-test.php:442
+msgid "Heading One"
+msgstr ""
+
+#: class-block-unit-test.php:446
+msgid "Heading Two"
+msgstr ""
+
+#: class-block-unit-test.php:450
+msgid "Heading Three"
+msgstr ""
+
+#: class-block-unit-test.php:454
+msgid "Heading Four"
+msgstr ""
+
+#: class-block-unit-test.php:458
+msgid "Heading Five"
+msgstr ""
+
+#: class-block-unit-test.php:462
+msgid "Heading Six"
+msgstr ""
+
+#: class-block-unit-test.php:504
+msgid "Unordered List"
+msgstr ""
+
+#: class-block-unit-test.php:526
+msgid "Verse"
+msgstr ""
+
+#: class-block-unit-test.php:530
+msgid "This is an example of the core Gutenberg verse block."
+msgstr ""
+
+#: class-block-unit-test.php:538
+msgid "Separator"
+msgstr ""
+
+#: class-block-unit-test.php:542
+msgid "Here are examples of the three separator styles of the core Gutenberg separator block."
+msgstr ""
+
+#: class-block-unit-test.php:558
+msgid "Table"
+msgstr ""
+
+#: class-block-unit-test.php:574
+msgid "Latest Posts, List View"
+msgstr ""
+
+#: class-block-unit-test.php:584
+msgid "Latest Posts, Grid View"
+msgstr ""
+
+#: class-block-unit-test.php:598
+msgid "Blockquote"
+msgstr ""
+
+#: class-block-unit-test.php:619
+msgid "Alternate Blockquote"
+msgstr ""
+
+#: class-block-unit-test.php:640
+msgid "Audio"
+msgstr ""
+
+#: class-block-unit-test.php:662
+msgid "Buttons"
+msgstr ""
+
+#: class-block-unit-test.php:704
+msgid "Categories"
+msgstr ""
+
+#: class-block-unit-test.php:714
+msgid "Archives"
+msgstr ""
+
+#: class-block-unit-test.php:724
+msgid "Columns"
+msgstr ""
+
+#: class-block-unit-test.php:800
+msgid "Pull Quotes"
+msgstr ""
+
+#: class-block-unit-test.php:816, class-block-unit-test.php:890, class-block-unit-test.php:968, class-block-unit-test.php:1014
+msgid "Wide aligned"
+msgstr ""
+
+#: class-block-unit-test.php:829
+msgid "Full width"
+msgstr ""
+
+#: class-block-unit-test.php:898
+msgid "Full Width"
+msgstr ""
+
+#: class-block-unit-test.php:940
+msgid "Video Blocks"
+msgstr ""
+
+#: class-block-unit-test.php:948
+msgid "Youtube video"
+msgstr ""
+
+#: class-block-unit-test.php:958
+msgid "Vimeo video"
+msgstr ""
+
+#: class-block-unit-test.php:991
+msgid "Cover Blocks"
+msgstr ""
+
+#: class-block-unit-test.php:1019
+msgid "Wide Cover Image Block"
+msgstr ""
+
+#: class-block-unit-test.php:1029
+msgid "Full Width Cover Image"
+msgstr ""
+
+#: class-block-unit-test.php:1065
+msgid "Gallery Blocks"
+msgstr ""
