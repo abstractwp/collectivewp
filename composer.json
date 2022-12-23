@@ -1,0 +1,27 @@
+{
+    "name": "abstractwp/collectivewp",
+    "description": "Plugins for www.collectivewp.com",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Thong Dang",
+            "email": "thong@anabastractny.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+        }
+    ],
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "wp-coding-standards/wpcs": "^2.3",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "require": {
+        "wpackagist-plugin/custom-post-type-ui":"1.13.3"
+    }
+}

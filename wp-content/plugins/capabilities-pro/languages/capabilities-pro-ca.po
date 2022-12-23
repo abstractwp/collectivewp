@@ -1,0 +1,1135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PublishPress Capabilities Pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-19 14:33-0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Kevin Behrens <kevin@publishpress.com>\n"
+"Language-Team: PublishPress <help@publishpress.com>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-KeywordsList: __;_e;_c;_x;__ngettext;_n;_ex;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: ../includes-pro\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin-load.php:81 settings-ui.php:70
+msgid "Admin Menus"
+msgstr ""
+
+#: admin-load.php:82
+msgid "Nav Menus"
+msgstr ""
+
+#: admin-load.php:97 admin-load.php:121
+msgid "You do not have permission to manage menu restrictions."
+msgstr ""
+
+#: admin-load.php:143 admin-load.php:197
+#, fuzzy
+#| msgid "Settings saved."
+msgid "Settings updated."
+msgstr "Opcions desades."
+
+#: admin-load.php:162 admin-load.php:185
+msgid "You do not have permission to manage navigation menus."
+msgstr ""
+
+#: admin-menus.php:39 settings-ui.php:301
+msgid "Admin Menu Restrictions"
+msgstr ""
+
+#: admin-menus.php:53
+msgid ""
+"Note: You are only restricting access to admin menu screens. Some plugins "
+"may also add features to other areas of WordPress."
+msgstr ""
+
+#: admin-menus.php:96 admin-menus.php:114 nav-menus.php:119 nav-menus.php:139
+msgid "Toggle all"
+msgstr ""
+
+#: admin-menus.php:244 admin-menus.php:299
+msgid "This option is disabled to prevent complete lockout"
+msgstr ""
+
+#: admin-menus.php:334 nav-menus.php:231
+msgid "No menu found"
+msgstr ""
+
+#: admin.php:52
+msgid "Custom Statuses"
+msgstr ""
+
+#: admin.php:128
+#, fuzzy
+#| msgid "%s Capabilities"
+msgid "Custom Status Capabilities"
+msgstr "%s Competències"
+
+#: admin.php:143
+msgid "Can assign this status (for selected post types)"
+msgstr ""
+
+#: admin.php:144
+msgid "Can edit posts of this status (for selected post types)"
+msgstr ""
+
+#: admin.php:145
+msgid "Can edit other's posts of this status (for selected post types)"
+msgstr ""
+
+#: admin.php:146
+msgid "Can delete posts of this status (for selected post types)"
+msgstr ""
+
+#: admin.php:147
+msgid "Can delete other's posts of this status (for selected post types)"
+msgstr ""
+
+#: admin.php:242 admin.php:313
+#, php-format
+msgid "%s: assigned by Permission Group"
+msgstr ""
+
+#: admin.php:367
+msgid "Post Types..."
+msgstr ""
+
+#: admin.php:419
+msgid "Enable / Disable Custom Permissions"
+msgstr ""
+
+#: admin.php:425
+msgid "Customize Permissions"
+msgstr ""
+
+#: admin.php:434
+#, php-format
+msgid "%sAdvanced status control...%s"
+msgstr ""
+
+#: admin.php:440
+#, php-format
+msgid ""
+"For more control, <br />enable the PublishPress Permissions <br />%sStatus "
+"Control module%s"
+msgstr ""
+
+#: features/admin-features-block-url.php:91
+msgid "Blocked by URL"
+msgstr ""
+
+#: features/admin-features-block-url.php:108
+msgid "Block URL form:"
+msgstr ""
+
+#: features/admin-features-block-url.php:109
+msgid "Enter URL to be blocked by role:"
+msgstr ""
+
+#: features/admin-features-block-url.php:118
+#: features/admin-features-css-hide.php:118
+#: features/config/custom-config.php:38 features/config/custom-config.php:79
+msgid "Label"
+msgstr ""
+
+#: features/admin-features-block-url.php:120
+msgid ""
+"Enter the name/label to identify the element under Blocked by URL section of "
+"this screen."
+msgstr ""
+
+#: features/admin-features-block-url.php:125
+msgid "URLs"
+msgstr ""
+
+#: features/admin-features-block-url.php:129
+#: features/admin-features-css-hide.php:129
+#: features/config/custom-config.php:49 features/config/custom-config.php:90
+#, fuzzy
+msgid "Add"
+msgstr "Afegeix Competència"
+
+#: features/admin-features-block-url.php:137
+#, php-format
+msgid "Separate multiple urls by comma. (e.g, %1$s, %2$s, %3$s)."
+msgstr ""
+
+#: features/admin-features-block-url.php:157
+#: features/admin-features-block-url.php:208
+#: features/admin-features-css-hide.php:153
+#: features/admin-features-css-hide.php:205
+#: features/config/custom-config.php:114 features/config/custom-config.php:178
+msgid "An error occured!"
+msgstr ""
+
+#: features/admin-features-block-url.php:165
+#: features/admin-features-block-url.php:215
+#: features/admin-features-css-hide.php:161
+#: features/admin-features-css-hide.php:212
+msgid "Invalid action. Reload this page and try again."
+msgstr ""
+
+#: features/admin-features-block-url.php:167
+#: features/admin-features-css-hide.php:163
+#: features/config/custom-config.php:127
+msgid "All fields are required."
+msgstr ""
+
+#: features/admin-features-block-url.php:174
+msgid "New custom item added successfully"
+msgstr ""
+
+#: features/admin-features-block-url.php:188
+#: features/admin-features-css-hide.php:185
+#: features/config/custom-config.php:151
+#, fuzzy
+msgid "Delete"
+msgstr ""
+"Estàs apunt d'eliminar el rol %s.\n"
+"  'Cancel·la' per sortir, 'D'acord' per eliminar."
+
+#: features/admin-features-block-url.php:217
+#: features/admin-features-css-hide.php:214
+#: features/config/custom-config.php:189
+msgid "Invalid request!."
+msgstr ""
+
+#: features/admin-features-block-url.php:225
+#: features/admin-features-css-hide.php:222
+#: features/config/custom-config.php:208
+msgid "Selected item deleted successfully"
+msgstr ""
+
+#: features/admin-features-css-hide.php:91
+msgid "Hide Css Element"
+msgstr ""
+
+#: features/admin-features-css-hide.php:108
+msgid "Hide Css Element Form:"
+msgstr ""
+
+#: features/admin-features-css-hide.php:109
+msgid ""
+"You can remove other elements from admin area by adding their IDs or classes "
+"below:"
+msgstr ""
+
+#: features/admin-features-css-hide.php:120
+#: features/config/custom-config.php:40 features/config/custom-config.php:81
+msgid "Enter the name/label to identify the custom element on this screen."
+msgstr ""
+
+#: features/admin-features-css-hide.php:125
+#: features/config/custom-config.php:45 features/config/custom-config.php:86
+msgid "Element IDs or Classes"
+msgstr ""
+
+#: features/admin-features-css-hide.php:133
+#: features/config/custom-config.php:53 features/config/custom-config.php:94
+msgid ""
+"IDs or classes to hide. Separate multiple values by comma (.custom-item-"
+"one, .custom-item-two, #new-item-id)."
+msgstr ""
+
+#: features/admin-features-css-hide.php:171
+msgid "New CSS element added. Save changes to apply restrictions."
+msgstr ""
+
+#: features/config/custom-config.php:29 features/config/custom-config.php:70
+msgid ""
+"You can remove other elements from the editor screen by adding their IDs or "
+"classes below:"
+msgstr ""
+
+#: features/config/custom-config.php:125 features/config/custom-config.php:186
+msgid "Invalid action. Reload this page and try again if occured in error."
+msgstr ""
+
+#: features/config/custom-config.php:145
+msgid "New custom item added. Save changes to apply restrictions."
+msgstr ""
+
+#: features/custom.php:70
+msgid "Custom Gutenberg Items"
+msgstr ""
+
+#: features/custom.php:94
+msgid "Custom Classic Editor Items"
+msgstr ""
+
+#: features/metaboxes.php:110
+msgid "Metaboxes"
+msgstr ""
+
+#: functions-admin.php:30
+msgid "Admin Menu"
+msgstr ""
+
+#: functions-admin.php:36
+msgid "Nav Menu"
+msgstr ""
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:242
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:250
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:493
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:493
+msgid "Error"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/License.php:112
+msgid ""
+"Sorry, an error occurred. Please check the error log and contact the "
+"PublishPress support team."
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:122
+msgid "Missing license"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:125
+msgid "Your license key is expired"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:128
+msgid "Your license key has been disabled"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:132
+msgid "Invalid license"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:135
+msgid "Your license is not active for this URL"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:139
+msgid "This appears to be an invalid license key for this product"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:145
+msgid "Your license key has reached its activation limit"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:152
+#: settings-ui.php:179
+msgid "Activated"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:168
+msgid "Status"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:171
+msgid "Click here to read more about licenses."
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:174
+msgid "More information"
+msgstr ""
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:193
+msgid "Enter the license key for being able to update the plugin."
+msgstr ""
+
+#: manager-ui.php:24 settings-ui.php:282
+msgid "Control Custom Statuses"
+msgstr ""
+
+#: nav-menus.php:26
+msgid "Logged In Users"
+msgstr ""
+
+#: nav-menus.php:26
+msgid "Logged Out Users"
+msgstr ""
+
+#: nav-menus.php:54
+msgid "Navigation Menu Restrictions"
+msgstr ""
+
+#: pro-maint.php:46 pro-maint.php:59
+msgid "An error occurred. Please try again or contact the support team."
+msgstr ""
+
+#: settings-ui.php:27
+msgid "Activate Key"
+msgstr ""
+
+#: settings-ui.php:28
+msgid "Deactivate Key"
+msgstr ""
+
+#: settings-ui.php:29
+msgid "Connecting to publishpress.com server..."
+msgstr ""
+
+#: settings-ui.php:30
+msgid "The request could not be processed due to a connection failure."
+msgstr ""
+
+#: settings-ui.php:31
+msgid "Please enter the license key shown on your order receipt."
+msgstr ""
+
+#: settings-ui.php:32
+msgid "An unidentified error occurred."
+msgstr ""
+
+#: settings-ui.php:34
+msgid "The key has been deactivated."
+msgstr ""
+
+#: settings-ui.php:35
+msgid "The key has been activated."
+msgstr ""
+
+#: settings-ui.php:36
+msgid "The key has expired."
+msgstr ""
+
+#: settings-ui.php:37
+msgid "The key is invalid."
+msgstr ""
+
+#: settings-ui.php:38
+msgid "An unknown activation error occurred."
+msgstr ""
+
+#: settings-ui.php:39
+msgid "The key provided is not valid. Please double-check your entry."
+msgstr ""
+
+#: settings-ui.php:40
+msgid "This site is not valid to activate the key."
+msgstr ""
+
+#: settings-ui.php:41 settings-ui.php:47
+msgid "The key provided could not be validated by publishpress.com."
+msgstr ""
+
+#: settings-ui.php:42
+msgid "The key provided is already active on another site."
+msgstr ""
+
+#: settings-ui.php:43
+msgid "The key has already been activated on the allowed number of sites."
+msgstr ""
+
+#: settings-ui.php:44
+msgid "An unknown deactivation error occurred."
+msgstr ""
+
+#: settings-ui.php:45
+msgid "Unable to deactivate because the provided key is not valid."
+msgstr ""
+
+#: settings-ui.php:46
+msgid "This site is not valid to deactivate the key."
+msgstr ""
+
+#: settings-ui.php:48
+msgid "The key provided is not active on the specified site."
+msgstr ""
+
+#: settings-ui.php:53
+#, php-format
+msgid "If this is incorrect, <a href=\"%s\">request activation help</a>."
+msgstr ""
+
+#: settings-ui.php:54
+msgid "Please save settings before uploading site configuration."
+msgstr ""
+
+#: settings-ui.php:66
+msgid "License"
+msgstr ""
+
+#: settings-ui.php:68
+msgid "Capabilities"
+msgstr "Competències"
+
+#: settings-ui.php:71
+msgid "Editor Features"
+msgstr ""
+
+#: settings-ui.php:84
+msgid "License Key Activation"
+msgstr ""
+
+#: settings-ui.php:131
+#, php-format
+msgid ""
+"Your PublishPress license key has expired. For continued priority support, "
+"<a href=\"%s\">please renew</a>."
+msgstr ""
+
+#: settings-ui.php:142
+#, php-format
+msgid ""
+"Your PublishPress license key will expire today. For updates and priority "
+"support, <a href=\"%s\">please renew</a>."
+msgstr ""
+
+#: settings-ui.php:149
+#, php-format
+msgid ""
+"Your PublishPress license key will expire in %d day. For updates and "
+"priority support, <a href=\"%s\">please renew</a>."
+msgstr ""
+
+#: settings-ui.php:170
+msgid "Key Expired"
+msgstr ""
+
+#: settings-ui.php:175 settings-ui.php:185
+msgid "Deactivate"
+msgstr ""
+
+#: settings-ui.php:185
+msgid "Activate"
+msgstr ""
+
+#: settings-ui.php:211
+#, php-format
+msgid "view %s&nbsp;details"
+msgstr ""
+
+#: settings-ui.php:221
+msgid "Update&nbsp;Available"
+msgstr ""
+
+#: settings-ui.php:228
+msgid "Update&nbsp;Check"
+msgstr ""
+
+#: settings-ui.php:234
+msgid "Account"
+msgstr ""
+
+#: settings-ui.php:240
+msgid "Pricing"
+msgstr ""
+
+#: settings-ui.php:261
+msgid "Display PublishPress Branding"
+msgstr ""
+
+#: settings-ui.php:305
+msgid "Any non-restricted user role allows access"
+msgstr ""
+
+#: settings-ui.php:306
+msgid "Any restricted user role prevents access"
+msgstr ""
+
+#: settings-ui.php:309
+msgid "How are restrictions applied when a user has multiple roles?"
+msgstr ""
+
+#: settings-ui.php:326
+msgid "Support for Private Post Types"
+msgstr ""
+
+#~ msgid "Warning:"
+#~ msgstr "Atenció:"
+
+#, php-format
+#~ msgid "The active plugin %s is not compatible with your PHP version."
+#~ msgstr "L'extensió activa %s no és compatible amb la teva versió de PHP."
+
+#, php-format
+#~ msgid "%s is required for this plugin."
+#~ msgstr "Es requereix %s per aquesta extensió."
+
+#~ msgid "Settings saved."
+#~ msgstr "Opcions desades."
+
+#~ msgid "Roles"
+#~ msgstr "Rols"
+
+#~ msgid "Backup"
+#~ msgstr "Copia"
+
+#, fuzzy
+#~| msgid "Settings saved."
+#~ msgid "Settings"
+#~ msgstr "Opcions desades."
+
+#~ msgid "Role Capabilities"
+#~ msgstr "Competències"
+
+#~ msgid "Save Changes"
+#~ msgstr "Desa els canvis"
+
+#, fuzzy
+#~| msgid "Select action:"
+#~ msgid "Deletion"
+#~ msgstr "Selecciona una acció:"
+
+#, fuzzy, php-format
+#~| msgid "%s Capabilities"
+#~ msgid "Term %s Capabilities"
+#~ msgstr "%s Competències"
+
+#, fuzzy, php-format
+#~| msgid "%s Capabilities"
+#~ msgid "Post %s Capabilities"
+#~ msgstr "%s Competències"
+
+#, fuzzy
+#~| msgid "Role Capabilities"
+#~ msgid "WordPress Core Capabilities"
+#~ msgstr "Competències"
+
+#, fuzzy
+#~| msgid "Capability Manager"
+#~ msgid "Capability Name"
+#~ msgstr "Administrador de Compoetències"
+
+#, fuzzy, php-format
+#~| msgid "Capabilities for %s"
+#~ msgid "Plugin Capabilities &ndash; %s"
+#~ msgstr "Competències per %s"
+
+#~ msgid "Member support forum"
+#~ msgstr "Forum d'Ajuda"
+
+#~ msgid "Level:"
+#~ msgstr "Nivell:"
+
+#~ msgid "Add Capability"
+#~ msgstr "Afegeix Competència"
+
+#~ msgid "New backup saved."
+#~ msgstr "S'ha creat la copia de seguretat."
+
+#, fuzzy
+#~| msgid "Roles and Capabilities restored from last backup."
+#~ msgid "Roles and Capabilities restored from initial backup."
+#~ msgstr ""
+#~ "S'han recuperat els Rols i Competències des de la copia de seguretat."
+
+#~ msgid "Restore failed. No backup found."
+#~ msgstr "Ha fallat la recuperació. No s'ha trobat cap copia de seguretat."
+
+#, fuzzy, php-format
+#~| msgid "Roles and Capabilities restored from last backup."
+#~ msgid "%s restored from last backup."
+#~ msgstr ""
+#~ "S'han recuperat els Rols i Competències des de la copia de seguretat."
+
+#, fuzzy
+#~| msgid "Roles and Capabilities restored from last backup."
+#~ msgid "Roles and Capabilities restored from selected auto-backup."
+#~ msgstr ""
+#~ "S'han recuperat els Rols i Competències des de la copia de seguretat."
+
+#, fuzzy
+#~| msgid "File error. Please try again."
+#~ msgid "Error importing settings! Please try again."
+#~ msgstr "Error de fitxer. Si us plau, torneu-ho a provar."
+
+#~ msgid "Needed function to create default roles not found!"
+#~ msgstr "La funció per crear els rols predeterminats no s'ha trobat!"
+
+#~ msgid "Roles and Capabilities reset to WordPress defaults"
+#~ msgstr ""
+#~ "S'han restaurat Rols i Competències als valors predeterminats de "
+#~ "WordPress."
+
+#, fuzzy
+#~| msgid "Backup Tool for %1$sPublishPress Capabilities%2$s"
+#~ msgid "Backup Tool for PublishPress Capabilities"
+#~ msgstr "Eina de Copies de Seguretat per a %1$sPublishPress Capabilities%2$s"
+
+#~ msgid "Restore"
+#~ msgstr "Restaura"
+
+#~ msgid "Backup Roles and Capabilities"
+#~ msgstr "Desa una copia de rols i competències"
+
+#, fuzzy
+#~| msgid "Backup"
+#~ msgid "Last Backup"
+#~ msgstr "Copia"
+
+#, fuzzy
+#~| msgid "Backup roles and capabilities"
+#~ msgid "Restore Previous Roles and Capabilities"
+#~ msgstr "Desa una copia de rols i competències"
+
+#, fuzzy, php-format
+#~| msgid "Backup"
+#~ msgid "Manual backup of %s (%s)"
+#~ msgstr "Copia"
+
+#, fuzzy
+#~| msgid "Backup"
+#~ msgid "Initial Backup"
+#~ msgstr "Copia"
+
+#, fuzzy
+#~| msgid "Save Changes"
+#~ msgid "No changes"
+#~ msgstr "Desa els canvis"
+
+#~ msgid "Reset WordPress Defaults"
+#~ msgstr "Restaura valors predeterminats de WordPress"
+
+#~ msgid "WARNING:"
+#~ msgstr "ATENCIÓ:"
+
+#~ msgid ""
+#~ "Reseting default Roles and Capabilities will set them to the WordPress "
+#~ "install defaults."
+#~ msgstr ""
+#~ "Restaurant els valors predeterminats per a Rols i Competències, els "
+#~ "configurarà als valors predeterminats de la instal·lació de WordPress."
+
+#~ msgid ""
+#~ "If you have installed any plugin that adds new roles or capabilities, "
+#~ "these will be lost."
+#~ msgstr ""
+#~ "Si has instal·lat alguna extensió que afegeix nous rols o competències, "
+#~ "aquests es perdran."
+
+#~ msgid "It is recommended to use this only as a last resource!"
+#~ msgstr "Es recomana utilitzar aquesta opció només com a últim recurs!"
+
+#~ msgid ""
+#~ "You are about to reset Roles and Capabilities to WordPress defaults.\n"
+#~ " 'Cancel' to stop, 'OK' to reset."
+#~ msgstr ""
+#~ "Estàs apunt de restaurar els valors predeterminats de WordPress per a "
+#~ "Rols i Competències.\n"
+#~ "  'Cancel·la' per abandonarr, 'D'acord' per restaurar."
+
+#~ msgid "Reset to WordPress defaults"
+#~ msgstr "Restaura els valors predeterminats de WordPress"
+
+#, fuzzy
+#~| msgid "Settings saved."
+#~ msgid "Export Settings"
+#~ msgstr "Opcions desades."
+
+#, fuzzy
+#~| msgid "Role Capabilities"
+#~ msgid "Roles and Capabilities"
+#~ msgstr ""
+#~ "S'han restaurat Rols i Competències als valors predeterminats de "
+#~ "WordPress."
+
+#, fuzzy
+#~| msgid "Settings saved."
+#~ msgid "Import Settings"
+#~ msgstr "Opcions desades."
+
+#, fuzzy
+#~| msgid "Select action:"
+#~ msgid "User actions"
+#~ msgstr "Selecciona una acció:"
+
+#, fuzzy
+#~ msgid "New"
+#~ msgstr "Error: No s'ha pogut crear el nou rol."
+
+#, fuzzy
+#~| msgid "Edit Roles"
+#~ msgid "Editor"
+#~ msgstr "Rols"
+
+#, fuzzy
+#~| msgid "Edit Roles"
+#~ msgid "Edit title"
+#~ msgstr "Rols"
+
+#, fuzzy
+#~| msgid "Documentation"
+#~ msgid "Document Panel"
+#~ msgstr "Documentació"
+
+#, fuzzy
+#~| msgid "Settings saved."
+#~ msgid "Color settings"
+#~ msgstr "Opcions desades."
+
+#, fuzzy
+#~| msgid "Settings saved."
+#~ msgid "Text settings"
+#~ msgstr "Opcions desades."
+
+#~ msgid "Edit Roles"
+#~ msgstr "Rols"
+
+#~ msgid "New role created."
+#~ msgstr "S'ha creat el nou rol."
+
+#~ msgid "Error: Failed creating the new role."
+#~ msgstr "Error: No s'ha pogut crear el nou rol."
+
+#, fuzzy
+#~| msgid "Local file is not readable."
+#~ msgid "The selected role is not editable."
+#~ msgstr "El fitxer local no es pot llegir."
+
+#~ msgid "Incorrect capability name."
+#~ msgstr "Nom incorrecte de competència."
+
+#~ msgid "Type / Taxonomy settings saved."
+#~ msgstr "Opcions desades."
+
+#~ msgid "Bad form received."
+#~ msgstr "S'ha rebut un formulari incorrecte."
+
+#~ msgid "You cannot remove Manage Capabilities from Administrators"
+#~ msgstr "No pots eliminar 'Manage Capabilities' dels administradors"
+
+#~ msgid "Role"
+#~ msgstr "Rol"
+
+#~ msgid "New capability added to role."
+#~ msgstr "Nova competència afegida al rol."
+
+#~ msgid "Bad form Received"
+#~ msgstr "S'ha rebut un formulari incorrecte."
+
+#, fuzzy
+#~ msgid "About"
+#~ msgstr ""
+#~ "Estàs apunt de restaurar els valors predeterminats de WordPress per a "
+#~ "Rols i Competències.\n"
+#~ "  'Cancel·la' per abandonarr, 'D'acord' per restaurar."
+
+#~ msgid "Documentation"
+#~ msgstr "Documentació"
+
+#, fuzzy, php-format
+#~| msgid "%s already exists. Please change the file name."
+#~ msgid "The role \"%s\" already exists. Please choose a different name."
+#~ msgstr "El fitxer %s ja existeix. Si en plau canvieu-ne el nom."
+
+#, php-format
+#~ msgid ""
+#~ "Cannot delete default role. You <a href=\"%s\">have to change it first</"
+#~ "a>."
+#~ msgstr ""
+#~ "No es pot eliminar el rol predeterminat. <a href=\"%s\" Abans has de "
+#~ "canviar-lo</a>."
+
+#, fuzzy, php-format
+#~| msgid "Role has been deleted. %1$d users moved to default role %2$s."
+#~ msgid "%1$d users moved to default role %2$s."
+#~ msgstr ""
+#~ "El rol ha estat eliminat. S'han mogut %1$d usuaris al rol predeterminat "
+#~ "%2$s."
+
+#, fuzzy
+#~| msgid "Role"
+#~ msgid "Role Slug"
+#~ msgstr "Rol"
+
+#, fuzzy
+#~| msgid "Level:"
+#~ msgid "Role Level"
+#~ msgstr "Nivell:"
+
+#, fuzzy
+#~| msgid "Delete Role"
+#~ msgid "Delete role"
+#~ msgstr "Eliminar Rol"
+
+#, fuzzy
+#~| msgid "Edit Roles"
+#~ msgid "Update Role"
+#~ msgstr "Rols"
+
+#, fuzzy
+#~| msgid "Create New Role"
+#~ msgid "Create Role"
+#~ msgstr "Crear rol nou"
+
+#, fuzzy
+#~| msgid "Edit Roles"
+#~ msgid "Edit Role"
+#~ msgstr "Rols"
+
+#, fuzzy
+#~| msgid "Copy this role to"
+#~ msgid "Copy Role"
+#~ msgstr "Copia aquest rol a"
+
+#~ msgid "Create New Role"
+#~ msgstr "Crear rol nou"
+
+#, fuzzy
+#~| msgid "Roles"
+#~ msgid "All Roles"
+#~ msgstr "Rols"
+
+#~ msgid "Copy"
+#~ msgstr "Copiar"
+
+#, fuzzy
+#~| msgid "Delete Role"
+#~ msgid "Default Role"
+#~ msgstr ""
+#~ "El rol ha estat eliminat. S'han mogut %1$d usuaris al rol predeterminat "
+#~ "%2$s."
+
+#, fuzzy
+#~| msgid "Role"
+#~ msgid "Your Role"
+#~ msgstr "Rol"
+
+#, fuzzy
+#~| msgid "MIME type can't be detected."
+#~ msgid "This plugin can be deleted."
+#~ msgstr "No es pot detectar el tipus MIME."
+
+#~ msgid "Delete this role"
+#~ msgstr "Elimina aquest rol"
+
+#, php-format
+#~ msgid ""
+#~ "You are about to delete the %s role.\n"
+#~ "\n"
+#~ " 'Cancel' to stop, 'OK' to delete."
+#~ msgstr ""
+#~ "Estàs apunt d'eliminar el rol %s.\n"
+#~ "  'Cancel·la' per sortir, 'D'acord' per eliminar."
+
+#~ msgid "Add to role"
+#~ msgstr "Afegir al rol"
+
+#~ msgid "Reset Roles and Capabilities to WordPress defaults"
+#~ msgstr "Restaura Rols i Competències als valors predeterminats de WordPress"
+
+#, fuzzy
+#~| msgid "Documentation"
+#~ msgid "Capabilites Documentation"
+#~ msgstr "Documentació"
+
+#~ msgid "Change"
+#~ msgstr "Canvia"
+
+#~ msgid "Create"
+#~ msgstr "Crear"
+
+#~ msgid "Restore last saved backup"
+#~ msgstr "Recupera la darrera còpia de seguretat"
+
+#~ msgid "Do Action"
+#~ msgstr "Executa l'Acció"
+
+#~ msgid "What do you think you're doing?!?"
+#~ msgstr "Que et penses que fas?"
+
+#~ msgid "New capabilities saved."
+#~ msgstr "S'han desat les noves competències."
+
+#~ msgid "Option blocked by administrator."
+#~ msgstr "Opció desactivada per l'administrador."
+
+#~ msgid "The active plugin %s is not compatible with your WordPress version."
+#~ msgstr ""
+#~ "L'extensió activa %s no és compatible amb la teva versió de WordPress."
+
+#~ msgid "WordPress %s is required to run this plugin."
+#~ msgstr "Aquesta extensió requereix com a mínim WordPress %s."
+
+#~ msgid "Standard sidebar functions are not present."
+#~ msgstr "Les funcions de la barra lateral estàndard no es troben presents."
+
+#~ msgid "It is required to use the standard sidebar to run %s"
+#~ msgstr "És necessari utilitzar la barra lateral estàndard per executar %s"
+
+#~ msgid "Just Now"
+#~ msgstr "Ara mateix"
+
+#~ msgid "1 minute ago"
+#~ msgstr "Fa 1 minut"
+
+#~ msgid "1 hour ago"
+#~ msgstr "Fa 1 hora"
+
+#~ msgid "Today at %s"
+#~ msgstr "Avui a les %s"
+
+#~ msgid "Yesterday at %s"
+#~ msgstr "Ahir a les %s"
+
+#~ msgid "Plugin Homepage"
+#~ msgstr "Pàgina web de l'extensió"
+
+#~ msgid "Theme Homepage"
+#~ msgstr "Pàgina web del tema"
+
+#~ msgid "Author Homepage"
+#~ msgstr "Lloc web de l'autor"
+
+#~ msgid "Donate to project"
+#~ msgstr "Fes un donatiu"
+
+#~ msgid "Local file doesn't exist."
+#~ msgstr "El fitxer local no existeix."
+
+#~ msgid ""
+#~ "File upload error (the uploaded file exceeds the upload_max_filesize "
+#~ "directive in php.ini)."
+#~ msgstr ""
+#~ "Error de pujada de fitxer (El fitxer pujat excedeix de la directiva "
+#~ "upload_max_filesize de php.ini)."
+
+#~ msgid ""
+#~ "File upload error (the uploaded file exceeds the MAX_FILE_SIZE directive "
+#~ "that was specified in the html form)."
+#~ msgstr ""
+#~ "Error pujant el fitxer (el fitxer pujat excedeix la directiva "
+#~ "MAX_FILE_SIZE que s'ha especificat al formulari HTML)."
+
+#~ msgid "File upload error (the uploaded file was only partially uploaded)."
+#~ msgstr "Error pujant el fitxer (El fitxer només s'ha rebut parcialment)."
+
+#~ msgid "File upload error (no file was uploaded)."
+#~ msgstr "Error pujant el fitxer (No s'ha rebut cap fitxer)."
+
+#~ msgid "File upload error (missing a temporary folder)."
+#~ msgstr "Error pujant el fitxer (manca la carpeta temporal)."
+
+#~ msgid "File upload error (failed to write file to disk)."
+#~ msgstr "Error pujant el fitxer (No s'ha pogut escriure al disc)."
+
+#~ msgid "File upload error (file upload stopped by extension)."
+#~ msgstr "Error pujant el fitxer (El fitxer s'ha bloquejat per extensió)."
+
+#~ msgid "File upload error (unknown error code)."
+#~ msgstr "Error pujant el fitxer (Codi d'error desconegut)."
+
+#~ msgid "File upload error. Please try again."
+#~ msgstr ""
+#~ "S'ha produït un error pujant el fitxer. Torneu-ho a provar d'aquí una "
+#~ "estona."
+
+#~ msgid "File too big."
+#~ msgstr "Fitxer massa gran."
+
+#~ msgid "Incorrect type of file."
+#~ msgstr "Tipus d'arxiu invàlid"
+
+#~ msgid "Image too wide."
+#~ msgstr "Imatge massa ample."
+
+#~ msgid "Image too narrow."
+#~ msgstr "Imatge massa estreta."
+
+#~ msgid "Image too high."
+#~ msgstr "Imatge massa alta."
+
+#~ msgid "Image too short."
+#~ msgstr "Imatge massa baixa."
+
+#~ msgid "Image ratio too high (image too wide)."
+#~ msgstr "Ratio d'imatge massa gran (Imatge massa ample)."
+
+#~ msgid "Image ratio too low (image too high)."
+#~ msgstr "Ratio d'imatge massa baix (Imatge massa alta)."
+
+#~ msgid "Image has too many pixels."
+#~ msgstr "La imatge té massa píxels."
+
+#~ msgid "Image has not enough pixels."
+#~ msgstr "La imatge no té prou píxels."
+
+#~ msgid "File not uploaded. Can't carry on a process."
+#~ msgstr "No s'ha pujat el fitxer. No s'ha pogut executar el procés."
+
+#~ msgid "No correct temp source file. Can't carry on a process."
+#~ msgstr "El fitxer temporal no es correcte. No es pot executar el procés."
+
+#~ msgid "No correct uploaded source file. Can't carry on a process."
+#~ msgstr "El fitxer original no es correcte. No es pot executar el procés."
+
+#~ msgid "Destination directory can't be created. Can't carry on a process."
+#~ msgstr ""
+#~ "No es pot crear el directori de destí. No es pot executar el procés."
+
+#~ msgid "Destination directory doesn't exist. Can't carry on a process."
+#~ msgstr "El directori de destí no existeix. No es pot executar el procés."
+
+#~ msgid "Destination path is not a directory. Can't carry on a process."
+#~ msgstr "La ruta de destí no és un directori. No es pot executar el procés."
+
+#~ msgid ""
+#~ "Destination directory can't be made writeable. Can't carry on a process."
+#~ msgstr ""
+#~ "No es pot canviar a 'escriure' els drets del directori de destí. No es "
+#~ "pot executar el procés."
+
+#~ msgid "Destination path is not a writeable. Can't carry on a process."
+#~ msgstr ""
+#~ "No es pot escriure en el directori de destí. No es pot executar el procés."
+
+#~ msgid "Can't create the temporary file. Can't carry on a process."
+#~ msgstr "No es pot crear un fitxer temporal. No es pot executar el procés."
+
+#~ msgid "Source file is not readable. Can't carry on a process."
+#~ msgstr "El fitxer d'origen no es pot llegir. No es pot executar el procés."
+
+#~ msgid "No create from %s support."
+#~ msgstr "No hi ha funcions per crear des de %s."
+
+#~ msgid "Error in creating %s image from source."
+#~ msgstr "Error creant la imatge %s des de l'original."
+
+#~ msgid "Can't read image source. Not an image?."
+#~ msgstr "No es pot llegir la imatge original. És una imatge?"
+
+#~ msgid "GD doesn't seem to be present."
+#~ msgstr "No sembla que la llibreria GD estigui present."
+
+#~ msgid "No create from %s support, can't read watermark."
+#~ msgstr ""
+#~ "No hi ha funcions per crear des de %s, no es pot llegir la marca a "
+#~ "l'aigua."
+
+#~ msgid "No %s read support, can't create watermark."
+#~ msgstr ""
+#~ "No hi ha funcions per llegir %s, no es pot crear la marca a l'aigua."
+
+#~ msgid "Unknown image format, can't read watermark."
+#~ msgstr "Format d'imatge desconegut, no es pot llegir la marca a l'aigua."
+
+#~ msgid "No %s create support."
+#~ msgstr "No hi ha funcions per crear %s."
+
+#~ msgid "No conversion type defined."
+#~ msgstr "No s'ha definit cap tipus de conversió."
+
+#~ msgid "Error copying file on the server. copy() failed."
+#~ msgstr "Error copiant el fitxer al serivor. copy() ha fallat."
+
+#~ msgid "Error reading the file."
+#~ msgstr "Error llegint el fitxer."
+
+#~ msgid "Help donating"
+#~ msgstr "Ajuda donant"
