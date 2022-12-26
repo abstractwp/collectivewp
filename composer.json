@@ -16,6 +16,9 @@
         "url": "https://wpackagist.org"
         }
     ],
+    "config": {
+        "allow-plugins": true
+    },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
         "wp-coding-standards/wpcs": "^2.3",
