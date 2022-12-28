@@ -58,8 +58,8 @@ function selective_refresh_support( $wp_customize ) {
 
 	// The <div> classname to append edit icon too.
 	$settings = [
-		'blogname'            => '.site-title a',
-		'blogdescription'     => '.site-description',
+		'blogname'                    => '.site-title a',
+		'blogdescription'             => '.site-description',
 		'collectivewp_copyright_text' => '.site-info',
 	];
 

@@ -26,5 +26,9 @@
     },
     "require": {
         "wpackagist-plugin/custom-post-type-ui":"1.13.3"
+    },
+    "scripts": {
+        "format": "phpcbf --report=summary,source",
+        "lint": "phpcs --report=summary,source"
     }
 }
