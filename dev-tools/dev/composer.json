@@ -26,6 +26,7 @@
   },
   "require": {
       "wpackagist-plugin/custom-post-type-ui":"1.13.3",
-      "johnbillion/user-switching": "^1.7"
+      "johnbillion/user-switching": "^1.7",
+      "wpackagist-plugin/query-monitor":"3.10.1"
   }
 }
