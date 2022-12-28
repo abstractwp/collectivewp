@@ -216,6 +216,8 @@ wp-content/themes/collectivewp/build/
 # Git actions
 !.github/
 !.github/**
+!dev-tools/
+!dev-tools/**
 
 # Stop editing!
 

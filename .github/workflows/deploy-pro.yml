@@ -28,8 +28,10 @@ jobs:
         run: cd wp-content/themes/collectivewp && rm -rf node_modules
 
       - name: Install plugins
-      # Install dependencies using composer.json in the root.
+        # Install dependencies using composer.json in the dev-tools.
         uses: "ramsey/composer-install@v2"
+        with:
+          working-directory: "dev-tools/pro"
 
       - name: Deploy WordPress to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3.1.1
