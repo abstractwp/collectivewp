@@ -25,6 +25,7 @@
       "phpcompatibility/phpcompatibility-wp": "^2.1"
   },
   "require": {
-      "wpackagist-plugin/custom-post-type-ui":"1.13.3"
+      "wpackagist-plugin/custom-post-type-ui":"1.13.3",
+      "johnbillion/user-switching": "^1.7"
   }
 }
