@@ -33,6 +33,9 @@ jobs:
         with:
           working-directory: "dev-tools/pro"
 
+      - name: Move plugins
+        run: mv -f dev-tools/pro/wp-content/plugins/* wp-content/plugins/
+
       - name: Deploy WordPress to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3.1.1
         with:
