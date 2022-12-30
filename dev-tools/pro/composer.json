@@ -20,7 +20,7 @@
       "allow-plugins": true
   },
   "require": {
-      "wpackagist-plugin/custom-post-type-ui":"1.13.3",
+      "wpackagist-plugin/custom-post-type-ui":"1.13.4",
       "civicrm/composer-downloads-plugin": "v3.0.0",
       "wpackagist-plugin/block-widgets-monster":"1.0.2"
   },
