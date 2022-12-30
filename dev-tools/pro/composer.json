@@ -20,6 +20,16 @@
       "allow-plugins": true
   },
   "require": {
-      "wpackagist-plugin/custom-post-type-ui":"1.13.3"
+      "wpackagist-plugin/custom-post-type-ui":"1.13.3",
+      "civicrm/composer-downloads-plugin": "v3.0.0"
+  },
+  "extra": {
+    "downloads": {
+      "block-unit-test": {
+        "url": "https://github.com/abstractwp/block-unit-test/releases/download/1.1.0/block-unit-test.zip",
+        "path": "wp-content/plugins/block-unit-test",
+        "ignore": ["test", "doc", ".*"]
+      }
+    }
   }
 }
