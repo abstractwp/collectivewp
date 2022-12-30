@@ -32,6 +32,11 @@
         "url": "https://github.com/abstractwp/block-unit-test/releases/download/1.1.0/block-unit-test.zip",
         "path": "wp-content/plugins/block-unit-test",
         "ignore": ["test", "doc", ".*"]
+      },
+      "theme-test-data": {
+        "url": "https://github.com/abstractwp/theme-test-data/releases/download/1.0.2/theme-test-data.zip",
+        "path": "wp-content/plugins/theme-test-data",
+        "ignore": ["vendor", ".*"]
       }
     }
   }
