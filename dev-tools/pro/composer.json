@@ -45,7 +45,7 @@
       },
       "collectivewp": {
         "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/collectivewp.zip",
-        "path": "wp-content/theme/collectivewp",
+        "path": "wp-content/themes/collectivewp",
         "ignore": []
       }
     }
