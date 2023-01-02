@@ -42,6 +42,8 @@ git fetch --all
 git checkout main
 # Checkout theme
 git submodule update
+# Download all plugins via composer
+composer install
 ```
 
 ## Using NPM, Composer, & WP-CLI without installation
