@@ -15,6 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install plugins & theme
+        # Install dependencies using composer.json in the dev-tools.
+        uses: "ramsey/composer-install@v2"
+        with:
+          working-directory: "dev-tools/dev"
+
+      - name: Move plugins
+        run: mv -f dev-tools/dev/wp-content/plugins/* wp-content/plugins/
+
+      - name: Move theme
+        run: mv -f dev-tools/dev/wp-content/themes/* wp-content/themes/
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.2.0
         with:
@@ -26,15 +38,6 @@ jobs:
 
       - name: Remove node_modules
         run: cd wp-content/themes/collectivewp && rm -rf node_modules
-
-      - name: Install plugins
-       # Install dependencies using composer.json in the dev-tools.
-        uses: "ramsey/composer-install@v2"
-        with:
-          working-directory: "dev-tools/dev"
-
-      - name: Move plugins
-        run: mv -f dev-tools/dev/wp-content/plugins/* wp-content/plugins/
 
       - name: Deploy WordPress to WP Engine
         uses: wpengine/github-action-wpe-site-deploy@v3.1.1

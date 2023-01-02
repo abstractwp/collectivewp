@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/collectivewp"]
+	path = wp-content/themes/collectivewp
+	url = git@github.com:abstractwp/abstractwp_s.git

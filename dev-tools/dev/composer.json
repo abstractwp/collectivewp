@@ -25,7 +25,15 @@
       "wpackagist-plugin/query-monitor":"3.10.1",
       "wpackagist-plugin/wp-debugging":"2.11.14",
       "civicrm/composer-downloads-plugin": "v3.0.0",
-      "wpackagist-plugin/block-widgets-monster":"1.0.2"
+      "wpackagist-plugin/block-widgets-monster":"1.0.2",
+      "wpackagist-plugin/fluent-smtp":"2.2.2",
+      "wpackagist-plugin/wp-security-audit-log":"4.4.3",
+      "wpackagist-plugin/capability-manager-enhanced":"2.6.1",
+      "wpackagist-plugin/redirection": "^5.3",
+      "wpackagist-plugin/wordpress-seo":"19.13",
+      "wpackagist-plugin/debloat":"1.2.1",
+      "pronamic/gravityforms": "^2.6.8"
+
   },
   "extra": {
     "downloads": {
@@ -38,6 +46,11 @@
         "url": "https://github.com/abstractwp/theme-test-data/releases/download/1.0.2/theme-test-data.zip",
         "path": "wp-content/plugins/theme-test-data",
         "ignore": ["vendor", ".*"]
+      },
+      "collectivewp": {
+        "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/collectivewp.zip",
+        "path": "wp-content/themes/collectivewp",
+        "ignore": []
       }
     }
   }
