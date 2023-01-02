@@ -204,11 +204,22 @@ Thumbs.db
 !wp-content/plugins/capabilities-pro/**
 !wp-content/plugins/wp-migrate-db-pro/
 !wp-content/plugins/wp-migrate-db-pro/**
+!wp-content/plugins/facetwp/
+!wp-content/plugins/facetwp/**
 
 # Theme
 
 !wp-content/themes/collectivewp/
 !wp-content/themes/collectivewp/**
+wp-content/themes/collectivewp/vendor/
+wp-content/themes/collectivewp/node_modules/
+wp-content/themes/collectivewp/build/
+
+# Git actions
+!.github/
+!.github/**
+!dev-tools/
+!dev-tools/**
 
 # Stop editing!
 
