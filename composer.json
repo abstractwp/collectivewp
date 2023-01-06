@@ -22,8 +22,8 @@
     "require": {
         "wpackagist-plugin/custom-post-type-ui":"1.13.4",
         "johnbillion/user-switching": "^1.7",
-        "wpackagist-plugin/query-monitor":"3.10.1",
-        "wpackagist-plugin/wp-debugging":"2.11.14",
+        "wpackagist-plugin/query-monitor":"3.11.1",
+        "wpackagist-plugin/wp-debugging":"2.11.15",
         "civicrm/composer-downloads-plugin": "v3.0.0",
         "wpackagist-plugin/block-widgets-monster":"1.0.2",
         "wpackagist-plugin/fluent-smtp":"2.2.2",
@@ -31,7 +31,7 @@
         "wpackagist-plugin/capability-manager-enhanced":"2.6.1",
         "wpackagist-plugin/redirection": "^5.3",
         "wpackagist-plugin/wordpress-seo":"19.13",
-        "wpackagist-plugin/debloat":"1.2.1",
+        "wpackagist-plugin/so-clean-up-wp-seo":"3.14.12",
         "pronamic/gravityforms": "^2.6.8"
 
     },
