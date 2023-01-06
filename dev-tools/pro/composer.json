@@ -28,7 +28,7 @@
       "wpackagist-plugin/capability-manager-enhanced":"2.6.1",
       "wpackagist-plugin/redirection": "^5.3",
       "wpackagist-plugin/wordpress-seo":"19.13",
-      "wpackagist-plugin/debloat":"1.2.1",
+      "wpackagist-plugin/so-clean-up-wp-seo":"3.14.12",
       "pronamic/gravityforms": "^2.6.8"
   },
   "extra": {
