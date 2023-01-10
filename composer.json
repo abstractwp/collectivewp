@@ -28,7 +28,6 @@
         "wpackagist-plugin/block-widgets-monster":"1.0.2",
         "wpackagist-plugin/fluent-smtp":"2.2.2",
         "wpackagist-plugin/wp-security-audit-log":"4.4.3",
-        "wpackagist-plugin/capability-manager-enhanced":"2.6.1",
         "wpackagist-plugin/redirection": "^5.3",
         "wpackagist-plugin/wordpress-seo":"19.13",
         "wpackagist-plugin/so-clean-up-wp-seo":"3.14.12",
