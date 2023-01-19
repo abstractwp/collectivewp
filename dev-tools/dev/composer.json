@@ -47,7 +47,7 @@
         "ignore": ["vendor", ".*"]
       },
       "collectivewp": {
-        "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/collectivewp.zip",
+        "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/main.zip",
         "path": "wp-content/themes/collectivewp",
         "ignore": []
       }
