@@ -25,7 +25,7 @@
         "wpackagist-plugin/query-monitor":"3.11.1",
         "wpackagist-plugin/wp-debugging":"2.11.15",
         "civicrm/composer-downloads-plugin": "v3.0.0",
-        "wpackagist-plugin/block-widgets-monster":"1.0.2",
+        "wpackagist-plugin/block-widgets-monster":"1.0.3",
         "wpackagist-plugin/fluent-smtp":"2.2.2",
         "wpackagist-plugin/wp-security-audit-log":"4.4.3",
         "wpackagist-plugin/redirection": "^5.3",

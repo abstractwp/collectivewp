@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fdcc7098358f7e4a15b8771a1f16f31",
+    "content-hash": "a6aa845f07258fde591af3b3d289248a",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.6.8",
+            "version": "2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "b27aec2cf246cc73ba256f6fd6956e180996e61f"
+                "reference": "06545ac01f2dc542cce58bf6bc79630f1d58de23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/b27aec2cf246cc73ba256f6fd6956e180996e61f",
-                "reference": "b27aec2cf246cc73ba256f6fd6956e180996e61f",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/06545ac01f2dc542cce58bf6bc79630f1d58de23",
+                "reference": "06545ac01f2dc542cce58bf6bc79630f1d58de23",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.6.8"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7"
             },
-            "time": "2022-11-10T10:07:29+00:00"
+            "time": "2023-02-09T10:06:35+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -333,7 +333,7 @@
         },
         {
             "name": "wpackagist-plugin/block-widgets-monster",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/block-widgets-monster/",
@@ -341,31 +341,13 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/block-widgets-monster.zip?timestamp=1657713480"
+                "url": "https://downloads.wordpress.org/plugin/block-widgets-monster.zip?timestamp=1675955958"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/block-widgets-monster/"
-        },
-        {
-            "name": "wpackagist-plugin/capability-manager-enhanced",
-            "version": "2.6.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/capability-manager-enhanced/",
-                "reference": "tags/2.6.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/capability-manager-enhanced.2.6.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/capability-manager-enhanced/"
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
@@ -384,24 +366,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
-        },
-        {
-            "name": "wpackagist-plugin/debloat",
-            "version": "1.2.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/debloat/",
-                "reference": "tags/1.2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debloat.1.2.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/debloat/"
         },
         {
             "name": "wpackagist-plugin/fluent-smtp",
@@ -423,15 +387,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.10.1",
+            "version": "3.11.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.10.1"
+                "reference": "tags/3.11.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.10.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.11.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -441,21 +405,39 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "5.3.6",
+            "version": "5.3.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.3.6"
+                "reference": "tags/5.3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.3.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
+            "name": "wpackagist-plugin/so-clean-up-wp-seo",
+            "version": "3.14.12",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/so-clean-up-wp-seo/",
+                "reference": "tags/3.14.12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/so-clean-up-wp-seo.3.14.12.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/so-clean-up-wp-seo/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
@@ -477,15 +459,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-debugging",
-            "version": "2.11.14",
+            "version": "2.11.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-debugging/",
-                "reference": "tags/2.11.14"
+                "reference": "tags/2.11.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-debugging.2.11.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-debugging.2.11.15.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
