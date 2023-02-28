@@ -51,8 +51,8 @@ jobs:
             server: ${{ secrets.PANTHEON_HOST }}
             password: ${{ secrets.PANTHEON_PASSWORD }}
             port: 2222
-            local_path: 'wp-content/'
-            remote_path: 'code/'
+            local_path: './wp-content/*'
+            remote_path: '~/code/wp-content/'
             sftpArgs: '-o ConnectTimeout=5'
 
       # - name: Notify Slack
