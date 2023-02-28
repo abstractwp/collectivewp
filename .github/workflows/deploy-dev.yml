@@ -49,7 +49,8 @@ jobs:
         with:
             username: ${{ secrets.PANTHEON_USERNAME }}
             server: ${{ secrets.PANTHEON_HOST }}
-            ssh_private_key: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+            password: ${{ secrets.PANTHEON_PASSWORD }}
+            port: 2222
             local_path: 'wp-content/'
             remote_path: 'code/'
             sftpArgs: '-o ConnectTimeout=5'
