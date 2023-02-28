@@ -85,11 +85,15 @@ class FacetWP_Builder
 
             endwhile;
         }
+        else {
+            $no_results_text = $settings['no_results_text'] ?? '';
+            $output .= do_shortcode( $no_results_text );
+        }
 
         $output .= '</div>';
 
         $output .= $this->render_css();
- 
+
         return $output;
     }
 

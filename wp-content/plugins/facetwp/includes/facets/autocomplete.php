@@ -56,9 +56,10 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
     function render( $params ) {
 
         $output = '';
+        $facet = $params['facet'];
         $value = (array) $params['selected_values'];
         $value = empty( $value ) ? '' : stripslashes( $value[0] );
-        $placeholder = $params['facet']['placeholder'] ?? __( 'Start typing', 'fwp-front' ) . '...';
+        $placeholder = empty( $facet['placeholder'] ) ? __( 'Start typing', 'fwp-front' ) : $facet['placeholder'];
         $placeholder = facetwp_i18n( $placeholder );
         $output .= '<input type="text" class="facetwp-autocomplete" value="' . esc_attr( $value ) . '" placeholder="' . esc_attr( $placeholder ) . '" autocomplete="off" />';
         $output .= '<input type="button" class="facetwp-autocomplete-update" value="' . __( 'Go', 'fwp-front' ) . '" />';

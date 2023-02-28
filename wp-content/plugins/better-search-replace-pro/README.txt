@@ -1,8 +1,8 @@
 === Better Search Replace Pro ===
-Contributors: deliciousbrains, mattshaw
+Contributors: wpengine, deliciousbrains, mattshaw
 Tags: search replace, search and replace, update urls, database, search replace database, update database urls, update live url, better search replace, search&replace
 Requires at least: 3.0.1
-Tested up to: 6.0.1
+Tested up to: 6.1.1
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -88,6 +88,9 @@ This is likely an issue with your PHP memory limit. Try temporarily increasing i
 2. After running a search/replace dry-run.
 
 == Changelog ==
+
+= 1.4.2 - January 10, 2023 =
+* Security: Arbitrary tab templates in the `templates` directory can no longer be loaded using a query parameter.
 
 = 1.4.1 - July 25, 2022 =
 * Security: Backup and import filenames now contain a random salt

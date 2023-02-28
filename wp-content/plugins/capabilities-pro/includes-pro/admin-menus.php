@@ -47,15 +47,6 @@ $admin_child_menu_option = array_key_exists($default_role, $admin_child_menu_opt
                         <tr>
                             <td class="content">
 
-                                <div class="publishpress-headline">
-                                    <span class="cme-subtext">
-                                    <span class='pp-capability-role-caption'>
-                                    <?php
-                                    esc_html_e('Note: You are only restricting access to admin menu screens. Some plugins may also add features to other areas of WordPress.', 'capabilities-pro');
-                                    ?>
-                                    </span>
-                                    </span>
-                                </div>
                                 <div class="publishpress-filters">
                                     <select name="ppc-admin-menu-role" class="ppc-admin-menu-role">
                                         <?php

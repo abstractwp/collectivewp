@@ -104,7 +104,6 @@ class AdminFiltersPro {
         $cap_name = (is_multisite() && is_super_admin()) ? 'read' : 'manage_capabilities';
         
         add_submenu_page('pp-capabilities-roles',  __('Admin Menus', 'capabilities-pro'), __('Admin Menus', 'capabilities-pro'), $cap_name, 'pp-capabilities-admin-menus', [$this, 'ManageAdminMenus']);
-        add_submenu_page('pp-capabilities-roles',  __('Nav Menus', 'capabilities-pro'), __('Nav Menus', 'capabilities-pro'), $cap_name, 'pp-capabilities-nav-menus', [$this, 'ManageNavMenus']);
     }
 
     /**
@@ -172,61 +171,6 @@ class AdminFiltersPro {
 
 		include ( dirname(__FILE__) . '/admin-menus.php' );
 	}
-
-    /**
-     * Manages navigation menu permissions
-     *
-     * @hook add_management_page
-     * @return void
-     */
-    function ManageNavMenus()
-    {
-        global $capsman;
-
-        if ((!is_multisite() || !is_super_admin()) && !current_user_can('administrator') && !current_user_can('manage_capabilities')) {
-            // TODO: Implement exceptions.
-            wp_die('<strong>' . esc_html__('You do not have permission to manage navigation menus.', 'capabilities-pro') . '</strong>');
-        }
-
-        $capsman->generateNames();
-        $roles = array_keys($capsman->roles);
-
-        if (!isset($capsman->current)) {
-            if (empty($_POST) && !empty($_REQUEST['role'])) {
-                $capsman->set_current_role(sanitize_key($_REQUEST['role']));
-            }
-        }
-
-        if (!isset($capsman->current) || !get_role($capsman->current)) {
-            $capsman->current = $capsman->get_last_role();
-        }
-
-        if (!in_array($capsman->current, $roles)) {
-            $capsman->current = array_shift($roles);
-        }
-
-
-        if (!empty($_SERVER['REQUEST_METHOD']) && ('POST' == $_SERVER['REQUEST_METHOD']) && isset($_POST['ppc-nav-menu-role']) && !empty($_REQUEST['_wpnonce'])) {
-            if (!wp_verify_nonce(sanitize_key($_REQUEST['_wpnonce']), 'pp-capabilities-nav-menus')) {
-                wp_die('<strong>' . esc_html__('You do not have permission to manage navigation menus.', 'capabilities-pro') . '</strong>');
-            } else {
-                $menu_role = sanitize_key($_POST['ppc-nav-menu-role']);
-
-                $capsman->set_current_role($menu_role);
-
-                //set role nav child menu
-                $nav_item_menu_option = !empty(get_option('capsman_nav_item_menus')) ? get_option('capsman_nav_item_menus') : [];
-
-                $nav_item_menu_option[$menu_role] = isset($_POST['pp_cababilities_restricted_items']) ? array_map('sanitize_text_field', $_POST['pp_cababilities_restricted_items']) : '';
-
-                update_option('capsman_nav_item_menus', $nav_item_menu_option, false);
-
-                ak_admin_notify(__('Settings updated.', 'capabilities-pro'));
-            }
-        }
-
-        include(dirname(__FILE__) . '/nav-menus.php');
-    }
 
     function versionInfoRedirect() {
         if (!empty($_REQUEST['publishpress_caps_refresh_updates']) && current_user_can('activate_plugins')) { // not a security issue, but prevent status refresh by CSRF

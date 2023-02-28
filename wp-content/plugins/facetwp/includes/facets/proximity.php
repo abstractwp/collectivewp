@@ -3,8 +3,11 @@
 class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
 {
 
-    /* (array) Associative array containing each post ID and its distance */
+    /* (array) Associative array containing post_id => distance */
     public $distance = [];
+
+    /* (array) Associative array containing post_id => [lat, lng] */
+    public $post_latlng = [];
 
 
     function __construct() {
@@ -145,7 +148,15 @@ class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
             }
 
             if ( $dist <= $radius ) {
-                $this->distance[ $row->post_id ] = $dist;
+                $existing = $this->distance[ $row->post_id ] ?? -1;
+
+                if ( -1 == $existing || $dist < $existing ) {
+                    $this->distance[ $row->post_id ] = $dist;
+
+                    if ( apply_filters( 'facetwp_proximity_store_latlng', false ) ) {
+                        $this->post_latlng[ $row->post_id ] = [ $lat2, $lng2 ];
+                    }
+                }
             }
         }
 
@@ -171,7 +182,7 @@ class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
             // hook
             $api_key = apply_filters( 'facetwp_gmaps_api_key', $api_key );
 
-            FWP()->display->assets['gmaps'] = '//maps.googleapis.com/maps/api/js?libraries=places&key=' . trim( $api_key );
+            FWP()->display->assets['gmaps'] = '//maps.googleapis.com/maps/api/js?libraries=places&key=' . trim( $api_key ) . '&callback=Function.prototype';
         }
 
         // Pass extra options into Places Autocomplete

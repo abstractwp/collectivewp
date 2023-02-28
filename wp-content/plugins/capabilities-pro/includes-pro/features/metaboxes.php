@@ -99,6 +99,9 @@ class EditorFeaturesMetaboxes {
                 foreach ($post_metaboxes_data as $post_type => $post_meta_values) {
                     if (is_array($post_meta_values) && count($post_meta_values) > 0) {
                         foreach ($post_meta_values as $post_meta_value) {
+                            if (!$post_meta_value) {
+                                continue;
+                            }
                             $metabox_id = $post_meta_value['id'];
                             if (!in_array($metabox_id, $included_metabox) && !in_array($metabox_id, $excluded_ids)) {
                                 

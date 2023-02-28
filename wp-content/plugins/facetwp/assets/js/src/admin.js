@@ -69,6 +69,10 @@
                             title: FWP.__('Spacing between results'),
                             defaultValue: 10
                         },
+                        no_results_text: {
+                            type: 'textarea',
+                            title: FWP.__('No results text')
+                        },
                         text_style: {
                             type: 'text-style',
                             title: FWP.__('Text style'),
@@ -316,7 +320,7 @@
                     let fields = [];
 
                     if ('layout' == type) {
-                        fields.push('num_columns', 'grid_gap');
+                        fields.push('num_columns', 'grid_gap', 'no_results_text');
                     }
 
                     if ('row' == type) {

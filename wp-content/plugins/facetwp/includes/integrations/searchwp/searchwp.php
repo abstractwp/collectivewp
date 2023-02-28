@@ -23,8 +23,8 @@ class FacetWP_Integration_SearchWP
      */
     function is_main_query( $is_main_query, $query ) {
         if ( $is_main_query && $query->is_search() && ! empty( $query->get( 's' ) ) ) {
-            $args = $this->get_valid_args( $query );
-            $this->keywords = $query->get( 's' );
+            $args = stripslashes_deep( $this->get_valid_args( $query ) );
+            $this->keywords = $args['s'];
             $this->swp_query = $this->run_query( $args );
             $query->set( 'using_searchwp', true );
             $query->set( 'searchwp', false );
@@ -36,7 +36,7 @@ class FacetWP_Integration_SearchWP
 
     /**
      * Whitelist supported SWP_Query arguments
-     * 
+     *
      * @link https://searchwp.com/documentation/classes/swp_query/#arguments
      */
     function get_valid_args( $query ) {
@@ -62,7 +62,7 @@ class FacetWP_Integration_SearchWP
      * Modify FacetWP's render() query to use SearchWP's results while bypassing
      * WP core search. We're using this additional query to support custom query
      * modifications, such as for FacetWP's sort box.
-     * 
+     *
      * The hook priority (1000) is important because this needs to run after
      * FacetWP_Request->update_query_vars()
      */
@@ -91,10 +91,10 @@ class FacetWP_Integration_SearchWP
     /**
      * If [facetwp => false] then it's the get_filtered_post_ids() query. Return
      * the raw SearchWP results to prevent the additional query.
-     * 
+     *
      * If [facetwp => true] and [first_run => true] then it's the main WP query. Return
      * a non-null value to kill the query, since we don't use the results.
-     * 
+     *
      * If [facetwp => true] and [first_run => false] then it's the FacetWP render() query.
      */
     function posts_pre_query( $posts, $query ) {

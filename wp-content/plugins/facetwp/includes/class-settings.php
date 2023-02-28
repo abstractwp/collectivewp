@@ -74,7 +74,7 @@ class FacetWP_Settings
                         'html' => $this->get_setting_html( 'wc_enable_variations', 'toggle' )
                     ],
                     'wc_index_all' => [
-                        'label' => __( 'Include all products?', 'fwp' ),
+                        'label' => __( 'Index out-of-stock products?', 'fwp' ),
                         'notes' => __( 'Show facet choices for out-of-stock products?', 'fwp' ),
                         'html' => $this->get_setting_html( 'wc_index_all', 'toggle' )
                     ]
@@ -459,6 +459,7 @@ $false_value = $atts['false_value'] ?? 'no';
         return [
             'Number of grid columns' => __( 'Number of grid columns', 'fwp' ),
             'Spacing between results' => __( 'Spacing between results', 'fwp' ),
+            'No results text' => __( 'No results text', 'fwp' ),
             'Text style' => __( 'Text style', 'fwp' ),
             'Text color' => __( 'Text color', 'fwp' ),
             'Font size' => __( 'Font size', 'fwp' ),

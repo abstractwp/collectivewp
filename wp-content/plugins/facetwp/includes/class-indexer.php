@@ -23,7 +23,7 @@ class FacetWP_Indexer
 
 
     function __construct() {
-        $this->set_table_prop();
+        $this->set_table( 'auto' );
         $this->run_cron();
 
         if ( apply_filters( 'facetwp_indexer_is_enabled', true ) ) {
@@ -220,7 +220,6 @@ class FacetWP_Indexer
             // Store post IDs
             if ( $this->index_all ) {
                 update_option( 'facetwp_indexing', json_encode( $post_ids ) );
-                $this->set_table_prop();
             }
         }
 
@@ -286,7 +285,6 @@ class FacetWP_Indexer
 
             $this->manage_temp_table( 'replace' );
             $this->manage_temp_table( 'delete' );
-            $this->set_table_prop();
         }
 
         do_action( 'facetwp_indexer_complete' );
@@ -619,13 +617,17 @@ class FacetWP_Indexer
 
 
     /**
-     * Determine whether a temp index table is in use
-     * @since 3.5
+     * Set either the index or temp table
+     * @param string $table 'auto', 'index', or 'temp'
+     * @since 4.1.4
      */
-    function set_table_prop() {
+    function set_table( $table = 'auto' ) {
         global $wpdb;
 
-        $table = ( '' == get_option( 'facetwp_indexing', '' ) ) ? 'index' : 'temp';
+        if ( 'auto' == $table ) {
+            $table = ( '' == get_option( 'facetwp_indexing', '' ) ) ? 'index' : 'temp';
+        }
+
         $this->table = $wpdb->prefix . 'facetwp_' . $table;
     }
 
@@ -642,6 +644,7 @@ class FacetWP_Indexer
 
         if ( 'create' == $action ) {
             $wpdb->query( "CREATE TABLE $temp_table LIKE $table" );
+            $this->set_table( 'temp' );
         }
         elseif ( 'replace' == $action ) {
             $wpdb->query( "TRUNCATE TABLE $table" );
@@ -649,6 +652,7 @@ class FacetWP_Indexer
         }
         elseif ( 'delete' == $action ) {
             $wpdb->query( "DROP TABLE IF EXISTS $temp_table" );
+            $this->set_table( 'index' );
         }
     }
 
