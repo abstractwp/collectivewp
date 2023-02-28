@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@arkweid/lefthook": "^0.7.4"
+  },
+  "scripts": {
+    "postinstall": "npx lefthook install"
+  }
+}

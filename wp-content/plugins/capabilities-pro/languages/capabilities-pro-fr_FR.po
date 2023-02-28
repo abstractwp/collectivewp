@@ -1,0 +1,1920 @@
+# Translation of Plugins - PublishPress Capabilities &#8211; User Role Access, Editor Permissions, Admin Menus - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - PublishPress Capabilities &#8211; User Role Access, Editor Permissions, Admin Menus - Stable (latest release) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - PublishPress Capabilities &#8211; User Role "
+"Access, Editor Permissions, Admin Menus - Stable (latest release)\n"
+"POT-Creation-Date: 2022-04-19 14:31-0400\n"
+"PO-Revision-Date: 2022-10-22 20:11+0200\n"
+"Last-Translator: Kevin Behrens <kevin@publishpress.com>\n"
+"Language-Team: Angelo Giammarresi - info@wocmultimedia.com\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-KeywordsList: __;_e;_c;_n;_x;_ex;__ngettext;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: ../includes-pro\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin-load.php:81 settings-ui.php:70
+msgid "Admin Menus"
+msgstr "Menus d’administration"
+
+#: admin-load.php:82
+msgid "Nav Menus"
+msgstr "Menus de navigation"
+
+#: admin-load.php:97 admin-load.php:121
+msgid "You do not have permission to manage menu restrictions."
+msgstr "Vous n’avez pas le droit de gérer les restrictions de menu."
+
+#: admin-load.php:143 admin-load.php:197
+msgid "Settings updated."
+msgstr "Réglages mis à jour."
+
+#: admin-load.php:162 admin-load.php:185
+msgid "You do not have permission to manage navigation menus."
+msgstr "Vous n’avez pas le droit de gérer les menus de navigation."
+
+#: admin-menus.php:39 settings-ui.php:301
+msgid "Admin Menu Restrictions"
+msgstr "Restrictions du menu d’administration"
+
+#: admin-menus.php:53
+msgid ""
+"Note: You are only restricting access to admin menu screens. Some plugins "
+"may also add features to other areas of WordPress."
+msgstr ""
+"Note : Vous ne limitez l’accès qu’aux écrans des menus d’administration. "
+"Certaines extensions peuvent également ajouter des fonctionnalités à "
+"d’autres zones de WordPress."
+
+#: admin-menus.php:96 admin-menus.php:114 nav-menus.php:119 nav-menus.php:139
+msgid "Toggle all"
+msgstr "Tout masquer/afficher"
+
+#: admin-menus.php:244 admin-menus.php:299
+msgid "This option is disabled to prevent complete lockout"
+msgstr "Cette option est désactivée pour éviter un verrouillage complet"
+
+#: admin-menus.php:334 nav-menus.php:231
+msgid "No menu found"
+msgstr "Aucun menu trouvé"
+
+#: admin.php:52
+msgid "Custom Statuses"
+msgstr "États personnalisés"
+
+#: admin.php:128
+msgid "Custom Status Capabilities"
+msgstr "Permissions des états personnalisés"
+
+#: admin.php:143
+msgid "Can assign this status (for selected post types)"
+msgstr ""
+"Vous pouvez assigner cet état (pour les types de publications sélectionnés)."
+
+#: admin.php:144
+msgid "Can edit posts of this status (for selected post types)"
+msgstr ""
+"Vous pouvez modifier les publications de cet état (pour les types de "
+"publications sélectionnés)"
+
+#: admin.php:145
+msgid "Can edit other's posts of this status (for selected post types)"
+msgstr ""
+"Vous pouvez modifier les publications d’autres personnes ayant cet état "
+"(pour les types de publications sélectionnés)"
+
+#: admin.php:146
+msgid "Can delete posts of this status (for selected post types)"
+msgstr ""
+"Vous pouvez supprimer les publications de cet état (pour les types de "
+"publications sélectionnés)"
+
+#: admin.php:147
+msgid "Can delete other's posts of this status (for selected post types)"
+msgstr ""
+"Vous pouvez supprimer les publications d’autres personnes ayant cet état "
+"(pour les types de publications sélectionnés)"
+
+#: admin.php:242 admin.php:313
+#, php-format
+msgid "%s: assigned by Permission Group"
+msgstr "%s : attribué par le groupe de permissions"
+
+#: admin.php:367
+msgid "Post Types..."
+msgstr "Types de publication…"
+
+#: admin.php:419
+msgid "Enable / Disable Custom Permissions"
+msgstr "Activer/désactiver les permissions personnalisées"
+
+#: admin.php:425
+msgid "Customize Permissions"
+msgstr "Personnaliser les permissions"
+
+#: admin.php:434
+#, php-format
+msgid "%sAdvanced status control...%s"
+msgstr "%sContrôle avancé des états…%s"
+
+#: admin.php:440
+#, php-format
+msgid ""
+"For more control, <br />enable the PublishPress Permissions <br />%sStatus "
+"Control module%s"
+msgstr ""
+"Pour plus de contrôle, <br />activez le module PublishPress Permissions <br /"
+">%sContrôle des états%s."
+
+#: features/admin-features-block-url.php:91
+msgid "Blocked by URL"
+msgstr "Bloqué par URL"
+
+#: features/admin-features-block-url.php:108
+msgid "Block URL form:"
+msgstr "Bloquez le formulaire de l’URL :"
+
+#: features/admin-features-block-url.php:109
+msgid "Enter URL to be blocked by role:"
+msgstr "Entrez l’URL à bloquer par rôle :"
+
+#: features/admin-features-block-url.php:118
+#: features/admin-features-css-hide.php:118
+#: features/config/custom-config.php:38 features/config/custom-config.php:79
+msgid "Label"
+msgstr "Libellé"
+
+#: features/admin-features-block-url.php:120
+msgid ""
+"Enter the name/label to identify the element under Blocked by URL section of "
+"this screen."
+msgstr ""
+"Saisissez le nom/libellé permettant d’identifier l’élément dans la section "
+"Bloqué par URL de cet écran."
+
+#: features/admin-features-block-url.php:125
+msgid "URLs"
+msgstr "URLs"
+
+#: features/admin-features-block-url.php:129
+#: features/admin-features-css-hide.php:129
+#: features/config/custom-config.php:49 features/config/custom-config.php:90
+msgid "Add"
+msgstr "Ajouter"
+
+#: features/admin-features-block-url.php:137
+#, php-format
+msgid "Separate multiple urls by comma. (e.g, %1$s, %2$s, %3$s)."
+msgstr ""
+"Séparez les urls multiples par une virgule. (par exemple, %1$s, %2$s, %3$s)."
+
+#: features/admin-features-block-url.php:157
+#: features/admin-features-block-url.php:208
+#: features/admin-features-css-hide.php:153
+#: features/admin-features-css-hide.php:205
+#: features/config/custom-config.php:114 features/config/custom-config.php:178
+msgid "An error occured!"
+msgstr "Une erreur s’est produite !"
+
+#: features/admin-features-block-url.php:165
+#: features/admin-features-block-url.php:215
+#: features/admin-features-css-hide.php:161
+#: features/admin-features-css-hide.php:212
+msgid "Invalid action. Reload this page and try again."
+msgstr "Action non valide. Rechargez cette page et réessayez."
+
+#: features/admin-features-block-url.php:167
+#: features/admin-features-css-hide.php:163
+#: features/config/custom-config.php:127
+msgid "All fields are required."
+msgstr "Tous les champs sont obligatoires."
+
+#: features/admin-features-block-url.php:174
+#| msgid "The new role %s was created successfully."
+msgid "New custom item added successfully"
+msgstr "Nouvel élément personnalisé ajouté correctement"
+
+#: features/admin-features-block-url.php:188
+#: features/admin-features-css-hide.php:185
+#: features/config/custom-config.php:151
+msgid "Delete"
+msgstr "Supprimer"
+
+#: features/admin-features-block-url.php:217
+#: features/admin-features-css-hide.php:214
+#: features/config/custom-config.php:189
+msgid "Invalid request!."
+msgstr "Requête invalide !"
+
+#: features/admin-features-block-url.php:225
+#: features/admin-features-css-hide.php:222
+#: features/config/custom-config.php:208
+#| msgid "The new role %s was created successfully."
+msgid "Selected item deleted successfully"
+msgstr "L’élément sélectionné a été supprimé correctement"
+
+#: features/admin-features-css-hide.php:91
+msgid "Hide Css Element"
+msgstr "Masquer l’élément CSS"
+
+#: features/admin-features-css-hide.php:108
+msgid "Hide Css Element Form:"
+msgstr "Masquer le formulaire des éléments CSS :"
+
+#: features/admin-features-css-hide.php:109
+msgid ""
+"You can remove other elements from admin area by adding their IDs or classes "
+"below:"
+msgstr ""
+"Vous pouvez supprimer d’autres éléments de la zone d’administration en "
+"ajoutant leurs ID ou classes ci-dessous :"
+
+#: features/admin-features-css-hide.php:120
+#: features/config/custom-config.php:40 features/config/custom-config.php:81
+msgid "Enter the name/label to identify the custom element on this screen."
+msgstr ""
+"Saisissez le nom/libellé permettant d’identifier l’élément personnalisé sur "
+"cet écran."
+
+#: features/admin-features-css-hide.php:125
+#: features/config/custom-config.php:45 features/config/custom-config.php:86
+msgid "Element IDs or Classes"
+msgstr "IDs ou classes d’éléments"
+
+#: features/admin-features-css-hide.php:133
+#: features/config/custom-config.php:53 features/config/custom-config.php:94
+msgid ""
+"IDs or classes to hide. Separate multiple values by comma (.custom-item-"
+"one, .custom-item-two, #new-item-id)."
+msgstr ""
+"ID ou classes à masquer. Séparez les valeurs multiples par une virgule (."
+"custom-item-one, .custom-item-two, #new-item-id)."
+
+#: features/admin-features-css-hide.php:171
+msgid "New CSS element added. Save changes to apply restrictions."
+msgstr ""
+"Le nouvel élément CSS a été ajouté. Enregistrez les modifications pour "
+"appliquer les restrictions."
+
+#: features/config/custom-config.php:29 features/config/custom-config.php:70
+msgid ""
+"You can remove other elements from the editor screen by adding their IDs or "
+"classes below:"
+msgstr ""
+"Vous pouvez supprimer d’autres éléments de l’écran de l’éditeur en ajoutant "
+"leurs ID ou leurs classes ci-dessous :"
+
+#: features/config/custom-config.php:125 features/config/custom-config.php:186
+msgid "Invalid action. Reload this page and try again if occured in error."
+msgstr ""
+"Action non valide. Rechargez cette page et réessayez si une erreur s’est "
+"produite."
+
+#: features/config/custom-config.php:145
+msgid "New custom item added. Save changes to apply restrictions."
+msgstr ""
+"Le nouvel élément personnalisé a été ajouté. Enregistrez les modifications "
+"pour appliquer les restrictions."
+
+#: features/custom.php:70
+msgid "Custom Gutenberg Items"
+msgstr "Éléments personnalisés de Gutenberg"
+
+#: features/custom.php:94
+msgid "Custom Classic Editor Items"
+msgstr "Éléments personnalisés de l’éditeur classique"
+
+#: features/metaboxes.php:110
+msgid "Metaboxes"
+msgstr "Boîtes méta"
+
+#: functions-admin.php:30
+msgid "Admin Menu"
+msgstr "Menus d’administration"
+
+#: functions-admin.php:36
+msgid "Nav Menu"
+msgstr "Menu de navigation"
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:242
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+"Une nouvelle version pour %1$s est disponible. %2$sAfficher les détails de "
+"la version %3$s%4$s."
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:250
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+"Une nouvelle version pour %1$s est disponible. %2$sAfficher les détails de "
+"la version %3$s%4$s ou %5$smettre à jour maintenant%6$s."
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:493
+msgid "You do not have permission to install plugin updates"
+msgstr "Vous n’avez pas le droit d’installer les mises à jour des extensions."
+
+#: library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:493
+msgid "Error"
+msgstr "Erreur"
+
+#: library/wordpress-edd-license-integration/src/core/License.php:112
+msgid ""
+"Sorry, an error occurred. Please check the error log and contact the "
+"PublishPress support team."
+msgstr ""
+"Désolé, une erreur s’est produite. Veuillez vérifier le journal des erreurs "
+"et contacter l’équipe de support PublishPress."
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:122
+msgid "Missing license"
+msgstr "Licence manquante"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:125
+msgid "Your license key is expired"
+msgstr "Votre clé de licence a expiré"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:128
+msgid "Your license key has been disabled"
+msgstr "Votre clé de licence a été désactivée"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:132
+msgid "Invalid license"
+msgstr "Licence invalide"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:135
+msgid "Your license is not active for this URL"
+msgstr "Votre licence n’est pas active pour cette URL"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:139
+msgid "This appears to be an invalid license key for this product"
+msgstr "Cette clé de licence semble être invalide pour ce produit"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:145
+msgid "Your license key has reached its activation limit"
+msgstr "Votre clé de licence a atteint sa limite d’activation"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:152
+#: settings-ui.php:179
+msgid "Activated"
+msgstr "Activée"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:168
+msgid "Status"
+msgstr "État"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:171
+msgid "Click here to read more about licenses."
+msgstr "Cliquez ici pour lire plus sur les licences."
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:174
+msgid "More information"
+msgstr "Plus d’informations"
+
+#: library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:193
+msgid "Enter the license key for being able to update the plugin."
+msgstr "Entrez la clé de licence pour pouvoir mettre à jour l’extension."
+
+#: manager-ui.php:24 settings-ui.php:282
+msgid "Control Custom Statuses"
+msgstr "Contrôle des états personnalisés"
+
+#: nav-menus.php:26
+msgid "Logged In Users"
+msgstr "Utilisateurs et utilisatrices connectés"
+
+#: nav-menus.php:26
+msgid "Logged Out Users"
+msgstr "Utilisateurs et utilisatrices déconnectés"
+
+#: nav-menus.php:54
+msgid "Navigation Menu Restrictions"
+msgstr "Restrictions du menu de navigation"
+
+#: pro-maint.php:46 pro-maint.php:59
+msgid "An error occurred. Please try again or contact the support team."
+msgstr ""
+"Une erreur s’est produite. Veuillez réessayer ou contacter l’équipe de "
+"support."
+
+#: settings-ui.php:27
+msgid "Activate Key"
+msgstr "Activez la clé"
+
+#: settings-ui.php:28
+msgid "Deactivate Key"
+msgstr "Désactivez la clé"
+
+#: settings-ui.php:29
+msgid "Connecting to publishpress.com server..."
+msgstr "Connexion au serveur publishpress.com…"
+
+#: settings-ui.php:30
+msgid "The request could not be processed due to a connection failure."
+msgstr "La demande n’a pas pu être traitée en raison d’un échec de connexion."
+
+#: settings-ui.php:31
+msgid "Please enter the license key shown on your order receipt."
+msgstr "Veuillez saisir la clé de licence figurant sur votre reçu de commande."
+
+#: settings-ui.php:32
+msgid "An unidentified error occurred."
+msgstr "Une erreur non identifiée s’est produite."
+
+#: settings-ui.php:34
+msgid "The key has been deactivated."
+msgstr "La clé a été désactivée."
+
+#: settings-ui.php:35
+msgid "The key has been activated."
+msgstr "La clé a été activée."
+
+#: settings-ui.php:36
+msgid "The key has expired."
+msgstr "La clé a expiré."
+
+#: settings-ui.php:37
+msgid "The key is invalid."
+msgstr "La clé est invalide."
+
+#: settings-ui.php:38
+msgid "An unknown activation error occurred."
+msgstr "Une erreur d’activation inconnue s’est produite."
+
+#: settings-ui.php:39
+msgid "The key provided is not valid. Please double-check your entry."
+msgstr "La clé fournie n’est pas valide. Veuillez revérifier votre entrée."
+
+#: settings-ui.php:40
+msgid "This site is not valid to activate the key."
+msgstr "Ce site n’est pas valide pour activer la clé."
+
+#: settings-ui.php:41 settings-ui.php:47
+msgid "The key provided could not be validated by publishpress.com."
+msgstr "La clé fournie n’a pas pu être validée par publishpress.com."
+
+#: settings-ui.php:42
+msgid "The key provided is already active on another site."
+msgstr "La clé fournie est déjà active sur un autre site."
+
+#: settings-ui.php:43
+msgid "The key has already been activated on the allowed number of sites."
+msgstr "La clé a déjà été activée sur le nombre de sites autorisés."
+
+#: settings-ui.php:44
+msgid "An unknown deactivation error occurred."
+msgstr "Une erreur de désactivation inconnue s’est produite."
+
+#: settings-ui.php:45
+msgid "Unable to deactivate because the provided key is not valid."
+msgstr "Impossible de désactiver car la clé fournie n’est pas valide."
+
+#: settings-ui.php:46
+msgid "This site is not valid to deactivate the key."
+msgstr "Ce site n’est pas valide pour désactiver la clé."
+
+#: settings-ui.php:48
+msgid "The key provided is not active on the specified site."
+msgstr "La clé fournie n’est pas active sur le site spécifié."
+
+#: settings-ui.php:53
+#, php-format
+msgid "If this is incorrect, <a href=\"%s\">request activation help</a>."
+msgstr ""
+"Si cela est incorrect, <a href=\"%s\">demandez une aide à l’activation</a>."
+
+#: settings-ui.php:54
+msgid "Please save settings before uploading site configuration."
+msgstr ""
+"Veuillez enregistrer les réglages avant de téléverser la configuration du "
+"site."
+
+#: settings-ui.php:66
+msgid "License"
+msgstr "Licence"
+
+#: settings-ui.php:68
+msgid "Capabilities"
+msgstr "Permissions"
+
+#: settings-ui.php:71
+msgid "Editor Features"
+msgstr "Fonctionnalités de l’éditeur"
+
+#: settings-ui.php:84
+msgid "License Key Activation"
+msgstr "Activation de la clé de licence"
+
+#: settings-ui.php:131
+#, php-format
+msgid ""
+"Your PublishPress license key has expired. For continued priority support, "
+"<a href=\"%s\">please renew</a>."
+msgstr ""
+"Votre clé de licence PublishPress a expiré. Pour continuer à bénéficier d’un "
+"support prioritaire, <a href=\"%s\">vous devez la renouveler</a>."
+
+#: settings-ui.php:142
+#, php-format
+msgid ""
+"Your PublishPress license key will expire today. For updates and priority "
+"support, <a href=\"%s\">please renew</a>."
+msgstr ""
+"Votre clé de licence PublishPress va expirer aujourd’hui. Pour continuer à "
+"bénéficier d’un support prioritaire, <a href=\"%s\">vous devez la "
+"renouveler</a>."
+
+#: settings-ui.php:149
+#, php-format
+msgid ""
+"Your PublishPress license key will expire in %d day. For updates and "
+"priority support, <a href=\"%s\">please renew</a>."
+msgstr ""
+"Votre clé de licence PublishPress va expirer dans %d jours. Pour continuer à "
+"bénéficier d’un support prioritaire, <a href=\"%s\">vous devez la "
+"renouveler</a>."
+
+#: settings-ui.php:170
+msgid "Key Expired"
+msgstr "Clé expirée"
+
+#: settings-ui.php:175 settings-ui.php:185
+msgid "Deactivate"
+msgstr "Désactiver"
+
+#: settings-ui.php:185
+msgid "Activate"
+msgstr "Activer"
+
+#: settings-ui.php:211
+#, php-format
+msgid "view %s&nbsp;details"
+msgstr "Afficher les détails de %s&nbsp;"
+
+#: settings-ui.php:221
+msgid "Update&nbsp;Available"
+msgstr "Mise à jour&nbsp;disponible"
+
+#: settings-ui.php:228
+msgid "Update&nbsp;Check"
+msgstr "Vérification&nbsp;mise à jour"
+
+#: settings-ui.php:234
+msgid "Account"
+msgstr "Compte"
+
+#: settings-ui.php:240
+msgid "Pricing"
+msgstr "Prix"
+
+#: settings-ui.php:261
+msgid "Display PublishPress Branding"
+msgstr "Afficher la marque PublishPress"
+
+#: settings-ui.php:305
+msgid "Any non-restricted user role allows access"
+msgstr "Tout rôle d’utilisateur et utilisatrice non restreint permet l’accès"
+
+#: settings-ui.php:306
+msgid "Any restricted user role prevents access"
+msgstr "Tout rôle d’utilisateur et utilisatrice restreint empêche l’accès"
+
+#: settings-ui.php:309
+msgid "How are restrictions applied when a user has multiple roles?"
+msgstr ""
+"Comment les restrictions sont-elles appliquées lorsqu’un utilisateur ou "
+"utilisatrice a plusieurs rôles ?"
+
+#: settings-ui.php:326
+msgid "Support for Private Post Types"
+msgstr "Prise en charge des types de publication privées"
+
+#, fuzzy
+#~| msgid ""
+#~| "<strong>Error:</strong> PublishPress Capabilities cannot function "
+#~| "because another copy of Capability Manager is active."
+#~ msgid ""
+#~ "<strong>Error:</strong> PublishPress Capabilities cannot function because "
+#~ "another copy of Capability Manager is active."
+#~ msgstr ""
+#~ "<strong>Erreur :</strong> PublishPress Capabilities ne peut être activée "
+#~ "car un autre gestionnaire de permission est activé."
+
+#~ msgid "Warning:"
+#~ msgstr "Avertissement :"
+
+#, php-format
+#~ msgid "The active plugin %s is not compatible with your PHP version."
+#~ msgstr ""
+#~ "L’extension active %s n’est pas compatible avec votre version de PHP."
+
+#, php-format
+#~ msgid "%s is required for this plugin."
+#~ msgstr "%s est requis pour cette extension."
+
+#~ msgid "Settings saved."
+#~ msgstr "Réglages enregistrés."
+
+#~ msgid "Roles"
+#~ msgstr "Rôles"
+
+#~ msgid "Admin Features"
+#~ msgstr "Fonctionnalités administratives"
+
+#~ msgid "Backup"
+#~ msgstr "Sauvegarde"
+
+#~ msgid "Settings"
+#~ msgstr "Réglages"
+
+#~ msgid "Upgrade to Pro"
+#~ msgstr "Mettre à niveau en Pro"
+
+#, php-format
+#~ msgid ""
+#~ "Warning: This role cannot access the dashboard without the read "
+#~ "capability. %1$sClick here to fix this now%2$s."
+#~ msgstr ""
+#~ "Avertissement : ce rôle ne peut accéder au tableau de bord sans la "
+#~ "permission de lecture. %1$sCliquez ici pour le corriger%2$s."
+
+#~ msgid "Role Capabilities"
+#~ msgstr "Permissions du rôle"
+
+#~ msgid "Save Changes"
+#~ msgstr "Enregistrer les modifications"
+
+#, php-format
+#~ msgid ""
+#~ "<strong>Note:</strong> Capability changes <strong>remain in the database</"
+#~ "strong> after plugin deactivation. You can also configure this role as a "
+#~ "%sPermission Group%s."
+#~ msgstr ""
+#~ "<strong>Note : </strong>Les changements de permission<strong> restent "
+#~ "dans la base de données</strong> après la désactivation de l’extension. "
+#~ "Vous pouvez également configurer ce rôle en tant que %sGroupe de droits%s."
+
+#~ msgid ""
+#~ "<strong>Note:</strong> Capability changes <strong>remain in the database</"
+#~ "strong> after plugin deactivation."
+#~ msgstr ""
+#~ "<strong>Note :</strong> Les changements de permission <strong>restent "
+#~ "dans la base de données</strong> après la désactivation du plugin."
+
+#~ msgid "&nbsp;"
+#~ msgstr "&nbsp;"
+
+#~ msgid "Reading"
+#~ msgstr "Lecture"
+
+#~ msgid "Editing"
+#~ msgstr "Édition"
+
+#~ msgid "Deletion"
+#~ msgstr "Supression"
+
+#~ msgid "WordPress Core"
+#~ msgstr "WordPress Core"
+
+#~ msgid "Invalid Capabilities"
+#~ msgstr "Permissions invalides"
+
+#~ msgid "Additional"
+#~ msgstr "Additionnel"
+
+#, php-format
+#~ msgid "Term %s Capabilities"
+#~ msgstr "Permissions de le terme %s"
+
+#, php-format
+#~ msgid "Post %s Capabilities"
+#~ msgstr "Permissions de la publication %s"
+
+#~ msgid "Filter by taxonomy"
+#~ msgstr "Filtrer par taxonomie"
+
+#~ msgid "Filter by post type"
+#~ msgstr "Filtrer par type de publication"
+
+#~ msgid "Clear"
+#~ msgstr "Effacer"
+
+#, php-format
+#~ msgid "shared capability: %s"
+#~ msgstr "permission partagée : %s"
+
+#~ msgid "WordPress Core Capabilities"
+#~ msgstr "Permissions de base de WordPress"
+
+#~ msgid "No results found. Please try again with a different word."
+#~ msgstr "Aucun résultat trouvé. Veuillez réessayer avec un autre mot."
+
+#, fuzzy
+#~| msgid "Capabilities"
+#~ msgid "Capability Name"
+#~ msgstr "Permissions"
+
+#~ msgid ""
+#~ "Lockout Prevention: To remove read capability, first remove WordPress "
+#~ "admin / editing capabilities, or add \"dashboard_lockout_ok\" capability"
+#~ msgstr ""
+#~ "Prévention du verrouillage : pour supprimer la permission de lecture, "
+#~ "supprimez d’abord les permissions d’administration/édition de WordPress "
+#~ "ou ajoutez la permission « dashboard_lockout_ok »"
+
+#, php-format
+#~ msgid "Plugin Capabilities &ndash; %s"
+#~ msgstr "Plugin Capabilities &ndash; %s"
+
+#~ msgid ""
+#~ "The following entries have no effect. Please assign desired capabilities "
+#~ "in the Read / Edit / Delete grid above."
+#~ msgstr ""
+#~ "Les entrées suivantes n’ont aucun effet. Veuillez attribuer les "
+#~ "permisions souhaitées dans la grille lire/modifier/supprimer ci-dessus."
+
+#~ msgid "Additional Capabilities"
+#~ msgstr "Permissions supplémentaires"
+
+#~ msgid ""
+#~ "Automatically define type-specific capabilities for your custom post "
+#~ "types and taxonomies"
+#~ msgstr ""
+#~ "Définissez automatiquement les permissions spécifiques à vos types de "
+#~ "publication et taxonomies personnalisés"
+
+#~ msgid "Assign standard WP roles supplementally for a specific post type"
+#~ msgstr ""
+#~ "Assignez des rôles WP standard de manière complémentaire pour un type de "
+#~ "publication spécifique"
+
+#~ msgid ""
+#~ "Assign custom WP roles supplementally for a specific post type <em>(Pro)</"
+#~ "em>"
+#~ msgstr ""
+#~ "Assignez des rôles WP personnalisés de manière complémentaire pour un "
+#~ "type de publication spécifique <em> (Pro)</em>"
+
+#~ msgid "Customize reading permissions per-category or per-post"
+#~ msgstr "Personnalisez les droits de lecture par catégorie ou par article"
+
+#~ msgid ""
+#~ "Customize editing permissions per-category or per-post <em>(Pro)</em>"
+#~ msgstr ""
+#~ "Personnalisez les droits de modification par catégorie ou par publication "
+#~ "<em> (Pro)</em>"
+
+#~ msgid ""
+#~ "Custom Post Visibility statuses, fully implemented throughout wp-admin "
+#~ "<em>(Pro)</em>"
+#~ msgstr ""
+#~ "États de visibilité de publication personnalisés, entièrement mis en "
+#~ "œuvre dans wp-admin. <em> (Pro)</em>"
+
+#~ msgid ""
+#~ "Custom Moderation statuses for access-controlled, multi-step publishing "
+#~ "workflow <em>(Pro)</em>"
+#~ msgstr ""
+#~ "États de modération personnalisés pour un flux de publication à accès "
+#~ "contrôlé et à plusieurs étapes <em> (Pro)</em>"
+
+#~ msgid "Regulate permissions for Edit Flow post statuses <em>(Pro)</em>"
+#~ msgstr ""
+#~ "Réglementez les droits pour modifier les états de publication Edit Flow "
+#~ "<em> (Pro)</em>"
+
+#~ msgid ""
+#~ "Customize the moderated editing of published content with Revisionary or "
+#~ "Post Forking <em>(Pro)</em>"
+#~ msgstr ""
+#~ "Personnaliser la modification modérée de la publication publié avec "
+#~ "Revisionary ou Post Forking <em> (Pro)</em>"
+
+#~ msgid ""
+#~ "Grant Spectator, Participant or Moderator access to specific bbPress "
+#~ "forums <em>(Pro)</em>"
+#~ msgstr ""
+#~ "Autorisez les visiteurs, participants ou modérateurs à accéder aux forums "
+#~ "bbPress <em> (Pro)</em>"
+
+#~ msgid ""
+#~ "Grant supplemental content permissions to a BuddyPress group <em>(Pro)</"
+#~ "em>"
+#~ msgstr ""
+#~ "Autorisez les droits de contenu supplémentaire au groupe BuddyPress <em> "
+#~ "(Pro)</em>"
+
+#~ msgid ""
+#~ "WPML integration to mirror permissions to translations <em>(Pro)</em>"
+#~ msgstr ""
+#~ "Intégration WPML pour refléter les droits dans les traductions <em> "
+#~ "(Pro)</em>"
+
+#~ msgid "Member support forum"
+#~ msgstr "Forum d’assistance aux membres"
+
+#, php-format
+#~ msgid "%1$sgrab%2$s %3$s"
+#~ msgstr "%1$sprendre%2$s %3$s"
+
+#, php-format
+#~ msgid "%1$sbuy%2$s %3$s"
+#~ msgstr "%1$sacheter%2$s %3$s"
+
+#~ msgid "Level:"
+#~ msgstr "Niveau :"
+
+#, fuzzy
+#~| msgid "PublishPress Capabilities"
+#~ msgid "PublishPress Capabilities is safe to use"
+#~ msgstr "PublishPress Capabilities"
+
+#, fuzzy
+#~| msgid ""
+#~| "On this screen, you can restore an earlier version of your roles and "
+#~| "capabilities."
+#~ msgid ""
+#~ "This plugin automatically creates a backup whenever you save changes. You "
+#~ "can use these backups to\n"
+#~ "restore an earlier version of your roles and capabilities."
+#~ msgstr ""
+#~ "Sur cet écran, vous pouvez restaurer une version antérieure de vos rôles "
+#~ "et permissions."
+
+#~ msgid "Add Capability"
+#~ msgstr "Ajouter une permission"
+
+#~ msgid "include in new sites"
+#~ msgstr "inclure dans les nouveaux sites"
+
+#~ msgid "sync role to all sites now"
+#~ msgstr "synchroniser le rôle avec tous les sites maintenant"
+
+#~ msgid "sync options to all sites now"
+#~ msgstr "synchroniser les options sur tous les sites maintenant"
+
+#~ msgid "You do not have permission to restore roles."
+#~ msgstr "Vous n’avez pas la permission de restaurer les rôles."
+
+#~ msgid "New backup saved."
+#~ msgstr "Nouvelle sauvegarde enregistrée."
+
+#~ msgid "Roles and Capabilities restored from initial backup."
+#~ msgstr "Rôles et capacités restaurés à partir de la sauvegarde initiale."
+
+#~ msgid "Restore failed. No backup found."
+#~ msgstr "Echec de la restauration. Aucune sauvegarde trouvée."
+
+#, fuzzy, php-format
+#~| msgid "Roles and Capabilities restored from last backup."
+#~ msgid "%s restored from last backup."
+#~ msgstr "Rôles et permissions restaurés à partir de la dernière sauvegarde."
+
+#~ msgid "Roles and Capabilities restored from selected auto-backup."
+#~ msgstr ""
+#~ "Rôles et capacités restaurés à partir de la sauvegarde automatique "
+#~ "sélectionnée."
+
+#~ msgid "Needed function to create default roles not found!"
+#~ msgstr ""
+#~ "Fonction nécessaire à la création des rôles par défaut non trouvée !"
+
+#~ msgid "Roles and Capabilities reset to WordPress defaults"
+#~ msgstr ""
+#~ "Rôles et permissions réinitialisées avec les valeurs par défaut de "
+#~ "WordPress"
+
+#, fuzzy
+#~| msgid "Backup Tool for %1$sPublishPress Capabilities%2$s"
+#~ msgid "Backup Tool for PublishPress Capabilities"
+#~ msgstr "Outil de sauvegarde pour %1$sPublishPress Capabilities%2$s"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurer"
+
+#~ msgid "Reset Roles"
+#~ msgstr "Réinitialiser les rôles"
+
+#~ msgid "Backup Roles and Capabilities"
+#~ msgstr "Sauvegarder les rôles et les permissions"
+
+#, php-format
+#~ msgid ""
+#~ "PublishPress Capabilities automatically creates a backup on installation "
+#~ "and whenever you save changes. The initial backup and last %d auto-"
+#~ "backups are kept."
+#~ msgstr ""
+#~ "PublishPress Capabilities crée automatiquement une sauvegarde lors de "
+#~ "l’installation et à chaque fois que vous enregistrez des modifications. "
+#~ "La sauvegarde initiale et les dernières %d sauvegardes automatiques sont "
+#~ "conservées."
+
+#~ msgid ""
+#~ "A backup created on this screen replaces any previous manual backups, but "
+#~ "is never automatically replaced."
+#~ msgstr ""
+#~ "Le sauvegarde créée sur cet écran remplace toutes les sauvegardes "
+#~ "manuelles précédentes, mais n’est jamais remplacée automatiquement."
+
+#, php-format
+#~ msgid "Last Manual Backup - %s"
+#~ msgstr "Dernière sauvegarde manuelle - %s"
+
+#~ msgid "Last Backup"
+#~ msgstr "Dernière sauvegarde"
+
+#~ msgid "Restore Previous Roles and Capabilities"
+#~ msgstr "Restaurer les rôles et permissions antérieurs"
+
+#~ msgid ""
+#~ "PublishPress Capabilities automatically creates a backup on installation "
+#~ "and whenever you save changes."
+#~ msgstr ""
+#~ "PublishPress Capabilities crée automatiquement une sauvegarde lors de "
+#~ "l’installation et à chaque fois que vous enregistrez des modifications."
+
+#~ msgid ""
+#~ "On this screen, you can restore an earlier version of your roles and "
+#~ "capabilities."
+#~ msgstr ""
+#~ "Sur cet écran, vous pouvez restaurer une version antérieure de vos rôles "
+#~ "et permissions."
+
+#~ msgid "Available Backups:"
+#~ msgstr "Sauvegardes disponibles :"
+
+#, fuzzy
+#~ msgid "all roles"
+#~ msgstr "Sauvegarde automatique de tous les rôles (%s)"
+
+#, fuzzy, php-format
+#~| msgid "Manual backup of all roles (%s)"
+#~ msgid "Manual backup of %s (%s)"
+#~ msgstr "Sauvegarde manuelle de tous les rôles (%s)"
+
+#, php-format
+#~ msgid "Auto-backup of all roles (%s)"
+#~ msgstr "Sauvegarde automatique de tous les rôles (%s)"
+
+#~ msgid "Initial backup of all roles"
+#~ msgstr "Sauvegarde initiale de tous les rôles"
+
+#~ msgid "Show changes from current roles only"
+#~ msgstr "Afficher uniquement les changements par rapport aux rôles actuels"
+
+#, php-format
+#~ msgid "Initial Backup - %s"
+#~ msgstr "Sauvegarde initiale - %s"
+
+#~ msgid "Initial Backup"
+#~ msgstr "Sauvegarde initiale"
+
+#, php-format
+#~ msgid "%s (%s roles)"
+#~ msgstr "%s (%s rôles)"
+
+#~ msgid "(this role will be removed if you restore backup)"
+#~ msgstr "(ce rôle sera supprimé si vous restaurez la sauvegarde)"
+
+#, php-format
+#~ msgid "%s (level %s)"
+#~ msgstr "%s (niveau %s)"
+
+#~ msgid "No changes"
+#~ msgstr "Aucun changement"
+
+#~ msgid "Reset WordPress Defaults"
+#~ msgstr "Réinitialiser avec les valeurs par défaut de WordPress"
+
+#~ msgid "WARNING:"
+#~ msgstr "Avertissement :"
+
+#~ msgid ""
+#~ "Reseting default Roles and Capabilities will set them to the WordPress "
+#~ "install defaults."
+#~ msgstr ""
+#~ "La réinitialisation des rôles et des capacités par défaut les définira "
+#~ "sur les valeurs d’installation par défaut de WordPress."
+
+#~ msgid ""
+#~ "If you have installed any plugin that adds new roles or capabilities, "
+#~ "these will be lost."
+#~ msgstr ""
+#~ "Si vous avez ajouté une extension pour créer de nouveaux rôles ou "
+#~ "permissions, celles-ci seront perdues."
+
+#~ msgid "It is recommended to use this only as a last resource!"
+#~ msgstr "Il est recommandé de ne l’utiliser qu’en dernier recours !"
+
+#~ msgid ""
+#~ "You are about to reset Roles and Capabilities to WordPress defaults.\n"
+#~ " 'Cancel' to stop, 'OK' to reset."
+#~ msgstr ""
+#~ "Vous êtes sur le point de réinitialiser les rôles et les permissions avec "
+#~ "les valeurs par défaut de WordPress.\n"
+#~ "« Annuler » pour arrêter et « OK » pour réinitialiser."
+
+#~ msgid "Reset to WordPress defaults"
+#~ msgstr "Réinitialiser avec les valeurs par défaut de WordPress"
+
+#, fuzzy
+#~| msgid "Text settings"
+#~ msgid "Export Settings"
+#~ msgstr "Réglages du texte"
+
+#, fuzzy
+#~| msgid "Role Capabilities"
+#~ msgid "Roles and Capabilities"
+#~ msgstr ""
+#~ "Rôles et permissions réinitialisées avec les valeurs par défaut de "
+#~ "WordPress"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgid "Import Settings"
+#~ msgstr "Réglages"
+
+#~ msgid "Recommendations for you"
+#~ msgstr "Des recommandations pour vous"
+
+#~ msgid "Control permissions for individual posts and pages"
+#~ msgstr ""
+#~ "Contrôlez les autorisations pour les publications et les pages "
+#~ "individuelles"
+
+#~ msgid "Choose who can read and edit each post."
+#~ msgstr "Choisissez qui peut lire et modifier chaque publication."
+
+#~ msgid "Allow specific user roles or users to manage each post."
+#~ msgstr ""
+#~ "Autorisez des rôles d’utilisateur ou utilisatrices et des utilisateurs ou "
+#~ "utilisatrices spécifiques à gérer chaque publication."
+
+#, fuzzy, php-format
+#~| msgid "PublishPress Permissions is 100% free to install."
+#~ msgid "PublishPress Permissions is 100% free to install."
+#~ msgstr "PublishPress Permissions est 100% gratuit à installer."
+
+#~ msgid "Click here to install PublishPress Permissions"
+#~ msgstr "Cliquez ici pour installer PublishPress Permissions"
+
+#~ msgid "Admin Feature Restrictions"
+#~ msgstr "Restrictions des fonctionnalités administratives"
+
+#~ msgid ""
+#~ "Note: You are only restricting access to admin features screens. Some "
+#~ "plugins may also add features to other areas of WordPress."
+#~ msgstr ""
+#~ "Note : Vous ne limitez l’accès qu’aux écrans des fonctionnalités "
+#~ "d’administration. Certaines extensions peuvent également ajouter des "
+#~ "fonctionnalités à d’autres zones de WordPress."
+
+#~ msgid "Classic Editor Screen"
+#~ msgstr "Écran éditeur classique"
+
+#, php-format
+#~ msgid "%s Restrict"
+#~ msgstr "Restriction %s"
+
+#~ msgid "Gutenberg Screen"
+#~ msgstr "Écran Gutenberg"
+
+#~ msgid "Editor Feature Restriction"
+#~ msgstr "Restriction des fonctionnalités de l’éditeur"
+
+#~ msgid ""
+#~ "Select editor features to remove. Note that this screen cannot be used to "
+#~ "grant additional features to any role."
+#~ msgstr ""
+#~ "Sélectionnez les fonctions d’éditeur à supprimer. Notez que cet écran ne "
+#~ "peut pas être utilisé pour accorder des fonctionnalités supplémentaires à "
+#~ "un rôle."
+
+#~ msgid "Gutenberg"
+#~ msgstr "Gutenberg"
+
+#~ msgid "Classic"
+#~ msgstr "Classique"
+
+#~ msgid "Header and Footer"
+#~ msgstr "En-tête et pied de page"
+
+#~ msgid "Admin Toolbar"
+#~ msgstr "Barre d’outils de l’administration"
+
+#~ msgid "Dashboard widgets"
+#~ msgstr "Widgets de tableau de bord"
+
+#~ msgid "Mobile Menu Toggle"
+#~ msgstr "Ouvrir/fermer le menu mobile"
+
+#~ msgid "WordPress Logo"
+#~ msgstr "Logo de WordPress"
+
+#~ msgid "WordPress External Links"
+#~ msgstr "Liens externes de WordPress"
+
+#~ msgid "Updates"
+#~ msgstr "Mises à jour"
+
+#~ msgid "Comments"
+#~ msgstr "Commentaires"
+
+#~ msgid "Right bar"
+#~ msgstr "Barre de droite"
+
+#~ msgid "User actions"
+#~ msgstr "Actions de l’utilisateur ou utilisatrice"
+
+#~ msgid "New"
+#~ msgstr "Ajouter nouveau"
+
+#~ msgid "User Display Name"
+#~ msgstr "Nom affiché de l’utilisateur/utilisatrice"
+
+#~ msgid "Yoast SEO"
+#~ msgstr "Yoast SEO"
+
+#~ msgid "Screen Options"
+#~ msgstr "Options de l’écran"
+
+#~ msgid "Help"
+#~ msgstr "Aide"
+
+#~ msgid "Thank you for creating with WordPress"
+#~ msgstr "Merci de faire de WordPress votre outil de création"
+
+#, php-format
+#~ msgid "Version %s"
+#~ msgstr "Version %s"
+
+#~ msgid "Welcome panel"
+#~ msgstr "Panneau d’accueil"
+
+#~ msgid "Top Tabs"
+#~ msgstr "Onglets supérieurs"
+
+#~ msgid "Editor"
+#~ msgstr "Éditeur"
+
+#~ msgid "Add New"
+#~ msgstr "Ajouter"
+
+#~ msgid "Title"
+#~ msgstr "Titre"
+
+#~ msgid "Permalink"
+#~ msgstr "Permalien"
+
+#~ msgid "Media Buttons (all)"
+#~ msgstr "Boutons multimédia (tous)"
+
+#~ msgid "HTML Editor Button"
+#~ msgstr "Bouton de l’éditeur HTML"
+
+#~ msgid "Word count"
+#~ msgstr "Nombre de mots"
+
+#~ msgid "Publish Box"
+#~ msgstr "Boîte de publication"
+
+#~ msgid "Save Draft"
+#~ msgstr "Enregistrer le brouillon"
+
+#~ msgid "Preview"
+#~ msgstr "Aperçu"
+
+#~ msgid "Publish Status "
+#~ msgstr "État de la publication "
+
+#~ msgid "Publish Visibility"
+#~ msgstr "Visibilité de la publication"
+
+#~ msgid "Password Protect This Post"
+#~ msgstr "Mot de passe pour protéger cette publication"
+
+#~ msgid "Publish Actions"
+#~ msgstr "Actions de publication"
+
+#~ msgid "Publish Schedule"
+#~ msgstr "Calendrier de publication"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Publish"
+#~ msgstr "Publier"
+
+#~ msgid "Taxonomy Boxes"
+#~ msgstr "Boîtes de taxonomie"
+
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+#~ msgid "Add New Category"
+#~ msgstr "Ajouter une nouvelle catégorie"
+
+#~ msgid "Tags"
+#~ msgstr "Étiquettes"
+
+#~ msgid "Page Boxes"
+#~ msgstr "Cadres de page"
+
+#~ msgid "Page Attributes"
+#~ msgstr "Attributs de la page"
+
+#~ msgid "Parent"
+#~ msgstr "Parent"
+
+#~ msgid "Page Template"
+#~ msgstr "Modèle de page"
+
+#~ msgid "Order"
+#~ msgstr "Tri"
+
+#~ msgid "Other Boxes"
+#~ msgstr "Autres cases"
+
+#~ msgid "Featured Image"
+#~ msgstr "Image mise en avant"
+
+#~ msgid "Post Slug"
+#~ msgstr "Slug de publication"
+
+#~ msgid "Discussion"
+#~ msgstr "Discussion"
+
+#~ msgid "Top Bar - Left"
+#~ msgstr "Barre supérieure - Gauche"
+
+#~ msgid "Add block"
+#~ msgstr "Ajouter un bloc"
+
+#~ msgid "Modes"
+#~ msgstr "Modes"
+
+#~ msgid "Undo"
+#~ msgstr "Annuler"
+
+#~ msgid "Redo"
+#~ msgstr "Rétablir"
+
+#~ msgid "Details"
+#~ msgstr "Détails"
+
+#~ msgid "Outline"
+#~ msgstr "Contour"
+
+#~ msgid "Top Bar - Right"
+#~ msgstr "Barre supérieure - Droite"
+
+#~ msgid "Switch to draft"
+#~ msgstr "Passer en brouillon"
+
+#~ msgid "Publish / Update"
+#~ msgstr "Publier/mettre à jour"
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#~ msgid "Body"
+#~ msgstr "Corps"
+
+#~ msgid "Edit title"
+#~ msgstr "Modifier le titre"
+
+#~ msgid "Content"
+#~ msgstr "Contenu"
+
+#~ msgid "Document Panel"
+#~ msgstr "Panneau de publication"
+
+#~ msgid "Status & visibility"
+#~ msgstr "État et visibilité"
+
+#, fuzzy
+#~| msgid "Page Template"
+#~ msgid "Template"
+#~ msgstr "Modèle de page invalide."
+
+#~ msgid "Featured image"
+#~ msgstr "Image mise en avant"
+
+#~ msgid "Excerpt"
+#~ msgstr "Extrait"
+
+#~ msgid "Post Attributes"
+#~ msgstr "Attributs d’articles"
+
+#~ msgid "Block Panel"
+#~ msgstr "Panneau de blocs"
+
+#~ msgid "Paragraph"
+#~ msgstr "Paragraphe"
+
+#~ msgid "Typography"
+#~ msgstr "Typographie"
+
+#~ msgid "Color settings"
+#~ msgstr "Réglages de couleur"
+
+#~ msgid "Text settings"
+#~ msgstr "Réglages du texte"
+
+#, php-format
+#~ msgid "All %s"
+#~ msgstr "Tous les %s"
+
+#~ msgid "Edit Roles"
+#~ msgstr "Modifier les Rôles"
+
+#, fuzzy
+#~| msgid "Editor Features"
+#~ msgid "Editor Feature"
+#~ msgstr "Fonctionnalités de l’éditeur"
+
+#, fuzzy
+#~| msgid "Admin Features"
+#~ msgid "Admin Feature"
+#~ msgstr "Fonctionnalités administratives"
+
+#~ msgid "New role created."
+#~ msgstr "Nouveau rôle créé."
+
+#~ msgid "Error: Failed creating the new role."
+#~ msgstr "Erreur : Échec de la création du nouveau rôle."
+
+#~ msgid "The selected role is not editable."
+#~ msgstr "Le rôle sélectionné n’est pas modifiable."
+
+#~ msgid "Incorrect capability name."
+#~ msgstr "Nom de permission incorrect."
+
+#~ msgid "Type / Taxonomy settings saved."
+#~ msgstr "Réglages de type/taxonomie sauvegardés."
+
+#~ msgid "Bad form received."
+#~ msgstr "Formulaire reçu incorrect."
+
+#~ msgid "You cannot remove Manage Capabilities from Administrators"
+#~ msgstr ""
+#~ "Vous ne pouvez pas supprimer Gérer les permissions des administrateurs"
+
+#~ msgid "Explicity negate this capability by storing as disabled"
+#~ msgstr ""
+#~ "Annulez explicitement cette permission en la stockant comme désactivée"
+
+#~ msgid "Explicitly negate these capabilities by storing as disabled"
+#~ msgstr ""
+#~ "Annulez explicitement ces permissions en les stockant comme désactivées"
+
+#~ msgid "Post type registration does not define this capability distinctly"
+#~ msgstr ""
+#~ "L’enregistrement du type de publication ne définit pas cette permission "
+#~ "de manière distincte"
+
+#~ msgid "This capability is explicitly negated. Click to add/remove normally."
+#~ msgstr ""
+#~ "Cette permission est explicitement niée. Cliquer pour l’ajouter/supprimer "
+#~ "normalement."
+
+#~ msgid "Add or remove this capability from the WordPress role"
+#~ msgstr "Ajouter ou supprimer une permission au rôle WordPress"
+
+#~ msgid "Add or remove capability from the role normally"
+#~ msgstr "Ajouter ou supprimer une permission du rôle normalement"
+
+#~ msgid "Are you sure you want to delete this item ?"
+#~ msgstr "Confirmez-vous vouloir supprimer cet élément ?"
+
+#~ msgid "Add or clear custom item entry before saving changes."
+#~ msgstr ""
+#~ "Ajoutez ou effacez une entrée d’élément personnalisé avant d’enregistrer "
+#~ "les modifications."
+
+#~ msgid "Name"
+#~ msgstr "Nom du rôle"
+
+#~ msgid "Role"
+#~ msgstr "Rôle"
+
+#~ msgid "Users"
+#~ msgstr "Utilisateurs"
+
+#~ msgid "You do not have permission to manage roles."
+#~ msgstr "Vous n’êtes pas autorisé à gérer les rôles."
+
+#~ msgid "You do not have permission to manage editor features."
+#~ msgstr "Vous n’êtes pas autorisé à gérer les fonctionnalités de l’éditeur."
+
+#~ msgid "You do not have permission to manage admin features."
+#~ msgstr ""
+#~ "Vous n’avez pas le droit de gérer les fonctionnalités d’administration."
+
+#~ msgid "You do not have permission to manage capabilities."
+#~ msgstr "Vous n’avez pas le droit de gérer les permissions."
+
+#~ msgid "New capability added to role."
+#~ msgstr "Nouvelle permission ajouté au rôle."
+
+#~ msgid "Bad form Received"
+#~ msgstr "Formulaire reçu incorrect"
+
+#, fuzzy
+#~| msgid "You do not have sufficient permissions to perform this action."
+#~ msgid "You do not have permission to perform this action."
+#~ msgstr "Vous n’avez pas les droits suffisants pour effectuer cette action."
+
+#, php-format
+#~ msgid "If you like %s, please leave us a %s rating. Thank you!"
+#~ msgstr "Si vous appréciez %s, veuillez nous laisser une note de %s. Merci !"
+
+#~ msgid "About"
+#~ msgstr "À propos"
+
+#~ msgid "Documentation"
+#~ msgstr "Documentation"
+
+#~ msgid "Contact"
+#~ msgstr "Contact"
+
+#, php-format
+#~ msgid "see %1$sRole Usage%2$s: \"Pattern Roles\""
+#~ msgstr "voir %1$sUtilisation des rôles%2$s : « Modèle de rôle »."
+
+#, php-format
+#~ msgid "activate %1$sAdvanced settings%2$s, see Role Usage"
+#~ msgstr "activer %1$sRéglages avancées%2$s, voir Utilisation des rôles"
+
+#, php-format
+#~ msgid ""
+#~ "\"Posts\" capabilities selected here also define type-specific role "
+#~ "assignment for Permission Groups%s."
+#~ msgstr ""
+#~ "Les permissions de « publications » sélectionnées ici définissent "
+#~ "également l’attribution de rôles spécifiques au type pour les groupes de "
+#~ "permissions%s."
+
+#, php-format
+#~ msgid ""
+#~ "\"Posts\" capabilities selected here also define type-specific role "
+#~ "assignment for Permit Groups%s."
+#~ msgstr ""
+#~ "Les permissions de « publications » sélectionnées ici définissent "
+#~ "également l’attribution de rôles spécifiques au type pour les groupes de "
+#~ "permissions%s."
+
+#, php-format
+#~ msgid ""
+#~ "Capabilities for custom statuses can be manually added here. (See "
+#~ "%sPermissions > Post Statuses%s for applicable names). %sSupplemental "
+#~ "status-specific roles%s are usually more convenient, though."
+#~ msgstr ""
+#~ "Les permissions pour les états personnalisés peuvent être ajoutées "
+#~ "manuellement ici. (Voir %sPermissions > Afficher les états%s pour les "
+#~ "noms applicables). Cependant, les %sRôles supplémentaires spécifiques aux "
+#~ "états %s sont généralement plus pratiques, cependant."
+
+#~ msgid ""
+#~ "Capabilities for custom statuses can be manually added here. Or activate "
+#~ "the PP Custom Post Statuses extension to assign status-specific "
+#~ "supplemental roles."
+#~ msgstr ""
+#~ "Les permissions pour les états personnalisés peuvent être ajoutées "
+#~ "manuellement ici. Ou activez l’extension PP Custom Post Statuses pour "
+#~ "affecter des rôles supplémentaires spécifiques à l’état."
+
+#~ msgid ""
+#~ "Capabilities for custom statuses can be manually added to a role here "
+#~ "(see Conditions > Status > Capability Mapping for applicable names). "
+#~ "However, it is usually more convenient to use Permit Groups to assign a "
+#~ "supplemental status-specific role."
+#~ msgstr ""
+#~ "Les permissions pour les états personnalisés peuvent être ajoutées "
+#~ "manuellement à un rôle ici (voir Conditions > États > Mappage des "
+#~ "permissions pour les noms applicables). Toutefois, il est généralement "
+#~ "plus pratique d’utiliser les groupes de permissions pour attribuer un "
+#~ "rôle supplémentaire spécifique à l’etat."
+
+#~ msgid "Type-Specific Capabilities"
+#~ msgstr "Permissions spécifiques par type"
+
+#~ msgid ""
+#~ "Ensure permissions can be controlled separately from other post types."
+#~ msgstr ""
+#~ "Assurez-vous que les droits peuvent être contrôlés séparément des autres "
+#~ "types de publication."
+
+#~ msgid "Use create_posts capability"
+#~ msgstr "Utilisez la permission create_posts"
+
+#~ msgid "Taxonomy-Specific Capabilities"
+#~ msgstr "Taxonomies spécifiques aux permissions"
+
+#~ msgid ""
+#~ "Ensure permissions can be controlled separately from other taxonomies."
+#~ msgstr ""
+#~ "Cela vous garantit que les droits peuvent être contrôlés séparément des "
+#~ "autres taxonomies."
+
+#~ msgid "Detailed Taxonomy Capabilities"
+#~ msgstr "Permissions détaillées de la taxonomie"
+
+#~ msgid ""
+#~ "Enforce Edit, Delete and Assign capabilities separately from Management "
+#~ "capability."
+#~ msgstr ""
+#~ "Appliquez les permissions de modification, de suppression et "
+#~ "d’attribution séparément de la gestion des permissions."
+
+#~ msgid "You do not have sufficient permissions to perform this action."
+#~ msgstr "Vous n’avez pas les droits suffisants pour effectuer cette action."
+
+#~ msgid "Your link has expired, refresh the page and try again."
+#~ msgstr "Votre lien a expiré, rafraîchissez la page et réessayez."
+
+#~ msgid "Missing parameters, refresh the page and try again."
+#~ msgstr ""
+#~ "Il y a des paramètres manquants, rafraîchissez la page et réessayez."
+
+#, php-format
+#~ msgid "Invalid role name entry: %s"
+#~ msgstr "Entrée de nom de rôle invalide : %s"
+
+#, php-format
+#~ msgid "The role \"%s\" already exists. Please choose a different name."
+#~ msgstr "Le rôle « %s » existe déjà. Veuillez choisir un autre nom."
+
+#~ msgid ""
+#~ "Something went wrong, the system wasn't able to create the role, refresh "
+#~ "the page and try again."
+#~ msgstr ""
+#~ "Quelque chose s’est mal passé, le système n’a pas été en mesure de créer "
+#~ "le rôle, rafraîchissez la page et réessayez."
+
+#, php-format
+#~ msgid "The new role %s was created successfully."
+#~ msgstr "Le nouveau rôle %s a été créé avec succès."
+
+#, fuzzy, php-format
+#~| msgid "The new role %s was created successfully."
+#~ msgid "%s role updated successfully."
+#~ msgstr "Le nouveau rôle %s a été créé avec succès."
+
+#, php-format
+#~ msgid ""
+#~ "Cannot delete default role. You <a href=\"%s\">have to change it first</"
+#~ "a>."
+#~ msgstr ""
+#~ "Vous ne pouvez pas modifier le rôle par defaut. Vous devez d’abord <a "
+#~ "href=\"%s\">le modifier</a>."
+
+#~ msgid "Deleting a system role is not allowed."
+#~ msgstr "La suppression d’un rôle système n’est pas autorisée."
+
+#, php-format
+#~ msgid "%1$d users moved to default role %2$s."
+#~ msgstr "%1$d utilisateurs déplacés vers le rôle par défaut %2$s."
+
+#, php-format
+#~ msgid "The role %1$s was successfully deleted. %2$s"
+#~ msgstr "Le rôle %1$s a été supprimé avec succès. %2$s"
+
+#, php-format
+#~ msgid "The selected %1$s roles were successfully deleted. %2$s"
+#~ msgstr "Les rôles %1$s sélectionnés ont été supprimés avec succès. %2$s"
+
+#~ msgid "The role could not be deleted."
+#~ msgstr "Le rôle n’a pas pu être supprimé."
+
+#, php-format
+#~ msgid "The role %1$s was successfully hidden."
+#~ msgstr "Le rôle %1$s a été masqué avec succès."
+
+#, php-format
+#~ msgid "The role %1$s was successfully unhidden."
+#~ msgstr "Le rôle %1$s a été affiché avec succès."
+
+#~ msgid "Role Name"
+#~ msgstr "Nom du rôle"
+
+#, fuzzy
+#~| msgid "Post Slug"
+#~ msgid "Role Slug"
+#~ msgstr "Slug de publication"
+
+#, fuzzy
+#~| msgid "Role Name"
+#~ msgid "Role Level"
+#~ msgstr "Nom du rôle"
+
+#, fuzzy
+#~| msgid "Delete Role"
+#~ msgid "Delete role"
+#~ msgstr "Supprimer le rôle"
+
+#, fuzzy
+#~| msgid "Update"
+#~ msgid "Update Role"
+#~ msgstr "Mettre à jour"
+
+#, fuzzy
+#~| msgid "Delete Role"
+#~ msgid "Create Role"
+#~ msgstr "Supprimer le rôle"
+
+#, fuzzy
+#~| msgid "Edit Roles"
+#~ msgid "Edit Role"
+#~ msgstr "Modifier les Rôles"
+
+#, fuzzy
+#~| msgid "Your Role"
+#~ msgid "Copy Role"
+#~ msgstr "Ton rôle"
+
+#, fuzzy
+#~| msgid "Add New Role"
+#~ msgid "Create New Role"
+#~ msgstr "Ajouter un nouveau rôle"
+
+#, fuzzy
+#~| msgid "Roles"
+#~ msgid "All Roles"
+#~ msgstr "Sauvegarde automatique de tous les rôles (%s)"
+
+#, fuzzy
+#~| msgid "Editor"
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#~ msgid "Copy"
+#~ msgstr "Copier"
+
+#~ msgid "(non-editable role)"
+#~ msgstr "(rôle non modifiable)"
+
+#~ msgid "Unhide"
+#~ msgstr "Afficher"
+
+#~ msgid "Hide"
+#~ msgstr "Masquer"
+
+#~ msgid "Default Role"
+#~ msgstr "Rôle par défaut"
+
+#~ msgid "Your Role"
+#~ msgstr "Ton rôle"
+
+#~ msgid "Are you sure you want to delete this role?"
+#~ msgstr "Confirmez-vous la suppression de ce rôle ?"
+
+#, php-format
+#~ msgid "Search results for &#8220;%s&#8221;"
+#~ msgstr "Résultats de la recherche pour &#171; %s &#187;"
+
+#~ msgid "Search Roles"
+#~ msgstr "Recherche de rôles"
+
+#~ msgid "Description here."
+#~ msgstr "Description ici."
+
+#~ msgid "Capabilities Settings"
+#~ msgstr "Réglages des permissions"
+
+#~ msgid "Related Permissions Plugins"
+#~ msgstr "Extensions de droits similaires"
+
+#~ msgid "PublishPress"
+#~ msgstr "PublishPress"
+
+#~ msgid "PublishPress Authors"
+#~ msgstr "PublishPress Authors"
+
+#~ msgid "PublishPress Permissions"
+#~ msgstr "PublishPress Permissions"
+
+#~ msgid "PublishPress Revisions"
+#~ msgstr "PublishPress Revisions"
+
+#~ msgid "Help / Contact Form"
+#~ msgstr "Aide/Formulaire de contact"
+
+#, fuzzy
+#~| msgid "<strong>This plugin can be deleted.</strong>"
+#~ msgid "This plugin can be deleted."
+#~ msgstr "<strong>Cette extension peut être supprimée.</strong>"
+
+#~ msgid ""
+#~ "You can block pages by URL or hide Admin elements by entering a CSS class "
+#~ "or ID. This feature is available in PublishPress Capabilities Pro."
+#~ msgstr ""
+#~ "Vous pouvez bloquer des pages par URL ou masquer des éléments de "
+#~ "l’administration en saisissant une classe ou un ID CSS. Cette "
+#~ "fonctionnalité est disponible dans PublishPress Capabilities Pro."
+
+#~ msgid ""
+#~ "You can restrict access to admin menu screens. This feature is available "
+#~ "in PublishPress Capabilities Pro"
+#~ msgstr ""
+#~ "Vous pouvez restreindre l’accès aux écrans du menu d’administration. "
+#~ "Cette fonctionnalité est disponible dans PublishPress Capabilities Pro"
+
+#~ msgid "Checklist"
+#~ msgstr "Liste de contrôle"
+
+#~ msgid "Editorial Comments"
+#~ msgstr "Commentaires éditoriaux"
+
+#~ msgid "Notifications"
+#~ msgstr "Notifications"
+
+#~ msgid "TaxoPress - Settings"
+#~ msgstr "TaxoPress - Réglages"
+
+#~ msgid ""
+#~ "You can hide plugin metaboxes. You can also hide specific items by "
+#~ "entering their CSS class or ID. This feature is available in PublishPress "
+#~ "Capabilities Pro."
+#~ msgstr ""
+#~ "Vous pouvez masquer les boîtes méta des extensions. Vous pouvez également "
+#~ "masquer des éléments spécifiques en saisissant leur classe CSS ou leur "
+#~ "ID. Cette fonctionnalité est disponible dans PublishPress Capabilities "
+#~ "Pro."
+
+#~ msgid "Custom item one"
+#~ msgstr "Élément personnalisé un"
+
+#~ msgid "Permalink: Descriptive Caption"
+#~ msgstr "Permalien : Légende descriptive"
+
+#~ msgid "Page Attributes: Order"
+#~ msgstr "Attributs de la page : Tri"
+
+#~ msgid ""
+#~ "You can restrict access to navigation menus. This feature is available in "
+#~ "PublishPress Capabilities Pro"
+#~ msgstr ""
+#~ "Vous pouvez restreindre l’accès aux menus de navigation. Cette "
+#~ "fonctionnalité est disponible dans PublishPress Capabilities Pro"
+
+#~ msgid "Filter by capability"
+#~ msgstr "Filtrer par permission"
+
+#~ msgid "Copy option settings to all sites now"
+#~ msgstr "Copiez les réglages des options sur tous les sites maintenant"
+
+#~ msgid "Rename"
+#~ msgstr "Renommer"
+
+#~ msgid "New Role Name"
+#~ msgstr "Nom du nouveau rôle"
+
+#~ msgid "Rename Role"
+#~ msgstr "Renommer le rôle"
+
+#~ msgid "Restore Selected Roles"
+#~ msgstr "Restaurer les rôles sélectionnés"
+
+#~ msgid "Manual Backup"
+#~ msgstr "Sauvegarde manuelle"
+
+#~ msgid "The name is how it appears on your site."
+#~ msgstr "Le nom tel qu’il apparaîtra sur votre site."
+
+#~ msgid "Contact the PublishPress team"
+#~ msgstr "Contact de l’équipe de PublishPress"
+
+#~ msgid "Capabilites Documentation"
+#~ msgstr "Documentation de Capabilities"
+
+#~ msgid "About PublishPress Capabilities"
+#~ msgstr "À propos de PublishPress Capabilities"
+
+#~ msgid ""
+#~ "Make selected post types require a different capability to add new posts."
+#~ msgstr ""
+#~ "Faire en sorte que les types de publication sélectionnés nécessitent une "
+#~ "permission différente pour ajouter de nouvelles publications."
+
+#~ msgid ""
+#~ "Role level is mostly deprecated. However, it still determines eligibility "
+#~ "for Post Author assignment and limits the application of user editing "
+#~ "capabilities."
+#~ msgstr ""
+#~ "Le niveau de rôle est généralement obsolète. Cependant, il détermine "
+#~ "toujours l’éligibilité à l’affectation d’auteur de publication et limite "
+#~ "l’application des permissions de modification par l’utilisateur."
+
+#~ msgid "https://publishpress.com/"
+#~ msgstr "https://publishpress.com/"
+
+#~ msgid "https://publishpress.com/capability-manager/"
+#~ msgstr "https://publishpress.com/capability-manager/"
+
+#~ msgid ""
+#~ "Manage WordPress role definitions, per-site or network-wide. Organizes "
+#~ "post capabilities by post type and operation."
+#~ msgstr ""
+#~ "Gérez les définitions de rôles WordPress, par site ou à l’échelle du "
+#~ "réseau. Organisez les permissions par type de publication."
+
+#~ msgid "Reset Roles and Capabilities to WordPress defaults"
+#~ msgstr ""
+#~ "Réinitialiser les rôles et les permissions avec les valeurs par défaut de "
+#~ "WordPress"
+
+#~ msgid "Copy / update this role definition to all sites now"
+#~ msgstr ""
+#~ "Copiez/mettez à jour cette définition de rôle sur tous les sites "
+#~ "maintenant"
+
+#~ msgid "Create this role definition in new (future) sites"
+#~ msgstr "Créer cette définition de rôle dans les nouveaux (futurs) sites"
+
+#~ msgid "Add to role"
+#~ msgstr "Ajouter au rôle"
+
+#~ msgid "Copy this role to"
+#~ msgstr "Copier ce rôle vers"
+
+#~ msgid "hidden"
+#~ msgstr "masqué"
+
+#~ msgid ""
+#~ "Make role available for supplemental assignment to Permission Groups only"
+#~ msgstr "Rendre ce rôle uniquement disponible aux Permissions de groupe"
+
+#~ msgid ""
+#~ "You are about to delete the %s role.\n"
+#~ "\n"
+#~ " 'Cancel' to stop, 'OK' to delete."
+#~ msgstr ""
+#~ "Vous allez supprimer le rôle %s.\n"
+#~ "\n"
+#~ " « Annuler » pour arrêter, « OK » pour supprimer."
+
+#~ msgid "Delete this role"
+#~ msgstr "Supprimer ce rôle"
+
+#~ msgid "negate none (add/remove all capabilities normally)"
+#~ msgstr "ne rien nier (ajouter/supprimer les permissions normalement)"
+
+#~ msgid "negate all (storing as disabled capabilities)"
+#~ msgstr "nier tout (stockage en tant que permissions désactivées)"
+
+#~ msgid "check / uncheck all"
+#~ msgstr "sélectionner/désélectionner tout"
+
+#~ msgid ""
+#~ "can delete posts which are currently published with private visibility"
+#~ msgstr "peut supprimer les publications publiées avec une visibilité privée"
+
+#~ msgid "can delete posts which are currently published"
+#~ msgstr "peut supprimer les publications publiées"
+
+#~ msgid "can delete posts which were created by other users"
+#~ msgstr "peut supprimer les publications créés par d’autres utilisateurs"
+
+#~ msgid ""
+#~ "has basic deletion capability (but may need other capabilities based on "
+#~ "post status and ownership)"
+#~ msgstr ""
+#~ "possède la permission de supprimer de base (mais peut nécessiter d’autres "
+#~ "permissions basées sur le état ou la propriété de la publication)"
+
+#~ msgid "can make a post publicly visible"
+#~ msgstr "peut modifier la visibilité d’une publication"
+
+#~ msgid "can edit posts which are currently published with private visibility"
+#~ msgstr "peut modifier les articles publiés avec la visibilité privée"
+
+#~ msgid "can edit posts which are currently published"
+#~ msgstr "peut modifier les articles publiés"
+
+#~ msgid "can edit posts which were created by other users"
+#~ msgstr "peut modifier les articles créés par d’autres utilisateurs"
+
+#~ msgid ""
+#~ "has basic editing capability (but may need other capabilities based on "
+#~ "post status and ownership)"
+#~ msgstr ""
+#~ "possède la permission de modifier de base (mais peut nécessiter d’autres "
+#~ "permissions basées sur le état ou la propriété de la publication)"
+
+#~ msgid "can read posts which are currently published with private visibility"
+#~ msgstr "peut lire les articles publiés avec la visibilité privée"
+
+#~ msgid "%s info/purchase"
+#~ msgstr "%s infos/achat"
+
+#~ msgid "%s (free install)"
+#~ msgstr "%s (installation gratuite)"

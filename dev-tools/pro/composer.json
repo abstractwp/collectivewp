@@ -1,0 +1,52 @@
+{
+  "name": "abstractwp/collectivewp",
+  "description": "Plugins for www.collectivewp.com",
+  "type": "project",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+      {
+          "name": "Thong Dang",
+          "email": "thong@anabastractny.com"
+      }
+  ],
+  "minimum-stability": "stable",
+  "repositories": [
+      {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+      }
+  ],
+  "config": {
+      "allow-plugins": true
+  },
+  "require": {
+      "wpackagist-plugin/custom-post-type-ui":"1.13.4",
+      "civicrm/composer-downloads-plugin": "v3.0.0",
+      "wpackagist-plugin/block-widgets-monster":"1.0.3",
+      "wpackagist-plugin/fluent-smtp":"2.2.2",
+      "wpackagist-plugin/wp-security-audit-log":"4.4.3",
+      "wpackagist-plugin/redirection": "^5.3",
+      "wpackagist-plugin/wordpress-seo":"19.13",
+      "wpackagist-plugin/so-clean-up-wp-seo":"3.14.12",
+      "pronamic/gravityforms": "^2.6.8"
+  },
+  "extra": {
+    "downloads": {
+      "block-unit-test": {
+        "url": "https://github.com/abstractwp/block-unit-test/releases/download/1.1.0/block-unit-test.zip",
+        "path": "wp-content/plugins/block-unit-test",
+        "ignore": ["test", "doc", ".*"]
+      },
+      "theme-test-data": {
+        "url": "https://github.com/abstractwp/theme-test-data/releases/download/1.0.2/theme-test-data.zip",
+        "path": "wp-content/plugins/theme-test-data",
+        "ignore": ["vendor", ".*"]
+      },
+      "collectivewp": {
+        "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/collectivewp.zip",
+        "path": "wp-content/themes/collectivewp",
+        "ignore": []
+      }
+    }
+  }
+}
