@@ -2,7 +2,7 @@ name: Deploy to Pantheon
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   build:
     name: Build and push to Pantheon
