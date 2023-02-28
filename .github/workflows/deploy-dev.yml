@@ -44,24 +44,15 @@ jobs:
         run: find ./ -type d -name ".git .github .wpe*" | xargs rm -fr
 
       ## Deploy
-      - name: Deploy to Pantheon
-        env:
-          pantheon_site: 'ecd6cef3-593a-4e19-857e-6aeca354e3f6'
-          pantheon_env: 'dev'
-        run: |
-          commit_message=$(git log -1 --pretty=%B)
-          git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
-          git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
-          terminus build:env:push $pantheon_site.$pantheon_env --message="CI Deployment for: $commit_message"
-
-      ## Terminus
-      - name: Terminus Drush Updates
-        env:
-          pantheon_site: 'ecd6cef3-593a-4e19-857e-6aeca354e3f6'
-          pantheon_env: 'dev'
-        run: |
-          terminus -n drush $pantheon_site.$pantheon_env -- deploy -y
-          terminus -n env:clear-cache $pantheon_site.$pantheon_env
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+            username: ${{ secrets.PANTHEON_USERNAME }}
+            server: ${{ secrets.PANTHEON_HOST }}
+            ssh_private_key: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+            local_path: 'wp-content/'
+            remote_path: 'code/'
+            sftpArgs: '-o ConnectTimeout=5'
 
       # - name: Notify Slack
       #   uses: rtCamp/action-slack-notify@v2
