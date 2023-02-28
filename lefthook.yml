@@ -43,9 +43,9 @@ pre-commit:
     #   root: "wp-content/plugins/collectivewp-functions/"
     #   glob: "*.{js,ts,tsx}"
     #   run: npx eslint {staged_files} --fix
-    lint-markdown-project:
-      glob: "*.{md}"
-      run: npx markdownlint-cli {staged_files} --disable MD013 --fix
+    # lint-markdown-project:
+    #   glob: "*.{md}"
+    #   run: npx markdownlint-cli {staged_files} --disable MD013 --fix
     # lint-markdown-theme:
     #   root: "wp-content/themes/collectivewp/"
     #   glob: "*.{md}"

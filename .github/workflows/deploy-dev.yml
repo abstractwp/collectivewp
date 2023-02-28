@@ -1,36 +1,36 @@
+name: Deploy to Pantheon
 on:
   push:
     branches:
-      - dev
-
-name: Deploy to WPE
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+      - master
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    name: Build and push to Pantheon
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Install plugins & theme
-        # Install dependencies using composer.json in the dev-tools.
-        uses: "ramsey/composer-install@v2"
+      - uses: actions/checkout@v3
+      - id: setup-runner
+        name: Setup Runner
+        uses: ./.github/actions/setup-runner
         with:
-          working-directory: "dev-tools/dev"
+          pantheon_ssh_key: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+          ssh_config: ${{ secrets.SSH_CONFIG }}
+          pantheon_machine_token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+          php_version: '7.4'
+          composer_version: 'v2'
+          terminus_version: '^2.0'
+          node_version: '16'
+
+      - name: Composer Install Dependencies
+        run: composer install --working-dir=dev-tools/pro --optimize-autoloader --no-dev --prefer-dist --no-progress --no-suggest
 
       - name: Move plugins
-        run: mv -f dev-tools/dev/wp-content/plugins/* wp-content/plugins/
+        run: mv -f dev-tools/pro/wp-content/plugins/* wp-content/plugins/
 
       - name: Move theme
-        run: mv -f dev-tools/dev/wp-content/themes/* wp-content/themes/
+        run: mv -f dev-tools/pro/wp-content/themes/* wp-content/themes/
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.2.0
-        with:
-          node-version: '16.7.0'
+      # Build Theme
       - run: cd wp-content/themes/collectivewp && npm install
 
       - name: Compile theme assets
@@ -39,23 +39,36 @@ jobs:
       - name: Remove node_modules
         run: cd wp-content/themes/collectivewp && rm -rf node_modules
 
-      - name: Deploy WordPress to WP Engine
-        uses: wpengine/github-action-wpe-site-deploy@v3.1.1
-        with:
-        # Keys, lint & url options
-          WPE_SSHG_KEY_PRIVATE: ${{secrets.WPENGINE_SSH_KEY_PRIVATE}}
-          PHP_LINT: FALSE
-          SRC_PATH: "wp-content/"
-          REMOTE_PATH: "wp-content/"
-          CACHE_CLEAR: TRUE
-          WPE_ENV: collectwpdev
+      ## Prepare for Pantheon
+      - name: Prepare for Pantheon
+        run: find ./ -type d -name ".git .github .wpe*" | xargs rm -fr
 
-      - name: Notify Slack
-        uses: rtCamp/action-slack-notify@v2
+      ## Deploy
+      - name: Deploy to Pantheon
         env:
-            SLACK_CHANNEL: client-collectivewp
-            SLACK_COLOR: ${{ job.status }}
-            SLACK_ICON: https://avatars.slack-edge.com/2021-09-02/2472786275504_23fa532873531951ddd3_32.png
-            SLACK_USERNAME: Github
-            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-            SLACK_FOOTER: ${{ github.repository }}
+          pantheon_site: 'ecd6cef3-593a-4e19-857e-6aeca354e3f6'
+          pantheon_env: 'dev'
+        run: |
+          commit_message=$(git log -1 --pretty=%B)
+          git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          terminus build:env:push $pantheon_site.$pantheon_env --message="CI Deployment for: $commit_message"
+
+      ## Terminus
+      - name: Terminus Drush Updates
+        env:
+          pantheon_site: 'ecd6cef3-593a-4e19-857e-6aeca354e3f6'
+          pantheon_env: 'dev'
+        run: |
+          terminus -n drush $pantheon_site.$pantheon_env -- deploy -y
+          terminus -n env:clear-cache $pantheon_site.$pantheon_env
+
+      # - name: Notify Slack
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #       SLACK_CHANNEL: client-collectivewp
+      #       SLACK_COLOR: ${{ job.status }}
+      #       SLACK_ICON: https://avatars.slack-edge.com/2021-09-02/2472786275504_23fa532873531951ddd3_32.png
+      #       SLACK_USERNAME: Github
+      #       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #       SLACK_FOOTER: ${{ github.repository }}
