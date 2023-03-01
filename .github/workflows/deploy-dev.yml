@@ -46,7 +46,7 @@ jobs:
       ## Deploy
       - name: Deploy to Pantheon
         env:
-          pantheon_site: 'ecd6cef3-593a-4e19-857e-6aeca354e3f6'
+          pantheon_site: ${{ secrets.PANTHEON_SITE_NAME }}
           pantheon_env: 'dev'
         run: |
           commit_message=$(git log -1 --pretty=%B)
@@ -59,7 +59,7 @@ jobs:
       ## Terminus
       - name: Terminus Drush Updates
         env:
-          pantheon_site: 'ecd6cef3-593a-4e19-857e-6aeca354e3f6'
+          pantheon_site: ${{ secrets.PANTHEON_SITE_NAME }}
           pantheon_env: 'dev'
         run: |
           # terminus -n drush $pantheon_site.$pantheon_env -- deploy -y
