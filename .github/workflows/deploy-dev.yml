@@ -41,7 +41,7 @@ jobs:
 
       ## Prepare for Pantheon
       - name: Prepare for Pantheon
-        run: find ./ -type d -name ".git .github .wpe*" | xargs rm -fr
+        run: find ./ -type d -name ".git .github .wpe* .gitmodules" | xargs rm -fr
 
       ## Deploy
       - name: Deploy to Pantheon
@@ -52,8 +52,10 @@ jobs:
           commit_message=$(git log -1 --pretty=%B)
           git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
-          terminus branch:list $pantheon_site.$pantheon_env
-          # terminus build:env:push $pantheon_site.$pantheon_env --message="CI Deployment for: $commit_message"
+          git config --global core.fileMode false
+          git rm -f wp-content/themes/collectivewp
+          git fetch --unshallow
+          terminus build:env:push $pantheon_site.$pantheon_env --message="CI Deployment for: $commit_message"
 
       ## Terminus
       - name: Terminus Drush Updates
