@@ -237,6 +237,8 @@ Thumbs.db
 !wp-content/plugins/wp-migrate-db-pro/**
 !wp-content/plugins/facetwp/
 !wp-content/plugins/facetwp/**
+!wp-content/plugins/gravityformsactivecampaign/
+!wp-content/plugins/gravityformsactivecampaign/**
 
 # Git actions
 !.github/
