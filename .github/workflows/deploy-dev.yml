@@ -31,17 +31,17 @@ jobs:
         run: mv -f dev-tools/pro/wp-content/themes/* wp-content/themes/
 
       # Build Theme
-      # - run: cd wp-content/themes/collectivewp && npm install
+      - run: cd wp-content/themes/collectivewp && npm install
 
-      # - name: Compile theme assets
-      #   run: cd wp-content/themes/collectivewp && npm run build
+      - name: Compile theme assets
+        run: cd wp-content/themes/collectivewp && npm run build
 
-      # - name: Remove node_modules
-      #   run: cd wp-content/themes/collectivewp && rm -rf node_modules
+      - name: Remove node_modules
+        run: cd wp-content/themes/collectivewp && rm -rf node_modules
 
       ## Prepare for Pantheon
       - name: Prepare for Pantheon
-        run: find ./ -type d -name ".git .github .wpe* .gitmodules" | xargs rm -fr
+        run: find ./ -type d -name ".git .github .wpe*" | xargs rm -fr
 
       ## Deploy
       - name: Deploy to Pantheon
@@ -53,7 +53,7 @@ jobs:
           git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
           git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git config --global core.fileMode false
-          git rm -f wp-content/themes/collectivewp
+          git submodule deinit --cached --all
           git fetch --unshallow
           terminus build:env:push $pantheon_site.$pantheon_env --message="CI Deployment for: $commit_message"
 
