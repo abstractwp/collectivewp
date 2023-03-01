@@ -89,8 +89,8 @@ wp-content/plugins/autoupdater*
 #*.tgz
 .github/
 .github/**
-vendor/
-vendor/**
+./vendor/
+./vendor/**
 composer.json
 composer.lock
 lefthook.yml
