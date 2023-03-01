@@ -65,12 +65,12 @@ jobs:
           # terminus -n drush $pantheon_site.$pantheon_env -- deploy -y
           terminus -n env:clear-cache $pantheon_site.$pantheon_env
 
-      # - name: Notify Slack
-      #   uses: rtCamp/action-slack-notify@v2
-      #   env:
-      #       SLACK_CHANNEL: client-collectivewp
-      #       SLACK_COLOR: ${{ job.status }}
-      #       SLACK_ICON: https://avatars.slack-edge.com/2021-09-02/2472786275504_23fa532873531951ddd3_32.png
-      #       SLACK_USERNAME: Github
-      #       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      #       SLACK_FOOTER: ${{ github.repository }}
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_CHANNEL: client-collectivewp
+            SLACK_COLOR: ${{ job.status }}
+            SLACK_ICON: https://avatars.slack-edge.com/2021-09-02/2472786275504_23fa532873531951ddd3_32.png
+            SLACK_USERNAME: Github
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+            SLACK_FOOTER: ${{ github.repository }}
