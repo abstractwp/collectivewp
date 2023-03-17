@@ -112,3 +112,39 @@ function collectivewp_remove_screen_options() {
 	return false;
 }
 add_filter('screen_options_show_screen', 'collectivewp_remove_screen_options');
+
+/**
+ * Add or Remove links from the Admin Bar
+ *
+ * @link https://digwp.com/2011/04/admin-bar-tricks/#add-remove-links
+ *
+ * @link https://www.isitwp.com/remove-wordpress-logo-admin-bar/
+ *
+ * @link https://wordpress.stackexchange.com/questions/200296/how-to-remove-customize-from-admin-menu-bar-after-wp-4-3/201646
+ *
+ */
+function collectivewp_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu( 'comments' ); // remove comments
+	$wp_admin_bar->remove_menu( 'wp-logo' ); // remove WordPress menu
+	$wp_admin_bar->remove_menu( 'updates' ); // remove updates
+	$wp_admin_bar->remove_menu( 'new-content' ); // remove add new
+	$wp_admin_bar->remove_menu( 'customize' ); // remove customizer
+}
+add_action( 'wp_before_admin_bar_render', 'collectivewp_admin_bar_render' );
+
+/**
+ * Remove the Howdy Text in WordPress
+ *
+ * @link https://wpintensity.com/change-howdy-text-wordpress/
+ *
+ */
+function collectivewp_remove_howdy( $wp_admin_bar ) {
+	$my_account=$wp_admin_bar->get_node('my-account');
+	$newtitle = str_replace( 'Howdy,', '', $my_account->title );
+	$wp_admin_bar->add_node( array(
+		'id' => 'my-account',
+		'title' => $newtitle,
+	) );
+}
+add_filter( 'admin_bar_menu', 'collectivewp_remove_howdy',25 );
