@@ -103,3 +103,12 @@ function collectivewp_disable_default_dashboard_widgets() {
 }
 add_action('wp_dashboard_setup', 'collectivewp_disable_default_dashboard_widgets', 999);
 
+/**
+ * Remove screen options
+ *
+ * @link https://www.wpbeginner.com/wp-tutorials/how-to-disable-the-screen-options-button-in-wordpress/
+ */
+function collectivewp_remove_screen_options() {
+	return false;
+}
+add_filter('screen_options_show_screen', 'collectivewp_remove_screen_options');
