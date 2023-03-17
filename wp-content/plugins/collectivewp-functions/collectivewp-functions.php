@@ -60,3 +60,13 @@ function collectivewp_blacklist_blocks( $allowed_blocks ) {
 	return array_keys( $blocks );
 
 }
+
+/**
+ * Remove embed blocks.
+ */
+function collectivewp_deny_embed_variations_blocks() {
+	wp_enqueue_script( 'deny-list-blocks', plugin_dir_url( __FILE__ ) . 'js/list-blocks.js', array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' )
+);
+}
+add_action( 'enqueue_block_editor_assets', 'collectivewp_deny_embed_variations_blocks' );
+
