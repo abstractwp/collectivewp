@@ -289,6 +289,7 @@ class Remote
         $return['subsites']               = $site_details['subsites']; // TODO: Remove backwards compatibility.
         $return['site_details']           = $site_details;
         $return['beta_optin']             = BetaManager::has_beta_optin($this->settings);
+        $return['firewall_plugins']       = $site_details['firewall_plugins'];
         $return                           = apply_filters('wpmdb_establish_remote_connection_data', $return);
         $result                           = $this->http->end_ajax($return, false, true);
 

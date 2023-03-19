@@ -100,8 +100,6 @@ Thumbs.db
 !wp-config-dev.php
 !CHANGELOG.md
 !.gitignore
-!.wpe-pull-ignore
-!.wpe-push-ignore
 
 
 #############################################
@@ -137,26 +135,6 @@ Thumbs.db
 # wp-content/wp-cache-config.php
 # wp-content/cache/*
 # wp-content/cache/supercache/*
-
-# WP Engine specific files
-# NOTE:
-#   These files are specific to running a WordPress site at WP Engine and would
-#   likely result in a broken production site if modified in production (in
-#   fact, permissions would prevent modification for many of these files). It is
-#   strongly recommended that you do not attempt to modify these files in
-#   production.
-/_wpeprivate
-# /wp-content/object-cache.php
-# /wp-content/mu-plugins/mu-plugin.php
-# /wp-content/mu-plugins/slt-force-strong-passwords.php
-# /wp-content/mu-plugins/stop-long-comments.php
-# /wp-content/mu-plugins/force-strong-passwords*
-# /wp-content/mu-plugins/wpe-devkit*
-# /wp-content/mu-plugins/wpengine-common*
-# /wp-content/mu-plugins/wpengine-excerpt*
-# /wp-content/plugins/wpengine-snapshot/snapshots
-# /wp-content/mysql.sql
-# /.wpe-devkit
 
 # Some other files which may be desirable to skip under certain circumstances
 #.listing
@@ -259,14 +237,8 @@ Thumbs.db
 !wp-content/plugins/wp-migrate-db-pro/**
 !wp-content/plugins/facetwp/
 !wp-content/plugins/facetwp/**
-
-# Theme
-
-!wp-content/themes/collectivewp/
-!wp-content/themes/collectivewp/**
-wp-content/themes/collectivewp/vendor/
-wp-content/themes/collectivewp/node_modules/
-wp-content/themes/collectivewp/build/
+!wp-content/plugins/gravityformsactivecampaign/
+!wp-content/plugins/gravityformsactivecampaign/**
 
 # Git actions
 !.github/

@@ -132,6 +132,7 @@ class UsageTracking
         add_action('wpmdb_cancellation', [$this, 'log_migration_cancellation'], 50);
         add_action('wpmdb_error_migration', [$this, 'log_migration_error'], 10, 1);
         add_filter('wpmdb_notification_strings', [$this, 'template_notice_enable_usage_tracking']);
+        add_action('wpmdb_after_finalize_migration', [$this, 'log_migration_complete']);
     }
 
     public function register_rest_routes()
@@ -155,7 +156,7 @@ class UsageTracking
      **/
     public function send_migration_update($status = 'complete', $data = [])
     {
-        if ('complete' === $status) {
+        if ('complete' === $status && isset($_POST['intent']) && in_array($_POST['intent'], ['savefile', 'backup_local'])) {
             $this->http->check_ajax_referer('flush');
         }
 

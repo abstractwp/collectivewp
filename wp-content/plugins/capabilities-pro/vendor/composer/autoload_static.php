@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit16f09708b57b517ec1367575f4c6f8d7
+class ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa
 {
     public static $files = array (
         'c92bf23a32412037ecdc51806b458c36' => __DIR__ . '/..' . '/alledia/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php',
@@ -48,10 +48,10 @@ class ComposerStaticInit16f09708b57b517ec1367575f4c6f8d7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit16f09708b57b517ec1367575f4c6f8d7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit16f09708b57b517ec1367575f4c6f8d7::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit16f09708b57b517ec1367575f4c6f8d7::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit16f09708b57b517ec1367575f4c6f8d7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$classMap;
 
         }, null, ClassLoader::class);
     }
