@@ -140,11 +140,13 @@ add_action( 'wp_before_admin_bar_render', 'collectivewp_admin_bar_render' );
  *
  */
 function collectivewp_remove_howdy( $wp_admin_bar ) {
-	$my_account=$wp_admin_bar->get_node('my-account');
-	$newtitle = str_replace( 'Howdy,', '', $my_account->title );
-	$wp_admin_bar->add_node( array(
-		'id' => 'my-account',
-		'title' => $newtitle,
-	) );
+	if (is_admin()) {
+		$my_account = $wp_admin_bar->get_node('my-account');
+		$newtitle   = str_replace( 'Howdy,', '', $my_account->title );
+		$wp_admin_bar->add_node( array(
+			'id' => 'my-account',
+			'title' => $newtitle,
+		) );
+	}
 }
 add_filter( 'admin_bar_menu', 'collectivewp_remove_howdy',25 );
