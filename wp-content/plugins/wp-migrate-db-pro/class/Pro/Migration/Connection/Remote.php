@@ -252,10 +252,6 @@ class Remote
                 )
             );
         }
-        if (method_exists('WpeCommon', 'get_wpe_auth_cookie_value')) {
-            $cookie_value = \WpeCommon::get_wpe_auth_cookie_value();
-            $return['wpe_cookie'] = $cookie_value;
-        }
 
         $site_details = $this->util->site_details();
 

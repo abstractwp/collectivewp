@@ -46,7 +46,7 @@ class FacetWP_Display
 
     /**
      * Set default values for atts
-     * 
+     *
      * Old: [facetwp template="foo" static]
      * New: [facetwp template="foo" static="true"]
      */

@@ -1977,7 +1977,7 @@
                             else if (isNumeric(data.pct)) {
                                 window.setStatus('load', FWP.__('Indexing') + '... ' + data.pct + '%');
                                 self.is_indexing = true;
-    
+
                                 self.timeout = setTimeout(() => {
                                     self.getProgress();
                                 }, 5000);

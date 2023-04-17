@@ -18,6 +18,12 @@ class FacetWP_Request
     /* (boolean) Initial load? */
     public $is_preload = false;
 
+    /* (string) Name of active FacetWP template */
+    public $template_name;
+
+    /* (array) Response output */
+    public $output;
+
 
     function __construct() {
         $this->process_json();

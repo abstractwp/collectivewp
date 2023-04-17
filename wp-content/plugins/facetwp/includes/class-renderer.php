@@ -36,6 +36,9 @@ class FacetWP_Renderer
     /* (array) The final WP_Query object */
     public $query;
 
+    /* (array) Convenience var */
+    public $facet_types;
+
 
     function __construct() {
         $this->facet_types = FWP()->helper->facet_types;
