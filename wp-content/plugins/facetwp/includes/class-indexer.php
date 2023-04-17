@@ -21,6 +21,9 @@ class FacetWP_Indexer
     /* (array) Value modifiers set via the admin UI */
     public $modifiers;
 
+    /* (bool) Whether indexing hooks are in use */
+    public $is_overridden;
+
 
     function __construct() {
         $this->set_table( 'auto' );
@@ -292,10 +295,10 @@ class FacetWP_Indexer
 
 
     /**
-     * Get an array of post IDs to index
-     * @since 3.6.8
+     * Get the array of indexer query args
+     * @since 4.1.8
      */
-    function get_post_ids_to_index( $post_id = false ) {
+    function get_query_args() {
         $args = [
             'post_type'         => 'any',
             'post_status'       => 'publish',
@@ -306,12 +309,21 @@ class FacetWP_Indexer
             'no_found_rows'     => true,
         ];
 
+        return apply_filters( 'facetwp_indexer_query_args', $args );
+    }
+
+
+    /**
+     * Get an array of post IDs to index
+     * @since 3.6.8
+     */
+    function get_post_ids_to_index( $post_id = false ) {
+        $args = $this->get_query_args();
+
         if ( is_int( $post_id ) ) {
             $args['p'] = $post_id;
             $args['posts_per_page'] = 1;
         }
-
-        $args = apply_filters( 'facetwp_indexer_query_args', $args );
 
         $query = new WP_Query( $args );
         return (array) $query->posts;

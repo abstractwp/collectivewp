@@ -4,6 +4,7 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
 {
 
     public $is_buffering = false;
+    public $limit;
 
 
     function __construct() {
@@ -126,7 +127,7 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
 
         if ( ! empty( $query ) && ! empty( $facet_name ) ) {
             $sql = "
-            SELECT DISTINCT facet_display_value
+            SELECT DISTINCT facet_value, facet_display_value
             FROM {$wpdb->prefix}facetwp_index
             WHERE
                 facet_name = '$facet_name' AND
@@ -135,12 +136,18 @@ class FacetWP_Facet_Autocomplete extends FacetWP_Facet
             ORDER BY facet_display_value ASC
             LIMIT $this->limit";
 
-            $results = $wpdb->get_results( $sql );
+            $results = $wpdb->get_results( $sql, ARRAY_A );
 
-            foreach ( $results as $result ) {
+            foreach ( $results as $row ) {
+                $label = $row['facet_display_value'];
+
                 $output[] = [
-                    'value' => $result->facet_display_value,
-                    'label' => $result->facet_display_value,
+                    'value' => $label,
+                    'label' => apply_filters( 'facetwp_facet_display_value', $label, [
+                        'selected' => false,
+                        'facet' => FWP()->helper->get_facet_by_name( $facet_name ),
+                        'row' => $row
+                    ])
                 ];
             }
         }

@@ -3,6 +3,11 @@
 class FacetWP_Ajax
 {
 
+    public $url_vars;
+    public $query_vars;
+    public $is_preload;
+
+
     function __construct() {
         add_action( 'init', [ $this, 'switchboard' ], 1000 );
     }
@@ -99,13 +104,18 @@ class FacetWP_Ajax
         $type = $_POST['type'];
 
         if ( 'post_types' == $type ) {
-            $post_types = get_post_types( [ 'exclude_from_search' => false, '_builtin' => false ] );
-            $post_types = [ 'post', 'page' ] + $post_types;
-            sort( $post_types );
+            $args = FWP()->indexer->get_query_args();
+            $types = (array) ( $args['post_type'] ?? 'post' );
+
+            if ( 'any' == $types[0] ) {
+                $types = get_post_types( [ 'exclude_from_search' => false, '_builtin' => false ] );
+                $types = [ 'post', 'page' ] + $types;
+                sort( $types );
+            }
 
             $response = [
                 'code' => 'success',
-                'message' => implode( ', ', $post_types )
+                'message' => implode( ', ', $types )
             ];
         }
         elseif ( 'indexer_stats' == $type ) {

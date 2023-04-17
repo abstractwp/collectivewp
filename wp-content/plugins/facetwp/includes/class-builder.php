@@ -162,7 +162,7 @@ class FacetWP_Builder
         $value = $source;
 
         $selector = '.fwpl-item.' . $name;
-        $selector = ( 'button' == $source ) ? $selector . ' button' : $selector;
+        $selector = ( 'button' == $source ) ? $selector . ' .fwpl-btn' : $selector;
         $this->css[ $selector ] = $this->build_styles( $settings );
 
         if ( 0 === strpos( $source, 'post_' ) || 'ID' == $source ) {
@@ -259,8 +259,8 @@ class FacetWP_Builder
             $value = $this->linkify( $value, $settings['link'] );
         }
         elseif ( 'button' == $source ) {
-            $value = '<button>' . $settings['button_text'] . '</button>';
-            $value = $this->linkify( $value, $settings['link'] );
+            $settings['link']['class'] = 'fwpl-btn';
+            $value = $this->linkify( $settings['button_text'], $settings['link'] );
         }
         elseif ( 'html' == $source ) {
             $value = do_shortcode( $settings['content'] );
@@ -451,9 +451,10 @@ class FacetWP_Builder
     function linkify( $value, $link_data, $term_data = [] ) {
         global $post;
 
-        $type = $link_data['type'];
-        $href = $link_data['href'];
-        $target = $link_data['target'];
+        $type = $link_data['type'] ?? '';
+        $href = $link_data['href'] ?? '';
+        $class = $link_data['class'] ?? '';
+        $target = $link_data['target'] ?? '';
 
         if ( 'none' !== $type ) {
             if ( 'post' == $type ) {
@@ -467,7 +468,11 @@ class FacetWP_Builder
                 $target = ' target="' . $target . '"';
             }
 
-            $value = '<a href="' . $href . '"' . $target . '>' . $value . '</a>';
+            if ( ! empty( $class ) ) {
+                $class = ' class="' . $class . '"';
+            }
+
+            $value = '<a href="' . $href . '"' . $class . $target . '>' . $value . '</a>';
         }
 
         return $value;
