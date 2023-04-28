@@ -287,6 +287,12 @@
     color: red;
 }
 
+/* Listing Builder */
+
+.fwpl-btn {
+    text-decoration: none;
+}
+
 /* CSS animations */
 
 @keyframes spin {

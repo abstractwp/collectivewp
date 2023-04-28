@@ -206,6 +206,8 @@ Thumbs.db
 !wp-content/plugins/wp-migrate-db-pro/**
 !wp-content/plugins/facetwp/
 !wp-content/plugins/facetwp/**
+!wp-content/plugins/gw-submit-to-access/
+!wp-content/plugins/gw-submit-to-access/**
 
 # Theme
 

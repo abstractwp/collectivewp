@@ -44,7 +44,7 @@ window.fUtil = (() => {
             return typeof input !== 'undefined';
         }
 
-        static post(url, data, settings) {
+        static async post(url, data, settings) {
             var settings = Object.assign({}, {
                 dataType: 'json',
                 contentType: 'application/json',
@@ -57,14 +57,19 @@ window.fUtil = (() => {
 
             data = ('application/json' === settings.contentType) ? JSON.stringify(data) : $.toEncoded(data);
 
-            fetch(url, {
+            let resp = await fetch(url, {
                 method: 'POST',
                 headers: settings.headers,
                 body: data
-            })
-            .then(response => response[settings.dataType]())
-            .then(json => settings.done(json))
-            .catch(err => settings.fail(err));
+            });
+
+            if (resp.ok) {
+                let val = await resp[settings.dataType]();
+                return settings.done(val);
+            }
+            else {
+                return settings.fail(resp.status + ' - ' + resp.statusText);
+            }
         }
 
         static toEncoded(obj, prefix, out) {
