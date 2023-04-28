@@ -161,7 +161,7 @@ function linkedin_shortcode( $atts ) {
 	// Your LinkedIn application's Client ID and redirect URI
 	$client_id     = "86soip2obkw8cx";
 	$client_secret = "QWNvx3DqAiDOMG4F";
-	$redirect_uri  = "https://collectivewp.test/register/";
+	$redirect_uri = "https://collectivewp.test/register/";
 
 	// Set the query parameters for retrieving the authorization code
 	$params = array(
