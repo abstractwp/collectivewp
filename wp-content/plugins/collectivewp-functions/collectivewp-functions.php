@@ -9,6 +9,9 @@ Text Domain: collectivewp
 Domain Path: /languages
 */
 
+define( 'COLLECTIVEWP_PATH', plugin_dir_path( __FILE__ ) );
+include( COLLECTIVEWP_PATH . 'includes/linkedin-functions.php');
+
 /**
  * Disable core block features.
  */
@@ -150,3 +153,4 @@ function collectivewp_remove_howdy( $wp_admin_bar ) {
 	}
 }
 add_filter( 'admin_bar_menu', 'collectivewp_remove_howdy',25 );
+
