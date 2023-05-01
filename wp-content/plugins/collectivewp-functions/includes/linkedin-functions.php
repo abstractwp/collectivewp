@@ -165,6 +165,6 @@ function linkedin_shortcode( $atts ) {
 
 	$return_html .= '</div>';
 	if ( !is_admin() ) {
-		echo $return_html;
+		return $return_html;
 	}
 }
