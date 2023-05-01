@@ -1,4 +1,12 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// Include LinkedIn settings page.
+require_once( plugin_dir_path( __FILE__ ) . 'linkedin-settings.php' );
+
 // Register the plugin shortcode
 add_shortcode('linkedin', 'linkedin_shortcode');
 
@@ -149,69 +157,4 @@ function linkedin_shortcode( $atts ) {
 		echo $messages;
 	}
 	echo '</div>';
-}
-
-// Add a menu item for the LinkedIn settings page under the "Settings" menu
-function add_linkedin_settings_page() {
-	add_options_page( 'LinkedIn Settings', 'LinkedIn Settings', 'manage_options', 'linkedin-settings', 'linkedin_settings_page' );
-}
-add_action( 'admin_menu', 'add_linkedin_settings_page' );
-
-// Display the LinkedIn settings page with the form fields
-function linkedin_settings_page() {
-	?>
-	<div class="wrap">
-			<h1>LinkedIn Settings</h1>
-			<form method="post" action="options.php">
-					<?php settings_fields( 'linkedin_settings_group' ); ?>
-					<?php do_settings_sections( 'linkedin_settings_page' ); ?>
-					<?php submit_button(); ?>
-			</form>
-	</div>
-	<?php
-}
-
-// Add the LinkedIn settings fields to the page
-function register_linkedin_settings() {
-	register_setting( 'linkedin_settings_group', 'linkedin_client_id' );
-	register_setting( 'linkedin_settings_group', 'linkedin_client_secret' );
-	register_setting( 'linkedin_settings_group', 'linkedin_redirect_uri' );
-	register_setting( 'linkedin_settings_group', 'linkedin_form_id' );
-
-	add_settings_section( 'linkedin_settings_section', 'LinkedIn API Settings', 'linkedin_settings_section_callback', 'linkedin_settings_page' );
-
-	add_settings_field( 'linkedin_client_id', 'Client ID', 'linkedin_client_id_callback', 'linkedin_settings_page', 'linkedin_settings_section' );
-	add_settings_field( 'linkedin_client_secret', 'Client Secret', 'linkedin_client_secret_callback', 'linkedin_settings_page', 'linkedin_settings_section' );
-	add_settings_field( 'linkedin_redirect_uri', 'Redirect URI', 'linkedin_redirect_uri_callback', 'linkedin_settings_page', 'linkedin_settings_section' );
-	add_settings_field( 'linkedin_form_id', 'Gravity Form ID', 'linkedin_form_id_callback', 'linkedin_settings_page', 'linkedin_settings_section' );
-}
-add_action( 'admin_init', 'register_linkedin_settings' );
-
-// Display the LinkedIn settings section header text
-function linkedin_settings_section_callback() {
-	echo 'Enter your LinkedIn API settings below:';
-}
-
-// Display the LinkedIn client ID field
-function linkedin_client_id_callback() {
-	$client_id = get_option( 'linkedin_client_id' );
-	echo '<input type="text" name="linkedin_client_id" value="' . esc_attr( $client_id ) . '" />';
-}
-
-// Display the LinkedIn client secret field
-function linkedin_client_secret_callback() {
-	$client_secret = get_option( 'linkedin_client_secret' );
-	echo '<input type="text" name="linkedin_client_secret" value="' . esc_attr( $client_secret ) . '" />';
-}
-
-// Display the LinkedIn redirect URI field
-function linkedin_redirect_uri_callback() {
-	$redirect_uri = get_option( 'linkedin_redirect_uri' );
-	echo '<input type="text" name="linkedin_redirect_uri" value="' . esc_attr( $redirect_uri ) . '" />';
-}
-
-// Display the Gravity Form ID field
-function linkedin_form_id_callback() {
-	$form_id = get_option( 'linkedin_form_id' );
-	echo '<input type="text" name="linkedin_form_id" value="' . esc_attr( $form_id ) . '" />';
 }
