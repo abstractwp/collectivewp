@@ -20,6 +20,12 @@ function linkedin_shortcode( $atts ) {
 	$redirect_uri = get_option('linkedin_redirect_uri');
 	$form_id = get_option('linkedin_form_id');
 
+	// Mapping fields.
+	$linkedin_field_first_name = get_option('linkedin_field_first_name') ?? 'input_1.3';
+	$linkedin_field_last_name = get_option('linkedin_field_last_name') ?? 'input_1.6';
+	$linkedin_field_email_address = get_option('linkedin_field_email_address') ?? 'input_2';
+	$linkedin_field_username = get_option('linkedin_field_username') ?? 'input_3';
+
 	// Set the query parameters for retrieving the authorization code
 	$params = array(
 		"response_type" => "code",
@@ -102,10 +108,10 @@ function linkedin_shortcode( $atts ) {
 
 			// Set the form ID and entry data
 			$entry_data = array(
-				'input_1.3' => $first_name,
-				'input_1.6' => $last_name,
-				'input_2'   => $email_address,
-				'input_3'   => substr($email_address, 0, strpos($email_address, "@")),
+				$linkedin_field_first_name => $first_name,
+				$linkedin_field_last_name => $last_name,
+				$linkedin_field_email_address   => $email_address,
+				$linkedin_field_username   => substr($email_address, 0, strpos($email_address, "@")),
 			);
 
 			// Create a new instance of the Gravity Forms API

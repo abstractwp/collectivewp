@@ -24,6 +24,10 @@ function linkedin_register_settings() {
 	register_setting( 'linkedin_settings', 'linkedin_client_secret' );
 	register_setting( 'linkedin_settings', 'linkedin_redirect_uri' );
 	register_setting( 'linkedin_settings', 'linkedin_form_id' );
+	register_setting( 'linkedin_settings', 'linkedin_field_first_name' );
+	register_setting( 'linkedin_settings', 'linkedin_field_last_name' );
+	register_setting( 'linkedin_settings', 'linkedin_field_email_address' );
+	register_setting( 'linkedin_settings', 'linkedin_field_username' );
 }
 
 // Display the plugin settings page.
@@ -50,6 +54,34 @@ function linkedin_settings_callback() {
 				<tr valign="top">
 						<th scope="row"><?php esc_html_e( 'Gravity Form ID', 'linkedin-settings' ); ?></th>
 						<td><input type="text" name="linkedin_form_id" value="<?php echo esc_attr( get_option( 'linkedin_form_id' ) ); ?>" /></td>
+				</tr>
+			</table>
+			<h2><?php esc_html_e('Form Mapping Fields', 'linkedin-login'); ?></h2>
+			<p><?php esc_html_e('Gravity Form fields that is used for registration.', 'linkedin-login'); ?></p>
+			<table class="form-table">
+				<tr>
+					<th scope="row"><?php esc_html_e('First Name', 'linkedin-login'); ?></th>
+					<td>
+							<input type="text" name="linkedin_field_first_name" value="<?php echo esc_attr(get_option('linkedin_field_first_name')); ?>" class="regular-text">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e('Last Name', 'linkedin-login'); ?></th>
+					<td>
+							<input type="text" name="linkedin_field_last_name" value="<?php echo esc_attr(get_option('linkedin_field_last_name')); ?>" class="regular-text">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e('Email Address', 'linkedin-login'); ?></th>
+					<td>
+							<input type="text" name="linkedin_field_email_address" value="<?php echo esc_attr(get_option('linkedin_field_email_address')); ?>" class="regular-text">
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?php esc_html_e('Username', 'linkedin-login'); ?></th>
+					<td>
+							<input type="text" name="linkedin_field_username" value="<?php echo esc_attr(get_option('linkedin_field_username')); ?>" class="regular-text">
+					</td>
 				</tr>
 			</table>
 			<?php submit_button(); ?>
