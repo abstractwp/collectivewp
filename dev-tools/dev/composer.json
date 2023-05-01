@@ -31,8 +31,7 @@
       "wpackagist-plugin/redirection": "^5.3.10",
       "wpackagist-plugin/wordpress-seo":"20.5",
       "wpackagist-plugin/so-clean-up-wp-seo":"4.0.0",
-      "pronamic/gravityforms": "^2.7.4",
-      "wpackagist-plugin/heateor-social-login":"1.1.22"
+      "pronamic/gravityforms": "^2.7.4"
 
   },
   "extra": {
