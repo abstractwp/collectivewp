@@ -39,7 +39,7 @@ function linkedin_shortcode( $atts ) {
 	$auth_url .= "?" . http_build_query($params);
 
 	// Display the LinkedIn login button on the login page
-	$return_html = '<div class="container">';
+	$return_html = '<div>';
 
 	$messages = '';
 	// Check if the user has been redirected back to the website after granting permission to your LinkedIn application
