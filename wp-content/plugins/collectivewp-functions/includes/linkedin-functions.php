@@ -33,7 +33,7 @@ function linkedin_shortcode( $atts ) {
 	$auth_url .= "?" . http_build_query($params);
 
 	// Display the LinkedIn login button on the login page
-	echo '<div class="container">';
+	$return_html = '<div class="container">';
 
 	$messages = '';
 	// Check if the user has been redirected back to the website after granting permission to your LinkedIn application
@@ -123,7 +123,7 @@ function linkedin_shortcode( $atts ) {
 				} else {
 					if ( isset($entry['entry_id']) ) {
 						// Entry created successfully
-						error_log( 'Gravity Forms entry created with ID: ' . $entry['id'] );
+						error_log( 'Gravity Forms entry created with ID: ' . $entry['entry_id'] );
 						if ( isset( $entry['confirmation_type'] ) && $entry['confirmation_type'] === 'redirect' ) {
 							wp_redirect( $entry['confirmation_redirect'] );
 							exit;
@@ -152,9 +152,12 @@ function linkedin_shortcode( $atts ) {
 
 	}
 	if ( '' === $messages ) {
-		echo '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Register with LinkedIn</a></div>';
+		$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Register with LinkedIn</a></div>';
 	} else {
-		echo $messages;
+		$return_html .= $messages;
 	}
-	echo '</div>';
+
+	$return_html .= '</div>';
+
+	echo $return_html;
 }
