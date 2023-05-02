@@ -154,3 +154,10 @@ function collectivewp_remove_howdy( $wp_admin_bar ) {
 }
 add_filter( 'admin_bar_menu', 'collectivewp_remove_howdy',25 );
 
+/**
+ * Remove BuddyPress admin
+ */
+function hide_bp_notice() {
+	remove_action( 'bp_admin_init', 'bp_core_activation_notice', 1010 );
+}
+add_action('init', 'hide_bp_notice');
