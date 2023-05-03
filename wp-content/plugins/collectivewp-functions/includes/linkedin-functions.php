@@ -10,6 +10,11 @@ require_once( plugin_dir_path( __FILE__ ) . 'linkedin-settings.php' );
 // Register the plugin shortcode
 add_shortcode('linkedin-register', 'linkedin_register_shortcode');
 
+/**
+ * Show register via LinkedIn button.
+ *
+ * @param array $atts the shortcode attributes.
+ */
 function linkedin_register_shortcode( $atts ) {
 	// LinkedIn API endpoint for retrieving the authorization code
 	$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
@@ -26,23 +31,23 @@ function linkedin_register_shortcode( $atts ) {
 	$linkedin_field_email_address = get_option('linkedin_field_email_address') ?? 'input_2';
 	$linkedin_field_username = get_option('linkedin_field_username') ?? 'input_3';
 
-	// Set the query parameters for retrieving the authorization code
+	// Set the query parameters for retrieving the authorization code.
 	$params = array(
 		"response_type" => "code",
 		"client_id"     => $client_id,
 		"redirect_uri"  => $redirect_uri,
-		"state"         => "login", // set a state parameter to prevent CSRF attacks
-		"scope"         => "r_liteprofile r_emailaddress" // specify the permissions that your LinkedIn application is requesting
+		"state"         => "login",
+		"scope"         => "r_liteprofile r_emailaddress"
 	);
 
-	// Redirect the user to the LinkedIn API endpoint for authentication and authorization
+	// Redirect the user to the LinkedIn API endpoint for authentication and authorization.
 	$auth_url .= "?" . http_build_query($params);
 
-	// Display the LinkedIn login button on the login page
-	$return_html = '<div class="has-global-padding alignfull is-layout-constrained wp-block-group">';
+	// Display the LinkedIn login button on the login page.
+	$return_html = '<div>';
 
 	$messages = '';
-	// Check if the user has been redirected back to the website after granting permission to your LinkedIn application
+	// Check if the user has been redirected back to the website after granting permission to your LinkedIn application.
 	if (isset($_GET['code']) && isset($_GET['state']) && $_GET['state'] === 'login') {
 		// Exchange the authorization code for an access token
 		$authorization_code = $_GET['code'];
@@ -68,19 +73,19 @@ function linkedin_register_shortcode( $atts ) {
 
 		if ( ( isset( $token_data->error ) && 'invalid_request' !== $token_data->error ) ||
 			! isset( $token_data->error ) ) {
-			// Use the access token to retrieve the user's LinkedIn profile
+			// Use the access token to retrieve the user's LinkedIn profile.
 			$profile_url   = "https://api.linkedin.com/v2/me";
 			$email_url    = "https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))";
 			$access_token = $token_data->access_token;
 
-			// Create headers array with access token
+			// Create headers array with access token.
 			$headers = array(
 				"Authorization: Bearer ".$access_token,
 				"Content-Type: application/json",
 				"x-li-format: json"
 			);
 
-			// Create curl request to retrieve user's profile
+			// Create curl request to retrieve user's profile.
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $profile_url);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -88,7 +93,7 @@ function linkedin_register_shortcode( $atts ) {
 			$profile_result = curl_exec($ch);
 			curl_close($ch);
 
-			// Create curl request to retrieve user's email
+			// Create curl request to retrieve user's email.
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $email_url);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -96,17 +101,17 @@ function linkedin_register_shortcode( $atts ) {
 			$email_result = curl_exec($ch);
 			curl_close($ch);
 
-			// Parse the results
+			// Parse the results.
 			$profile_data = json_decode($profile_result, true);
 			$email_data  = json_decode($email_result, true);
 
-			// Extract the relevant information
+			// Extract the relevant information.
 			$first_name     = $profile_data["firstName"]["localized"]["en_US"];
 			$last_name     = $profile_data["lastName"]["localized"]["en_US"];
 			$email_address = $email_data["elements"][0]["handle~"]["emailAddress"];
 
 
-			// Set the form ID and entry data
+			// Set the form ID and entry data.
 			$entry_data = array(
 				$linkedin_field_first_name => $first_name,
 				$linkedin_field_last_name => $last_name,
@@ -114,21 +119,19 @@ function linkedin_register_shortcode( $atts ) {
 				$linkedin_field_username   => substr($email_address, 0, strpos($email_address, "@")),
 			);
 
-			// Create a new instance of the Gravity Forms API
+			// Create a new instance of the Gravity Forms API.
 			$api = new GFAPI();
 
-			// Check if the form ID is valid
+			// Check if the form ID is valid.
 			$form = $api->get_form( $form_id );
 			if ( $form ) {
-				// Create the new entry
+				// Create the new entry.
 				$entry = $api->submit_form( $form_id, $entry_data );
-				// Check if the entry was created successfully
+				// Check if the entry was created successfully.
 				if ( is_wp_error( $entry ) ) {
-					// Handle the error
 					error_log( 'Failed to create Gravity Forms entry: ' . $entry->get_error_message() );
 				} else {
 					if ( isset($entry['entry_id']) ) {
-						// Entry created successfully
 						error_log( 'Gravity Forms entry created with ID: ' . $entry['entry_id'] );
 						if ( isset( $entry['confirmation_type'] ) && $entry['confirmation_type'] === 'redirect' ) {
 							wp_redirect( $entry['confirmation_redirect'] );
@@ -146,7 +149,7 @@ function linkedin_register_shortcode( $atts ) {
 				}
 
 			} else {
-				// Invalid form ID
+				// Invalid form ID.
 				error_log( 'Invalid Gravity Forms form ID: ' . $form_id );
 			}
 		}
@@ -158,9 +161,9 @@ function linkedin_register_shortcode( $atts ) {
 
 	}
 	if ( '' === $messages ) {
-		$return_html .= '<div class="flex"><a class="button primary linkedin aligncenter" href="' . $auth_url . '">Register with LinkedIn</a></div>';
+		$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Register with LinkedIn</a></div>';
 	} else {
-		$return_html .= '<p class="has-text-align-center">' . $messages . '</p>';
+		$return_html .= '<p>' . $messages . '</p>';
 
 		if (strpos($messages, 'This email address is already registered') !== false) {
 			$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
@@ -173,10 +176,9 @@ function linkedin_register_shortcode( $atts ) {
 				"scope"         => "r_liteprofile r_emailaddress"
 			);
 
-			// Redirect the user to the LinkedIn API endpoint for authentication and authorization
 			$auth_url .= "?" . http_build_query($params);
 
-			$return_html .= '<div class="flex"><a class="button primary aligncenter linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
+			$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
 		}
 	}
 
@@ -187,7 +189,7 @@ function linkedin_register_shortcode( $atts ) {
 }
 
 
-// Register the plugin shortcode
+// Register the plugin shortcode.
 add_shortcode('linkedin-login', 'linkedin_login_shortcode');
 
 /**
@@ -196,10 +198,10 @@ add_shortcode('linkedin-login', 'linkedin_login_shortcode');
 function linkedin_login_shortcode( $atts ) {
 
 	if ( is_user_logged_in() ) {
-		$html = '<div class="has-global-padding alignfull is-layout-constrained wp-block-group"><p class="has-text-align-center"><strong>You are already logged in.</strong></p>';
+		$html = '<div class="has-global-padding alignfull is-layout-constrained wp-block-group"><p><strong>You are already logged in.</strong></p>';
 		$current_user = wp_get_current_user();
 		$username = $current_user->user_login;
-		$html .= '<div class="flex"><a class="button primary aligncenter" href="' . home_url( '/members/' . $username . '/profile/' ) . '">Go to your Profile</a></div></div>';
+		$html .= '<div class="flex"><a class="button primary" href="' . home_url( '/members/' . $username . '/profile/' ) . '">Go to your Profile</a></div></div>';
 
 		return $html;
 	}
@@ -210,7 +212,6 @@ function linkedin_login_shortcode( $atts ) {
 
 	$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
 
-	// Set the query parameters for retrieving the authorization code
 	$params = array(
 		"response_type" => "code",
 		"client_id"     => $client_id,
@@ -219,7 +220,6 @@ function linkedin_login_shortcode( $atts ) {
 		"scope"         => "r_liteprofile r_emailaddress"
 	);
 
-	// Redirect the user to the LinkedIn API endpoint for authentication and authorization
 	$auth_url .= "?" . http_build_query($params);
 
 	if (isset($_GET['code']) && isset($_GET['state']) && $_GET['state'] === 'login') {
@@ -245,18 +245,15 @@ function linkedin_login_shortcode( $atts ) {
 
 		if ( ( isset( $token_data->error ) && 'invalid_request' !== $token_data->error ) ||
 			! isset( $token_data->error ) ) {
-			// Use the access token to retrieve the user's LinkedIn profile
 			$email_url    = "https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))";
 			$access_token = $token_data->access_token;
 
-			// Create headers array with access token
 			$headers = array(
 				"Authorization: Bearer ".$access_token,
 				"Content-Type: application/json",
 				"x-li-format: json"
 			);
 
-			// Create curl request to retrieve user's email
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $email_url);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -285,6 +282,6 @@ function linkedin_login_shortcode( $atts ) {
 			}
 		}
 	} else {
-		return '<div class="flex"><a class="button primary aligncenter linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
+		return '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
 	}
 }
