@@ -8,9 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once( plugin_dir_path( __FILE__ ) . 'linkedin-settings.php' );
 
 // Register the plugin shortcode
-add_shortcode('linkedin', 'linkedin_shortcode');
+add_shortcode('linkedin-register', 'linkedin_register_shortcode');
 
-function linkedin_shortcode( $atts ) {
+function linkedin_register_shortcode( $atts ) {
 	// LinkedIn API endpoint for retrieving the authorization code
 	$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
 
@@ -166,5 +166,108 @@ function linkedin_shortcode( $atts ) {
 	$return_html .= '</div>';
 	if ( !is_admin() ) {
 		return $return_html;
+	}
+}
+
+
+// Register the plugin shortcode
+add_shortcode('linkedin-login', 'linkedin_login_shortcode');
+
+/**
+ * Login with linkedin shortcode.
+ */
+function linkedin_login_shortcode( $atts ) {
+
+	if ( is_user_logged_in() ) {
+		$html = '<div class="has-global-padding alignfull is-layout-constrained wp-block-group"><p class="has-text-align-center"><strong>You are already logged in.</strong></p>';
+		$current_user = wp_get_current_user();
+		$username = $current_user->user_login;
+		$html .= '<div class="flex"><a class="button primary aligncenter" href="' . home_url( '/members/' . $username . '/profile/' ) . '">Go to your Profile</a></div></div>';
+
+		return $html;
+	}
+
+	$client_id = get_option('linkedin_client_id');
+	$client_secret = get_option('linkedin_client_secret');
+	$login_redirect_url = site_url( '/login/' );
+
+	$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
+
+	// Set the query parameters for retrieving the authorization code
+	$params = array(
+		"response_type" => "code",
+		"client_id"     => $client_id,
+		"redirect_uri"  => $login_redirect_url,
+		"state"         => "login",
+		"scope"         => "r_liteprofile r_emailaddress"
+	);
+
+	// Redirect the user to the LinkedIn API endpoint for authentication and authorization
+	$auth_url .= "?" . http_build_query($params);
+
+	if (isset($_GET['code']) && isset($_GET['state']) && $_GET['state'] === 'login') {
+		$authorization_code = $_GET['code'];
+		$token_url    = "https://www.linkedin.com/oauth/v2/accessToken";
+		$token_params = array(
+				"grant_type" => "authorization_code",
+				"client_id" => $client_id,
+				"client_secret" => $client_secret,
+				"redirect_uri" => $login_redirect_url,
+				"code" => $authorization_code
+		);
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $token_url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($token_params));
+		$token_response = curl_exec($ch);
+		curl_close($ch);
+
+		$token_data = json_decode($token_response);
+
+		if ( ( isset( $token_data->error ) && 'invalid_request' !== $token_data->error ) ||
+			! isset( $token_data->error ) ) {
+			// Use the access token to retrieve the user's LinkedIn profile
+			$email_url    = "https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))";
+			$access_token = $token_data->access_token;
+
+			// Create headers array with access token
+			$headers = array(
+				"Authorization: Bearer ".$access_token,
+				"Content-Type: application/json",
+				"x-li-format: json"
+			);
+
+			// Create curl request to retrieve user's email
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $email_url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$email_result = curl_exec($ch);
+			curl_close($ch);
+
+			$email_data  = json_decode($email_result, true);
+			$email_address = $email_data["elements"][0]["handle~"]["emailAddress"];
+
+			$user = get_user_by( 'email', $email_address );
+
+			if ( $user ) {
+				wp_set_current_user( $user->ID );
+				wp_set_auth_cookie( $user->ID );
+				do_action( 'wp_login', $user->user_login, $user );
+				$profile_url = home_url( '/members/' . $user->user_login . '/profile/' );
+				wp_redirect( $profile_url );
+				exit;
+			} else {
+				wp_redirect( site_url( '/register/' ) );
+			}
+		} else {
+			if ( isset( $token_data->error_description ) && '' !== $token_data->error_description ) {
+				error_log( $token_data->error_description );
+			}
+		}
+	} else {
+		return '<div class="flex"><a class="button primary aligncenter linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
 	}
 }

@@ -39,6 +39,7 @@ function linkedin_settings_callback() {
 			<?php settings_fields( 'linkedin_settings' ); ?>
 			<?php do_settings_sections( 'linkedin_settings' ); ?>
 			<table class="form-table">
+				<p><strong><?php esc_html_e('Use the shortcode [linkedin-register] to display the \'Register via LinkedIn\' button and [linkedin-login] to display the \'Login via LinkedIn\' button.', 'linkedin-login'); ?></strong></p>
 				<tr valign="top">
 						<th scope="row"><?php esc_html_e( 'Client ID', 'linkedin-settings' ); ?></th>
 						<td><input type="text" name="linkedin_client_id" value="<?php echo esc_attr( get_option( 'linkedin_client_id' ) ); ?>" /></td>
