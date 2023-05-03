@@ -39,7 +39,7 @@ function linkedin_register_shortcode( $atts ) {
 	$auth_url .= "?" . http_build_query($params);
 
 	// Display the LinkedIn login button on the login page
-	$return_html = '<div>';
+	$return_html = '<div class="has-global-padding alignfull is-layout-constrained wp-block-group">';
 
 	$messages = '';
 	// Check if the user has been redirected back to the website after granting permission to your LinkedIn application
@@ -49,11 +49,11 @@ function linkedin_register_shortcode( $atts ) {
 
 		$token_url    = "https://www.linkedin.com/oauth/v2/accessToken";
 		$token_params = array(
-				"grant_type" => "authorization_code",
-				"client_id" => $client_id,
-				"client_secret" => $client_secret,
-				"redirect_uri" => $redirect_uri,
-				"code" => $authorization_code
+			"grant_type" => "authorization_code",
+			"client_id" => $client_id,
+			"client_secret" => $client_secret,
+			"redirect_uri" => $redirect_uri,
+			"code" => $authorization_code
 		);
 
 		$ch = curl_init();
@@ -158,9 +158,26 @@ function linkedin_register_shortcode( $atts ) {
 
 	}
 	if ( '' === $messages ) {
-		$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Register with LinkedIn</a></div>';
+		$return_html .= '<div class="flex"><a class="button primary linkedin aligncenter" href="' . $auth_url . '">Register with LinkedIn</a></div>';
 	} else {
-		$return_html .= $messages;
+		$return_html .= '<p class="has-text-align-center">' . $messages . '</p>';
+
+		if (strpos($messages, 'This email address is already registered') !== false) {
+			$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
+
+			$params = array(
+				"response_type" => "code",
+				"client_id"     => $client_id,
+				"redirect_uri"  => site_url( '/login/' ),
+				"state"         => "login",
+				"scope"         => "r_liteprofile r_emailaddress"
+			);
+
+			// Redirect the user to the LinkedIn API endpoint for authentication and authorization
+			$auth_url .= "?" . http_build_query($params);
+
+			$return_html .= '<div class="flex"><a class="button primary aligncenter linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
+		}
 	}
 
 	$return_html .= '</div>';
