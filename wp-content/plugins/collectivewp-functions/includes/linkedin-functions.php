@@ -198,7 +198,7 @@ add_shortcode('linkedin-login', 'linkedin_login_shortcode');
 function linkedin_login_shortcode( $atts ) {
 
 	if ( is_user_logged_in() ) {
-		$html = '<div class="has-global-padding alignfull is-layout-constrained wp-block-group"><p><strong>You are already logged in.</strong></p>';
+		$html = '<div class="has-global-padding is-layout-constrained wp-block-group">';
 		$current_user = wp_get_current_user();
 		$username = $current_user->user_login;
 		$html .= '<div class="flex"><a class="button primary" href="' . home_url( '/members/' . $username . '/profile/' ) . '">Go to your Profile</a></div></div>';
