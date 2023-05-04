@@ -85,10 +85,10 @@ get_header(); ?>
 				<h2><?php esc_html_e( 'Your account is now active!', 'gravityformsuserregistration' ); ?></h2>
 
 				<div id="signup-welcome">
-					<p><span class="h3"><?php esc_html_e( 'Username:', 'gravityformsuserregistration' ); ?></span> <?php echo esc_html( $user->user_login ); ?></p>
+					<p><strong><?php esc_html_e( 'Username:', 'gravityformsuserregistration' ); ?></strong> <?php echo esc_html( $user->user_login ); ?></p>
 
 					<p>
-						<span class="h3"><?php esc_html_e( 'Password:', 'gravityformsuserregistration' ); ?></span>
+						<strong><?php esc_html_e( 'Password:', 'gravityformsuserregistration' ); ?></strong>
 						<?php
 						if ( $result['password_hash'] ) {
 							esc_html_e( 'Set at registration.', 'gravityformsuserregistration' );
