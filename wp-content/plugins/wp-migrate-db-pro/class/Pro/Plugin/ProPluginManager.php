@@ -2,6 +2,7 @@
 
 namespace DeliciousBrains\WPMDB\Pro\Plugin;
 
+use DeliciousBrains\WPMDB\Common\Addon\Addon;
 use DeliciousBrains\WPMDB\Common\Helpers;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
 use DeliciousBrains\WPMDB\Common\Http\WPMDBRestAPIServer;
@@ -17,8 +18,8 @@ use DeliciousBrains\WPMDB\Common\Settings\Settings;
 use DeliciousBrains\WPMDB\Common\Sql\Table;
 use DeliciousBrains\WPMDB\Common\UI\Notice;
 use DeliciousBrains\WPMDB\Common\UI\TemplateBase;
+use DeliciousBrains\WPMDB\Common\Upgrades\UpgradeRoutinesManager;
 use DeliciousBrains\WPMDB\Common\Util\Util;
-use DeliciousBrains\WPMDB\Pro\Addon\Addon;
 use DeliciousBrains\WPMDB\Pro\Api;
 use DeliciousBrains\WPMDB\Pro\Beta\BetaManager;
 use DeliciousBrains\WPMDB\Pro\Download;
@@ -70,7 +71,8 @@ class ProPluginManager extends PluginManagerBase
         Helper $http_helper,
         TemplateBase $template,
         Notice $notice,
-        ProfileManager $profile_manager
+        ProfileManager $profile_manager,
+        UpgradeRoutinesManager $upgrade_routines_manager
     ) {
         parent::__construct(
             $settings,
@@ -86,7 +88,8 @@ class ProPluginManager extends PluginManagerBase
             $http_helper,
             $template,
             $notice,
-            $profile_manager
+            $profile_manager,
+            $upgrade_routines_manager
         );
 
         $this->addon    = $addon;
@@ -161,19 +164,30 @@ class ProPluginManager extends PluginManagerBase
         $data['valid_licence']  = $valid_license ? 1 : 0;
         $data['has_licence']    = $this->license->get_licence_key() === '' ? 0 : 1;
         $data['licence_status'] = $this->license->check_license_status();
+        $data['license_errors'] = [];
         $data['api_data']       = [];
 
-        if ($valid_license) {
+        if ($data['has_licence']) {
             $api_data = $this->license->get_api_data();
             if (!empty($api_data)) {
                 $data['api_data'] = $api_data;
                 //Get expired license notification messages
                 if ($data['licence_status'] === 'subscription_expired') {
                     $data['api_data']['errors']['subscription_expired'] = [];
-                    $licence_status_messages = $this->license->get_licence_status_message( null, 'all' );
+                    $licence_status_messages                            = $this->license->get_licence_status_message(
+                        null,
+                        'all'
+                    );
                     foreach ($licence_status_messages as $frontend_context => $status_message) {
-                        $data['api_data']['errors']['subscription_expired'][ $frontend_context ] = sprintf( '<div class="notification-message warning-notice inline-message invalid-licence">%s</div>', $status_message );
+                        $data['api_data']['errors']['subscription_expired'][$frontend_context] = sprintf(
+                            '<div class="notification-message warning-notice inline-message invalid-licence">%s</div>',
+                            $status_message
+                        );
                     }
+                } elseif (!empty($api_data['errors'][$data['licence_status']])) {
+                    $data['api_data']['errors'][$data['licence_status']] = [];
+                    $data['api_data']['errors'][$data['licence_status']]['default'] = $this->license->get_licence_status_message();
+                    $data['license_errors'][$data['licence_status']] = $data['api_data']['errors'][$data['licence_status']]['default'];
                 }
             }
         }
@@ -190,6 +204,7 @@ class ProPluginManager extends PluginManagerBase
         $templates[$notice_name] = [
             'message' => $this->license->get_licence_status_message(),
             'id'      => $notice_name,
+            'error'   => true,
         ];
 
         return $templates;
@@ -632,8 +647,8 @@ class ProPluginManager extends PluginManagerBase
     public function ajax_get_local_site_details() {
         return $this->http->end_ajax([
             'mst_available' => (string)((int)(Util::isPro() && Util::is_addon_registered('mst'))),
-            'tpf_available' => (string)((int)(Util::isPro() && Util::is_addon_registered('tpf'))),
-            'mf_available' => (string)((int)(Util::isPro() && Util::is_addon_registered('mf'))),
+            'tpf_available' => (string)Util::is_addon_registered('tpf'),
+            'mf_available'  => (string)Util::is_addon_registered('mf'),
         ]);
     }
 }

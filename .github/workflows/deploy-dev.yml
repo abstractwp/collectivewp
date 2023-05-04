@@ -1,0 +1,76 @@
+name: Deploy to Pantheon
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    name: Build and push to Pantheon
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: setup-runner
+        name: Setup Runner
+        uses: ./.github/actions/setup-runner
+        with:
+          pantheon_ssh_key: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+          ssh_config: ${{ secrets.SSH_CONFIG }}
+          pantheon_machine_token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+          php_version: '7.4'
+          composer_version: 'v2'
+          terminus_version: '^2.0'
+          node_version: '16'
+
+      - name: Composer Install Dependencies
+        run: composer install --working-dir=dev-tools/pro --optimize-autoloader --no-dev --prefer-dist --no-progress --no-suggest
+
+      - name: Move plugins
+        run: mv -f dev-tools/pro/wp-content/plugins/* wp-content/plugins/
+
+      - name: Move theme
+        run: mv -f dev-tools/pro/wp-content/themes/* wp-content/themes/
+
+      # Build Theme
+      - run: cd wp-content/themes/collectivewp && npm install
+
+      - name: Compile theme assets
+        run: cd wp-content/themes/collectivewp && npm run build
+
+      - name: Remove node_modules
+        run: cd wp-content/themes/collectivewp && rm -rf node_modules
+
+      ## Prepare for Pantheon
+      - name: Prepare for Pantheon
+        run: find ./ -type d -name ".git .github .wpe*" | xargs rm -fr
+
+      ## Deploy
+      - name: Deploy to Pantheon
+        env:
+          pantheon_site: ${{ secrets.PANTHEON_SITE_NAME }}
+          pantheon_env: 'dev'
+        run: |
+          commit_message=$(git log -1 --pretty=%B)
+          git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git config --global core.fileMode false
+          git fetch --unshallow
+          terminus build:env:push $pantheon_site.$pantheon_env --message="CI Deployment for: $commit_message"
+
+      ## Terminus
+      - name: Terminus Drush Updates
+        env:
+          pantheon_site: ${{ secrets.PANTHEON_SITE_NAME }}
+          pantheon_env: 'dev'
+        run: |
+          # terminus -n drush $pantheon_site.$pantheon_env -- deploy -y
+          terminus -n env:clear-cache $pantheon_site.$pantheon_env
+
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_CHANNEL: client-collectivewp
+            SLACK_COLOR: ${{ job.status }}
+            SLACK_ICON: https://avatars.slack-edge.com/2021-09-02/2472786275504_23fa532873531951ddd3_32.png
+            SLACK_USERNAME: Github
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+            SLACK_FOOTER: ${{ github.repository }}

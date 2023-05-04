@@ -16,11 +16,6 @@ if ( ! defined( 'BSR_PATH' ) ) exit;
 // Determines which tab to display.
 $active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'bsr_search_replace';
 
-// Bail if not on a BSR page
-if ( ! in_array( $active_tab, array( 'bsr_search_replace', 'bsr_backup_import', 'bsr_settings', 'bsr_help' ) ) ) {
-	wp_die( 'The requested tab was not found.', 'better-search-replace' );
-}
-
 if ( 'bsr_settings' === $active_tab ) {
 	$action = get_admin_url() . 'options.php';
 } else {
@@ -60,12 +55,8 @@ if ( 'bsr_settings' === $active_tab ) {
 
 		<?php
 		// Include the correct tab template.
-		$bsr_template = str_replace( '_', '-', sanitize_file_name( $active_tab ) ) . '.php';
-		if ( file_exists( BSR_PATH . 'templates/' . $bsr_template ) ) {
-			include BSR_PATH . 'templates/' . $bsr_template;
-		} else {
-			include BSR_PATH . 'templates/bsr-search-replace.php';
-		}
+		$bsr_template = BSR_Templates_Helper::get_tab_template($active_tab);
+		include $bsr_template;
 		?>
 
 	</form>

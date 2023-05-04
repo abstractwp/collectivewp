@@ -252,10 +252,6 @@ class Remote
                 )
             );
         }
-        if (method_exists('WpeCommon', 'get_wpe_auth_cookie_value')) {
-            $cookie_value = \WpeCommon::get_wpe_auth_cookie_value();
-            $return['wpe_cookie'] = $cookie_value;
-        }
 
         $site_details = $this->util->site_details();
 
@@ -264,7 +260,7 @@ class Remote
         $return['table_sizes']            = $this->table->get_table_sizes();
         $return['table_rows']             = $this->table->get_table_row_count();
         $return['table_sizes_hr']         = array_map(array($this->table, 'format_table_sizes'), $this->table->get_table_sizes());
-        $return['path']                   = $this->util->get_absolute_root_file_path();
+        $return['path']                   = Util::get_absolute_root_file_path();
         $return['url']                    = Util::home_url();
         $return['prefix']                 = $site_details['prefix']; // TODO: Remove backwards compatibility.
         $return['bottleneck']             = $this->util->get_bottleneck();
@@ -278,6 +274,10 @@ class Remote
         $return['post_types']             = $this->table->get_post_types();
         // TODO: Use WP_Filesystem API.
         $return['write_permissions']      = (is_writeable($this->filesystem->get_upload_info('path')) ? 'true' : 'false');
+        $return['themes_permissions']     = is_writeable(WP_CONTENT_DIR . DIRECTORY_SEPARATOR . 'themes') ? 'true' : 'false';
+        $return['plugins_permissions']    = is_writeable(WP_PLUGIN_DIR) ? 'true' : 'false';
+        $return['muplugins_permissions']  = is_writeable(WPMU_PLUGIN_DIR) ? 'true' : 'false';
+        $return['others_permissions']     = is_writeable(WP_CONTENT_DIR) ? 'true' : 'false';
         $return['upload_dir_long']        = $this->filesystem->get_upload_info('path');
         $return['wp_upload_dir']          = $this->filesystem->get_wp_upload_dir();
         $return['temp_prefix']            = $this->props->temp_prefix;
@@ -285,6 +285,7 @@ class Remote
         $return['subsites']               = $site_details['subsites']; // TODO: Remove backwards compatibility.
         $return['site_details']           = $site_details;
         $return['beta_optin']             = BetaManager::has_beta_optin($this->settings);
+        $return['firewall_plugins']       = $site_details['firewall_plugins'];
         $return                           = apply_filters('wpmdb_establish_remote_connection_data', $return);
         $result                           = $this->http->end_ajax($return, false, true);
 

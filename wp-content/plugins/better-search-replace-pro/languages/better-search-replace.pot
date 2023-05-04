@@ -1,15 +1,15 @@
-# Copyright (C) 2022 Delicious Brains
+# Copyright (C) 2023 Delicious Brains
 # This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Better Search Replace Pro 1.4.1\n"
+"Project-Id-Version: Better Search Replace Pro 1.4.2\n"
 "Report-Msgid-Bugs-To: "
 "http://wordpress.org/support/plugin/better-search-replace\n"
-"POT-Creation-Date: 2022-07-22 17:45:10+00:00\n"
+"POT-Creation-Date: 2023-01-10 10:18:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Delicious Brains <mayday@bettersearchreplace.com>\n"
 "Language-Team: Delicious Brains <mayday@bettersearchreplace.com>\n"
 "Language: en\n"
@@ -71,11 +71,11 @@ msgstr ""
 msgid "Better Search Replace Pro"
 msgstr ""
 
-#: includes/class-bsr-admin.php:108
+#: includes/class-bsr-admin.php:109
 msgid "Database imported successfully."
 msgstr ""
 
-#: includes/class-bsr-admin.php:114
+#: includes/class-bsr-admin.php:115
 msgid ""
 "<p><strong>DRY RUN:</strong> <strong>%d</strong> tables were searched, "
 "<strong>%d</strong> cells were found that need to be updated, and "
@@ -84,7 +84,7 @@ msgid ""
 "details, or use the form below to run the search/replace.</p>"
 msgstr ""
 
-#: includes/class-bsr-admin.php:121
+#: includes/class-bsr-admin.php:122
 msgid ""
 "<p>During the search/replace, <strong>%d</strong> tables were searched, "
 "with <strong>%d</strong> cells changed in <strong>%d</strong> "
@@ -92,35 +92,35 @@ msgid ""
 "Details\">Click here</a> for more details.</p>"
 msgstr ""
 
-#: includes/class-bsr-admin.php:244
+#: includes/class-bsr-admin.php:245
 msgid "<-- Back to overview"
 msgstr ""
 
-#: includes/class-bsr-admin.php:265
+#: includes/class-bsr-admin.php:266
 msgid "Row %d, Column '%s'"
 msgstr ""
 
-#: includes/class-bsr-admin.php:274
+#: includes/class-bsr-admin.php:275
 msgid "Table"
 msgstr ""
 
-#: includes/class-bsr-admin.php:274
+#: includes/class-bsr-admin.php:275
 msgid "Changes Found"
 msgstr ""
 
-#: includes/class-bsr-admin.php:274
+#: includes/class-bsr-admin.php:275
 msgid "Rows Updated"
 msgstr ""
 
-#: includes/class-bsr-admin.php:274
+#: includes/class-bsr-admin.php:275
 msgid "Time"
 msgstr ""
 
-#: includes/class-bsr-admin.php:285
+#: includes/class-bsr-admin.php:286
 msgid "View"
 msgstr ""
 
-#: includes/class-bsr-admin.php:298
+#: includes/class-bsr-admin.php:299
 msgid " seconds"
 msgstr ""
 
@@ -194,19 +194,19 @@ msgstr ""
 msgid "Run Search/Replace profile after import"
 msgstr ""
 
-#: templates/bsr-dashboard.php:52 templates/bsr-search-replace.php:68
+#: templates/bsr-dashboard.php:47 templates/bsr-search-replace.php:68
 msgid "Search/Replace"
 msgstr ""
 
-#: templates/bsr-dashboard.php:53
+#: templates/bsr-dashboard.php:48
 msgid "Backup/Import"
 msgstr ""
 
-#: templates/bsr-dashboard.php:54 templates/bsr-settings.php:46
+#: templates/bsr-dashboard.php:49 templates/bsr-settings.php:46
 msgid "Settings"
 msgstr ""
 
-#: templates/bsr-dashboard.php:55
+#: templates/bsr-dashboard.php:50
 msgid "Help"
 msgstr ""
 

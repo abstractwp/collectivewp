@@ -3,6 +3,8 @@
 namespace DeliciousBrains\WPMDB\Pro\Transfers;
 
 use DeliciousBrains\WPMDB\Common\MigrationPersistence\Persistence;
+use DeliciousBrains\WPMDB\Pro\Transfers\Files\Payload;
+use DeliciousBrains\WPMDB\Common\Transfers\Files\Util;
 
 class Sender {
 
@@ -21,12 +23,12 @@ class Sender {
 	/**
 	 * Sender constructor.
 	 *
-	 * @param Files\Util    $util
-	 * @param Files\Payload $payload
+	 * @param Util    $util
+	 * @param Payload $payload
 	 */
 	public function __construct(
-		Files\Util $util,
-		Files\Payload $payload
+		Util $util,
+		Payload $payload
 	) {
 		$this->util    = $util;
 		$this->payload = $payload;
@@ -94,7 +96,7 @@ class Sender {
 
 		$handle = $this->payload->create_payload( $batch, $state_data, $state_data['bottleneck'] );
 		rewind( $handle );
-		stream_filter_append( $handle, 'zlib.deflate', STREAM_FILTER_ALL );
+
 
 		// Read payload line by line and send each line to the output buffer
 		while ( ! feof( $handle ) ) {

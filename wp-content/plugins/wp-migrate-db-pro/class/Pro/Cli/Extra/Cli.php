@@ -249,12 +249,11 @@ class Cli extends Export
             return $this->cli_error(__('There is more than one profile with that name, please use the profile ID instead. See wp migratedb profiles for help.', 'wp-migrate-db'));
         }
 
-        $key = array_search($name, $names);
-
-        if (false !== $key) {
-            $this->profileID = ++$key;
-
-            return $profiles[$this->profileID];
+        foreach($profiles as $key => $profile) {
+            if ($profile['name'] === $name) {
+                $this->profileID = $key;
+                return $profiles[$this->profileID];
+            }
         }
 
         return $this->cli_error(__('Profile not found.', 'wp-migrate-db'));
@@ -505,7 +504,7 @@ class Cli extends Export
     public function get_standard_search_replace_pairs($action = 'push')
     {
         $local_url   = preg_replace('#^https?:#', '', Util::home_url());
-        $local_path  = $this->util->get_absolute_root_file_path();
+        $local_path  = Util::get_absolute_root_file_path();
         $remote_url  = preg_replace('#^https?:#', '', $this->remote['url']);
         $remote_path = $this->remote['path'];
         $push        = 'push' === $action;
@@ -719,7 +718,7 @@ class Cli extends Export
         }
 
         if (isset($profile['media_files']) && true === $profile['media_files']['enabled']) {
-            if (false === class_exists('\DeliciousBrains\WPMDB\Pro\MF\MediaFilesAddon')) {
+            if (false === class_exists('\DeliciousBrains\WPMDB\Pro\MF\MediaFilesRemote')) {
                 return $this->cli_error(__('The profile is set to migrate media files, however migrating media files is not supported with the current license.', 'wp-migrate-db'));
             }
         }

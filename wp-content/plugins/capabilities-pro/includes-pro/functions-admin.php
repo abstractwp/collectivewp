@@ -27,20 +27,20 @@ require_once (dirname(__FILE__) . '/features/admin-features-block-url.php');
 
 function pp_capabilities_pro_backup_sections($backup_sections){
 
+    //Admin Features Pro
+    $backup_sections['capsman_admin_features_backup']['options'][] = 'ppc_admin_feature_block_url_custom_data';
+    $backup_sections['capsman_admin_features_backup']['options'][] = 'ppc_admin_feature_css_hide_custom_data';
+
+    //Editor Features Pro
+    $backup_sections['capsman_editor_features_backup']['options'][] = 'ppc_feature_post_gutenberg_custom_data';
+    $backup_sections['capsman_editor_features_backup']['options'][] = 'ppc_feature_post_classic_custom_data';
+
     //Admin Menu
     $admin_menu_options = ['capsman_admin_menus', 'capsman_admin_child_menus'];
     $backup_sections['capsman_admin_menu_backup']['label'] = esc_html__('Admin Menu', 'capabilities-pro');
     foreach($admin_menu_options as $admin_menu_option){
         $backup_sections['capsman_admin_menu_backup']['options'][] = $admin_menu_option;
     }
-
-    //Nav Menu
-   $backup_sections['capsman_nav_menu_backup']['label']     = esc_html__('Nav Menu', 'capsman-enhanced');
-   $backup_sections['capsman_nav_menu_backup']['options'][] = "capsman_nav_item_menus";
-
-   //settings
-   $backup_sections['capsman_settings_backup']['label']     = esc_html__('Settings', 'capsman-enhanced');
-   $backup_sections['capsman_settings_backup']['options']   = pp_capabilities_settings_options();
     
 
     return $backup_sections;
@@ -58,13 +58,6 @@ function pp_capabilities_pro_after_role_copied($role_slug, $copied_role) {
     if (is_array($admin_child_menu_option) && array_key_exists($copied_role, $admin_child_menu_option)) {
         $admin_child_menu_option[$role_slug] = $admin_child_menu_option[$copied_role];
         update_option('capsman_admin_child_menus', $admin_child_menu_option, false);
-    }
-
-    //Copy Nav Menu
-    $nav_item_menu_option = !empty(get_option('capsman_nav_item_menus')) ? get_option('capsman_nav_item_menus') : [];
-    if (is_array($nav_item_menu_option) && array_key_exists($copied_role, $nav_item_menu_option)) {
-        $nav_item_menu_option[$role_slug] = $nav_item_menu_option[$copied_role];
-        update_option('capsman_nav_item_menus', $nav_item_menu_option, false);
     }
 }
 

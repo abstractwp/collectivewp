@@ -310,7 +310,7 @@ class Replace
         ) {
             $standard_pairs = $migration_options['search_replace']['standard_search_replace'];
             foreach ($standard_pairs as $key => $pair) {
-                if (in_array($key, $migration_options['search_replace']['standard_options_enabled'], true)) {
+                if (!empty(trim($pair['replace'])) && in_array($key, $migration_options['search_replace']['standard_options_enabled'], true)) {
                     $tmp_find_replace_pairs[$pair['search']] = $pair['replace'];
                 }
             }
@@ -617,24 +617,38 @@ class Replace
             return $pre;
         }
 
-        //Check if find and replace needs be skipped for the current table
-        $skipped_tables = apply_filters('wpmdb_skip_search_replace_tables', []);
-        if (in_array($this->table, $skipped_tables, true)) {
-            return $data;
-        }
-
         //If the intent is find_replace we need to prefix the tables with the temp prefix and wp base table prefix.
-        $table_prefix = '';
+        global $wpdb;
+        $table_prefix = $wpdb->base_prefix;
         if ( 'find_replace' === $this->get_intent() ) {
-            global $wpdb;
-            $table_prefix = $this->properties->temp_prefix . $wpdb->base_prefix;
+
+            $table_prefix = $this->properties->temp_prefix . $table_prefix;
         }
 
-        // Some options contain serialized self-references which leads to memory exhaustion. Skip these.
-        if ( $this->table_is( 'options', $table_prefix ) && 'option_value' === $this->get_column() && is_serialized( $data ) ) {
-            if ( preg_match( '/r\:\d+;/i', $data ) ) {
+        //Check if find and replace needs be skipped for the current table
+        $skipped_tables = apply_filters('wpmdb_skip_search_replace_tables', ['eum_logs']);
+        foreach ($skipped_tables as $skipped_table) {
+            if ($this->table === $table_prefix . $skipped_table) {
                 return $data;
             }
+        }
+
+        if ($this->should_do_reference_check($table_prefix) && is_serialized( $data ) && preg_match('/r\:\d+;/i', $data)) {
+            $current_row   = $this->get_row();
+            $first_row_key = reset($current_row);
+            $skipped       = [
+                'table'          => str_replace('_mig_', '', $this->get_table()),
+                'primary_key'    => $first_row_key,
+                'column'         => $this->get_column(),
+                'contains_match' => $this->has_skipped_values($data)
+            ];
+
+            if (property_exists($this->get_row(), 'option_name') && $this->table_is('options', $table_prefix)) {
+                $skipped['option_name'] = $this->get_row()->option_name;
+            }
+
+            error_log('WPMDB Find & Replace skipped: ' . json_encode($skipped));
+            return $data;
         }
 
         $is_json           = false;
@@ -732,6 +746,39 @@ class Replace
 
         return $data;
     }
+
+    /**
+     * Search unseralized string for potential match
+     *
+     * @param string $data
+     * @return bool
+     **/
+    protected function has_skipped_values($data)
+    {
+        foreach( $this->search as $search_string) {
+            if (false !== strpos($data, $search_string)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Table and cloumns to search for references
+     * @param string $table_prefix
+     * @return bool
+     **/
+    protected function should_do_reference_check($table_prefix)
+    {
+        if ( $this->table_is('options', $table_prefix) && 'option_value' === $this->get_column()) {
+            return true;
+        }
+        if ( $table_prefix . 'duplicator_packages' === $this->get_table()  && 'package' === $this->get_column() ) {
+            return  true;
+        }
+        return false;
+    }
+
 
     /**
      * Getter for the $table class property.

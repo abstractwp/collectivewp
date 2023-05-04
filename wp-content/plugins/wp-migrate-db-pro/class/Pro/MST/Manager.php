@@ -2,7 +2,7 @@
 
 namespace DeliciousBrains\WPMDB\Pro\MST;
 
-use DeliciousBrains\WPMDB\Pro\Addon\AddonManagerInterface;
+use DeliciousBrains\WPMDB\Common\Addon\AddonManagerInterface;
 use DeliciousBrains\WPMDB\WPMDBDI;
 use DeliciousBrains\WPMDB\Pro\MST\CliCommand\MultisiteToolsAddonCli;
 
@@ -11,18 +11,18 @@ class Manager implements AddonManagerInterface
 
     private $cli = false;
 
-    public function register()
+    public function register($licensed)
     {
 
-        add_action('wp_migrate_db_pro_cli_before_load', function () {
+        add_action('wp_migrate_db_pro_cli_before_load', function ($licensed) {
             $this->cli = true;
-            return $this->init();
+            return $this->init($licensed);
         });
 
-        return $this->init();
+        return $this->init($licensed);
     }
 
-    private function init() {
+    private function init($licensed) {
         global $wpmdbpro_multisite_tools;
 
         if ( ! is_null($wpmdbpro_multisite_tools) ) {
@@ -30,13 +30,19 @@ class Manager implements AddonManagerInterface
         }
 
         $container = WPMDBDI::getInstance();
-        $container->get(MultisiteToolsAddon::class)->register();
-        $container->get(MultisiteToolsAddonCli::class)->register();
+        $mst = $container->get(MultisiteToolsAddon::class);
+
+        $mst->register();
+        $mst->set_licensed($licensed);
+
+        $mst_cli = $container->get(MultisiteToolsAddonCli::class);
+        $mst_cli->register();
+
 
         if ($this->cli) {
-            $wpmdbpro_multisite_tools = WPMDBDI::getInstance()->get(MultisiteToolsAddonCli::class);
+            $wpmdbpro_multisite_tools = $mst_cli;
         } else {
-            $wpmdbpro_multisite_tools = WPMDBDI::getInstance()->get(MultisiteToolsAddon::class);
+            $wpmdbpro_multisite_tools = $mst;
         }
 
         add_filter('wpmdb_addon_registered_mst', '__return_true');

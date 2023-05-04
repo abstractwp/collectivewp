@@ -139,8 +139,7 @@ height: 5px;
 }
 
 
-body.capabilities_page_pp-capabilities-admin-menus .pp-capability-menus-select .restrict-column,
-body.capabilities_page_pp-capabilities-nav-menus .pp-capability-menus-select .restrict-column {
+body.capabilities_page_pp-capabilities-admin-menus .pp-capability-menus-select .restrict-column {
     width: 70px !important;
 }
 
@@ -226,10 +225,6 @@ table#akmin .pp-capability-menus-select .restrict-column {
 
 .pp-capability-menus-wrapper .tooltip:hover .tooltiptext {
     visibility: visible;
-}
-
-.capabilities_page_pp-capabilities-admin-menus input.ppc-admin-menu-submit, .capabilities_page_pp-capabilities-nav-menus input.ppc-nav-menu-submit {
-margin-bottom: 10px !important;
 }
 
 @media only screen and ( max-width: 782px ) {

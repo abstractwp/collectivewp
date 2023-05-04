@@ -95,13 +95,11 @@ table.admin-features-block-url-form {
   box-sizing: border-box;
 }
 
-.pp-capability-menus-wrapper.nav-menus .pp-column-right .pp-sidebar-box:first-of-type ul,
 .pp-capability-menus-wrapper.admin-menus .pp-column-right .pp-sidebar-box:first-of-type ul {
     padding: 0 !important;
     margin: 0 !important;
 }
 
-.pp-capability-menus-wrapper.nav-menus .pp-column-right .pp-sidebar-box:first-of-type ul input:disabled,
 .pp-capability-menus-wrapper.admin-menus .pp-column-right .pp-sidebar-box:first-of-type ul input:disabled {
     opacity: 1 !important;
     background: #fff !important;
@@ -110,22 +108,17 @@ table.admin-features-block-url-form {
     border: 1px solid #8c8f94 !important;
 }
 
-.pp-capability-menus-wrapper.nav-menus .pp-column-right .pp-sidebar-box:first-of-type ul input[type=checkbox]:checked::before,
 .pp-capability-menus-wrapper.admin-menus .pp-column-right .pp-sidebar-box:first-of-type ul input[type=checkbox]:checked::before {
     content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCAyMCAyMCIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7Ij48cGF0aCBkPSJNMTQuOTUgNi40NkwxMS40MSAxMGwzLjU0IDMuNTRsLTEuNDEgMS40MUwxMCAxMS40MmwtMy41MyAzLjUzbC0xLjQyLTEuNDJMOC41OCAxMEw1LjA1IDYuNDdsMS40Mi0xLjQyTDEwIDguNThsMy41NC0zLjUzeiIgZmlsbD0iI2RjMTQzYyIvPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgwLCAwLCAwLCAwKSIgLz48L3N2Zz4=) !important;
 }
 
-.pp-capability-menus-wrapper.nav-menus .pp-column-right .pp-sidebar-box:first-of-type ul,
 .pp-capability-menus-wrapper.admin-menus .pp-column-right .pp-sidebar-box:first-of-type ul {
     list-style: none !important;
 }
 
 @media (min-width: 1200px) {
     .pp-capability-menus-wrapper.admin-menus div.pp-column-right {
-        padding-top: 87px;
-    }
-    .pp-capability-menus-wrapper.nav-menus div.pp-column-right {
-        padding-top: 62px;
+        padding-top: 61px;
     }
 }
 

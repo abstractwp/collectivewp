@@ -12,7 +12,7 @@ use DeliciousBrains\WPMDB\Common\Properties\Properties;
 use DeliciousBrains\WPMDB\Common\Sql\Table;
 use DeliciousBrains\WPMDB\Common\Sql\TableHelper;
 use DeliciousBrains\WPMDB\Common\Util\Util;
-use DeliciousBrains\WPMDB\Pro\Addon\Addon;
+use DeliciousBrains\WPMDB\Common\Addon\Addon;
 use DeliciousBrains\WPMDB\Common\Multisite\Multisite;
 use DeliciousBrains\WPMDB\Pro\UI\Template;
 use DeliciousBrains\WPMDB\Pro\MST\MediaFilesCompat;
@@ -89,8 +89,8 @@ class MultisiteToolsAddonCli extends MultisiteToolsAddon
         if ($profile['multisite_tools']['enabled']) {
             $site_id = $profile['mst_subsite_to_subsite'] ? $profile['mst_destination_subsite'] : $profile['mst_selected_subsite'];
         }
-       
-        if (1 < $site_id) {
+
+        if ($destination_site['is_multisite'] === 'true' && 1 < $site_id) {
             $profile['new_prefix'] = $destination_prefix . $site_id . '_';
         } else {
             $profile['new_prefix'] = $destination_prefix;
@@ -124,15 +124,17 @@ class MultisiteToolsAddonCli extends MultisiteToolsAddon
             return $profile;
         }
         $mst_select_subsite      = $mst['enabled'] ? '1' : '0';
-        $mst_destination_subsite = isset($mst['destination_subsite']) ? $mst['destination_subsite'] : '0';
-        $mst_subsite_to_subsite = isset($profile['mst_subsite_to_subsite']) ? $profile['mst_subsite_to_subsite'] : $profile['current_migration']['twoMultisites']; 
+        $mst_subsite_to_subsite  = isset($profile['mst_subsite_to_subsite']) ? $profile['mst_subsite_to_subsite'] : $profile['current_migration']['twoMultisites'];
         $mst_args = [
             'mst_select_subsite'      => $mst_select_subsite,
             'mst_selected_subsite'    => (int)$mst['selected_subsite'],
-            'mst_destination_subsite' => (int)$mst_destination_subsite,
             'mst_subsite_to_subsite'  => $mst_subsite_to_subsite,
             'new_prefix'              => $mst['new_prefix'],
         ];
+
+        if ($mst_subsite_to_subsite === true) {
+            $mst_args['mst_destination_subsite'] = isset($mst['destination_subsite']) ? $mst['destination_subsite'] : '0';
+        }
 
         $profile = array_merge($profile, $mst_args);
 
@@ -151,7 +153,7 @@ class MultisiteToolsAddonCli extends MultisiteToolsAddon
             && $form_data_parsed['mst_select_subsite']) {
             $args['mst_select_subsite']   = '1';
             $args['mst_selected_subsite'] = $form_data_parsed['mst_selected_subsite'];
-            
+
         }
         if (isset($form_data_parsed['mst_destination_subsite'])) {
             $args['mst_destination_subsite'] = $form_data_parsed['mst_destination_subsite'];
@@ -237,7 +239,7 @@ class MultisiteToolsAddonCli extends MultisiteToolsAddon
             if (empty($assoc_args['subsite-source']) || empty($assoc_args['subsite-destination']) ) {
                 return $this->cli->cli_error(__('A valid Blog ID or Subsite URL must be supplied for both networks to make use of the subsite to subsite option', 'wp-migrate-db-pro-multisite-tools'));
             }
-            
+
             if (!is_multisite()) {
                 return $this->cli->cli_error(__('Both source and destination must be networks to make use of the subsite to subsite option', 'wp-migrate-db-pro-multisite-tools'));
             }
@@ -278,10 +280,11 @@ class MultisiteToolsAddonCli extends MultisiteToolsAddon
             'mst_select_subsite',
             'mst_subsite_to_subsite',
             'mst_selected_subsite',
-            'mst_destination_subsite',
             'new_prefix'
         );
-
+        if ($mst_subsite_to_subsite === true) {
+            $filtered_profile['mst_destination_subsite'] = $mst_destination_subsite;
+        }
         return array_merge($profile, $filtered_profile);
     }
 
