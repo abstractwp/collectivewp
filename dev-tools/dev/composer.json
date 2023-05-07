@@ -34,9 +34,7 @@
       "pronamic/gravityforms": "^2.7.5",
       "wpackagist-plugin/buddypress":"11.1.0",
       "wpackagist-plugin/bbpress":"2.6.9",
-      "wpackagist-plugin/publishpress":"3.10.1",
-      "wpackagist-plugin/publishpress-checklists":"2.7.4"
-
+      "wpackagist-plugin/publishpress":"3.10.1"
   },
   "extra": {
     "downloads": {

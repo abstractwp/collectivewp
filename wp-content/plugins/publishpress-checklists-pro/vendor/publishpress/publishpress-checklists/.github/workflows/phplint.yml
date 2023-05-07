@@ -1,0 +1,32 @@
+name: PHPLint
+
+on: [push]
+
+jobs:
+  phplint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        extensions: intl
+      env:
+        COMPOSER_TOKEN: ${{ secrets.COMPOSER_TOKEN }}
+
+    - name: Update the composer.lock file
+      run: composer update --lock
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Check syntax errors
+      run: ./vendor/bin/phplint
