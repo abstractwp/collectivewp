@@ -5,7 +5,7 @@
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '488ae3e4187e9c83fcea10012e0a2bfa7a4d404d',
+        'reference' => '8deeee82ccaf507e96f03430b8cc780a3961b093',
         'name' => 'publishpress/capabilities-pro',
         'dev' => false,
     ),
@@ -52,7 +52,7 @@
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '488ae3e4187e9c83fcea10012e0a2bfa7a4d404d',
+            'reference' => '8deeee82ccaf507e96f03430b8cc780a3961b093',
             'dev_requirement' => false,
         ),
         'publishpress/publishpress-instance-protection' => array(
