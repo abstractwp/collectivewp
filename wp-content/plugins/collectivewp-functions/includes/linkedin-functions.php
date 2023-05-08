@@ -105,27 +105,23 @@ function linkedin_register_shortcode( $atts ) {
 			$last_name     = $profile_data["lastName"]["localized"]["en_US"];
 			$email_address = $email_data["elements"][0]["handle~"]["emailAddress"];
 			$username      = substr($email_address, 0, strpos($email_address, "@"));
-			$password      = wp_generate_password();
-
-			// Set the user details
-			$user_data = array(
-				'user_login' => $username,
-				'user_email' => $email_address,
-				'user_pass'  => $password,
-				'first_name'  => $first_name,
-				'last_name'  => $last_name,
-				'role'       => 'subscriber' // Set the user role (subscriber, editor, etc.)
-			);
+			$password  = wp_generate_password();
 
 			// Insert the new user
-			$user_id = wp_insert_user( $user_data );
+			$user_id = bp_core_signup_user( $username, $password, $email_address, array( 'meta' => [] ) );
 
 			// Check if the user was successfully created
 			if ( ! is_wp_error( $user_id ) ) {
+				$user_data = array(
+					'ID' => $user_id,
+					'display_name' => $first_name . '##' . $last_name
+				);
+				wp_update_user( $user_data );
+
 				wp_redirect( $thank_you_url );
 				exit;
 			} else {
-				$messages = $user_id->get_error_message();
+				$messages = 'Register fail!';
 			}
 		} else {
 			if ( isset( $token_data->error_description ) && '' !== $token_data->error_description ) {
