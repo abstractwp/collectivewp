@@ -255,3 +255,98 @@ function linkedin_login_shortcode( $atts ) {
 		return '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
 	}
 }
+
+function send_user_data_to_ac( $user_id ) {
+	// Get user data
+	$user = get_userdata( $user_id );
+	$data_name = explode( "##", $user->display_name );
+	$first_name = $data_name[0];
+	$last_name = $data_name[1];
+	$email     = $user->user_email;
+	$password  = wp_generate_password();
+
+	$user_data = array(
+		'ID' => $user_id,
+		'first_name' => $first_name,
+		'last_name' => $last_name,
+		'display_name' => $user->display_name,
+		'password' => $password
+	);
+
+	wp_update_user($user_data);
+
+	// Prepare data for ActiveCampaign form.
+	$ac_data = array(
+		'firstName' => $first_name,
+		'lastName' => $last_name,
+		'email'     => $email,
+		'password'  => $password
+	);
+
+	// Set up the API URL and key
+	$api_url = 'https://collectivewp.api-us1.com';
+	$api_key = 'aa1c465824f2340a00302d6cc125ada6f16170beb71a5006028afb002e76aab832ff341a';
+
+	$params = array(
+		// this is the action that adds a contact
+		'api_action'   => 'contact_add',
+		'api_output'   => 'serialize',
+	);
+
+	// Set up the data to send
+	$data = array(
+		'contact' => $ac_data,
+		'form' => 3
+	);
+	$post = array(
+		'email'                    => $email,
+		'first_name'                => $first_name,
+		'last_name'                => $last_name,
+		'form'          => 3, // Subscription Form ID, to inherit those redirection settings
+		'instantresponders[2]' => 0, // set to 0 to if you don't want to sent instant autoresponders
+	);
+
+	// This section takes the input fields and converts them to the proper format
+	$query = "";
+	foreach( $params as $key => $value ) $query .= urlencode($key) . '=' . urlencode($value) . '&';
+	$query = rtrim($query, '& ');
+
+	// This section takes the input data and converts it to the proper format
+	$data = "";
+	foreach( $post as $key => $value ) $data .= urlencode($key) . '=' . urlencode($value) . '&';
+	$data = rtrim($data, '& ');
+
+	// clean up the url
+	$api_url = rtrim($api_url, '/ ');
+
+	// This sample code uses the CURL library for php to establish a connection,
+	// submit your request, and show (print out) the response.
+	if ( !function_exists('curl_init') ) die('CURL not supported. (introduced in PHP 4.0.2)');
+
+	if ( $params['api_output'] == 'json' && !function_exists('json_decode') ) {
+			die('JSON not supported. (introduced in PHP 5.2.0)');
+	}
+	$api = $api_url . '/admin/api.php?' . $query;
+
+	$request = curl_init($api);
+	curl_setopt($request, CURLOPT_HTTPHEADER, array('API-TOKEN: ' . $api_key));  //  Provide the API Token via the API-TOKEN header
+	curl_setopt($request, CURLOPT_HEADER, 0);
+	curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($request, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($request, CURLOPT_FOLLOWLOCATION, true);
+	$response = (string)curl_exec($request);
+	curl_close($request);
+
+	if ( !$response ) {
+		die('Nothing was returned. Do you have a connection to Email Marketing server?');
+	}
+
+	$result = unserialize($response);
+
+
+	// Result info that is always returned
+	echo '<div class="bp-message success">' . $result['result_message'] . '</div>';
+
+}
+
+add_action( 'bp_core_activated_user', 'send_user_data_to_ac' );
