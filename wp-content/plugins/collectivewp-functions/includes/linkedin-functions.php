@@ -22,14 +22,9 @@ function linkedin_register_shortcode( $atts ) {
 	// Your LinkedIn application's Client ID and redirect URI
 	$client_id = get_option('linkedin_client_id');
 	$client_secret = get_option('linkedin_client_secret');
-	$redirect_uri = get_option('linkedin_redirect_uri');
-	$form_id = get_option('linkedin_form_id');
+	$redirect_uri = site_url( '/register/' );
 
-	// Mapping fields.
-	$linkedin_field_first_name = get_option('linkedin_field_first_name') ?? 'input_1.3';
-	$linkedin_field_last_name = get_option('linkedin_field_last_name') ?? 'input_1.6';
-	$linkedin_field_email_address = get_option('linkedin_field_email_address') ?? 'input_2';
-	$linkedin_field_username = get_option('linkedin_field_username') ?? 'input_3';
+	$thank_you_url = get_option('linkedin_redirect_uri') ?? site_url( '/register/thank-you-for-registering/' );
 
 	// Set the query parameters for retrieving the authorization code.
 	$params = array(
@@ -109,51 +104,30 @@ function linkedin_register_shortcode( $atts ) {
 			$first_name     = $profile_data["firstName"]["localized"]["en_US"];
 			$last_name     = $profile_data["lastName"]["localized"]["en_US"];
 			$email_address = $email_data["elements"][0]["handle~"]["emailAddress"];
+			$username      = substr($email_address, 0, strpos($email_address, "@"));
+			$password      = wp_generate_password();
 
-
-			// Set the form ID and entry data.
-			$entry_data = array(
-				$linkedin_field_first_name => $first_name,
-				$linkedin_field_last_name => $last_name,
-				$linkedin_field_email_address   => $email_address,
-				$linkedin_field_username   => substr($email_address, 0, strpos($email_address, "@")),
+			// Set the user details
+			$user_data = array(
+				'user_login' => $username,
+				'user_email' => $email_address,
+				'user_pass'  => $password,
+				'first_name'  => $first_name,
+				'last_name'  => $last_name,
+				'role'       => 'subscriber' // Set the user role (subscriber, editor, etc.)
 			);
 
-			// Create a new instance of the Gravity Forms API.
-			$api = new GFAPI();
+			// Insert the new user
+			$user_id = wp_insert_user( $user_data );
 
-			// Check if the form ID is valid.
-			$form = $api->get_form( $form_id );
-			if ( $form ) {
-				// Create the new entry.
-				$entry = $api->submit_form( $form_id, $entry_data );
-				// Check if the entry was created successfully.
-				if ( is_wp_error( $entry ) ) {
-					error_log( 'Failed to create Gravity Forms entry: ' . $entry->get_error_message() );
-				} else {
-					if ( isset($entry['entry_id']) ) {
-						error_log( 'Gravity Forms entry created with ID: ' . $entry['entry_id'] );
-						if ( isset( $entry['confirmation_type'] ) && $entry['confirmation_type'] === 'redirect' ) {
-							wp_redirect( $entry['confirmation_redirect'] );
-							exit;
-						} else {
-							$messages = $entry['confirmation_message'];
-						}
-
-					} else {
-						if (isset($entry['validation_messages'])) {
-							array_unique( $entry['validation_messages'] );
-							$messages = implode('<br/>', $entry['validation_messages']);
-						}
-					}
-				}
-
+			// Check if the user was successfully created
+			if ( ! is_wp_error( $user_id ) ) {
+				wp_redirect( $thank_you_url );
+				exit;
 			} else {
-				// Invalid form ID.
-				error_log( 'Invalid Gravity Forms form ID: ' . $form_id );
+				$messages = $user_id->get_error_message();
 			}
-		}
-		else {
+		} else {
 			if ( isset( $token_data->error_description ) && '' !== $token_data->error_description ) {
 				error_log( $token_data->error_description );
 			}
@@ -165,7 +139,7 @@ function linkedin_register_shortcode( $atts ) {
 	} else {
 		$return_html .= '<p>' . $messages . '</p>';
 
-		if (strpos($messages, 'This email address is already registered') !== false) {
+		if (strpos($messages, 'Sorry, that username already exists!') !== false) {
 			$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
 
 			$params = array(
