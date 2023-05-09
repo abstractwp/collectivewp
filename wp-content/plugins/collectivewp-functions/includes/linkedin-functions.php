@@ -264,24 +264,18 @@ function send_user_data_to_ac( $user_id ) {
 	$last_name = $data_name[1];
 	$email     = $user->user_email;
 	$password  = wp_generate_password();
+	$username  = $user->user_login;
 
 	$user_data = array(
 		'ID'           => $user_id,
 		'first_name'    => $first_name,
 		'last_name'    => $last_name,
-		'display_name' => $user->display_name,
-		'password'     => $password
+		'display_name' => $user->display_name
 	);
 
 	wp_update_user($user_data);
 
-	// Prepare data for ActiveCampaign form.
-	$ac_data = array(
-		'firstName'  => $first_name,
-		'lastName'  => $last_name,
-		'email'     => $email,
-		'password'  => $password
-	);
+	wp_set_password($password, $user_id);
 
 	// Set up the API URL and key
 	$api_url = get_option('activecampaign_api_uri');
@@ -294,17 +288,13 @@ function send_user_data_to_ac( $user_id ) {
 		'api_output'   => 'serialize',
 	);
 
-	// Set up the data to send
-	$data = array(
-		'contact' => $ac_data,
-		'form'    => $form_id
-	);
-
 	$post = array(
-		'email'     => $email,
-		'first_name' => $first_name,
-		'last_name' => $last_name,
-		'form'      => $form_id
+		'email'              => $email,
+		'first_name'          => $first_name,
+		'last_name'          => $last_name,
+		'form'               => $form_id,
+		'field[%PASSWORD%,0]' => $password,
+		'field[%USERNAME%,0]' => $username
 	);
 
 	$query = "";
