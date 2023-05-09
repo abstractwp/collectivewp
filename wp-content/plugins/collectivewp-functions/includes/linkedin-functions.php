@@ -121,7 +121,7 @@ function linkedin_register_shortcode( $atts ) {
 				wp_redirect( $thank_you_url );
 				exit;
 			} else {
-				$messages = 'Register fail!';
+				$messages = $user_id->get_error_message();
 			}
 		} else {
 			if ( isset( $token_data->error_description ) && '' !== $token_data->error_description ) {
