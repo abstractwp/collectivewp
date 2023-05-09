@@ -23,6 +23,9 @@ function linkedin_register_settings() {
 	register_setting( 'linkedin_settings', 'linkedin_client_id' );
 	register_setting( 'linkedin_settings', 'linkedin_client_secret' );
 	register_setting( 'linkedin_settings', 'linkedin_redirect_uri' );
+	register_setting( 'linkedin_settings', 'activecampaign_api_uri' );
+	register_setting( 'linkedin_settings', 'activecampaign_api_key' );
+	register_setting( 'linkedin_settings', 'activecampaign_form_id' );
 }
 
 // Display the plugin settings page.
@@ -45,7 +48,24 @@ function linkedin_settings_callback() {
 				</tr>
 				<tr valign="top">
 						<th scope="row"><?php esc_html_e( 'Redirect URI', 'linkedin-settings' ); ?></th>
-						<td><input type="text" name="linkedin_redirect_uri" value="<?php echo esc_attr( get_option( 'linkedin_redirect_uri' ) ); ?>" /></td>
+						<td><input type="text" name="linkedin_redirect_uri" value="<?php echo esc_attr( get_option( 'linkedin_redirect_uri' ) ); ?>" style="width: 500px" /></td>
+				</tr>
+			</table>
+
+			<table class="form-table">
+				<p><strong><?php esc_html_e('ActiveCampaign Settings', 'linkedin-login'); ?></strong></p>
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'API URL', 'linkedin-settings' ); ?></th>
+					<td><input type="text" name="activecampaign_api_uri" value="<?php echo esc_attr( get_option( 'activecampaign_api_uri' ) ); ?>" style="width: 500px" /></td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'API Key', 'linkedin-settings' ); ?></th>
+					<td><input type="text" name="activecampaign_api_key" value="<?php echo esc_attr( get_option( 'activecampaign_api_key' ) ); ?>" style="width: 500px" /></td>
+				</tr>
+
+				<tr valign="top">
+					<th scope="row"><?php esc_html_e( 'Register Form ID', 'linkedin-settings' ); ?></th>
+					<td><input type="text" name="activecampaign_form_id" value="<?php echo esc_attr( get_option( 'activecampaign_form_id' ) ); ?>" style="width: 500px" /></td>
 				</tr>
 			</table>
 			<?php submit_button(); ?>

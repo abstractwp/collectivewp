@@ -266,26 +266,27 @@ function send_user_data_to_ac( $user_id ) {
 	$password  = wp_generate_password();
 
 	$user_data = array(
-		'ID' => $user_id,
-		'first_name' => $first_name,
-		'last_name' => $last_name,
+		'ID'           => $user_id,
+		'first_name'    => $first_name,
+		'last_name'    => $last_name,
 		'display_name' => $user->display_name,
-		'password' => $password
+		'password'     => $password
 	);
 
 	wp_update_user($user_data);
 
 	// Prepare data for ActiveCampaign form.
 	$ac_data = array(
-		'firstName' => $first_name,
-		'lastName' => $last_name,
+		'firstName'  => $first_name,
+		'lastName'  => $last_name,
 		'email'     => $email,
 		'password'  => $password
 	);
 
 	// Set up the API URL and key
-	$api_url = 'https://collectivewp.api-us1.com';
-	$api_key = 'aa1c465824f2340a00302d6cc125ada6f16170beb71a5006028afb002e76aab832ff341a';
+	$api_url = get_option('activecampaign_api_uri');
+	$api_key = get_option('activecampaign_api_key');
+	$form_id = get_option('activecampaign_form_id');
 
 	$params = array(
 		// this is the action that adds a contact
@@ -296,31 +297,26 @@ function send_user_data_to_ac( $user_id ) {
 	// Set up the data to send
 	$data = array(
 		'contact' => $ac_data,
-		'form' => 3
-	);
-	$post = array(
-		'email'                    => $email,
-		'first_name'                => $first_name,
-		'last_name'                => $last_name,
-		'form'          => 3, // Subscription Form ID, to inherit those redirection settings
-		'instantresponders[2]' => 0, // set to 0 to if you don't want to sent instant autoresponders
+		'form'    => $form_id
 	);
 
-	// This section takes the input fields and converts them to the proper format
+	$post = array(
+		'email'     => $email,
+		'first_name' => $first_name,
+		'last_name' => $last_name,
+		'form'      => $form_id
+	);
+
 	$query = "";
 	foreach( $params as $key => $value ) $query .= urlencode($key) . '=' . urlencode($value) . '&';
 	$query = rtrim($query, '& ');
 
-	// This section takes the input data and converts it to the proper format
 	$data = "";
 	foreach( $post as $key => $value ) $data .= urlencode($key) . '=' . urlencode($value) . '&';
 	$data = rtrim($data, '& ');
 
-	// clean up the url
 	$api_url = rtrim($api_url, '/ ');
 
-	// This sample code uses the CURL library for php to establish a connection,
-	// submit your request, and show (print out) the response.
 	if ( !function_exists('curl_init') ) die('CURL not supported. (introduced in PHP 4.0.2)');
 
 	if ( $params['api_output'] == 'json' && !function_exists('json_decode') ) {
@@ -329,7 +325,7 @@ function send_user_data_to_ac( $user_id ) {
 	$api = $api_url . '/admin/api.php?' . $query;
 
 	$request = curl_init($api);
-	curl_setopt($request, CURLOPT_HTTPHEADER, array('API-TOKEN: ' . $api_key));  //  Provide the API Token via the API-TOKEN header
+	curl_setopt($request, CURLOPT_HTTPHEADER, array('API-TOKEN: ' . $api_key));
 	curl_setopt($request, CURLOPT_HEADER, 0);
 	curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($request, CURLOPT_POSTFIELDS, $data);
@@ -343,10 +339,9 @@ function send_user_data_to_ac( $user_id ) {
 
 	$result = unserialize($response);
 
-
-	// Result info that is always returned
-	echo '<div class="bp-message success">' . $result['result_message'] . '</div>';
-
+	if ( ! $result['result_code'] ) {
+		error_log( $result['result_message'] );
+	}
 }
 
 add_action( 'bp_core_activated_user', 'send_user_data_to_ac' );
