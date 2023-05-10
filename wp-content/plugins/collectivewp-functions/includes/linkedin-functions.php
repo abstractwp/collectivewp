@@ -22,14 +22,9 @@ function linkedin_register_shortcode( $atts ) {
 	// Your LinkedIn application's Client ID and redirect URI
 	$client_id = get_option('linkedin_client_id');
 	$client_secret = get_option('linkedin_client_secret');
-	$redirect_uri = get_option('linkedin_redirect_uri');
-	$form_id = get_option('linkedin_form_id');
+	$redirect_uri = site_url( '/register/' );
 
-	// Mapping fields.
-	$linkedin_field_first_name = get_option('linkedin_field_first_name') ?? 'input_1.3';
-	$linkedin_field_last_name = get_option('linkedin_field_last_name') ?? 'input_1.6';
-	$linkedin_field_email_address = get_option('linkedin_field_email_address') ?? 'input_2';
-	$linkedin_field_username = get_option('linkedin_field_username') ?? 'input_3';
+	$thank_you_url = get_option('linkedin_redirect_uri') ?? site_url( '/register/thank-you-for-registering/' );
 
 	// Set the query parameters for retrieving the authorization code.
 	$params = array(
@@ -109,51 +104,26 @@ function linkedin_register_shortcode( $atts ) {
 			$first_name     = $profile_data["firstName"]["localized"]["en_US"];
 			$last_name     = $profile_data["lastName"]["localized"]["en_US"];
 			$email_address = $email_data["elements"][0]["handle~"]["emailAddress"];
+			$username      = substr($email_address, 0, strpos($email_address, "@"));
+			$password  = wp_generate_password();
 
+			// Insert the new user
+			$user_id = bp_core_signup_user( $username, $password, $email_address, array( 'meta' => [] ) );
 
-			// Set the form ID and entry data.
-			$entry_data = array(
-				$linkedin_field_first_name => $first_name,
-				$linkedin_field_last_name => $last_name,
-				$linkedin_field_email_address   => $email_address,
-				$linkedin_field_username   => substr($email_address, 0, strpos($email_address, "@")),
-			);
+			// Check if the user was successfully created
+			if ( ! is_wp_error( $user_id ) ) {
+				$user_data = array(
+					'ID' => $user_id,
+					'display_name' => $first_name . '##' . $last_name
+				);
+				wp_update_user( $user_data );
 
-			// Create a new instance of the Gravity Forms API.
-			$api = new GFAPI();
-
-			// Check if the form ID is valid.
-			$form = $api->get_form( $form_id );
-			if ( $form ) {
-				// Create the new entry.
-				$entry = $api->submit_form( $form_id, $entry_data );
-				// Check if the entry was created successfully.
-				if ( is_wp_error( $entry ) ) {
-					error_log( 'Failed to create Gravity Forms entry: ' . $entry->get_error_message() );
-				} else {
-					if ( isset($entry['entry_id']) ) {
-						error_log( 'Gravity Forms entry created with ID: ' . $entry['entry_id'] );
-						if ( isset( $entry['confirmation_type'] ) && $entry['confirmation_type'] === 'redirect' ) {
-							wp_redirect( $entry['confirmation_redirect'] );
-							exit;
-						} else {
-							$messages = $entry['confirmation_message'];
-						}
-
-					} else {
-						if (isset($entry['validation_messages'])) {
-							array_unique( $entry['validation_messages'] );
-							$messages = implode('<br/>', $entry['validation_messages']);
-						}
-					}
-				}
-
+				wp_redirect( $thank_you_url );
+				exit;
 			} else {
-				// Invalid form ID.
-				error_log( 'Invalid Gravity Forms form ID: ' . $form_id );
+				$messages = $user_id->get_error_message();
 			}
-		}
-		else {
+		} else {
 			if ( isset( $token_data->error_description ) && '' !== $token_data->error_description ) {
 				error_log( $token_data->error_description );
 			}
@@ -165,7 +135,7 @@ function linkedin_register_shortcode( $atts ) {
 	} else {
 		$return_html .= '<p>' . $messages . '</p>';
 
-		if (strpos($messages, 'This email address is already registered') !== false) {
+		if (strpos($messages, 'Sorry, that username already exists!') !== false) {
 			$auth_url = "https://www.linkedin.com/oauth/v2/authorization";
 
 			$params = array(
@@ -285,3 +255,83 @@ function linkedin_login_shortcode( $atts ) {
 		return '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
 	}
 }
+
+function send_user_data_to_ac( $user_id ) {
+	// Get user data
+	$user = get_userdata( $user_id );
+	$data_name = explode( "##", $user->display_name );
+	$first_name = $data_name[0];
+	$last_name = $data_name[1];
+	$email     = $user->user_email;
+	$password  = wp_generate_password();
+	$username  = $user->user_login;
+
+	$user_data = array(
+		'ID'           => $user_id,
+		'first_name'    => $first_name,
+		'last_name'    => $last_name,
+		'display_name' => $user->display_name
+	);
+
+	wp_update_user($user_data);
+
+	wp_set_password($password, $user_id);
+
+	// Set up the API URL and key
+	$api_url = get_option('activecampaign_api_uri');
+	$api_key = get_option('activecampaign_api_key');
+	$form_id = get_option('activecampaign_form_id');
+
+	$params = array(
+		// this is the action that adds a contact
+		'api_action'   => 'contact_add',
+		'api_output'   => 'serialize',
+	);
+
+	$post = array(
+		'email'              => $email,
+		'first_name'          => $first_name,
+		'last_name'          => $last_name,
+		'form'               => $form_id,
+		'field[%PASSWORD%,0]' => $password,
+		'field[%USERNAME%,0]' => $username
+	);
+
+	$query = "";
+	foreach( $params as $key => $value ) $query .= urlencode($key) . '=' . urlencode($value) . '&';
+	$query = rtrim($query, '& ');
+
+	$data = "";
+	foreach( $post as $key => $value ) $data .= urlencode($key) . '=' . urlencode($value) . '&';
+	$data = rtrim($data, '& ');
+
+	$api_url = rtrim($api_url, '/ ');
+
+	if ( !function_exists('curl_init') ) die('CURL not supported. (introduced in PHP 4.0.2)');
+
+	if ( $params['api_output'] == 'json' && !function_exists('json_decode') ) {
+			die('JSON not supported. (introduced in PHP 5.2.0)');
+	}
+	$api = $api_url . '/admin/api.php?' . $query;
+
+	$request = curl_init($api);
+	curl_setopt($request, CURLOPT_HTTPHEADER, array('API-TOKEN: ' . $api_key));
+	curl_setopt($request, CURLOPT_HEADER, 0);
+	curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($request, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($request, CURLOPT_FOLLOWLOCATION, true);
+	$response = (string)curl_exec($request);
+	curl_close($request);
+
+	if ( !$response ) {
+		die('Nothing was returned. Do you have a connection to Email Marketing server?');
+	}
+
+	$result = unserialize($response);
+
+	if ( ! $result['result_code'] ) {
+		error_log( $result['result_message'] );
+	}
+}
+
+add_action( 'bp_core_activated_user', 'send_user_data_to_ac' );
