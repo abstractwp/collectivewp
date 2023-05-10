@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "@wordpress/babel-preset-default"
+    ],
+    [
+      "minify"
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/transform-react-jsx",
+      {
+        "pragma": "wp.element.createElement"
+      }
+    ],
+    "@babel/plugin-proposal-class-properties"
+  ],
+  "sourceMaps": "inline"
+}

@@ -24,6 +24,29 @@ wp-content/plugins/**
 *.jar
 *.rar
 *.tar
+*.zip
+*.tgz
+!wp-includes/**/*.gz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
 *.log
 *.sql
 *.sqlite
@@ -47,8 +70,6 @@ Thumbs.db
 !wp-config-dev.php
 !CHANGELOG.md
 !.gitignore
-!.wpe-pull-ignore
-!.wpe-push-ignore
 
 
 #############################################
@@ -84,26 +105,6 @@ Thumbs.db
 # wp-content/wp-cache-config.php
 # wp-content/cache/*
 # wp-content/cache/supercache/*
-
-# WP Engine specific files
-# NOTE:
-#   These files are specific to running a WordPress site at WP Engine and would
-#   likely result in a broken production site if modified in production (in
-#   fact, permissions would prevent modification for many of these files). It is
-#   strongly recommended that you do not attempt to modify these files in
-#   production.
-/_wpeprivate
-# /wp-content/object-cache.php
-# /wp-content/mu-plugins/mu-plugin.php
-# /wp-content/mu-plugins/slt-force-strong-passwords.php
-# /wp-content/mu-plugins/stop-long-comments.php
-# /wp-content/mu-plugins/force-strong-passwords*
-# /wp-content/mu-plugins/wpe-devkit*
-# /wp-content/mu-plugins/wpengine-common*
-# /wp-content/mu-plugins/wpengine-excerpt*
-# /wp-content/plugins/wpengine-snapshot/snapshots
-# /wp-content/mysql.sql
-# /.wpe-devkit
 
 # Some other files which may be desirable to skip under certain circumstances
 #.listing
@@ -202,12 +203,18 @@ Thumbs.db
 !wp-content/plugins/advanced-custom-fields-pro/**
 !wp-content/plugins/capabilities-pro/
 !wp-content/plugins/capabilities-pro/**
+!wp-content/plugins/publishpress-checklists-pro/
+!wp-content/plugins/publishpress-checklists-pro/**
 !wp-content/plugins/wp-migrate-db-pro/
 !wp-content/plugins/wp-migrate-db-pro/**
 !wp-content/plugins/facetwp/
 !wp-content/plugins/facetwp/**
 !wp-content/plugins/gw-submit-to-access/
 !wp-content/plugins/gw-submit-to-access/**
+!wp-content/plugins/gravityformsactivecampaign/
+!wp-content/plugins/gravityformsactivecampaign/**
+!wp-content/plugins/gravityformsuserregistration/
+!wp-content/plugins/gravityformsuserregistration/**
 
 # Theme
 
