@@ -32,6 +32,8 @@
       "wpackagist-plugin/wordpress-seo":"20.5",
       "wpackagist-plugin/so-clean-up-wp-seo":"4.0.0",
       "pronamic/gravityforms": "^2.7.4",
+      "wpackagist-plugin/buddypress":"11.1.0",
+      "wpackagist-plugin/bbpress":"2.6.9",
       "wpackagist-plugin/publishpress":"3.10.1"
   },
   "extra": {
