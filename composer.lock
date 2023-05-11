@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd10ef6fd9e2e9b658ea2d547e72aacf",
+    "content-hash": "a1a55c193917a0ac13656c09356b0577",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -204,6 +204,74 @@
                 }
             ],
             "time": "2022-08-20T06:45:11+00:00"
+        },
+        {
+            "name": "johnbillion/user-switching",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnbillion/user-switching.git",
+                "reference": "7a0f23cdfe0b9e7e37f3d44525d8bd98511983ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnbillion/user-switching/zipball/7a0f23cdfe0b9e7e37f3d44525d8bd98511983ef",
+                "reference": "7a0f23cdfe0b9e7e37f3d44525d8bd98511983ef",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1 || ^2",
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "codeception/module-cli": "^1.0",
+                "codeception/module-db": "^1.0",
+                "codeception/module-phpbrowser": "^1.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "*",
+                "lucatume/wp-browser": "^3.0",
+                "phpcompatibility/php-compatibility": "^9",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "roots/wordpress-core-installer": "^1.0.0",
+                "roots/wordpress-full": "*",
+                "szepeviktor/phpstan-wordpress": "^1.0",
+                "vlucas/phpdotenv": "^3",
+                "wp-cli/core-command": "^2",
+                "wp-cli/db-command": "^2",
+                "wp-cli/extension-command": "^2",
+                "wp-cli/language-command": "^2",
+                "wp-cli/rewrite-command": "^2",
+                "wp-coding-standards/wpcs": "^2"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "wordpress-install-dir": "tests/wordpress"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "John Blackbourn",
+                    "homepage": "https://johnblackbourn.com/"
+                }
+            ],
+            "description": "Instant switching between user accounts in WordPress.",
+            "homepage": "https://github.com/johnbillion/user-switching",
+            "support": {
+                "forum": "https://wordpress.org/support/plugin/user-switching",
+                "issues": "https://github.com/johnbillion/user-switching/issues",
+                "source": "https://github.com/johnbillion/user-switching"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/johnbillion",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-30T11:20:41+00:00"
         },
         {
             "name": "pantheon-systems/wp-native-php-sessions",

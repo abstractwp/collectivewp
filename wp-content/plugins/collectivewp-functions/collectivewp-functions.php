@@ -163,6 +163,28 @@ function hide_bp_notice() {
 add_action('init', 'hide_bp_notice');
 
 function custom_login_url() {
+	$login_page = get_page_by_path('login');
+	if ( ! isset( $login_page ) ) {
+		return;
+	}
 	return home_url( '/login/' );
 }
 add_filter( 'login_url', 'custom_login_url', PHP_INT_MAX );
+
+function custom_login_redirect( $redirect_to, $request, $user ) {
+	if ( is_wp_error( $user ) )
+		return $redirect_to;
+
+	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+		if ( in_array( 'administrator', $user->roles ) ) {
+			// Redirect administrators to wp-admin dashboard
+			return admin_url();
+		} else {
+			// Redirect users to bbPress forum
+			return bbp_get_user_profile_url( $user->ID );
+		}
+	}
+
+	return $redirect_to;
+}
+add_filter( 'login_redirect', 'custom_login_redirect', 10, 3 );
