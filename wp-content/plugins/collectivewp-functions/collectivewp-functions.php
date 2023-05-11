@@ -241,3 +241,12 @@ function custom_bbpress_text( $translated_text, $text, $domain ) {
 }
 add_filter( 'gettext', 'custom_bbpress_text', 10, 3 );
 
+/**
+ * Hide adminbar on frontend for non-admins.
+ */
+function remove_admin_bar_for_non_admins() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		show_admin_bar( false );
+	}
+}
+add_action( 'after_setup_theme', 'remove_admin_bar_for_non_admins' );
