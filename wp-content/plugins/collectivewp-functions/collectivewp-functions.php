@@ -163,6 +163,90 @@ function hide_bp_notice() {
 add_action('init', 'hide_bp_notice');
 
 function custom_login_url() {
+	$login_page = get_page_by_path('login');
+	if ( ! isset( $login_page ) ) {
+		return;
+	}
 	return home_url( '/login/' );
 }
 add_filter( 'login_url', 'custom_login_url', PHP_INT_MAX );
+
+function custom_login_redirect( $redirect_to, $request, $user ) {
+	if ( is_wp_error( $user ) )
+		return $redirect_to;
+
+	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+		if ( in_array( 'administrator', $user->roles ) ) {
+			// Redirect administrators to wp-admin dashboard
+			return admin_url();
+		} else {
+			// Redirect users to bbPress forum
+			return bbp_get_user_profile_url( $user->ID );
+		}
+	}
+
+	return $redirect_to;
+}
+add_filter( 'login_redirect', 'custom_login_redirect', 10, 3 );
+
+function custom_bbpress_forum_title( $title ) {
+	// Modify the title as needed
+	$new_title = 'Connects';
+
+	return $new_title;
+}
+add_filter( 'bbp_get_forum_archive_title', 'custom_bbpress_forum_title' );
+
+function custom_bbpress_archive_title( $title ) {
+	// Modify the title as needed
+	$new_title = 'Connects';
+
+	return $new_title;
+}
+add_filter( 'bbp_get_dynamic_forum_archive_title', 'custom_bbpress_archive_title' );
+
+function custom_bbpress_text( $translated_text, $text, $domain ) {
+	if ( $domain === 'bbpress' ) {
+		switch ( $text ) {
+			case 'Forum':
+				$translated_text = 'Connect';
+				break;
+			case 'Forums':
+				$translated_text = 'Connects';
+				break;
+			case 'forum':
+				$translated_text = 'connect';
+				break;
+			case 'forums':
+				$translated_text = 'connects';
+				break;
+			case 'This forum is empty.':
+				$translated_text = 'This connect is empty.';
+				break;
+			case 'Forum Attributes':
+				$translated_text = 'Connect Attributes';
+				break;
+			case 'Forum Moderators':
+				$translated_text = 'Connect Moderators';
+				break;
+			case 'All Forums':
+				$translated_text = 'All Connects';
+				break;
+			case 'Oh, bother! No forums were found here.':
+				$translated_text = 'Oh, bother! No connects were found here.';
+		}
+	}
+
+	return $translated_text;
+}
+add_filter( 'gettext', 'custom_bbpress_text', 10, 3 );
+
+/**
+ * Hide adminbar on frontend for non-admins.
+ */
+function remove_admin_bar_for_non_admins() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		show_admin_bar( false );
+	}
+}
+add_action( 'after_setup_theme', 'remove_admin_bar_for_non_admins' );
