@@ -188,3 +188,56 @@ function custom_login_redirect( $redirect_to, $request, $user ) {
 	return $redirect_to;
 }
 add_filter( 'login_redirect', 'custom_login_redirect', 10, 3 );
+
+function custom_bbpress_forum_title( $title ) {
+	// Modify the title as needed
+	$new_title = 'Connects';
+
+	return $new_title;
+}
+add_filter( 'bbp_get_forum_archive_title', 'custom_bbpress_forum_title' );
+
+function custom_bbpress_archive_title( $title ) {
+	// Modify the title as needed
+	$new_title = 'Connects';
+
+	return $new_title;
+}
+add_filter( 'bbp_get_dynamic_forum_archive_title', 'custom_bbpress_archive_title' );
+
+function custom_bbpress_text( $translated_text, $text, $domain ) {
+	if ( $domain === 'bbpress' ) {
+		switch ( $text ) {
+			case 'Forum':
+				$translated_text = 'Connect';
+				break;
+			case 'Forums':
+				$translated_text = 'Connects';
+				break;
+			case 'forum':
+				$translated_text = 'connect';
+				break;
+			case 'forums':
+				$translated_text = 'connects';
+				break;
+			case 'This forum is empty.':
+				$translated_text = 'This connect is empty.';
+				break;
+			case 'Forum Attributes':
+				$translated_text = 'Connect Attributes';
+				break;
+			case 'Forum Moderators':
+				$translated_text = 'Connect Moderators';
+				break;
+			case 'All Forums':
+				$translated_text = 'All Connects';
+				break;
+			case 'Oh, bother! No forums were found here.':
+				$translated_text = 'Oh, bother! No connects were found here.';
+		}
+	}
+
+	return $translated_text;
+}
+add_filter( 'gettext', 'custom_bbpress_text', 10, 3 );
+
