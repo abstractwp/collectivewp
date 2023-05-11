@@ -209,10 +209,20 @@ Thumbs.db
 !wp-content/plugins/wp-migrate-db-pro/**
 !wp-content/plugins/facetwp/
 !wp-content/plugins/facetwp/**
+!wp-content/plugins/gw-submit-to-access/
+!wp-content/plugins/gw-submit-to-access/**
 !wp-content/plugins/gravityformsactivecampaign/
 !wp-content/plugins/gravityformsactivecampaign/**
 !wp-content/plugins/gravityformsuserregistration/
 !wp-content/plugins/gravityformsuserregistration/**
+
+# Theme
+
+!wp-content/themes/collectivewp/
+!wp-content/themes/collectivewp/**
+wp-content/themes/collectivewp/vendor/
+wp-content/themes/collectivewp/node_modules/
+wp-content/themes/collectivewp/build/
 
 # Git actions
 !.github/

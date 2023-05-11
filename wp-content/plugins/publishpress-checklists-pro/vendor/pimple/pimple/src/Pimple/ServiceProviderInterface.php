@@ -24,6 +24,26 @@
  * THE SOFTWARE.
  */
 
+<<<<<<<< HEAD:wp-content/plugins/capabilities-pro/includes-pro/vendor/pimple/pimple/src/Pimple/Exception/UnknownIdentifierException.php
+namespace Pimple\Exception;
+
+use Psr\Container\NotFoundExceptionInterface;
+
+/**
+ * The identifier of a valid service or parameter was expected.
+ *
+ * @author Pascal Luna <skalpa@zetareticuli.org>
+ */
+class UnknownIdentifierException extends \InvalidArgumentException implements NotFoundExceptionInterface
+{
+    /**
+     * @param string $id The unknown identifier
+     */
+    public function __construct($id)
+    {
+        parent::__construct(\sprintf('Identifier "%s" is not defined.', $id));
+    }
+========
 namespace Pimple;
 
 /**
@@ -43,4 +63,5 @@ interface ServiceProviderInterface
      * @param Container $pimple A container instance
      */
     public function register(Container $pimple);
+>>>>>>>> wpe-dev:wp-content/plugins/publishpress-checklists-pro/vendor/pimple/pimple/src/Pimple/ServiceProviderInterface.php
 }

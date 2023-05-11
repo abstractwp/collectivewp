@@ -29,10 +29,26 @@ namespace Pimple\Exception;
 use Psr\Container\ContainerExceptionInterface;
 
 /**
+<<<<<<<< HEAD:wp-content/plugins/capabilities-pro/includes-pro/vendor/pimple/pimple/src/Pimple/Exception/FrozenServiceException.php
+ * An attempt to modify a frozen service was made.
+ *
+ * @author Pascal Luna <skalpa@zetareticuli.org>
+ */
+class FrozenServiceException extends \RuntimeException implements ContainerExceptionInterface
+{
+    /**
+     * @param string $id Identifier of the frozen service
+     */
+    public function __construct($id)
+    {
+        parent::__construct(\sprintf('Cannot override frozen service "%s".', $id));
+    }
+========
  * A closure or invokable object was expected.
  *
  * @author Pascal Luna <skalpa@zetareticuli.org>
  */
 class ExpectedInvokableException extends \InvalidArgumentException implements ContainerExceptionInterface
 {
+>>>>>>>> wpe-dev:wp-content/plugins/publishpress-checklists-pro/vendor/pimple/pimple/src/Pimple/Exception/ExpectedInvokableException.php
 }
