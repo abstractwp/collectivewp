@@ -127,6 +127,7 @@
                 "issues": "https://github.com/publishpress/WordPress-EDD-License-Integration/issues",
                 "source": "https://github.com/publishpress/WordPress-EDD-License-Integration/tree/v2.3.8"
             },
+            "abandoned": "publishpress/wordpress-edd-license",
             "time": "2022-06-03T17:37:40+00:00"
         },
         {
@@ -241,12 +242,12 @@
             "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/publishpress/library-instance-protection.git",
+                "url": "https://github.com/publishpress/legacy-instance-protection.git",
                 "reference": "ef1a631a41b723ce2e856f534ff4befbe914e964"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-instance-protection/zipball/ef1a631a41b723ce2e856f534ff4befbe914e964",
+                "url": "https://api.github.com/repos/publishpress/legacy-instance-protection/zipball/ef1a631a41b723ce2e856f534ff4befbe914e964",
                 "reference": "ef1a631a41b723ce2e856f534ff4befbe914e964",
                 "shasum": ""
             },
@@ -270,8 +271,7 @@
                 "wordpress plugin"
             ],
             "support": {
-                "issues": "https://github.com/publishpress/library-instance-protection/issues",
-                "source": "https://github.com/publishpress/library-instance-protection/tree/v1.0.2"
+                "source": "https://github.com/publishpress/legacy-instance-protection/tree/v1.0.2"
             },
             "abandoned": "publishpress/instance-protection",
             "time": "2022-06-03T17:41:36+00:00"
