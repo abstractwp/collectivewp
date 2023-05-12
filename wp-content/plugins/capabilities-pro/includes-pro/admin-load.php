@@ -40,7 +40,9 @@ class AdminFiltersPro {
 
         add_action('publishpress-caps_process_update', [$this, 'updateOptions']);
 
-        add_action('pp-capabilities-admin-submenus', [$this, 'actCapabilitiesSubmenus']);
+        add_filter('pp_capabilities_sub_menu_lists', [$this, 'actCapabilitiesSubmenus'], 10, 2);
+
+        add_filter('pp_capabilities_dashboard_features', [$this, 'addProFeaturestoDashboard']);
 
         //set admin menu and sub menu in 'adminmenu' to support custom menu and also get menu correct order
         add_action('adminmenu', [$this, 'setCapabilitiesAdminMenu']);
@@ -100,10 +102,47 @@ class AdminFiltersPro {
         return $settings_options;
     }
 
-    function actCapabilitiesSubmenus() {
-        $cap_name = (is_multisite() && is_super_admin()) ? 'read' : 'manage_capabilities';
-        
-        add_submenu_page('pp-capabilities-roles',  __('Admin Menus', 'capabilities-pro'), __('Admin Menus', 'capabilities-pro'), $cap_name, 'pp-capabilities-admin-menus', [$this, 'ManageAdminMenus']);
+    function actCapabilitiesSubmenus($sub_menu_pages, $cme_fakefunc) {
+
+        if (!$cme_fakefunc) {
+            //add admin menu after profile features menu
+            $profile_features_offset = array_search('profile-features', array_keys($sub_menu_pages));
+            $profile_features_menu   = [];
+            $profile_features_menu['admin-menus'] = [
+                'title'             => __('Admin Menus', 'capsman-enhanced'),
+                'capabilities'      => (is_multisite() && is_super_admin()) ? 'read' : 'manage_capabilities_admin_menus',
+                'page'              => 'pp-capabilities-admin-menus',
+                'callback'          => [$this, 'ManageAdminMenus'],
+                'dashboard_control' => true,
+            ];
+
+            $sub_menu_pages = array_merge(
+                array_slice($sub_menu_pages, 0, $profile_features_offset),
+                $profile_features_menu,
+                array_slice($sub_menu_pages, $profile_features_offset, null)
+            );
+        }
+
+        return $sub_menu_pages;
+    }
+
+    function addProFeaturestoDashboard($features) {
+
+            //add admin menu after profile features menu
+            $profile_features_offset = array_search('profile-features', array_keys($features));
+            $admin_menu_feature   = [];
+            $admin_menu_feature['admin-menus'] = [
+                'label'        => esc_html__('Admin Menus', 'capsman-enhanced'),
+                'description'  => esc_html__('Admin Menus allows you to block access to admin menu links.', 'capsman-enhanced'),
+            ];
+
+            $features = array_merge(
+                array_slice($features, 0, $profile_features_offset),
+                $admin_menu_feature,
+                array_slice($features, $profile_features_offset, null)
+            );
+
+        return $features;
     }
 
     /**
@@ -116,7 +155,7 @@ class AdminFiltersPro {
 	{
         global $capsman;
 
-		if ((!is_multisite() || !is_super_admin()) && !current_user_can('administrator') && !current_user_can('manage_capabilities')) {
+		if ((!is_multisite() || !is_super_admin()) && !current_user_can('administrator') && !current_user_can('manage_capabilities_admin_menus')) {
             // TODO: Implement exceptions.
 		    wp_die('<strong>' . esc_html__('You do not have permission to manage menu restrictions.', 'capabilities-pro') . '</strong>');
 		}
@@ -351,7 +390,7 @@ class AdminFiltersPro {
         $ppc_global_submenu = $submenu;
 
         // we only want to update complete menu and on capablities page where menu is not restricted
-        if ( current_user_can('manage_capabilities') && isset($_GET['page']) && $_GET['page'] === 'pp-capabilities-admin-menus') 
+        if ( current_user_can('manage_capabilities_admin_menus') && isset($_GET['page']) && $_GET['page'] === 'pp-capabilities-admin-menus') 
         {
             if ( get_option('ppc_admin_menus_menu') !== $menu) {//save menu
                 update_option('ppc_admin_menus_menu', $menu);

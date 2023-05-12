@@ -70,6 +70,10 @@ function pp_capabilities_admin_menu_permission()
         return;
     }
 
+    if (!pp_capabilities_feature_enabled('admin-menus')) {
+        return;
+    }
+
     $ppc_global_menu     = (array)get_option('ppc_admin_menus_menu');
     $ppc_global_submenu  = (array)get_option('ppc_admin_menus_submenu');
 
@@ -222,7 +226,7 @@ function pp_capabilities_admin_menu_permission()
     foreach ($admin_global_menu as $key => $item) {
         if (isset($item[2])) {
             $menu_slug = $item[2];
-            $manage_capabilities_menu = ($menu_slug === 'pp-capabilities-roles' && current_user_can('manage_capabilities')) ? true : false;
+            $manage_capabilities_menu = ($menu_slug === 'pp-capabilities-roles' && (current_user_can('manage_capabilities') || current_user_can('manage_capabilities_admin_menus'))) ? true : false;
             //remove menu and prevent page access if set
             if (!$manage_capabilities_menu && in_array($menu_slug, $disabled_menu_array)) {
                 if($remove_menu){

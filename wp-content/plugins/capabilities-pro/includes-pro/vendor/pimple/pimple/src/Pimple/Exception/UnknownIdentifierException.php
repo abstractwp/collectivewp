@@ -24,7 +24,6 @@
  * THE SOFTWARE.
  */
 
-<<<<<<<< HEAD:wp-content/plugins/capabilities-pro/includes-pro/vendor/pimple/pimple/src/Pimple/Exception/UnknownIdentifierException.php
 namespace Pimple\Exception;
 
 use Psr\Container\NotFoundExceptionInterface;
@@ -43,25 +42,4 @@ class UnknownIdentifierException extends \InvalidArgumentException implements No
     {
         parent::__construct(\sprintf('Identifier "%s" is not defined.', $id));
     }
-========
-namespace Pimple;
-
-/**
- * Pimple service provider interface.
- *
- * @author  Fabien Potencier
- * @author  Dominik Zogg
- */
-interface ServiceProviderInterface
-{
-    /**
-     * Registers services on the given container.
-     *
-     * This method should only be used to configure services and parameters.
-     * It should not get services.
-     *
-     * @param Container $pimple A container instance
-     */
-    public function register(Container $pimple);
->>>>>>>> wpe-dev:wp-content/plugins/publishpress-checklists-pro/vendor/pimple/pimple/src/Pimple/ServiceProviderInterface.php
 }
