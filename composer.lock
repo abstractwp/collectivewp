@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1a55c193917a0ac13656c09356b0577",
+    "content-hash": "16b36f32a439eeefd9f7cb69127000d0",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -274,69 +274,25 @@
             "time": "2022-07-30T11:20:41+00:00"
         },
         {
-            "name": "pantheon-systems/wp-native-php-sessions",
-            "version": "1.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pantheon-systems/wp-native-php-sessions.git",
-                "reference": "776840b5bc12faaeadfb2cd0ca075e693286d4e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wp-native-php-sessions/zipball/776840b5bc12faaeadfb2cd0ca075e693286d4e0",
-                "reference": "776840b5bc12faaeadfb2cd0ca075e693286d4e0",
-                "shasum": ""
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
-                "pantheon-systems/pantheon-wordpress-upstream-tests": "dev-master",
-                "phpcompatibility/php-compatibility": "^9.3",
-                "phpunit/phpunit": "^9",
-                "wp-coding-standards/wpcs": "dev-develop as 2.3.1",
-                "yoast/phpunit-polyfills": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Pantheon",
-                    "email": "noreply@pantheon.io"
-                },
-                {
-                    "name": "Daniel Bachhuber",
-                    "email": "daniel@handbuilt.co"
-                }
-            ],
-            "description": "native PHP sessions stored in the database for WordPress.",
-            "support": {
-                "issues": "https://github.com/pantheon-systems/wp-native-php-sessions/issues",
-                "source": "https://github.com/pantheon-systems/wp-native-php-sessions/tree/1.3.5"
-            },
-            "time": "2023-04-07T19:53:46+00:00"
-        },
-        {
             "name": "pronamic/gravityforms",
-            "version": "2.7.5",
+            "version": "2.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "6dd5e113684f8a6440725438d7e823274655d335"
+                "reference": "cb5dab10ef78afa8f7b63bcde9c44148066f48f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/6dd5e113684f8a6440725438d7e823274655d335",
-                "reference": "6dd5e113684f8a6440725438d7e823274655d335",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/cb5dab10ef78afa8f7b63bcde9c44148066f48f6",
+                "reference": "cb5dab10ef78afa8f7b63bcde9c44148066f48f6",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.5"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.6"
             },
-            "time": "2023-05-04T10:05:56+00:00"
+            "time": "2023-05-11T10:06:13+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -412,6 +368,24 @@
             "homepage": "https://wordpress.org/plugins/activity-log-wp-seo/"
         },
         {
+            "name": "wpackagist-plugin/bbpress",
+            "version": "2.6.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/bbpress/",
+                "reference": "tags/2.6.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/bbpress.2.6.9.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/bbpress/"
+        },
+        {
             "name": "wpackagist-plugin/block-widgets-monster",
             "version": "1.0.4",
             "source": {
@@ -430,16 +404,34 @@
             "homepage": "https://wordpress.org/plugins/block-widgets-monster/"
         },
         {
-            "name": "wpackagist-plugin/cookiebot",
-            "version": "4.2.8",
+            "name": "wpackagist-plugin/buddypress",
+            "version": "11.2.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.2.8"
+                "url": "https://plugins.svn.wordpress.org/buddypress/",
+                "reference": "tags/11.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/buddypress.11.2.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/buddypress/"
+        },
+        {
+            "name": "wpackagist-plugin/cookiebot",
+            "version": "4.2.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cookiebot/",
+                "reference": "tags/4.2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -539,15 +531,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.5",
+            "version": "20.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.5"
+                "reference": "tags/20.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.8.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -557,15 +549,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-security-audit-log",
-            "version": "4.5.0",
+            "version": "4.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-security-audit-log/",
-                "reference": "tags/4.5.0"
+                "reference": "tags/4.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.5.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

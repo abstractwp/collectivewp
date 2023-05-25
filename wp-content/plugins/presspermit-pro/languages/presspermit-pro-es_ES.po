@@ -1,0 +1,2221 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PublishPress Permissions Pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-07 17:12-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Angelo Giammaresi - info@wocmultimedia.com\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_c;__ngettext;_n;_x;_ex;esc_html__;esc_html_e\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-SearchPath-0: includes-pro\n"
+"X-Poedit-SearchPath-1: modules\n"
+"X-Poedit-SearchPathExcluded-0: includes-pro/admin-load.php\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: includes-pro/SettingsTabInstall.php:23
+msgid "License"
+msgstr "Licencia"
+
+#: includes-pro/SettingsTabInstall.php:30
+#: includes-pro/SettingsTabInstall.php:127
+msgid "License Key"
+msgstr "Clave de licencia"
+
+#: includes-pro/SettingsTabInstall.php:31
+msgid "Version"
+msgstr "Versión"
+
+#: includes-pro/SettingsTabInstall.php:43
+#: includes-pro/SettingsTabInstall.php:44
+msgid "settings"
+msgstr "ajustes"
+
+#: includes-pro/SettingsTabInstall.php:120
+msgid "Key Expired"
+msgstr "Clave caducada"
+
+#: includes-pro/SettingsTabInstall.php:123
+#: includes-pro/SettingsTabInstall.php:134
+msgid "Deactivate Key"
+msgstr "Desactiva la clave"
+
+#: includes-pro/SettingsTabInstall.php:126
+msgid "Key Activated"
+msgstr "Clave activada"
+
+#: includes-pro/SettingsTabInstall.php:134
+msgid "Activate Key"
+msgstr "Activa la clave"
+
+#: includes-pro/SettingsTabInstall.php:142
+msgid "review your account info"
+msgstr "revisa la información de tu cuenta"
+
+#: includes-pro/SettingsTabInstall.php:149
+msgid ""
+"Note: Renewal does not require deactivation. If you do deactivate, re-entry "
+"of the license key will be required."
+msgstr ""
+"Nota: La renovación no requiere la desactivación. Si la desactiva, será "
+"necesario volver a introducir la clave de licencia."
+
+#: includes-pro/SettingsTabInstall.php:211
+msgid "reload module info"
+msgstr "recarga el módulo de información"
+
+#: includes-pro/SettingsTabInstall.php:261
+#: includes-pro/SettingsTabInstall.php:269
+#, php-format
+msgid "Permissions Pro Version: %1$s %2$s"
+msgstr "Permissions Pro Versión: %1$s %2$s"
+
+#: includes-pro/SettingsTabInstall.php:265
+#, php-format
+msgid "view %s&nbsp;details"
+msgstr "ver %s&nbsp;detalles"
+
+#: includes-pro/SettingsTabInstall.php:279
+msgid "update check / install"
+msgstr "actualizar cheque/instalación"
+
+#: includes-pro/SettingsTabInstall.php:283
+#, php-format
+msgid "Database Schema Version: %s"
+msgstr "Versión del esquema de la base de datos: %s"
+
+#: includes-pro/SettingsTabInstall.php:289
+#, php-format
+msgid "WordPress Version: %s"
+msgstr "Versión de WordPress: %s"
+
+#: includes-pro/SettingsTabInstall.php:293
+#, php-format
+msgid "PHP Version: %s"
+msgstr "Versión de PHP: %s"
+
+#: includes-pro/library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:242
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+"Hay disponible una nueva versión de %1$s. %2$sRevisa los detalles de la "
+"versión %3$s%4$s."
+
+#: includes-pro/library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:250
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+"Hay disponible una nueva versión de %1$s. %2$sRevisa los detalles de la "
+"versión %3$s%4$s o %5$sactualízalo ahora%6$s."
+
+#: includes-pro/library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:493
+msgid "You do not have permission to install plugin updates"
+msgstr "No tienes permiso para instalar actualizaciones de plugins"
+
+#: includes-pro/library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php:493
+msgid "Error"
+msgstr "Error"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/License.php:112
+msgid ""
+"Sorry, an error occurred. Please check the error log and contact the "
+"PublishPress support team."
+msgstr ""
+"Lo sentimos, se ha producido un error. Por favor, comprueba el registro de "
+"errores y contáctate con el equipo de soporte de PublishPress."
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:122
+msgid "Missing license"
+msgstr "Falta la licencia"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:125
+msgid "Your license key is expired"
+msgstr "Tu clave de licencia ha caducado"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:128
+msgid "Your license key has been disabled"
+msgstr "Tu clave de licencia ha sido desactivada"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:132
+msgid "Invalid license"
+msgstr "Licencia no válida"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:135
+msgid "Your license is not active for this URL"
+msgstr "Tu licencia no está activa para este URL"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:139
+msgid "This appears to be an invalid license key for this product"
+msgstr "Esta parece ser una clave de licencia no válida para este producto"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:145
+msgid "Your license key has reached its activation limit"
+msgstr "Tu clave de licencia ha alcanzado su límite de activación"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:152
+msgid "Activated"
+msgstr "Activada"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:168
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:34
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:82
+msgid "Status"
+msgstr "Estado"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:171
+msgid "Click here to read more about licenses."
+msgstr "Haz clic aquí para leer más sobre las licencias."
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:174
+msgid "More information"
+msgstr "Máa informaciones"
+
+#: includes-pro/library/wordpress-edd-license-integration/src/core/Setting/Field/License_key.php:193
+msgid "Enter the license key for being able to update the plugin."
+msgstr "Introduce la clave de licencia para poder actualizar el plugin."
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/Dashboard/Profile.php:19
+msgid "Circle Membership"
+msgstr "Pertenencia a un círculo"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/Dashboard/Profile.php:21
+msgid "Viewing"
+msgstr "Viendo"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/Dashboard/Profile.php:21
+msgid "Editing"
+msgstr "Edición"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/Dashboard/Profile.php:27
+#, php-format
+msgid "%s is limited to circle authors only, for these post types:"
+msgstr ""
+"%s está limitado a los autores del círculo, para estos tipos de contenido:"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:26
+msgid "Circle Activation"
+msgstr "Activación de los círculos"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:38
+msgid "Visibility Circle"
+msgstr "Visibilidad del círculo"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:38
+msgid "Editorial Circle"
+msgstr "Círculo editorial"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:60
+#, php-format
+msgid "This group is a %s"
+msgstr "Este grupo es un %s"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:83
+#, php-format
+msgid ""
+"Members of this role are exempted from all %s restrictions, due to the %s "
+"capability."
+msgstr ""
+"Los miembros de este perfil están exentos de todas las restricciones de %s, "
+"debido a la capacidad de %s."
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:100
+msgid "apply limitation for post types:"
+msgstr "aplicar la limitación para los tipos de contenido:"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:110
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:150
+msgid "User"
+msgstr "Usuario"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:119
+msgid "more..."
+msgstr "más…"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:136
+msgid "edit"
+msgstr "Editar"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:141
+msgid "hide"
+msgstr "Ocultar"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:158
+msgid "(toggle all)"
+msgstr "(Marcar/desmarcar todos)"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:174
+msgid ""
+"Prevent viewing or editing of posts not authored by a fellow Circle Group "
+"member. Users may be a member of multiple circles. Note that an appropriate "
+"role assignment (either WP role or supplemental) is still required."
+msgstr ""
+"Impedir que se vean o editen las entradas que no hayan sido creadas por otro "
+"miembro del grupo del círculo. Los usuarios pueden ser miembros de varios "
+"círculos. Ten en cuenta que sigue siendo necesaria la asignación de un "
+"perfil adecuado (perfil de WP o complementario)."
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupEdit.php:178
+msgid ""
+"Users may be exempted by adding the pp_exempt_read_circle or "
+"pp_exempt_edit_circle capability to their primary WP role."
+msgstr ""
+"Los usuarios pueden estar exentos añadiendo la capacidad "
+"pp_exempt_read_circle o pp_exempt_edit_circle a su perfil principal de WP."
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupsListing.php:14
+msgid "Circle Type"
+msgstr "Tipo de círculo"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupsListing.php:43
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:233
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Admin.php:106
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:31
+msgid "Visibility"
+msgstr "Visibilidad"
+
+#: modules/presspermit-circles/classes/Permissions/Circles/UI/GroupsListing.php:51
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:234
+msgid "Editorial"
+msgstr "Editorial"
+
+#: modules/presspermit-circles/presspermit-circles.php:47
+msgid "Access Circles"
+msgstr "Acceso a los círculos"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BBPress/HooksAdmin.php:30
+msgid "Create Topics in"
+msgstr "Crea tema en"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BBPress/HooksAdmin.php:31
+msgid "Topic Creation"
+msgstr "Creación del tema"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BBPress/HooksAdmin.php:32
+msgid "Create Topic"
+msgstr "Crea tema"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BBPress/HooksAdmin.php:37
+msgid "Submit Replies in"
+msgstr "Envía las respuestas en"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BBPress/HooksAdmin.php:38
+msgid "Reply Submission"
+msgstr "Envío de respuestas"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BBPress/HooksAdmin.php:39
+msgid "Submit Reply"
+msgstr "Envía la respuesta"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:83
+msgid "No matching groups were found."
+msgstr "No se han encontrado grupos coincidentes."
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:100
+msgid "ID"
+msgstr "ID"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:101
+msgid "Name"
+msgstr "Nombre"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:102
+msgid "Users"
+msgstr "Usuarios"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:103
+msgid "Sitewide Roles"
+msgstr "Perfiles en todo el sitio"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:104
+msgid "Content Roles"
+msgstr "Perfiles de contenido"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:105
+msgid "Description"
+msgstr "Descripción"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:191
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:38
+msgid "Permissions"
+msgstr "Permisos"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:210
+msgid "BuddyPress Group Admin"
+msgstr "Administrador de grupos de BuddyPress"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/GroupsListTable.php:291
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:122
+msgid "Show more details"
+msgstr "Muestra más detalles"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/Hooks.php:37
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:185
+msgid "BuddyPress Groups"
+msgstr "Grupos de BuddyPress"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/Hooks.php:37
+msgid "BuddyPress Group"
+msgstr "Grupo de BuddyPress"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:77
+msgid ""
+"Supplemental roles and specific permissions assigned to this group by "
+"PublishPress Permissions"
+msgstr ""
+"Perfiles suplementarios y permisos específicos asignados a este grupo por "
+"PublishPress Permissions"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:77
+msgid "Click to toggle"
+msgstr "Haz clic para alternar"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:77
+msgid "Content Permissions"
+msgstr "Permisos de contenido"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:79
+msgid "Roles"
+msgstr "Perfiles"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:83
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:91
+msgid "none"
+msgstr "ninguno"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:87
+msgid "Exceptions"
+msgstr "Excepciones"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:122
+msgid "BuddyPress Group Members"
+msgstr "Miembros del grupo BuddyPress"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:160
+msgid "BP Permission Group"
+msgstr "Grupo de permisos BP"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:161
+msgid "BP Permission Groups"
+msgstr "Grupos de permisos BP"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/BuddyPress/PermissionGroups/HooksAdmin.php:174
+msgid "Manage"
+msgstr "Gestiona"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/CMSTreeView.php:112
+msgid ""
+"Page creation was blocked because you are not allowed to select that parent "
+"page."
+msgstr ""
+"La creación de la página ha sido bloqueada porque no tienes permiso para "
+"seleccionar esa página superior."
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/CMSTreeView.php:113
+msgid "Back to Dashboard"
+msgstr "Volver al escritorio"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/CMSTreeView.php:115
+msgid "Permission Denied"
+msgstr "Permiso denegado"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/CMSTreeView.php:117
+msgid "You are not allowed to select that parent page."
+msgstr "No tienes permiso para seleccionar esa página superior."
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/NetwideGroups.php:19
+msgid "Network Groups"
+msgstr "Grupos de la red"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/NetwideGroups.php:19
+msgid "Network Group"
+msgstr "Grupo de la red"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/PublicPostPreview.php:30
+msgid "This link has expired!"
+msgstr "¡Este enlace ha caducado!"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/PublicPostPreview.php:34
+msgid "No Public Preview available!"
+msgstr "¡No hay vista previa pública disponible!"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:47
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:273
+msgid "Configured Teaser Text"
+msgstr "Texto del avance configurado"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:55
+msgid "Network"
+msgstr "Red"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:65
+msgid "Groups"
+msgstr "Grupos"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:74
+msgid "Forum Teaser"
+msgstr "El avance del foro"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:89
+msgid "Network-wide groups"
+msgstr "Grupos para toda la red"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:93
+msgid "Teaser Topics"
+msgstr "Temas de los avances"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:94
+msgid "Hide Topic / Reply Author Link"
+msgstr "Oculta tema / Enlace de respuesta del autor"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:127
+#: modules/presspermit-compatibility/presspermit-compatibility.php:47
+msgid "Compatibility Pack"
+msgstr "Paquete de compatibilidad"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:185
+#, php-format
+msgid "Topic Teaser Text (%s):"
+msgstr "Texto del avance del tema (%s):"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:186
+#, php-format
+msgid "Reply Teaser Text (%s):"
+msgstr "Texto del avance de la respuesta (%s):"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:190
+msgid "First Reply"
+msgstr "Primera respuesta"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:191
+msgid "Other Replies"
+msgstr "Otras respuestas"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:208
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:323
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:895
+msgid "Anonymous Visitors"
+msgstr "Visitantes anónimos"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:208
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:895
+msgid "Logged In Users"
+msgstr "Usuarios conectados"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:241
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:954
+#, php-format
+msgid "Insert a login form by using %s[login_form]%s shortcode."
+msgstr "Inserta un formulario de acceso usando el shortcode %s[login_form]%s."
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:293
+msgid "Hide Topics and Replies"
+msgstr "Oculta temas y respuestas"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:294
+msgid "Tease Topics and Replies"
+msgstr "Temas avance y respuestas"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:295
+msgid "Show Topics, Tease Replies"
+msgstr "Muestra temas, Respuestas a los avances"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/UI/Settings.php:329
+msgid ""
+"The single forum teaser may be customized by STYLESHEETPATH/press-permit/"
+"teaser-content-forum.php"
+msgstr ""
+"El avance del foro único puede ser personalizado por STYLESHEETPATH/press-"
+"permit/teaser-content-forum.php"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/WPML/HooksAdmin.php:207
+msgid "WPML Integration"
+msgstr "Integración de WPML"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/WPML/HooksAdmin.php:213
+msgid "Mirror Post Permissions to translations"
+msgstr "Refleja los permisos de las entradas a las traducciones"
+
+#: modules/presspermit-compatibility/classes/Permissions/Compat/WPML/HooksAdmin.php:214
+msgid "Mirror Term Permissions to translations"
+msgstr "Refleja los permisos de los términos a las traducciones"
+
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:115
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:119
+msgid "[This topic requires additional permissions or membership.]"
+msgstr "[Este tema requiere permisos adicionales o una membresía.]"
+
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:116
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:120
+msgid "[...]"
+msgstr "[...]"
+
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:117
+msgid "[This topic requires site login.]"
+msgstr "[Este tema requiere el acceso al sitio.]"
+
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:118
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:122
+msgid "[login required]"
+msgstr "[acceso necesario]"
+
+#: modules/presspermit-compatibility/classes/Permissions/CompatHooks.php:121
+msgid "[This reply requires site login.]"
+msgstr "[Esta respuesta requiere el acceso al sitio.]"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess.php:57
+msgid ""
+"File attachment access keys and rewrite rules were regenerated for this site."
+msgstr ""
+"Las claves de acceso a los archivos adjuntos y las reglas de reescritura se "
+"han regenerado para este sitio."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/RuleFlush.php:16
+msgid "Invalid argument."
+msgstr "Argumento no válido."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/RuleFlush.php:18
+msgid "Please configure File Filtering options!"
+msgstr "¡Por favor, configura las opciones de filtrado de archivos!"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/RuleFlush.php:41
+msgid ""
+"File attachment access keys and rewrite rules were regenerated for this site "
+"("
+msgstr ""
+"Las claves de acceso a los archivos adjuntos y las reglas de reescritura se "
+"han regenerado para este sitio ("
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/RuleFlush.php:55
+msgid ""
+"File attachment access keys and rewrite rules for other sites will be "
+"regenerated at next access."
+msgstr ""
+"Las claves de acceso a los archivos adjuntos y las reglas de reescritura por "
+"otros sitios se regenerarán en el próximo acceso."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:32
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:82
+#: modules/presspermit-file-access/presspermit-file-access.php:56
+msgid "File Access"
+msgstr "Acceso a los archivos"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:39
+msgid "File Filtering"
+msgstr "Filtrado de archivos"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:51
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:301
+msgid "File Filtering Reset Key:"
+msgstr "Clave de restablecimiento del filtrado de archivos:"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:52
+msgid "Small Thumbnails Unfiltered"
+msgstr "Miniaturas pequeñas sin filtro"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:53
+msgid "Make Unattached Files Private"
+msgstr "Haz que los archivos no adjuntos sean privados"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:54
+msgid "Make Attached Files Private"
+msgstr "Haz que los archivos adjuntos sean privados"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:81
+msgid "Settings related to the regulation of direct file access (by file URL)."
+msgstr ""
+"Ajustes relacionados con la regulación del acceso directo a los archivos "
+"(por URL de archivo)."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:102
+#, php-format
+msgid ""
+"%1$sNote%2$s: Direct access to uploaded file attachments cannot be filtered "
+"because mod_rewrite is not enabled on your server."
+msgstr ""
+"%1$sNota%2$s: El acceso directo a los archivos adjuntos subidos no puede "
+"filtrarse porque mod_rewrite no está habilitado en tu servidor."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:108
+#, php-format
+msgid ""
+"%1$sNote%2$s: Direct access to uploaded file attachments will not be "
+"filtered due to your nonstandard UPLOADS path."
+msgstr ""
+"%1$sNota%2$s: El acceso directo a los archivos adjuntos subidos no se "
+"filtrará debido a que tu ruta UPLOADS no es estándar."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:116
+#, php-format
+msgid ""
+"%1$sNote%2$s: Direct access to uploaded file attachments cannot be filtered "
+"because WordPress permalinks are set to default."
+msgstr ""
+"%1$sNota%2$s: El acceso directo a los archivos adjuntos subidos no puede "
+"filtrarse porque los enlaces permanentes de WordPress están establecidos a "
+"los valores por defecto."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:128
+msgid "Filter Uploaded File Attachments"
+msgstr "Filtra los archivos adjuntos subidos"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:162
+msgid "Multisite File Filtering Configuration:"
+msgstr "Configuración del filtrado de archivos multisitio:"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:181
+msgid "show required rules"
+msgstr "muestra las reglas obligatorias"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsTabFileAccess.php:356
+#, php-format
+msgid "For Nginx integration, see %spublishpress.com documentation%s."
+msgstr ""
+"Para la integración de Nginx, consulta la %sdocumentación de publishpress.com"
+"%s."
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsUtility.php:37
+msgid "Attachments Utility"
+msgstr "Utilidad de adjuntos"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsUtility.php:44
+#, php-format
+msgid "Back to %1$sPermissions Settings%2$s"
+msgstr "Volver a %1$sAjusted de permisos%2$s"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccess/UI/SettingsUtility.php:150
+#, php-format
+msgid "%ssite %d :%s"
+msgstr "%ssitio %d :%s"
+
+#: modules/presspermit-file-access/classes/Permissions/FileAccessHooksAdmin.php:22
+#: modules/presspermit-file-access/classes/Permissions/FileAccessHooksAdmin.php:23
+msgid "Attachment Utility"
+msgstr "Utilidad de adjunto"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:77
+msgid "From:"
+msgstr "De:"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:82
+msgid "To:"
+msgstr "A:"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:104
+#, php-format
+msgid "Current Selections: %1$s refresh %2$s"
+msgstr "Selecciones actuales:%1$s recarga %2$s"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:168
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:174
+#, php-format
+msgid "%1$s (%2$s - %3$s)"
+msgstr "%1$s (%2$s - %3$s)"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:178
+#, php-format
+msgid "SCHEDULED: %s"
+msgstr "PROGRAMADO: %s"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:181
+#, php-format
+msgid "EXPIRED: %s"
+msgstr "CADUCADO: %s"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:183
+#, php-format
+msgid "ACTIVE with future expiration: %s"
+msgstr "ACTIVO con futura caducidad: %s"
+
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:185
+#: modules/presspermit-membership/classes/Permissions/Membership/UI/GroupEdit.php:189
+#, php-format
+msgid "ACTIVE: %s"
+msgstr "ACTIVO: %s"
+
+#: modules/presspermit-membership/presspermit-membership.php:47
+msgid "Membership"
+msgstr "Membresía"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Admin.php:63
+#, php-format
+msgid ""
+"PublishPress integration also requires the %1$sCollaborative Publishing "
+"module%2$s."
+msgstr ""
+"La integración de PublishPress también requiere el módulo %1$sPublicación "
+"colaborativa%2$s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Attributes.php:32
+#, php-format
+msgid "%s: "
+msgstr "%s: "
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Attributes.php:32
+#, php-format
+msgid "Custom %s: "
+msgstr "%s personalizado: "
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Attributes.php:48
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PermissionsAjax.php:24
+msgid "Workflow: "
+msgstr "Flujo de trabajo: "
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Attributes.php:49
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PermissionsAjax.php:25
+msgid "Visibility: "
+msgstr "Visibilidad: "
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Attributes.php:109
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:54
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:153
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacy.php:121
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:77
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:126
+msgid "Draft"
+msgstr "Borrador"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:29
+msgid "No items found."
+msgstr "No se ha encontrado ningún elemento."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:31
+msgid "Title"
+msgstr "Título"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:32
+msgid "Type"
+msgstr "Tipo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:33
+msgid "Date"
+msgstr "Fecha"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:39
+msgid "(no title)"
+msgstr "(sin título)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:45
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:110
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:152
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:86
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:258
+#: modules/presspermit-status-control/common/js/object-edit.js:23
+msgid "Published"
+msgstr "Publicado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:48
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:154
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:87
+msgid "Scheduled"
+msgstr "Programado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:51
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:156
+msgid "Pending Review"
+msgstr "Pendiente de revisión"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/Ajax.php:67
+msgid "Y/m/d"
+msgstr "Y/m/d"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:72
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:368
+#, php-format
+msgid "%s, Sticky"
+msgstr "%s, fijo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:127
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:128
+#, php-format
+msgid "%s <span class=\"count\">()</span>"
+msgstr "%s <span class=\"count\">()</span>"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:172
+msgid "Approve"
+msgstr "Aprueba"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:174
+msgid "Assign"
+msgstr "Asigna"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:176
+msgid "Mark In Progress"
+msgstr "Marca en progreso"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:178
+#, php-format
+msgid "Submit as %s"
+msgstr "Envía como %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:184
+#, php-format
+msgid "Save as %s"
+msgstr "Guarda como %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:189
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:160
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacy.php:122
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacySub.php:69
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:318
+#: modules/presspermit-status-control/common/js/object-edit.js:28
+msgid "Public"
+msgstr "Público"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostAdmin.php:193
+#, php-format
+msgid "Public (%s)"
+msgstr "Público (%s)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:58
+#, php-format
+msgid "Post set as %s"
+msgstr "Entrada establecida como %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:59
+#, php-format
+msgid "Page set as %s"
+msgstr "Páginaa establecida como %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:107
+msgid "Current Time"
+msgstr "Hora actual"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:108
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:159
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:171
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:175
+msgid "Update"
+msgstr "Actualizar"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:109
+msgid "Schedule"
+msgstr "Programam"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:111
+msgid "Privately Published"
+msgstr "Publicada como privada"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:112
+msgid "Publish"
+msgstr "Publicar"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:113
+msgid "Published, Sticky"
+msgstr "Publicada, fijo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEdit.php:168
+#, php-format
+msgid "Visibility forced to %1$s"
+msgstr "Visibilidad forzada para %1$s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:85
+#, php-format
+msgid "force visibility of all sub%s"
+msgstr "fuerza la visibilidad de todas las sub%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:101
+#, php-format
+msgid "Your site is configured to keep only the last %s revisions."
+msgstr "Tu sitio está configurado para guardar sólo las últimas %s revisiones."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:103
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:106
+#, php-format
+msgid "Revisions: %s"
+msgstr "Revisiones: %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:110
+msgid "Browse"
+msgstr "Explora"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:313
+msgid "add workflow status"
+msgstr "añade estado de flujo de trabajo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:458
+msgid "define privacy types"
+msgstr "define los tipos de privacidad"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:474
+#, php-format
+msgid "mirror selection to %1$s sub%2$s%3$s"
+msgstr "refleja la selección a %1$s sub%2$s%3$s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:505
+#, php-format
+msgid "Sub%1$s %2$s: "
+msgstr "Sub%1$s %2$s: "
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:512
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:528
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:329
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacySub.php:68
+msgid "(manual)"
+msgstr "(manual)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:601
+#, php-format
+msgid "Scheduled for: %s%s%s"
+msgstr "Programada para: %s%s%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:604
+#, php-format
+msgid "Published on: %s%s%s"
+msgstr "Publicada el: %s%s%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:610
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:625
+#, php-format
+msgid "Publish %simmediately%s"
+msgstr "Publicar %sinmediatamente%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:618
+#, php-format
+msgid "Schedule for: %s%s%s"
+msgstr "Programada para: %s%s%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostEditSubmitMetabox.php:621
+#, php-format
+msgid "Publish on: %s%s%s"
+msgstr "Publicar en: %s%s%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:54
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PostEdit.php:121
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:177
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:138
+msgid "Pending"
+msgstr "Pendiente"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:121
+msgid "post"
+msgstr "entrada"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:123
+#, php-format
+msgid ""
+"Your %1$s was successfully submitted, but you cannot make further edits at "
+"this time. The current status of the %1$s is %2$s."
+msgstr ""
+"Tu %1$s ha sido enviada correctamente, pero no puedes realizar más ediciones "
+"en este momento. El estado actual de la %1$s es %2$s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:155
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacy.php:123
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacySub.php:70
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:321
+#: modules/presspermit-status-control/common/js/object-edit.js:28
+msgid "Private"
+msgstr "Privado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:157
+msgid "Trash"
+msgstr "Papelera"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:314
+msgid "Subpage Vis."
+msgstr "Visibilidad de la subpágina"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:316
+#, php-format
+msgid "Force visibility of sub-%s"
+msgstr "Forzar la visibilidad de sub-%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:319
+#, php-format
+msgid "existing sub-%s"
+msgstr "sub-%s existente"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:330
+msgid "&mdash; No Change &mdash;"
+msgstr "&mdash; Sin cambios &mdash;"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Dashboard/PostsListing.php:430
+msgid "Visibility locked"
+msgstr "Visibilidad bloqueada"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacySub.php:53
+#, php-format
+msgid "Sub-%s"
+msgstr "Sub-%s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditPrivacySub.php:55
+msgid "Subpage Privacy"
+msgstr "Privacidad de la subpágina"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:151
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:179
+msgid "Advance Status"
+msgstr "Estado de avance"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:225
+msgid "Workflow&hellip;"
+msgstr "Flujo de trabajo&hellip;"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:228
+msgid "Save Draft"
+msgstr "Guardar borrador"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Gutenberg/PostEditStatus.php:229
+msgid "Submit Revision"
+msgstr "Envía la revisión"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/Status.php:29
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/Status.php:80
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/Status.php:97
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/StatusEdit.php:19
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusEdit.php:40
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:45
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:55
+msgid "You are not permitted to do that."
+msgstr "No tienes permiso para hacer eso."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/Status.php:50
+msgid "You can&#8217;t delete that status."
+msgstr "Ese estado no se puede borrar."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/StatusSave.php:25
+msgid ""
+"<strong>ERROR</strong>: That status name is already registered. Please "
+"choose another one."
+msgstr ""
+"<strong>ERROR</strong>: Ese nombre de estado ya está registrado. Por favor, "
+"elige otro."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/StatusSave.php:33
+msgid "<strong>ERROR</strong>: Please enter a label for the status."
+msgstr ""
+"<strong>ERROR</strong>: Por favor, introduce una etiqueta para el estado."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Handlers/StatusSave.php:154
+msgid "<strong>ERROR</strong>: The specified status does not exist."
+msgstr "<strong>ERROR</strong>: El estado especificado no existe."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:25
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:40
+msgid "Additional Status Settings:"
+msgstr "Ajuste de estado addicionales:"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:26
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:41
+msgid "Require Custom Permissions per-Status"
+msgstr "Requiere permisos personalizados por estado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:27
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:42
+msgid "Workflow Order, Branching, Button Labels"
+msgstr "Orden del flujo de trabajo, ramificación, etiquetas de los botones"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:28
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:43
+msgid "Set Post Types per-Status"
+msgstr "Establece los tipos de contenido por estado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:31
+msgid "Please enable the Status dropdown for Gutenberg compatibility."
+msgstr ""
+"Por favor, activa el desplegable de estado para la compatibilidad con "
+"Gutenberg."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:44
+msgid ""
+"%sNote%s: \"Change post status\" capabilities can be overriden by %Editing "
+"Permissions enabled for specific post types%s."
+msgstr ""
+"%sNota%s: Las capacidades de «Cambiar el estado de la entrada» pueden ser "
+"anuladas por %Permisos de edición habilitados para tipos de contenido "
+"específicos%s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/PublishPressSettings.php:48
+#, php-format
+msgid "Please %senable the Status dropdown%s for Gutenberg compatibility."
+msgstr ""
+"Por favor, %sactiva el desplegable de estado%s para la compatibilidad con "
+"Gutenberg."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:24
+msgid "Statuses"
+msgstr "Estados"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:35
+msgid "Workflow"
+msgstr "Flujo de trabajo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:46
+msgid "Custom Visibility Statuses"
+msgstr "Estados de visibilidad personalizados"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:47
+msgid "Custom Visibility Statuses require status-specific editing capabilities"
+msgstr ""
+"Los estados de visibilidad personalizados requieren capacidades de edición "
+"específicas para cada estado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:48
+msgid "Drafts visible on front end if specific Read Permissions assigned"
+msgstr ""
+"Borradores visibles en la vista pública si se asignan permisos de lectura "
+"específicos"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:51
+msgid ""
+"Supplemental Editor Role for \"standard statuses\" also grants capabilities "
+"for Workflow Statuses"
+msgstr ""
+"El perfil de editor suplementario para los «estados estándar» también otorga "
+"capacidades para los estados de flujo de trabajo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:52
+msgid ""
+"Publish button defaults to next workflow status (instead of highest "
+"permitted)"
+msgstr ""
+"El botón de publicación pasa por defecto al siguiente estado del flujo de "
+"trabajo (en lugar del más alto permitido)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:103
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:143
+msgid "Additional Configuration:"
+msgstr "Configuración addicional:"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:106
+msgid "Define Privacy Statuses"
+msgstr "Define los estados de privacidad"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:148
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:171
+msgid "Post Workflow Statuses"
+msgstr "Estados del flujo de trabajo de las entradas"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:153
+msgid "Enable PublishPress Status Dropdown"
+msgstr "Activa el desplegable de estado de PublishPress"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:157
+msgid "Turn on PublishPress Statuses"
+msgstr "Activa los estados de PublishPress"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:161
+msgid "Activate PublishPress"
+msgstr "Activa PublishPress"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/SettingsTabStatuses.php:169
+msgid "Workflow Order, Branching, Permissions"
+msgstr "Orden del flujo de trabajo, ramificación, permisos"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:50
+#, php-format
+msgid "This status is %sdefined by PublishPress%s."
+msgstr "Este estado está %sdefinido por PublishPress%s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:52
+msgid ""
+"This is a PublishPress status, but the PublishPress plugin seems to be "
+"inactive."
+msgstr ""
+"Este es un estado de PublishPress, pero el plugin de PublishPress parece "
+"estar inactivo."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:60
+msgid "Slug"
+msgstr "Slug"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:68
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:89
+msgid "Capability Mapping"
+msgstr "Asignación de capacidades"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:71
+msgid "(Default Capabilities)"
+msgstr "(Capacidades por defecto)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:73
+msgid "Custom Capabilities for this Status"
+msgstr "Capacidades personalizadas para este estado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:93
+#, php-format
+msgid "same as WORKFLOW BRANCH PARENT (%s)"
+msgstr "igual que la RAMA DEL FLUJO DE TRABAJO SUPERIOR (%s)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:96
+#, php-format
+msgid "same as %s status"
+msgstr "igual que el estado %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:104
+msgid ""
+"Simplify administration by making related statuses share capability "
+"requirements."
+msgstr ""
+"Simplifica la administración haciendo que los estados relacionados compartan "
+"los requisitos de capacidad."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:110
+msgid "Label"
+msgstr "Etiqueta"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:120
+msgid "Save As Label"
+msgstr "Guardar como etiqueta"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:128
+msgid "Submit Button Label"
+msgstr "Etiqueta del botón enviar"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:134
+msgid "Workflow Branch"
+msgstr "Ramificación del flujo de trabajo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:137
+msgid "(Main Workflow)"
+msgstr "(Flujo de trabajo principal)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:154
+#, php-format
+msgid "Workflow Order <br />(in %s branch)"
+msgstr "Orden del flujo de trabajo <br />(en %s ramas)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:154
+msgid "Workflow Order"
+msgstr "Orden del flujo de trabajo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:158
+msgid "(none)"
+msgstr "(ninguno)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:159
+msgid ""
+"If no order is set, this status will be available, but not offered as a "
+"default next step."
+msgstr ""
+"Si no has establecido ninguna orden, este estado estará disponible, pero no "
+"se ofrecerá como siguiente paso por defecto."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:165
+msgid "Note: Branch ordering starts at 1, separate from main workflow order."
+msgstr ""
+"Nota: El orden de las ramas comienza en 1, separado del orden del flujo de "
+"trabajo principal."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:167
+msgid ""
+"To make this status later in the workflow sequence, give it a higher number. "
+"To exclude it from workflow automation, give it a zero value."
+msgstr ""
+"Para que este estado sea posterior en la secuencia del flujo de trabajo, "
+"dale un número mayor. Para excluirlo de la automatización del flujo de "
+"trabajo, dale un valor cero."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:174
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:90
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:55
+msgid "Post Types"
+msgstr "Tipos de contenido"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:203
+msgid "(All Types)"
+msgstr "(Todos los tipos)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusAdmin.php:252
+#, php-format
+msgid "Note: Post Types must also be enabled in %1$sPublishPress settings%2$s"
+msgstr ""
+"Nota: Los tipos de contenidos deben estar activado también en los "
+"%1$sajustes de PublishPress%2$s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusEdit.php:63
+msgid "Status updated."
+msgstr "Estado actualizado."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusEdit.php:65
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:53
+msgid "Back to Statuses"
+msgstr "Volver a los estados"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusEdit.php:84
+msgid "Edit Post Status"
+msgstr "Editar estado de la entrada"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:66
+msgid "No matching statuses were found."
+msgstr "No se han encontrado estados coincidentes."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:86
+msgid "Order"
+msgstr "Orden"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:91
+msgid "Capabilities"
+msgstr "Capacidades"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:187
+msgid "Enable Custom Capabilities"
+msgstr "Activar las capacidades personalizadas"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:189
+msgid "Disable Custom Capabilities"
+msgstr "Desactivar las capacidades personalizadas"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:192
+msgid "Enable"
+msgstr "Activar"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:194
+msgid "Disable"
+msgstr "Desactivar"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:199
+msgid "Delete"
+msgstr "Borrar"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:249
+#, php-format
+msgid "Normal order for workflow progression within the %s branch."
+msgstr ""
+"Orden normal para la progresión del flujo de trabajo dentro de la rama %s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:253
+#, php-format
+msgid ""
+"This status will be available within the %s branch, but not offered as a "
+"default next step."
+msgstr ""
+"Este estado estará disponible dentro de la rama %s, pero no se ofrecerá como "
+"siguiente paso por defecto."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:255
+msgid ""
+"This status will be available in the main workflow, but not offered as a "
+"default next step."
+msgstr ""
+"Este estado estará disponible en el flujo de trabajo principal, pero no se "
+"ofrecerá como siguiente paso por defecto."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:258
+msgid "Normal order for workflow progression."
+msgstr "Orden normal para la progresión del flujo de trabajo."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:278
+#, php-format
+msgid "%s, more..."
+msgstr "%s, más..."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:283
+msgid "All"
+msgstr "Todo"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:309
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:313
+msgid "(Standard)"
+msgstr "(Estandar)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:317
+#, php-format
+msgid "(same as %s)"
+msgstr "(igual que %s)"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:319
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:322
+msgid "Custom"
+msgstr "Personalizado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusListTable.php:326
+msgid "Enabled"
+msgstr "Activado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:38
+msgid ""
+"Please use PublishPress to create custom statuses for publishing workflow."
+msgstr ""
+"Por favor, usa PublishPress para crear estados personalizados del flujo de "
+"trabajo de publicación."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:51
+msgid "Status created."
+msgstr "Estado creado."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:72
+msgid "Create Post Moderation Status"
+msgstr "Crear el estado de moderación de la publicación"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:72
+msgid "Create Post Privacy Status"
+msgstr "Crear el estado de privacidad de la publicación"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/StatusNew.php:97
+msgid "Create"
+msgstr "Crear"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:88
+msgid "Delete Statuses"
+msgstr "Borrar los estados"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:89
+msgid "You have specified this status for deletion:"
+msgstr "Has especificado este estado para el borrado:"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:106
+msgid "Confirm Deletion"
+msgstr "Confirmar el borrado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:108
+msgid "There are no valid statuses selected for deletion."
+msgstr "No hay estados válidos seleccionados para borrar."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:123
+msgid "Post Status Created."
+msgstr "Estado de la entrada creado."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:152
+#, php-format
+msgid "%s status deleted"
+msgstr "Estado %s borrado"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:159
+msgid "Status edited."
+msgstr "Estado editado."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:167
+msgid "New status created."
+msgstr "Nuevo estado creado."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:185
+msgid "Post Visibility Statuses"
+msgstr "Estados de visibilidad de las entradas"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:189
+msgid "Post Statuses for Editorial Workflow"
+msgstr "Estados de las entradas para el flujo de trabajo editorial"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:192
+msgid "Post Statuses"
+msgstr "Estados de las entradas"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:194
+#, php-format
+msgid "Define Statuses: %s"
+msgstr "Define los estados: %s"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:233
+#, php-format
+msgid ""
+"Set permissions, workflow order, post type usage or button labels for "
+"%sPublishPress Statuses%s below. See also %sPermissions > Settings > Statuses"
+"%s."
+msgstr ""
+"Establece los permisos, el orden del flujo de trabajo, el uso del tipo de "
+"contenido o las etiquetas de los botones para los %sEstados de PublishPress"
+"%s a continuación. Ve también %sPermisos > Ajustes > Estados%s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:236
+#, php-format
+msgid ""
+"For best results, activate the PublishPress plugin. See also %sPermissions > "
+"Settings > Statuses%s."
+msgstr ""
+"Para obtener los mejores resultados, activa el plugin PublishPress. Ve "
+"también %sPermisos > Ajustes > Estados%s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:240
+#, php-format
+msgid ""
+"Please turn on the %sPublishPress Status Dropdown%s for Gutenberg. Then come "
+"back to set workflow status order, permissions and post type usage."
+msgstr ""
+"Por favor, activa el %sdesplegable de estado de PublishPress%s para la "
+"compatibilidad con Gutenberg. A continuación, vuelve a establecer el orden "
+"del estado del flujo de trabajo, los permisos y el uso del tipo de contenido."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:244
+#, php-format
+msgid ""
+"For best results, please turn on the %sPublishPress Statuses Module%s. See "
+"also %sPermissions > Settings > Statuses%s."
+msgstr ""
+"Para obtener los mejores resultados, activa el %smódulo de los estados de "
+"PublishPress%s. Ve también %sPermisos > Ajustes > Estados%s."
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:329
+msgid "show capability mapping"
+msgstr "muestra la asignación de capacidades"
+
+#: modules/presspermit-status-control/classes/Permissions/Statuses/UI/Statuses.php:331
+msgid "Note: Status capability requirements are also adjusted for post type."
+msgstr ""
+"Nota: Los requisitos de capacidad de estado también se ajustan al tipo de "
+"contenido."
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:228
+msgid "Member"
+msgstr "Miembro"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:235
+msgid "Premium"
+msgstr "Premium"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:242
+msgid "Staff"
+msgstr "Personal"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:485
+msgid "Submitters"
+msgstr "Remitentes"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:486
+msgid "Submitter"
+msgstr "Remitente"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:506
+msgid "Force Visibility"
+msgstr "Fuerza la visibilidad"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooks.php:513
+msgid "Post Status"
+msgstr "Estado de la entrada"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:181
+msgid "Add New Status"
+msgstr "Anade nuevo estado"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:182
+msgid "Edit Status"
+msgstr "Editar estado"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:223
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:224
+msgid "Workflow Statuses"
+msgstr "Estados del flujo de trabajo"
+
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:236
+#: modules/presspermit-status-control/classes/Permissions/StatusesHooksAdmin.php:237
+msgid "Visibility Statuses"
+msgstr "Estados de visibilidad"
+
+#: modules/presspermit-status-control/presspermit-status-control.php:51
+msgid "Status Control"
+msgstr "Control del estado"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/Dashboard.php:40
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/Dashboard.php:41
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:32
+#: modules/presspermit-sync/presspermit-sync.php:47
+msgid "Sync Posts"
+msgstr "Sincronizar entradas"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/Helper.php:61
+#, php-format
+msgid ""
+"You seem to be using a Team / Staff plugin. To synchronize posts to users "
+"and give them editing permission, go to %1$sPermissions > Settings > Sync "
+"Posts%2$s"
+msgstr ""
+"Parece que estás usando un plugin de equipo/personal. Para sincronizar las "
+"entradas a los usuarios y darles permiso de edición, ve a %1$sPermisos > "
+"Ajustes > Sincronizar entradas%2$s"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/Helper.php:68
+msgid "Dismiss this notice."
+msgstr "Descartar este aviso."
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:40
+msgid "Synchronize Posts"
+msgstr "Sincronizar entradas"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:53
+msgid "Synchronize Posts to Users"
+msgstr "Sincronizar las entradas con los usuarios"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:54
+msgid "Grant Author Permissions"
+msgstr "Conceder permisos de autor"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:56
+msgid "Match Post Field"
+msgstr "Coincidir el campo entrada"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:57
+msgid "Match User Field"
+msgstr "Coincidir el campo usuario"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:58
+msgid "User Role"
+msgstr "Perfil usuario"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:59
+msgid "Parent Post"
+msgstr "Entrada padre"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:298
+msgid "Post Title"
+msgstr "Título entrada"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:299
+msgid "Post slug"
+msgstr "Slug entrada"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:303
+msgid "User Display Name"
+msgstr "Nombre del usuario a mostrar"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:304
+msgid "User email"
+msgstr "Correo electrónico del usuario"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:305
+msgid "User login"
+msgstr "Acceso de usuario"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:306
+msgid "User nicename"
+msgstr "Slug de usuario"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:327
+msgid "Sync to New Users"
+msgstr "Sincroniza con los nuevos usuarios"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:328
+msgid "Sync to Current Users"
+msgstr "Sincroniza con los usuarios actuales"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:329
+msgid "Role to Sync"
+msgstr "Perfil de sincronizar"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:330
+msgid "Post Match Field"
+msgstr "Campo entrada a coincidir"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:332
+msgid "User Match Field"
+msgstr "Campo usuario a coincidir"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:335
+msgid "Parent"
+msgstr "Padre"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:382
+msgid "please select..."
+msgstr "por favor selecciona…"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:383
+msgid "(all roles)"
+msgstr "(todos los perfiles)"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:437
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:480
+msgid "(other)"
+msgstr "(otro)"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:449
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:492
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:584
+msgid "select..."
+msgstr "selecciona…"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:450
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:493
+msgid "cancel"
+msgstr "cancelar"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:544
+msgid "Synchronization Results:"
+msgstr "Resultados de la sincronización:"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UI/SettingsTabSyncPosts.php:563
+msgid "Read more..."
+msgstr "Leer más…"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:60
+#, php-format
+msgid "%s: Skipping because no role is selected"
+msgstr "%s: Omitiendo porque no has seleccionado ningún perfil"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:78
+#, php-format
+msgid "%s: Enabled PressPermit filtering (Core > Filtered Post Types)"
+msgstr ""
+"%s: Activado el filtrado PressPermit (Núcleo > Tipos de contenido filtrados)"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:93
+#, php-format
+msgid "%1$s: Assigned supplemental %2$s Author role to [WP %3$s] group"
+msgstr ""
+"%1$s: Asignado el perfil de autor suplementario %2$s al grupo [WP %3$s]."
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:205
+#, php-format
+msgid "Ambiguous %1$s match (%2$s)"
+msgstr "Coincidencia ambigua de %1$s (%2$s)"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:235
+#, php-format
+msgid "Ambiguous user match for %1$s (%2$s, post id %3$s"
+msgstr "Coincidencia de usuario ambigua para %1$s (%2$s, ID de entrada %3$s"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:260
+#, php-format
+msgid "Ambiguous user match for %1$s (%2$s, $post id %3$s)"
+msgstr ""
+"Coincidencia de usuario ambigua para %1$s (%2$s, $ID de la entrada %3$s)"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:379
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:403
+#, php-format
+msgid "Ambiguous user match for %1$s (%2$s)"
+msgstr "Coincidencia de usuario ambigua para %1$s (%2$s)"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:434
+#, php-format
+msgid "%1$s: %2$s posts created"
+msgstr "%1$s: %2$s entradas creadas"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:440
+#, php-format
+msgid "%1$s: %2$s posts updated"
+msgstr "%1$s: %2$s entradas actualizadas"
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:451
+#, php-format
+msgid "%1$s: Synchronization done for %2$s role."
+msgstr "%1$s: Sincronización realizada para el perfil %2$s."
+
+#: modules/presspermit-sync/classes/Permissions/SyncPosts/UserSync.php:453
+#, php-format
+msgid "%s: Synchronization done."
+msgstr "%1$s: Sincronización realizada."
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/PostsTeaser.php:379
+#, php-format
+msgid "%s..."
+msgstr "%s..."
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:30
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooksAdmin.php:76
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooksAdmin.php:77
+#: modules/presspermit-teaser/presspermit-teaser.php:47
+msgid "Teaser"
+msgstr "El avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:37
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:131
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:241
+msgid "Teaser Type"
+msgstr "Tipo de avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:38
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:137
+msgid "Coverage"
+msgstr "Cobertura"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:39
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:143
+msgid "Teaser Text"
+msgstr "Texto del avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:40
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:149
+msgid "Redirect"
+msgstr "Redireccionar"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:41
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:155
+msgid "Options"
+msgstr "Opciones"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:43
+msgid "Hidden Content Teaser"
+msgstr "Avance del contenido oculto"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:53
+msgid "Display mode for readable private posts"
+msgstr "Modo de visualización de las entradas privadas legibles"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:54
+msgid "Display mode for readable non-private posts"
+msgstr "Modo de visualización de las entradas no privadas legibles"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:55
+msgid "Feed Replacement Text (use %permalink% for post URL)"
+msgstr ""
+"Texto de reemplazo del feed (usa %permalink% para la URL de la entrada)"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:56
+msgid "Hide Featured Image when Teaser is applied"
+msgstr "Oculta la imagen destacada cuando se aplica el avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:57
+msgid ""
+"\"Hide Private\" settings only apply to custom privacy (Member, Premium, "
+"Staff, etc.)"
+msgstr ""
+"Los ajustes de «Ocultar privado» sólo se aplican a la privacidad "
+"personalizada (Miembro, Premium, Personal, etc.)"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:101
+msgid "Posts Teaser"
+msgstr "Avance de las entradas"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:113
+msgid "All post teaser settings were updated."
+msgstr ""
+"Todos los ajustes de los avances de las entradas han sido actualizados."
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:121
+msgid "All post teaser settings were reset to defaults."
+msgstr ""
+"Todos los ajustes de los avances de las entradas han sido restablecidos a "
+"los valores por defecto."
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:244
+msgid "User Application"
+msgstr "Aplicación del usuario"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:272
+msgid "No Teaser"
+msgstr "Sin avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:274
+msgid "Excerpt as Teaser"
+msgstr "Extracto como avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:275
+msgid "Excerpt or pre-More as Teaser"
+msgstr "Extracto o pre-Leer más como avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:276
+msgid "Excerpt, pre-More or First X Characters"
+msgstr "Extracto, pre-Leer más o los primeros X caracteres"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:284
+msgid "Excerpt or First X Characters"
+msgstr "Extracto o los primeros X caracteres"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:305
+msgid "Number of characters to display"
+msgstr "Número de caracteres a mostrar"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:331
+msgid "Logged in Users"
+msgstr "Usuarios conectados"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:339
+msgid "Both"
+msgstr "Ambos"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:415
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:445
+msgid "Teaser Application"
+msgstr "Aplicación del avance"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:416
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:471
+msgid "Private Posts (if unreadable)"
+msgstr "Entradas privadas (si no legibles)"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:417
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:506
+msgid "Nav Menu Links"
+msgstr "Enlaces menú de navegación"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:452
+msgid "List and Single view"
+msgstr "Lista y vista individual"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:453
+msgid "Single view only"
+msgstr "Sólo vista individual"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:488
+msgid "Apply Teaser to Private Posts"
+msgstr "Aplica el avance a las entradas privadas"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:489
+msgid "Hide Private Posts"
+msgstr "Oculta las entradas privadas"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:490
+msgid "Hide for Custom Visibility"
+msgstr "Oculta por la visibilidad personalizada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:518
+msgid "Display Teaser Links in Nav Menu"
+msgstr "Muestra los enlaces de avance en el menú de navegación"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:519
+msgid "No Teaser Links in Nav Menu"
+msgstr "Ningún enlaces de avance en el menú de navegación"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:540
+msgid "Nav Menu Links - Disable Teaser for Some Categories / Tags:"
+msgstr ""
+"Enlaces del menú de navegación - desactiva avance para algunas categorías/"
+"etiquetas:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:552
+msgid "Taxonomy"
+msgstr "Taxonomía"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:604
+#, php-format
+msgid "Hide links related to these %s:"
+msgstr "Oculta los enlaces relacionados con estos %s:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:694
+msgid "Redirection"
+msgstr "Redirección"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:697
+msgid "Page Selection"
+msgstr "Selecciona página"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:704
+msgid "Anonymous Visitors:"
+msgstr "Visitantes anónimos:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:712
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:786
+msgid "No Redirect"
+msgstr "Ninguna redirección"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:713
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:787
+msgid "Redirect to WordPress Login"
+msgstr "Redirigir al acceso a WordPress"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:714
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:788
+msgid "Redirect to a Custom Page"
+msgstr "Redirigir a una página personalizada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:752
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:820
+msgid "This is a custom login page"
+msgstr "Esta es una página de acceso personalizada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:778
+msgid "Logged in Users:"
+msgstr "Usuarios conectados:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:868
+msgid "name"
+msgstr "nombre"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:869
+msgid "content"
+msgstr "contenido"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:870
+msgid "excerpt"
+msgstr "extracto"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:888
+msgid "post title"
+msgstr "título entrada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:889
+msgid "post content"
+msgstr "contenido entrada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:890
+msgid "post excerpt"
+msgstr "extracto entrada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:902
+#, php-format
+msgid "Teaser Text for %s"
+msgstr "Texto avance para %s"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:911
+#, php-format
+msgid "Replace %s with:"
+msgstr "Reemplaza %s con:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:915
+#, php-format
+msgid "Before %s:"
+msgstr "Antes de %s:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:919
+#, php-format
+msgid "After %s:"
+msgstr "Después de %s:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:990
+msgid "Type-Specific Teaser Text"
+msgstr "Texto de avance específico del tipo"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:994
+msgid ""
+"<strong>Copy</strong> the following code into your theme's <strong>functions."
+"php</strong> file (or some other file which is always executed and not auto-"
+"updated). You will need to adjust the 'my_custom_type' identifier and text "
+"as desired:"
+msgstr ""
+"<strong>Copia</strong> el siguiente código en el archivo <strong>functions."
+"php</strong> de tu tema (o algún otro archivo que se ejecute siempre y no se "
+"actualice automáticamente). Tendrás que ajustar el identificador y el texto "
+"de 'my_custom_type' como quieras:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1060
+msgid ""
+"To modify default settings network-wide, <strong>copy</strong> the following "
+"code into your theme's <strong>functions.php</strong> file (or some other "
+"file which is always executed and not auto-updated) and modify as desired:"
+msgstr ""
+"Para modificar los ajustes por defecto en toda la red, <strong>copia</"
+"strong> el siguiente código en el archivo <strong>functions.php</strong> de "
+"tu tema (o algún otro archivo que se ejecute siempre y no se actualice "
+"automáticamente) y ajústalo como quieras:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1104
+msgid ""
+"To force the value of a specific setting network-wide, <strong>copy</strong> "
+"the following code into your theme's <strong>functions.php</strong> file (or "
+"some other file which is always executed and not auto-updated) and modify as "
+"desired:"
+msgstr ""
+"Para forzar el valor de un ajuste específico en toda la red, <strong>copia</"
+"strong> el siguiente código en el archivo <strong>functions.php</strong> de "
+"tu tema (o algún otro archivo que se ejecute siempre y no se actualice "
+"automáticamente) y ajústalo como quieras:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1184
+msgid "Custom Fields"
+msgstr "Campos personalizados"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1192
+msgid "Hide Featured Image when Teaser is applied:"
+msgstr "Oculta la imagen destacada cuando se aplica el avance:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1212
+msgid "RSS"
+msgstr "RSS"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1234
+msgid "Display for readable private posts:"
+msgstr "Muestra para las entradas privadas legibles:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1240
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1265
+msgid "Full Content"
+msgstr "Contenido completo"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1240
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1265
+msgid "Excerpt Only"
+msgstr "Sólo extracto"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1240
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1265
+msgid "Title Only"
+msgstr "Sólo título"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1259
+msgid "Display for readable non-private posts:"
+msgstr "Muestra para las entradas privadas no legibles:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1286
+msgid "Feed Replacement Text:"
+msgstr "Texto de reemplazo del feed:"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1297
+#, php-format
+msgid "Use %s for post URL"
+msgstr "Usa %s para la URL de la entrada"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1318
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: modules/presspermit-teaser/classes/Permissions/Teaser/UI/PostsTeaser.php:1319
+msgid "Revert to Defaults"
+msgstr "Restaurar valores por defecto"
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooks.php:40
+msgid "View the content of this <a href='%permalink%'>article</a>"
+msgstr "Ver el contenido de esta <a href='%permalink%'>entrada</a>"
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooks.php:57
+msgid ""
+"Sorry, this content requires additional permissions.  Please contact an "
+"administrator for help."
+msgstr ""
+"Lo sentimos, este contenido requiere permisos adicionales.  Por favor, ponte "
+"en contacto con un administrador para obtener ayuda."
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooks.php:58
+msgid ""
+"Sorry, you don't have access to this content.  Please log in or contact a "
+"site administrator for help."
+msgstr ""
+"Lo sentimos, no tienes acceso a este contenido.  Por favor, accede o ponte "
+"en contacto con un administrador del sitio para obtener ayuda."
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooks.php:67
+msgid "Note: This content requires a higher login level."
+msgstr "Nota: Este contenido requiere un nivel de acceso superior."
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooks.php:68
+msgid "Note: This content requires site login."
+msgstr "Nota: Este contenido requiere el acceso al sitio."
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooksAdmin.php:33
+msgid "Select a page"
+msgstr "Selecciona una página"
+
+#: modules/presspermit-teaser/classes/Permissions/TeaserHooksAdmin.php:34
+msgid "Select terms"
+msgstr "Selecciona los términos"
+
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:202
+#: modules/presspermit-status-control/common/js/object-edit.js:14
+msgid "Schedule for:"
+msgstr "Programmado para:"
+
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:205
+#: modules/presspermit-status-control/common/js/object-edit.js:14
+msgid "Publish On:"
+msgstr "Publicar el:"
+
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:208
+#: modules/presspermit-status-control/common/js/object-edit.js:14
+msgid "Published On:"
+msgstr "Publicado el:"
+
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:318
+#: modules/presspermit-status-control/common/js/object-edit.js:28
+msgid "Public, Sticky"
+msgstr "Público, fijo"
+
+#: modules/presspermit-status-control/common/js/object-edit.dev.js:324
+#: modules/presspermit-status-control/common/js/object-edit.js:28
+msgid "Password Protected"
+msgstr "Protegida con contraseña"
+
+#: modules/presspermit-status-control/common/js/post-block-edit.dev.js:179
+#: modules/presspermit-status-control/common/js/post-block-edit.js:13
+msgid "Schedule…"
+msgstr "Programar…"
+
+#: modules/presspermit-status-control/common/lib/custom-privacy-sub-block.min.js:116
+msgid "Page descendent visibility is locked by parent page setting."
+msgstr ""
+"La visibilidad de los descendientes de la página está bloqueada por el "
+"ajuste de la página padre."
+
+#: modules/presspermit-status-control/common/lib/custom-privacy-sub-block.min.js:116
+msgid "Visibility for all page descendents."
+msgstr "Visibilidad para todos los descendientes de la página."
