@@ -1,0 +1,233 @@
+/*
+#pp-teaser .form-table {
+padding-top: 0;
+}
+*/
+
+section[id*="ppp-tab-"] {
+  margin-top: 20px;
+}
+
+span.teaser-num-chars input {
+width: 40px;
+vertical-align: middle;
+}
+
+.pp-textentries {
+    margin-top: 0.15em;
+    padding-left: 1.2em;
+}
+
+.ppp-code-sample {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.ppp-code-sample > span {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+#pp-teaser .ppp-code-sample > span > button.button-small {
+  margin-left: 5px;
+  line-height: 24px;
+  padding: 0 8px;
+  min-height: 26px;
+}
+
+#pp-teaser .ppp-code-sample > span > button .dashicons {
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+
+.pp-add-login-form {
+  margin-top: 5px !important;
+}
+
+.ppp-code-sample textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  height: 200px;
+  background: #fff;
+}
+
+.teaser-table {
+  margin-top: 20px;
+}
+
+#pp-teaser input[type="submit"] {
+  margin-top: 20px;
+}
+
+#pp-teaser section table.teaser-table tr th {
+font-weight: bold;
+}
+
+#pp-teaser .form-table tr.col-headers th {
+  text-align: center;
+}
+
+#pp-teaser h4 {
+margin-top: 0;
+margin-bottom: 8px;
+}
+
+#ppp-tab-teaser-type .form-table td {
+padding-top: 0;
+}
+
+table.pp-teaser-redirect .pp-select-dynamic-wrapper > span.select2 {
+  width: 250px !important;
+}
+
+td.pp-hide-terms .pp-select-dynamic-wrapper > span.select2 {
+  width: 450px !important;
+}
+
+.pp-select-dynamic-wrapper .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  margin: 6px 6px 0 0;
+}
+
+.teaser-coverage-nav-menu-terms {
+margin-top: 40px;
+}
+
+.teaser-coverage-nav-menu-terms h4 {
+font-size: 14px;
+font-weight: bold;
+}
+
+table.pp-teaser-redirect-table td {
+padding-left: 0;
+}
+
+.form-table .teaser_vspace td {
+padding-top: 2px;
+padding-bottom: 10px;
+}
+
+.form-table .teaser-post-type td {
+padding-top: 10px;
+padding-bottom: 2px;
+}
+
+#pp-teaser tr.teaser-post-type td {
+padding-top: 16px;
+vertical-align: top;
+}
+
+#pp-teaser div.teaser_vspace {
+padding-top: 5px;
+padding-bottom: 4px;
+}
+
+.pp-options-indent {
+    margin-left: 25px;
+}
+
+.pp-teaser-redirect-table tr, .pp-teaser-redirect-table tr td {
+    border-bottom: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pp-teaser-redirect-table input {
+    width: 175px;
+}
+
+#ppp-tab-teaser-text table.form-table input.short-text {
+  width: 300px;
+}
+
+#ppp-tab-teaser-text table.form-table input.regular-text {
+  width: 500px;
+}
+
+.pp_teaser_filter_notes textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* @TODO This should be in pressshack-admin.css from vendor/  */
+.pressshack-admin-wrapper .nav-tab-wrapper .nav-tab {
+  margin-bottom: -1px;
+}
+
+.pressshack-admin-wrapper .nav-tab-wrapper .nav-tab a:focus {
+  outline: none;
+}
+
+/* @TODO This overrides settings.css from vendor/  */
+.pp-form-table tr th,
+.pp-form-table tr td {
+  border-bottom: none;
+  background: transparent;
+}
+
+.pp-options-table tr {
+  border-bottom: none;
+}
+
+/* @TODO This overrides presspermit.css from vendor/  */
+.pp-subtext {
+  font-style: normal;
+}
+
+@media (min-width: 1200px) {
+
+  .teaser-table tr th:first-of-type {
+    width: 210px;
+    box-sizing: border-box;
+  }
+
+  .teaser-table tbody tr td > label {
+    display: none;
+  }
+
+  #pp-teaser div.teaser_vspace {
+    display: inline-block;
+    padding: 0 0 0 12px;
+  }
+
+  #ppp-tab-teaser-type .teaser-table thead tr th:nth-child(2) {
+    width: 340px;
+  }
+
+  #ppp-tab-coverage .teaser-table thead tr th:nth-child(3) {
+    width: 300px;
+  }
+
+  #ppp-tab-coverage .teaser-table thead tr th:nth-child(2),
+  #ppp-tab-redirect .teaser-table thead tr th:nth-child(2) {
+    width: 240px;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .teaser-table thead tr {
+    display: none !important;
+  }
+
+  .teaser-table tr th,
+  .teaser-table tr td {
+    display: block;
+  }
+
+  .teaser-table tr th:first-of-type {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+  .teaser-table tbody tr td > label {
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  #pp-teaser section table.teaser-table tr td label {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,12 @@
+option.pp-scheduled {
+    color: #aaa;
+}
+
+option.pp-expired {
+    color: #c00;
+    text-decoration: line-through;
+}
+
+#pp_member_start, #pp_member_end {
+    width: 110px;
+}
