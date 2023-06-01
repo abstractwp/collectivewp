@@ -44,11 +44,19 @@ Theme:                      <?php echo $theme->get( 'Name' ) . ' ' . $theme->get
 Parent Theme:               <?php echo empty( $parent ) ? '' : $parent->get( 'Name' ) . ' ' . $parent->get( 'Version' ); ?>
 
 
+Debug Mode:                 <?php echo ( 'on' == FWP()->helper->get_setting( 'debug_mode' ) ) ? 'ON' : 'OFF'; ?>
+
 PHP Version:                <?php echo phpversion(); ?>
 
 MySQL Version:              <?php echo esc_html( $GLOBALS['wpdb']->db_version() ); ?>
 
 Web Server Info:            <?php echo esc_html( $_SERVER['SERVER_SOFTWARE'] ); ?>
+
+PHP Memory Limit:           <?php echo ini_get( 'memory_limit' ); ?>
+
+WP_MEMORY_LIMIT:            <?php echo WP_MEMORY_LIMIT; ?>
+
+WP_MAX_MEMORY_LIMIT:        <?php echo WP_MAX_MEMORY_LIMIT; ?>
 
 
 <?php

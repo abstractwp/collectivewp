@@ -53,7 +53,7 @@ class FacetWP_Facet
      * @since 3.5.4
      */
     function get_limit( $facet, $default = 10, $field = 'count' ) {
-        $count = $facet[ $field ];
+        $count = $facet[ $field ] ?? $default;
 
         if ( '-1' == $count ) {
             return 1000;

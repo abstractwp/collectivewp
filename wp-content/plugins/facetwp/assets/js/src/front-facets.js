@@ -295,7 +295,7 @@
             else {
                 opts.minDate = settings.range.minDate;
                 opts.maxDate = settings.range.maxDate;
-            }      
+            }
 
             opts = FWP.hooks.applyFilters('facetwp/set_options/date_range', opts, {
                 'facet_name': facet_name,
@@ -939,7 +939,7 @@
             // layout builder
             if ( 0 < $('.fwpl-layout').len() ) {
                 var layout = $(params.html).find('.fwpl-layout').html();
-                $('.fwpl-layout').append(layout);
+                $('.facetwp-template .fwpl-layout').append(layout);
             }
             // other
             else {

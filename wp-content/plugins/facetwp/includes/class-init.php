@@ -122,7 +122,7 @@ class FacetWP_Init
                 'addon' => 'facetwp-elementor/facetwp-elementor.php',
                 'slug' => 'elementor'
             ],
-            'Polylang' => [
+            'Multilingual (Polylang)' => [
                 'is_active' => function_exists( 'pll_register_string' ),
                 'addon' => 'facetwp-i18n/facetwp-i18n.php',
                 'slug' => 'multilingual'
@@ -132,17 +132,17 @@ class FacetWP_Init
                 'addon' => 'facetwp-relevanssi/facetwp-relevanssi.php',
                 'slug' => 'relevanssi'
             ],
-            'Tasty Recipes' => [
+            'Recipes (Tasty Recipes)' => [
                 'is_active' => function_exists( 'Tasty_Recipes' ),
                 'addon' => 'facetwp-recipes/facetwp-recipes.php',
                 'slug' => 'recipes'
             ],
-            'WPML' => [
+            'Multilingual (WPML)' => [
                 'is_active' => defined( 'ICL_SITEPRESS_VERSION' ),
                 'addon' => 'facetwp-i18n/facetwp-i18n.php',
                 'slug' => 'multilingual'
             ],
-            'WP Recipe Maker' => [
+            'Recipes (WP Recipe Maker)' => [
                 'is_active' => function_exists( 'run_wp_recipe_maker' ),
                 'addon' => 'facetwp-recipes/facetwp-recipes.php',
                 'slug' => 'recipes'
