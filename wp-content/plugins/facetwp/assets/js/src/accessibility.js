@@ -58,6 +58,7 @@
                 $(this).attr('role', 'button');
                 $(this).attr('aria-haspopup', 'true');
                 $(this).attr('aria-expanded', $(this).hasClass('fs-open') ? 'true' : 'false');
+                $(this).attr('aria-label', $(this).find('.fs-label').html());
             });
 
             $('.facetwp-type-fselect .facetwp-dropdown').attr('aria-hidden', 'true');

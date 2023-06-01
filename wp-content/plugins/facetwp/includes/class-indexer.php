@@ -298,7 +298,7 @@ class FacetWP_Indexer
      * Get the array of indexer query args
      * @since 4.1.8
      */
-    function get_query_args() {
+    function get_query_args( $post_id = false ) {
         $args = [
             'post_type'         => 'any',
             'post_status'       => 'publish',
@@ -309,6 +309,11 @@ class FacetWP_Indexer
             'no_found_rows'     => true,
         ];
 
+        if ( is_int( $post_id ) ) {
+            $args['p'] = $post_id;
+            $args['posts_per_page'] = 1;
+        }
+
         return apply_filters( 'facetwp_indexer_query_args', $args );
     }
 
@@ -318,13 +323,7 @@ class FacetWP_Indexer
      * @since 3.6.8
      */
     function get_post_ids_to_index( $post_id = false ) {
-        $args = $this->get_query_args();
-
-        if ( is_int( $post_id ) ) {
-            $args['p'] = $post_id;
-            $args['posts_per_page'] = 1;
-        }
-
+        $args = $this->get_query_args( $post_id );
         $query = new WP_Query( $args );
         return (array) $query->posts;
     }
