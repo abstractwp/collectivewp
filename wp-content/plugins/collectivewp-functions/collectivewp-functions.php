@@ -250,3 +250,20 @@ function remove_admin_bar_for_non_admins() {
 	}
 }
 add_action( 'after_setup_theme', 'remove_admin_bar_for_non_admins' );
+
+/**
+ * Removes the Comments menu item from the admin sidebar.
+ */
+function disable_comments_admin_menu() {
+	remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'disable_comments_admin_menu' );
+
+/**
+ * Removes the Comments menu from the admin toolbar.
+ */
+function disable_comments_admin_bar() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu( 'comments' );
+}
+add_action( 'wp_before_admin_bar_render', 'disable_comments_admin_bar' );
