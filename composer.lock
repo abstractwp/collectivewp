@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8421577f786a31e147001857fa622f6d",
+    "content-hash": "c85e489b473b8cbb5bcc1e2114a600e7",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -458,6 +458,24 @@
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
         },
         {
+            "name": "wpackagist-plugin/email-templates",
+            "version": "1.4.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/email-templates/",
+                "reference": "tags/1.4.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/email-templates.1.4.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/email-templates/"
+        },
+        {
             "name": "wpackagist-plugin/fluent-smtp",
             "version": "2.2.4",
             "source": {
@@ -477,15 +495,15 @@
         },
         {
             "name": "wpackagist-plugin/publishpress",
-            "version": "3.10.1",
+            "version": "3.10.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/publishpress/",
-                "reference": "tags/3.10.1"
+                "reference": "tags/3.10.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/publishpress.3.10.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/publishpress.3.10.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
