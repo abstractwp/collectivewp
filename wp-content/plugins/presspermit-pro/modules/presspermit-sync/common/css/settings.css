@@ -1,0 +1,169 @@
+#pp-sync_posts_table .pp-subtext {
+    margin-top: 3px;
+}
+
+#pp-sync_posts_table tbody tr th {
+    white-space: nowrap;
+    padding-right: 50px;
+}
+
+#pp-sync_posts_table tbody tr td {
+    width: 100%
+}
+
+#pp-sync_posts_table tbody tr td table th {
+    padding-right: 0;
+    width: auto;
+    border-bottom: none !important;
+}
+
+#pp-sync_posts_table tbody tr td table td {
+    width: auto;
+    border-bottom: none !important;
+}
+
+#pp-sync_posts_table div.agp-v-spaced_input {
+    margin-top: 15px
+}
+
+#sync_posts_to_users_settings {
+    margin-top: 10px
+}
+
+#sync_posts_to_users_settings th {
+    vertical-align: bottom;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#sync_posts_to_users_settings td {
+    vertical-align: top;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#pp-sync_posts_table .pp-no-hide {
+    margin-top: 0;
+}
+
+#sync_posts_to_users_settings th.pp-enable {
+    text-align: center !important;
+    max-width: 160px;
+}
+
+#sync_posts_to_users_settings th.pp-sync-now {
+    width: 120px;
+}
+
+#sync_posts_to_users_settings td.pp-sync-type {
+    text-align: right !important;
+    width: 160px;
+    padding-right: 10px !important
+}
+
+#sync_posts_to_users_settings th.pp-sync-post-field, #sync_posts_to_users_settings th.pp-sync-user-field {
+    width: 220px
+}
+
+#sync_posts_to_users_settings th.pp-sync-equals {
+    width: 20px;
+}
+
+#sync_posts_to_users_settings th.pp-sync-role {
+    width: 230px;
+}
+
+#sync_posts_to_users_settings th.pp-sync-parent {
+    width: 80px;
+}
+
+#sync_posts_to_users_settings td.pp-sync-post-field, #sync_posts_to_users_settings td.pp-sync-user-field {
+    width: 200px
+}
+
+#sync_posts_to_users_settings th.pp-sync-equals, #sync_posts_to_users_settings td.pp-sync-equals {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+#sync_posts_to_users_settings td.pp-sync-equals span {
+    font-weight: bold;
+    font-size: 22px
+}
+
+#sync_posts_to_users_settings td.pp-sync-now, #sync_posts_to_users_settings th.pp-sync-now {
+    text-align: center
+}
+
+#sync_posts_to_users_settings select, #sync_posts_to_users_settings input[type="text"] {
+    max-width: 200px
+}
+
+#sync_posts_to_users_settings td.pp-sync-parent {
+    text-align: center
+}
+
+#sync_posts_to_users_settings input.ppp-parent-field {
+    width: 50px
+}
+
+#sync_posts_to_users_settings div.ppp-sync-hint {
+    width: 190px;
+}
+
+#sync_posts_to_users_settings input.pp-sync-now-button {
+    margin-top: 10px
+}
+
+#pp-sync_posts_table .pp-sync-permissions-hint {
+    padding: 10px;
+    margin-top: 20px
+}
+
+#pp-sync_posts_table .pp-sync-permissions-hint h4 {
+    margin-top: 0
+}
+
+#pp-sync_posts_table .pp-sync-permissions-hint ul {
+    list-style: disc;
+    padding-left: 20px;
+    padding-bottom: 0;
+    margin-bottom: 0
+}
+
+#pp-sync_posts_table .pp-sync-permissions-hint ul li {
+    padding-bottom: 8px
+}
+
+#pp-sync_posts_table .pp-sync-permissions-hint ul li ul {
+    margin-top: 10px
+}
+
+#pp-sync_posts_table .pp-sync-permissions-hint ol li {
+    margin-top: 10px
+}
+#pp-sync_posts_table div.pp-sync-results {
+    background-color: #ffe8c6;
+    border: 2px solid black;
+    margin-top: 20px
+}
+
+#pp-sync_posts_table div.pp-sync-results h3 {
+    padding-top: 5px;
+    margin: 0
+}
+
+#pp-sync_posts_table div.pp-sync-permissions-hint h4 {
+margin-top:2px;
+margin-bottom:2px;
+}
+
+
+
+/*
+#sync_posts_to_users_settings td.rlabel, #sync_posts_to_users_settings th.rlabel{text-align:right !important;}
+*/

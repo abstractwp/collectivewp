@@ -15,9 +15,6 @@ final class FacetWP_Helper
     /* (array) Cached terms */
     public $term_cache;
 
-    /* (array) Index table row counts */
-    public $row_counts;
-
 
     function __construct() {
         $this->facet_types = $this->get_facet_types();
@@ -376,6 +373,27 @@ final class FacetWP_Helper
 
 
     /**
+     * Escape output data
+     * @return mixed the escaped value(s)
+     * @since 4.2.0
+     */
+    function escape( $input ) {
+        if ( is_array( $input ) ) {
+            $output = [];
+
+            foreach ( $input as $key => $val ) {
+                $output[ $key ] = $this->escape( $val );
+            }
+        }
+        else {
+            $output = htmlspecialchars( $input );
+        }
+
+        return $output;
+    }
+
+
+    /**
      * Does an active facet with the specified setting exist?
      * @return boolean
      * @since 1.4.0
@@ -466,14 +484,14 @@ final class FacetWP_Helper
                 '_edit_last',
                 '_edit_lock',
             ] );
-    
+
             // Get taxonomies
             $taxonomies = get_taxonomies( [], 'object' );
-    
+
             // Get custom fields
             $meta_keys = $wpdb->get_col( "SELECT DISTINCT meta_key FROM {$wpdb->postmeta} ORDER BY meta_key" );
             $custom_fields = array_diff( $meta_keys, $excluded_fields );
-    
+
             $sources = [
                 'posts' => [
                     'label' => __( 'Posts', 'fwp' ),
@@ -497,11 +515,11 @@ final class FacetWP_Helper
                     'weight' => 30
                 ]
             ];
-    
+
             foreach ( $taxonomies as $tax ) {
                 $sources['taxonomies']['choices'][ 'tax/' . $tax->name ] = $tax->labels->name . ' (' . $tax->name . ')';
             }
-    
+
             foreach ( $custom_fields as $cf ) {
                 if ( 0 !== strpos( $cf, '_oembed_' ) ) {
                     $sources['custom_fields']['choices'][ 'cf/' . $cf ] = $cf;
@@ -540,10 +558,6 @@ final class FacetWP_Helper
      * @since 3.3.4
      */
     function get_row_counts() {
-        if ( isset( $this->row_counts ) ) {
-            return $this->row_counts;
-        }
-
         global $wpdb;
 
         $output = [];
@@ -552,8 +566,6 @@ final class FacetWP_Helper
         foreach ( $results as $result ) {
             $output[ $result->facet_name ] = (int) $result->row_count;
         }
-
-        $this->row_counts = $output;
 
         return $output;
     }

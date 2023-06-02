@@ -1,0 +1,59 @@
+/* --- Custom Post Stati Admin */
+div.pp-conditions table th.column-cap_map, div.pp-conditions table td.cap_map {
+    text-align: center;
+    display: none;
+}
+
+div.pp-conditions table td.cap_map ul li {
+    margin-bottom: 1em;
+}
+
+div.pp-conditions table thead tr th.column-order, div.pp-conditions table thead tr td.column-order {
+    width: 80px;
+}
+
+div.pp-conditions .activating {
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    margin: 0.5em 0.5em 0.5em 0;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #ffffe0;
+    border-color: #e6db55;
+}
+
+div.pp-conditions .activating p {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px
+}
+
+div.pp-statuses-other-config {
+    background-color: white;
+    padding: 2px 2px 2px 10px;
+    margin-top: 15px
+}
+
+div.pp-statuses-other-config h4 {
+    margin-bottom: 6px;
+    padding-bottom: 0;
+    font-size: 12px
+}
+
+div.pp-statuses-other-config ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin: 0 0 0 2em
+}
+
+div.pp-statuses-other-config a, div.pp-statuses-other-config a:visited {
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+#editcondition input[type="text"] {
+    width: 250px
+}

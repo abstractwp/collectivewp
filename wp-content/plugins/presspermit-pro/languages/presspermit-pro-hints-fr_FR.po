@@ -1,0 +1,837 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PublishPress Permissions Pro Hints\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-07 15:54-0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Angelo Giammarresi - info@wocmultimedia.com\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../includes-pro\n"
+"X-Poedit-KeywordsList: __;_e;_c;__ngettext;_n;_x;_ex;esc_html__;esc_html_e\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-SearchPath-0: admin-load.php\n"
+
+#: admin-load.php:33
+msgid "Display PublishPress Branding in Admin"
+msgstr "Afficher la marque PublishPress dans l’administration"
+
+#: admin-load.php:80
+#, php-format
+msgid ""
+"Should pages with privacy status \"premium\" require set_pages_premium and "
+"edit_premium_pages capabilities? If so, you can %1$sassign a status-specific "
+"Page Editor role%2$s or %3$sadd the capabilities directly to a role%4$s."
+msgstr ""
+"Les pages dont l’état de confidentialité est « premium » doivent-elles avoir "
+"les permissions set_pages_premium et edit_premium_pages ? Si c’est le cas, "
+"vous pouvez %1$sassigner un rôle d’éditeur de pages spécifique à l’état%2$s "
+"ou %3$sajouter les permissions directement à un rôle%4$s."
+
+#: admin-load.php:107
+#, php-format
+msgid ""
+"Note: Workflow sequence and branching for pre-publication is configured %son "
+"a separate screen%s"
+msgstr ""
+"Note : La séquence et le branchement du flux de travail pour la pré-"
+"publication sont configurés %sur un écran séparé%s"
+
+#: admin-load.php:113
+#, php-format
+msgid ""
+"Note: This generates a post (of selected type) for each current or future "
+"%suser%s in the selected role."
+msgstr ""
+"Note : Ceci génère une publication (du type sélectionné) pour chaque %scompte"
+"%s actuel ou futur dans le rôle sélectionné."
+
+#: admin-load.php:118
+#, php-format
+msgid ""
+"Permissions filtering is turned on for the post type: %1$sPermissions > Core "
+"> Filtered Post Types%2$s"
+msgstr ""
+"Le filtrage des droits est activé pour le type de publication : %1$sDroits > "
+"Coeur > Types de publication filtrés%2$s"
+
+#: admin-load.php:127
+#, php-format
+msgid ""
+"The synchronized role is supplemented with Author capabilities for the post "
+"type: %1$sPermissions > Groups%2$s > [Role Name]"
+msgstr ""
+"Le rôle synchronisé est complété par des permissions d’auteur·ice pour le "
+"type de publication : %1$sDroits > Groupes%2$s > [Nom du rôle]"
+
+#: admin-load.php:145
+#, php-format
+msgid "Additional settings provided by the %s module."
+msgstr "Réglages supplémentaires fournis par le module %s."
+
+#: admin-load.php:149
+msgid ""
+"Note: If you deactive, re-entry of the license key will be required for re-"
+"activation."
+msgstr ""
+"Note : Si vous le désactivez, vous devrez saisir à nouveau la clé de licence "
+"pour le réactiver."
+
+#: admin-load.php:154
+msgid ""
+"If enabled, custom group membership is applied network-wide (though role "
+"assignments are still site-specific)."
+msgstr ""
+"Si cette option est activée, l’appartenance à un groupe personnalisé est "
+"appliquée à l’ensemble du réseau (bien que les attributions de rôles restent "
+"spécifiques au site)."
+
+#: admin-load.php:157
+msgid "Can create network-wide permission groups"
+msgstr "Vous pouvez créer des groupes de droits à l’échelle du réseau"
+
+#: admin-load.php:160
+msgid "If group editing is allowed, can also modify network group membership"
+msgstr ""
+"Si la modification du groupe est autorisée, il est également possible de "
+"modifier l’appartenance à un groupe du réseau"
+
+#: admin-load.php:165
+msgid ""
+"Block direct URL access to images and other uploaded files in the WordPress "
+"uploads folder which are attached to posts that the user cannot read.  For "
+"each protected file, a separate RewriteRule will be added to the .htaccess "
+"file in this site's uploads folder.  Non-protected files are returned with "
+"no script execution whatsoever."
+msgstr ""
+"Bloquez l’accès URL direct aux images et aux autres fichiers téléversés dans "
+"le dossier des téléversement de WordPress qui sont attachés aux articles que "
+"l’utilisateur·ice ne peut pas lire.  Pour chaque fichier protégé, une "
+"RewriteRule distincte sera ajoutée au fichier .htaccess dans le dossier des "
+"téléversements de ce site.  Les fichiers non protégés sont renvoyés sans "
+"aucune exécution de script."
+
+#: admin-load.php:168
+#, php-format
+msgid ""
+"File Filtering on multisite installations will require the following rules "
+"to be inserted above the stock ms-files.php rules in the %1$smain .htaccess "
+"file%2$s:"
+msgstr ""
+"Le filtrage des fichiers sur les installations multisites nécessite "
+"l’insertion des règles suivantes au-dessus des règles ms-files.php dans le "
+"fichier %1$smain .htaccess%2$s :"
+
+#: admin-load.php:171
+msgid "But your .htaccess is missing or not writeable!"
+msgstr "Mais votre .htaccess est absent ou ne peut pas être écrit !"
+
+#: admin-load.php:174
+msgid ".htaccess needs to be updated to include these rules."
+msgstr "Le fichier .htaccess doit être mis à jour pour inclure ces règles."
+
+#: admin-load.php:177
+msgid ".htaccess file has all required rules."
+msgstr "Le fichier .htaccess contient toutes les règles requises."
+
+#: admin-load.php:180
+msgid ""
+"These rules will not be inserted automatically.  You are responsible for "
+"editing .htaccess and later removing the rules if the functionality is no "
+"longer desired."
+msgstr ""
+"Ces règles ne seront pas insérées automatiquement.  Vous êtes responsable de "
+"la modification du fichier .htaccess et de la suppression ultérieure des "
+"règles si la fonctionnalité n’est plus souhaitée."
+
+#: admin-load.php:183
+#, php-format
+msgid ""
+"Note that an additional rule will need to be added with each new site. "
+"%1$sTo eliminate this requirement, research \"WordPress remove ms-files\"."
+"%2$s"
+msgstr ""
+"Notez qu’une règle supplémentaire devra être ajoutée avec chaque nouveau "
+"site. %1$sPour éliminer ce prérequis, recherchez « WordPress remove ms-"
+"files ».%2$s"
+
+#: admin-load.php:186
+msgid ""
+"You will need to manually restore the .htacces file to default contents if "
+"anything goes wrong. Proceed?"
+msgstr ""
+"Vous devrez restaurer manuellement le contenu par défaut du fichier .htacces "
+"si quelque chose ne va pas. Poursuivre ?"
+
+#: admin-load.php:189
+msgid "Update .htaccess now"
+msgstr "Mettez à jour le fichier .htaccess maintenant"
+
+#: admin-load.php:192
+msgid "only for sites with protected files"
+msgstr "Uniquement pour les sites avec des fichiers protégés"
+
+#: admin-load.php:195
+msgid "for all sites"
+msgstr "Pour tous les sites"
+
+#: admin-load.php:198
+msgid "NONE: remove Permissions rules"
+msgstr "ACUNE : Supprimer le règles de droits"
+
+#: admin-load.php:201
+msgid ""
+"Since the plugin is not network-activated, you will need to modify the ."
+"htaccess file manually, inserting a RewriteRule as shown above for each site "
+"which needs file filtering."
+msgstr ""
+"Comme l’extension n’est pas activée par le réseau, vous devrez modifier le "
+"fichier .htaccess manuellement, en insérant une RewriteRule comme indiqué ci-"
+"dessus pour chaque site nécessitant un filtrage des fichiers."
+
+#: admin-load.php:204
+msgid ""
+"Make unattached files unreadable to users who do not have the "
+"edit_private_files or pp_list_all_files capability."
+msgstr ""
+"Rendre les fichiers non attachés illisibles pour les utilisateur·ice·s qui "
+"n’ont pas la permission edit_private_files ou pp_list_all_files."
+
+#: admin-load.php:207
+msgid ""
+"Make attached files unreadable to users who do not have the "
+"edit_private_files or pp_list_all_files capability."
+msgstr ""
+"Rendre les fichiers attachés illisibles pour les utilisateur·ice·s qui n’ont "
+"pas la permission edit_private_files ou pp_list_all_files."
+
+#: admin-load.php:210
+msgid ""
+"Improve Media Library performance by disabling file filtering for thumbnails "
+"(size specified in Settings > Media)."
+msgstr ""
+"Améliorez les performances de la médiathèque en désactivant le filtrage des "
+"fichiers pour les miniatures (taille spécifiée dans Réglages > Média)."
+
+#: admin-load.php:213
+#, php-format
+msgid ""
+"To trigger regeneration of %1$suploads/.htaccess%2$s with new file URL keys "
+"(at next site access), execute the following URL:"
+msgstr ""
+"Pour déclencher la régénération des %1$suploads/.htaccess%2$s avec les "
+"nouvelles clés d’URL des fichiers (au prochain accès au site), exécutez "
+"l’URL suivante :"
+
+#: admin-load.php:216
+#, php-format
+msgid ""
+"To trigger regeneration of %1$suploads/.htaccess%2$s with new file URL keys, "
+"execute the following URL:"
+msgstr ""
+"Pour déclencher la régénération des %1$suploads/.htaccess%2$s avec les "
+"nouvelles clés URL des fichiers, exécutez l’URL suivante :"
+
+#: admin-load.php:219
+msgid ""
+"Best practice is to access the above url periodically (using your own cron "
+"service) to prevent long-term bookmarking of protected files."
+msgstr ""
+"La meilleure pratique consiste à accéder périodiquement à l’url ci-dessus "
+"(en utilisant votre propre service cron) afin d’empêcher la mise en signet à "
+"long terme des fichiers protégés."
+
+#: admin-load.php:222
+msgid ""
+"Supply a custom key which will enable a support url to regenerate file "
+"access keys.  Then execute the url regularly (using your own cron service) "
+"to prevent long-term bookmarking of protected files."
+msgstr ""
+"Saisissez une clé personnalisée qui permettra à une url de support de "
+"régénérer les clés d’accès aux fichiers.  Exécutez ensuite l’url "
+"régulièrement (en utilisant votre propre service cron) pour empêcher la mise "
+"en signet à long terme des fichiers protégés."
+
+#: admin-load.php:225
+#, php-format
+msgid ""
+"%1$sNote:%2$s FTP-uploaded files will not be filtered correctly until you "
+"run the %3$sAttachments Utility%4$s."
+msgstr ""
+"%1$sNote:%2$s Les fichiers téléversés par FTP ne seront pas filtrés "
+"correctement tant que vous n’aurez pas exécuté le logiciel %3$sFichiers "
+"joints%4$s."
+
+#: admin-load.php:229
+msgid "Invalid file filtering key argument."
+msgstr "Argument clé de filtrage de fichier invalide."
+
+#: admin-load.php:232
+msgid "Please configure File Filtering options!"
+msgstr "Veuillez configurer les options de filtrage des fichiers !"
+
+#: admin-load.php:235
+msgid ""
+"Note that access control of direct file URLs also requires the following "
+"site configuration:"
+msgstr ""
+"Notez que le contrôle d’accès des URLs directs de fichiers nécessite "
+"également la configuration suivante du site :"
+
+#: admin-load.php:238
+msgid ""
+"The wp-content folder cannot be relocated outside the main WordPress folder."
+msgstr ""
+"The wp-content folder cannot be relocated outside the main WordPress folder."
+
+#: admin-load.php:241
+msgid ""
+"Note that to be detected as attachments, your file links must include www."
+msgstr ""
+"Notez que pour être détectés comme fichiers joints, vos liens de fichiers "
+"doivent inclure www."
+
+#: admin-load.php:244
+msgid ""
+"Note that to be detected as attachments, your file links must NOT include "
+"www."
+msgstr ""
+"Notez que pour être détectés comme fichiers joints, vos liens de fichiers ne "
+"doivent pas inclure www."
+
+#: admin-load.php:247
+#, php-format
+msgid ""
+"Files linked in post content must be in %1$s (or a subfolder of it). If you "
+"move files, consider using a %2$s search and replace plugin%3$s to update "
+"those URLs."
+msgstr ""
+"Les fichiers liés dans le contenu des publications doivent se trouver dans "
+"%1$s (ou un sous-dossier de celui-ci). Si vous déplacez des fichiers, pensez "
+"à utiliser une extension %2$s de recherche et de remplacement%3$s pour "
+"mettre à jour ces URL."
+
+#: admin-load.php:250
+msgid ""
+"For post restrictions to be extended to files and images, those attachments "
+"must be stored as post metadata (not just linked in the post content). The "
+"WordPress editor normally handles that, but this utility scans post content "
+"to apply any missing attachments."
+msgstr ""
+"Pour que les restrictions des publications soient étendues aux fichiers et "
+"aux images, ces fichiers joints doivent être stockés en tant que métadonnées "
+"de la publication (et pas seulement liés au contenu de la publication). "
+"L’éditeur de WordPress s’en occupe normalement, mais ce logiciel analyse le "
+"contenu des publications pour appliquer les fichiers joints manquants."
+
+#: admin-load.php:253
+msgid ""
+"To run this utility by cron task or other direct request, use the following "
+"URL:"
+msgstr ""
+"Pour exécuter ce logiciel par une tâche cron ou une autre demande directe, "
+"utilisez l’URL suivante :"
+
+#: admin-load.php:256
+#, php-format
+msgid ""
+"To run this utility by direct URL, set a file filtering regen key on "
+"%1$sPermissions Settings%2$s"
+msgstr ""
+"Pour exécuter ce logiciel par URL directe, définissez une clé de "
+"régénération du filtrage des fichiers dans %1$sRéglages des droits%2$s"
+
+#: admin-load.php:259
+msgid ""
+"Note: Direct access to uploaded file attachments cannot be filtered because "
+"your WP_CONTENT_DIR is not in the WordPress branch."
+msgstr ""
+"Note : L’accès direct aux fichiers joints téléversés ne peut pas être filtré "
+"car votre WP_CONTENT_DIR ne se trouve pas dans la branche WordPress."
+
+#: admin-load.php:262
+msgid "The operation was terminated due to an invalid configuration."
+msgstr "L’opération a été interrompue en raison d’une configuration invalide."
+
+#: admin-load.php:265
+#, php-format
+msgid "checking %s posts / pages..."
+msgstr "Vérification de %s publications/pages…"
+
+#: admin-load.php:268
+#, php-format
+msgid "%1$s skipping unfilterable file in %2$s \"%3$s\":%4$s %5$s"
+msgstr "%1$s sautant le fichier non filtrable dans %2$s « %3$s » : %4$s %5$s"
+
+#: admin-load.php:271
+#, php-format
+msgid "%1$s skipping missing file in %2$s \"%3$s\":%4$s %5$s"
+msgstr "%1$s sautant le fichier manquant dans %2$s « %3$s » : %4$s %5$s"
+
+#: admin-load.php:274 admin-load.php:277
+#, php-format
+msgid "%1$snew attachment in %2$s \"%3$s\":%4$s %5$s"
+msgstr "%1$snew attachment in %2$s « %3$s » : %4$s %5$s"
+
+#: admin-load.php:280
+#, php-format
+msgid ""
+"Operation complete: %s linked uploads were found in your post / page content."
+msgstr ""
+"Opération terminée : %s téléversements liés ont été trouvés dans le contenu "
+"de votre publication/page."
+
+#: admin-load.php:283
+#, php-format
+msgid "%s attachment records were added to the database."
+msgstr "%s attachment records were added to the database."
+
+#: admin-load.php:286
+msgid "All linked uploads are already registered as attachments."
+msgstr ""
+"Tous les téléversements liés sont déjà enregistrés en tant que fichiers "
+"joints."
+
+#: admin-load.php:291
+msgid ""
+"Statuses enabled here are available as Visibility options for post "
+"publishing. Affected posts become inaccessable without a corresponding "
+"status-specific role assignment."
+msgstr ""
+"Les états activés ici sont disponibles comme options de visibilité pour la "
+"publication des publications. Les publications affectées deviennent "
+"inaccessibles sans l’attribution d’un rôle spécifique à l’état correspondant."
+
+#: admin-load.php:294
+msgid ""
+"Statuses enabled here are available in the editor as additional steps "
+"between Draft and Published."
+msgstr ""
+"Les états activés ici sont disponibles dans l’éditeur comme étapes "
+"supplémentaires entre « Brouillon » et « Publié »."
+
+#: admin-load.php:297
+msgid ""
+"Statuses alter your content's accessibility by imposing additional "
+"capability requirements."
+msgstr ""
+"Les états modifient l’accessibilité de votre contenu en imposant des "
+"prérequis supplémentaires en termes de permission."
+
+#: admin-load.php:300
+#, php-format
+msgid ""
+"Enable Custom Capabilities by toggling the link below status name. If "
+"enabled, non-Editors will need a corresponding %ssupplemental role%s to edit "
+"posts of that status."
+msgstr ""
+"Activez les permissions personnalisées en cliquant sur le lien situé sous le "
+"nom de l’état. Si cette option est activée, les non-éditeur·ice·s devront "
+"disposer d’un %srôle complémentaire%s correspondant pour modifier les "
+"publications de cet état."
+
+#: admin-load.php:303
+#, php-format
+msgid ""
+"For post edit by a user who cannot publish, %sworkflow is configured%s to "
+"make the Publish button increment the post to the next workflow status "
+"permitted."
+msgstr ""
+"Pour la modification d’une publication par un utilisateur·ice qui ne peut "
+"pas publier, %sle flux de travail est configuré%s pour que le bouton "
+"« Publier » incrémente la publication au prochain état du flux de travail "
+"autorisé."
+
+#: admin-load.php:306
+#, php-format
+msgid ""
+"For post edit by a user who cannot publish, %sworkflow is configured%s to "
+"make the Publish button escalate the post to the highest-ordered workflow "
+"status permitted."
+msgstr ""
+"Dans le cas d’une publication effectuée par un utilisateur·ice qui ne peut "
+"pas publier, %sle flux de travail est configuré%s pour que le bouton "
+"« Publier » fasse passer le message à l’état du flux de travail le plus "
+"élevé autorisé."
+
+#: admin-load.php:309
+msgid ""
+"For post edit by a user who cannot publish, the Publish button will escalate "
+"the post to the highest-order status permitted to the user."
+msgstr ""
+"Dans le cas d’un message édité par un utilisateur·ice qui ne peut pas "
+"publier, le bouton « Publier » fera passer la publication à l’état le plus "
+"élevé autorisé à l’utilisateur·ice."
+
+#: admin-load.php:312
+#, php-format
+msgid "Please enable the PublishPress %sStatuses feature%s."
+msgstr "Veuillez activer la fonctionnalité %sÉtats%s de PublishPress."
+
+#: admin-load.php:315
+#, php-format
+msgid ""
+"Note that the Post Type itself will also need to have %sPermissions%s "
+"enabled."
+msgstr ""
+"Notez que le %sDroits%s doit également être activé pour le type de "
+"publication lui-même."
+
+#: admin-load.php:318
+#, php-format
+msgid ""
+"To define moderation statuses, %1$sactivate the Collaborative Publishing "
+"module%2$s."
+msgstr ""
+"Pour définir les états de modération, %1$sactivez le module de publication "
+"collaborative%2$s."
+
+#: admin-load.php:323
+msgid ""
+"To disable custom visibility statuses, first re-assign posts to a different "
+"status."
+msgstr ""
+"Pour désactiver les états de visibilité personnalisés, réassignez d’abord "
+"les publications à un état différent."
+
+#: admin-load.php:326
+msgid ""
+"Note, this only applies if the role definition includes the pp_moderate_any "
+"capability"
+msgstr ""
+"Note : Ceci s’applique uniquement si la définition du rôle inclut la "
+"permission pp_moderate_any."
+
+#: admin-load.php:329
+msgid "Create or edit custom Privacy or Workflow statuses"
+msgstr ""
+"Créez ou modifiez des états personnalisés de confidentialité ou de flux de "
+"travail"
+
+#: admin-load.php:332
+msgid "Create or edit Publication Workflow statuses"
+msgstr "Créez ou modifiez des états de flux de travail de publication"
+
+#: admin-load.php:335
+msgid "Create or edit custom Privacy statuses"
+msgstr "Créez ou modifiez des états personnalisés de confidentialité"
+
+#: admin-load.php:338
+msgid ""
+"Pertains to assignment of a custom privacy or moderation status. This "
+"capability in a WP role enables PP to assign a type-specific supplemental "
+"role with custom capabilities such as \"set_pages_approved\""
+msgstr ""
+"Se rapporte à l’attribution d’un état personnalisé de confidentialité ou de "
+"modération. Cette permission dans un rôle WP permet au PP d’attribuer un "
+"rôle supplémentaire spécifique au type avec des permissions personnalisées "
+"telles que « set_pages_approved »"
+
+#: admin-load.php:341
+msgid ""
+"Editors can edit posts having a moderation status (i.e. Approved) without a "
+"supplemental status-specific role"
+msgstr ""
+"Les éditeur·ice·s peuvent modifier les publications ayant un état de "
+"modération (c’est-à-dire Approuvé) sans rôle supplémentaire spécifique à "
+"l’état."
+
+#: admin-load.php:347
+msgid "Post property or meta field to match with user field"
+msgstr ""
+"Propriété de la publication ou champ méta à faire correspondre avec le champ "
+"de l’utilisateur·ice"
+
+#: admin-load.php:350
+msgid "User property or meta field to match with post field"
+msgstr ""
+"Propriété du compte ou champ méta à faire correspondre avec le champ de la "
+"publication"
+
+#: admin-load.php:353
+msgid "User meta field to match with post field"
+msgstr ""
+"Champ méta du compte à faire correspondre avec le champ de la publication"
+
+#: admin-load.php:356
+msgid "User role to include in synchronization"
+msgstr "Rôle de l’utilisateur·ice à inclure dans la synchronisation"
+
+#: admin-load.php:359
+msgid "Parent id for created posts"
+msgstr "ID parent pour les publications créées"
+
+#: admin-load.php:362
+msgid "Choose post field from suggested meta key names"
+msgstr ""
+"Choisissez le champ de publication parmi les noms de méta clés suggérés."
+
+#: admin-load.php:365
+msgid ""
+"When a new user of specified role is added, create or designate a post for "
+"them."
+msgstr ""
+"Lorsqu’un nouvel utilisateur·ice du rôle spécifié est ajouté, créez ou "
+"désignez une publication pour lui."
+
+#: admin-load.php:368
+msgid "Create or designate a post for existing users."
+msgstr ""
+"Créez ou désignez une publication pour les utilisateur·ice·s existants."
+
+#: admin-load.php:371
+msgid "This post type is not hierarchical"
+msgstr "Ce type de publication n’est pas hiérarchique"
+
+#: admin-load.php:374
+msgid "Establish a dedicated post for each qualified user."
+msgstr ""
+"Établissez une publication dédiée pour chaque utilisateur·ice qualifié."
+
+#: admin-load.php:377
+#, php-format
+msgid ""
+"Hint: If %s have custom fields (like email address), create one to assist "
+"field name discovery."
+msgstr ""
+"Conseil : si les %s ont des champs personnalisés (comme l’adresse "
+"électronique), créez-en un pour faciliter la découverte du nom du champ."
+
+#: admin-load.php:380
+msgid "Enable users to edit their own synchronized post."
+msgstr ""
+"Permettre aux utilisateurs de modifier leur propre publication synchronisée."
+
+#: admin-load.php:383
+msgid ""
+"It is designed to bring setup convenience and delegated editing permissions "
+"to Team / Staff plugins, but has broad usage potential."
+msgstr ""
+"Il est conçu pour apporter une commodité de configuration et des droits "
+"d’édition délégués aux extensions « Équipe/Personnel », mais il a un large "
+"potentiel d’utilisation."
+
+#: admin-load.php:386
+msgid ""
+"Post / User match fields allow existing Users to be designated as the Author "
+"(owner) of an exiting post."
+msgstr ""
+"Les champs de correspondance publication et compte permettent aux "
+"utilisateur·ice·s existants d’être désignés comme l’auteur·ice "
+"(propriétaire) d’une publication en cours."
+
+#: admin-load.php:389
+msgid ""
+"If a user cannot be matched to an existing post, a new post is created for "
+"them."
+msgstr ""
+"Si un utilisateur·ice ne peut être associé à une publication existante, une "
+"nouvelle publication est créée pour lui."
+
+#: admin-load.php:392
+msgid ""
+"These users will be enabled to edit their synchronized post if \"Grant "
+"Author Permissions\" is enabled.  This works by automating the following "
+"configuration:"
+msgstr ""
+"Ces utilisateur·ice·s seront autorisés à modifier leur publication "
+"synchronisée si l’option « Accorder des droits d’auteur·ice » est activée.  "
+"Cela fonctionne en automatisant la configuration suivante :"
+
+#: admin-load.php:395
+msgid ""
+"Developer note: User matches and Post data may be customized using filters "
+"and actions."
+msgstr ""
+"Note aux développeurs : les correspondances entre les comptes et les données "
+"de publication peuvent être personnalisées à l’aide de filtres et d’actions."
+
+#: admin-load.php:398
+msgid ""
+"This feature works with most Team / Staff plugins. However, the following "
+"are NOT fully compatible. With these plugins, PublishPress Permissions can "
+"sync and set editing permissions for teams, but not individual team members:"
+msgstr ""
+"Cette fonctionnalité fonctionne avec la plupart des extensions équipe/"
+"personnel. Cependant, les extensions suivantes ne sont PAS entièrement "
+"compatibles. Avec ces extensions, PublishPress Permissions peut synchroniser "
+"et définir les droits d’édition pour les équipes, mais pas pour les membres "
+"individuels de l’équipe :"
+
+#: admin-load.php:401
+msgid "This plugin is NOT fully compatible."
+msgstr "Cette extension n’est PAS entièrement compatible."
+
+#: admin-load.php:406
+#, php-format
+msgid ""
+"Settings for replacing unreadable content with teaser text, provided by the "
+"%s module."
+msgstr ""
+"Réglages pour remplacer le contenu illisible par un texte de présentation, "
+"fourni par le module %s."
+
+#: admin-load.php:406
+msgid "Teaser"
+msgstr "Présentation"
+
+#: admin-load.php:409
+msgid ""
+"Settings on this tab do not apply because teaser filtering is disabled for "
+"all post types."
+msgstr ""
+"Les réglages de cet onglet ne s’appliquent pas car le filtrage des "
+"présentations est désactivé pour tous les types de publication."
+
+#: admin-load.php:412
+msgid ""
+"Since some browsers will cache feeds without regard to user login, block RSS "
+"content even for qualified users."
+msgstr ""
+"Étant donné que certains navigateurs mettent les flux en cache sans tenir "
+"compte de la connexion de l’internaute, bloquez le contenu RSS même pour les "
+"utilisateur·ce·s qualifiés."
+
+#: admin-load.php:415
+msgid ""
+"By default, WordPress hides posts visitors don't have access to. This "
+"feature allows those posts to be displayed, with post content replaced by "
+"teaser text."
+msgstr ""
+"Par défaut, WordPress cache les publications auxquelles les internautes "
+"n’ont pas accès. Cette fonctionnalité permet d’afficher ces publications, le "
+"contenu de la publication étant remplacé par un texte de présentation."
+
+#: admin-load.php:418
+msgid ""
+"These settings adjust which views, link types and visibility statuses the "
+"teaser is applied to."
+msgstr ""
+"Ces réglages permettent de déterminer les vues, les types de liens et les "
+"états de visibilité auxquels la présentation est appliquée."
+
+#: admin-load.php:426
+msgid ""
+"You can override Teaser settings within the Nav Menu by hiding links to "
+"unreadable posts that are associated with the terms you select below."
+msgstr ""
+"Vous pouvez modifier les réglages de la présentation dans le menu de "
+"navigation en masquant les liens vers les publications illisibles qui sont "
+"associées aux termes que vous sélectionnez ci-dessous."
+
+#: admin-load.php:429
+msgid ""
+"Keep unreadable content hidden in the blogroll and link lists, but show the "
+"teaser on direct access attempts."
+msgstr ""
+"Gardez le contenu illisible caché dans le blogroll et les listes de liens, "
+"mais montrez la présentation lors des tentatives d’accès direct."
+
+#: admin-load.php:432
+msgid ""
+"Hide unreadable private posts, but show a teaser for posts which are "
+"unreadable due to regular Privacy or Role Restrictions."
+msgstr ""
+"Masquez les publications privées illisibles, mais affichez une présentation "
+"pour les publications qui sont illisibles en raison de restrictions "
+"régulières de confidentialité ou de rôle."
+
+#: admin-load.php:435
+msgid ""
+"If anyone tries to view a post they don't have access to, redirect to "
+"another page instead of displaying a teaser."
+msgstr ""
+"Si quelqu’un essaie de consulter une publication à laquelle il n’a pas "
+"accès, redirigez-le vers une autre page au lieu d’afficher une présentation."
+
+#: admin-load.php:438
+msgid ""
+"Replace post content or excerpt with custom text, possibly including an "
+"inline login form. You can also add text before or after the post title and "
+"excerpt."
+msgstr ""
+"Remplacez le contenu ou l’extrait de la publication par un texte "
+"personnalisé, incluant éventuellement un formulaire de connexion en ligne. "
+"Vous pouvez également ajouter du texte avant ou après le titre et l’extrait "
+"de la publication."
+
+#: admin-load.php:441
+msgid ""
+"Unreadable items of these comma-separated types will have nav menu item "
+"hidden."
+msgstr ""
+"Les éléments illisibles de ces types séparés par des virgules auront "
+"l’élément de menu de navigation caché."
+
+#: admin-load.php:445
+msgid "Visibility Circle membership does not limit viewing access"
+msgstr ""
+"L’adhésion à un cercle de visibilité ne limite pas l’accès à la visualisation"
+
+#: admin-load.php:448
+msgid "Editorial Circle membership does not limit editing access"
+msgstr "L’adhésion au cercle éditorial ne limite pas l’accès à la rédaction"
+
+#: admin-load.php:459
+msgid ""
+"When searching for users via Permissions ajax, return return only users "
+"registered to current site"
+msgstr ""
+"Lors de la recherche d’utilisateur·ice·s via Permissions ajax, retour "
+"uniquement des utilisateur·ice·s enregistrés sur le site actuel"
+
+#: admin-load.php:462
+msgid ""
+"If user is a super admin or has 'pp_manage_network_members' capability, user "
+"searches via Permissions ajax return users from all sites"
+msgstr ""
+"Si l’utilisateur·ice est un super administrateur·ice ou a la permission "
+"’pp_manage_network_members’, les recherches d’utilisateur·ice·s via "
+"Permissions ajax retournent les utilisateur·ice·s de tous les sites"
+
+#: admin-load.php:470
+msgid ""
+"Count users as a member of a BuddyPress Permissions Group only if they are a "
+"moderator of the BP group"
+msgstr ""
+"Compter les utilisateur·ice·s comme membres d’un groupe de droits BuddyPress "
+"uniquement s’ils sont modérateur·ice·s du groupe BP"
+
+#: admin-load.php:473
+msgid ""
+"Count users as a member of a BuddyPress Permissions Group only if they are "
+"an administrator of the BP group"
+msgstr ""
+"Compter les utilisateur·ice·s comme membres d’un groupe de droits BuddyPress "
+"uniquement s’ils sont administrateur·ice·s du groupe BP"
+
+#: admin-load.php:481
+msgid ""
+"CMS Page Tree View plugin: hide 'add' links (for all hierarchical post "
+"types) based on user's association permissions"
+msgstr ""
+"Extension CMS Page Tree View : Masquer les liens « ajouter » (pour tous les "
+"types de publication hiérarchiques) en fonction des droits d’association de "
+"l’utilisateur·ice"
+
+#: admin-load.php:484
+msgid ""
+"CMS Page Tree View plugin: hide 'add' links (for pages) based on user's page "
+"association permissions"
+msgstr ""
+"Extension CMS Page Tree View : Masquer les liens « ajouter » (pour les "
+"pages) en fonction des droits d’association de pages de l’utilisateur·ice"
+
+#: admin-load.php:487
+msgid ""
+"CMS Page Tree View plugin: hide 'add' links (for specified hierarchical post "
+"type) based on user's association permissions"
+msgstr ""
+"Extension CMS Page Tree View : Masquer les liens « ajouter » (pour tous les "
+"types de publication hiérarchiques spécifié) en fonction des droits "
+"d’association de l’utilisateur·ice"
