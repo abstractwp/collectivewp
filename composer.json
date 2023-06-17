@@ -37,7 +37,8 @@
         "wpackagist-plugin/bbpress":"2.6.9",
         "wpackagist-plugin/publishpress":"3.10.2",
         "wpackagist-plugin/email-templates":"1.4.2",
-        "wpackagist-plugin/speechkit":"3.10.5"
+        "wpackagist-plugin/speechkit":"3.10.5",
+        "wpackagist-plugin/instant-images":"5.3.1"
     },
     "extra": {
         "downloads": {
