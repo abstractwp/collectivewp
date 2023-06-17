@@ -29,13 +29,14 @@
       "wpackagist-plugin/fluent-smtp":"2.2.4",
       "wpackagist-plugin/wp-security-audit-log":"4.5.2",
       "wpackagist-plugin/redirection": "^5.3.10",
-      "wpackagist-plugin/wordpress-seo":"20.8",
+      "wpackagist-plugin/wordpress-seo":"20.9",
       "wpackagist-plugin/so-clean-up-wp-seo":"4.0.0",
       "pronamic/gravityforms": "^2.7.7",
       "wpackagist-plugin/buddypress":"11.2.0",
       "wpackagist-plugin/bbpress":"2.6.9",
       "wpackagist-plugin/publishpress":"3.10.2",
-      "wpackagist-plugin/email-templates":"1.4.2"
+      "wpackagist-plugin/email-templates":"1.4.2",
+      "wpackagist-plugin/speechkit":"3.10.5"
   },
   "extra": {
     "downloads": {
