@@ -387,7 +387,7 @@ class FacetWP_Renderer
         // Allow hooks to modify the default post IDs
         $post_ids = apply_filters( 'facetwp_pre_filtered_post_ids', $query->posts, $this );
 
-        // Store the unfiltered post IDs
+        // Store the original post IDs (before facet filtering is applied)
         FWP()->unfiltered_post_ids = $post_ids;
 
         foreach ( $this->facets as $facet_name => $the_facet ) {
@@ -454,11 +454,12 @@ class FacetWP_Renderer
 
         $post_ids = apply_filters( 'facetwp_filtered_post_ids', array_values( $post_ids ), $this );
 
-        // Store the filtered post IDs
+        // Store the final post IDs (after facet filtering has been applied)
         FWP()->filtered_post_ids = $post_ids;
 
         // Set a flag for whether filtering is applied
-        FWP()->is_filtered = ( FWP()->filtered_post_ids !== FWP()->unfiltered_post_ids );
+        // We're intentionally using $query->posts vs. FWP()->unfiltered_post_ids
+        FWP()->is_filtered = ( FWP()->filtered_post_ids !== $query->posts );
 
         // Return a zero array if no matches
         return empty( $post_ids ) ? [ 0 ] : $post_ids;

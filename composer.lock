@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c85e489b473b8cbb5bcc1e2114a600e7",
+    "content-hash": "161cd0644e085b2695075074d67753cf",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.7.7",
+            "version": "2.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "1cfc9915415b88c626fa6ffa8e8501e37d75b421"
+                "reference": "c0e63bd8785b41e6365f92b383e1428df558ead1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/1cfc9915415b88c626fa6ffa8e8501e37d75b421",
-                "reference": "1cfc9915415b88c626fa6ffa8e8501e37d75b421",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/c0e63bd8785b41e6365f92b383e1428df558ead1",
+                "reference": "c0e63bd8785b41e6365f92b383e1428df558ead1",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.7"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.8"
             },
-            "time": "2023-05-26T10:04:57+00:00"
+            "time": "2023-06-09T10:05:25+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -546,6 +546,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/so-clean-up-wp-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/speechkit",
+            "version": "3.10.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/speechkit/",
+                "reference": "tags/3.10.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/speechkit.3.10.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/speechkit/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

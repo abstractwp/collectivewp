@@ -197,6 +197,8 @@ Thumbs.db
 !wp-content/plugins/collectivewp-functions/
 !wp-content/plugins/collectivewp-functions/**
 
+!wp-content/plugins/admin-columns-pro/
+!wp-content/plugins/admin-columns-pro/**
 !wp-content/plugins/better-search-replace-pro/
 !wp-content/plugins/better-search-replace-pro/**
 !wp-content/plugins/advanced-custom-fields-pro/
