@@ -37,7 +37,7 @@
       "wpackagist-plugin/publishpress":"3.10.2",
       "wpackagist-plugin/email-templates":"1.4.2",
       "wpackagist-plugin/speechkit":"3.10.5",
-      "wpackagist-plugin/instant-images":"5.3.1"
+      "wpackagist-plugin/instant-images":"6.0.0"
   },
   "extra": {
     "downloads": {
