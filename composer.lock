@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "161cd0644e085b2695075074d67753cf",
+    "content-hash": "ef3fa72dfa69bb3b6a10d8de294c6006",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -423,15 +423,15 @@
         },
         {
             "name": "wpackagist-plugin/cookiebot",
-            "version": "4.2.10",
+            "version": "4.2.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.2.10"
+                "reference": "tags/4.2.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.10.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.11.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -492,6 +492,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/fluent-smtp/"
+        },
+        {
+            "name": "wpackagist-plugin/instant-images",
+            "version": "5.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/instant-images/",
+                "reference": "tags/5.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/instant-images.5.3.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/instant-images/"
         },
         {
             "name": "wpackagist-plugin/publishpress",

@@ -267,3 +267,32 @@ function disable_comments_admin_bar() {
 	$wp_admin_bar->remove_menu( 'comments' );
 }
 add_action( 'wp_before_admin_bar_render', 'disable_comments_admin_bar' );
+
+function restrict_media_library_access( $query ) {
+	// Check if the user role is Author
+	if ( current_user_can( 'author' ) ) {
+			// Set the author parameter to the current user's ID
+			$query['author'] = get_current_user_id();
+	}
+	return $query;
+}
+add_filter( 'ajax_query_attachments_args', 'restrict_media_library_access' );
+
+function remove_medialibrary_tab($strings) {
+	if ( current_user_can('author') ) {
+		unset($strings["uploadFilesTitle"]);
+		return $strings;
+	} else {
+		return $strings;
+	}
+}
+add_filter('media_view_strings','remove_medialibrary_tab');
+
+function remove_media_upload_button() {
+	if (current_user_can('author')) {
+		echo '<style>
+			.uploader-inline, .components-form-file-upload { display: none !important; }
+		</style>';
+	}
+}
+add_action('admin_head', 'remove_media_upload_button');
