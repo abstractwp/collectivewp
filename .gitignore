@@ -217,6 +217,8 @@ Thumbs.db
 !wp-content/plugins/gravityformsactivecampaign/**
 !wp-content/plugins/gravityformsuserregistration/
 !wp-content/plugins/gravityformsuserregistration/**
+!wp-content/plugins/gravityformsstripe/
+!wp-content/plugins/gravityformsstripe/**
 
 # Theme
 
