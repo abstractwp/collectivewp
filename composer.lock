@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "161cd0644e085b2695075074d67753cf",
+    "content-hash": "5a1316d1d0a890e6e34208e20ec8a25b",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.7.8",
+            "version": "2.7.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "c0e63bd8785b41e6365f92b383e1428df558ead1"
+                "reference": "e569a906ba6d81fedb8ceafaa9bba8ee3ee69fb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/c0e63bd8785b41e6365f92b383e1428df558ead1",
-                "reference": "c0e63bd8785b41e6365f92b383e1428df558ead1",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/e569a906ba6d81fedb8ceafaa9bba8ee3ee69fb2",
+                "reference": "e569a906ba6d81fedb8ceafaa9bba8ee3ee69fb2",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.8"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.10"
             },
-            "time": "2023-06-09T10:05:25+00:00"
+            "time": "2023-07-13T10:06:58+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -423,15 +423,15 @@
         },
         {
             "name": "wpackagist-plugin/cookiebot",
-            "version": "4.2.10",
+            "version": "4.2.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.2.10"
+                "reference": "tags/4.2.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.10.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.12.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -441,15 +441,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.13.6",
+            "version": "1.13.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.13.6"
+                "reference": "tags/1.13.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.13.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.13.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -477,21 +477,39 @@
         },
         {
             "name": "wpackagist-plugin/fluent-smtp",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/fluent-smtp/",
-                "reference": "tags/2.2.4"
+                "reference": "tags/2.2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.2.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/fluent-smtp.2.2.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/fluent-smtp/"
+        },
+        {
+            "name": "wpackagist-plugin/instant-images",
+            "version": "6.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/instant-images/",
+                "reference": "tags/6.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/instant-images.6.0.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/instant-images/"
         },
         {
             "name": "wpackagist-plugin/publishpress",
@@ -567,15 +585,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.8",
+            "version": "20.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.8"
+                "reference": "tags/20.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.11.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -585,15 +603,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-security-audit-log",
-            "version": "4.5.2",
+            "version": "4.5.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-security-audit-log/",
-                "reference": "tags/4.5.2"
+                "reference": "tags/4.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.5.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.5.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
