@@ -92,6 +92,9 @@ function collectivewp_disable_default_dashboard_widgets() {
 	unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'cookiebot_status' ]);
 	unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'fluentsmtp_reports_widget' ]);
 	unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'wpe_dify_news_feed' ]);
+	unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'post_status_widget' ]);
+	unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'notepad_widget' ]);
+	unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'myposts_widget' ]);
 	unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_primary' ]);
 	unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_secondary' ]);
 	unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_quick_press' ]);
