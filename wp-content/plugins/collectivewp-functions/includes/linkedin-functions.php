@@ -22,9 +22,9 @@ function linkedin_register_shortcode( $atts ) {
 	// Your LinkedIn application's Client ID and redirect URI
 	$client_id = get_option('linkedin_client_id');
 	$client_secret = get_option('linkedin_client_secret');
-	$redirect_uri = site_url( '/register/' );
+	$redirect_uri = site_url( '/apply-to-join/' );
 
-	$thank_you_url = get_option('linkedin_redirect_uri') ?? site_url( '/register/thank-you-for-registering/' );
+	$thank_you_url = get_option('linkedin_redirect_uri') ?? site_url( '/apply-to-join/thanks/' );
 
 	// Set the query parameters for retrieving the authorization code.
 	$params = array(
@@ -131,7 +131,7 @@ function linkedin_register_shortcode( $atts ) {
 
 	}
 	if ( '' === $messages ) {
-		$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Register with LinkedIn</a></div>';
+		$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Apply with LinkedIn</a></div>';
 	} else {
 		$return_html .= '<p>' . $messages . '</p>';
 
@@ -148,7 +148,7 @@ function linkedin_register_shortcode( $atts ) {
 
 			$auth_url .= "?" . http_build_query($params);
 
-			$return_html .= '<div class="flex"><a class="button primary linkedin" href="' . $auth_url . '">Login with LinkedIn</a></div>';
+			$return_html .= '<div class="flex"><a class="button primary linkedin" href="https://community.collectivewp.com/">Go to your Community</a></div>';
 		}
 	}
 
@@ -171,7 +171,7 @@ function linkedin_login_shortcode( $atts ) {
 		$html = '<div class="has-global-padding is-layout-constrained wp-block-group">';
 		$current_user = wp_get_current_user();
 		$username = $current_user->user_login;
-		$html .= '<div class="flex"><a class="button primary" href="' . home_url( '/members/' . $username . '/profile/' ) . '">Go to your Profile</a></div></div>';
+		$html .= '<div class="flex"><a class="button primary" href="https://community.collectivewp.com/">Go to your Community</a></div></div>';
 
 		return $html;
 	}
@@ -240,11 +240,11 @@ function linkedin_login_shortcode( $atts ) {
 				wp_set_current_user( $user->ID );
 				wp_set_auth_cookie( $user->ID );
 				do_action( 'wp_login', $user->user_login, $user );
-				$profile_url = home_url( '/members/' . $user->user_login . '/profile/' );
+				$profile_url = 'https://community.collectivewp.com/';
 				wp_redirect( $profile_url );
 				exit;
 			} else {
-				wp_redirect( site_url( '/register/' ) );
+				wp_redirect( site_url( '/apply-to-join/' ) );
 			}
 		} else {
 			if ( isset( $token_data->error_description ) && '' !== $token_data->error_description ) {
