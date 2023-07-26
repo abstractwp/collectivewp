@@ -233,6 +233,8 @@ class FacetWP_Display
             }
 
             echo $inline_scripts;
+
+            do_action( 'facetwp_scripts' );
 ?>
 <script>
 window.FWP_JSON = <?php echo json_encode( $this->json ); ?>;

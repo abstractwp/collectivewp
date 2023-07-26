@@ -493,7 +493,15 @@ class FacetWP_Integration_WooCommerce
         $source = $params['facet']['source'];
 
         if ( 'woo/stock_status' == $source ) {
-            $label = ( 'In Stock' == $label ) ? __( 'In Stock', 'fwp-front' ) : __( 'Out of Stock', 'fwp-front' );
+
+            // We aren't using a ternary here in case the user
+            // assigned a custom stock status label
+            if ( 'In Stock' == $label ) {
+                $label = __( 'In Stock', 'fwp-front' );
+            }
+            elseif ( 'Out of Stock' == $label ) {
+                $label = __( 'Out of Stock', 'fwp-front' );
+            }
         }
         elseif ( 'woo/on_sale' == $source ) {
             $label = __( 'On Sale', 'fwp-front' );
