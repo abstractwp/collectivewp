@@ -2,7 +2,7 @@
 /*
 Plugin Name: FacetWP
 Description: Advanced Filtering for WordPress
-Version: 4.2.1
+Version: 4.2.2
 Author: FacetWP, LLC
 Author URI: https://facetwp.com/
 
@@ -32,6 +32,8 @@ class FacetWP
     public $filtered_post_ids;
     public $unfiltered_post_ids;
     public $is_filtered;
+    public $is_modified;
+    public $or_values;
 
     public $init;
     public $api;
@@ -56,7 +58,7 @@ class FacetWP
         }
 
         // setup variables
-        define( 'FACETWP_VERSION', '4.2.1' );
+        define( 'FACETWP_VERSION', '4.2.2' );
         define( 'FACETWP_DIR', dirname( __FILE__ ) );
         define( 'FACETWP_URL', plugins_url( '', __FILE__ ) );
         define( 'FACETWP_BASENAME', plugin_basename( __FILE__ ) );

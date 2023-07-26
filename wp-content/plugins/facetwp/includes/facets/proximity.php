@@ -12,7 +12,7 @@ class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
 
     function __construct() {
         $this->label = __( 'Proximity', 'fwp' );
-        $this->fields = [ 'longitude', 'unit', 'radius_ui', 'radius_options', 'radius_min', 'radius_max', 'radius_default' ];
+        $this->fields = [ 'longitude', 'unit', 'radius_ui', 'radius_options', 'radius_min', 'radius_max', 'radius_default', 'placeholder' ];
 
         add_filter( 'facetwp_index_row', [ $this, 'index_latlng' ], 1, 2 );
         add_filter( 'facetwp_sort_options', [ $this, 'sort_options' ], 1, 2 );
@@ -29,6 +29,8 @@ class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
         $facet = $params['facet'];
         $value = $params['selected_values'];
         $unit = empty( $facet['unit'] ) ? 'mi' : $facet['unit'];
+        $placeholder = empty( $facet['placeholder'] ) ? __( 'Enter location', 'fwp-front' ) : $facet['placeholder'];
+        $placeholder = facetwp_i18n( $placeholder );
 
         $lat = empty( $value[0] ) ? '' : $value[0];
         $lng = empty( $value[1] ) ? '' : $value[1];
@@ -64,7 +66,7 @@ class FacetWP_Facet_Proximity_Core extends FacetWP_Facet
 
         <span class="facetwp-input-wrap">
             <i class="facetwp-icon locate-me"></i>
-            <input type="text" class="facetwp-location" value="<?php echo esc_attr( $location_name ); ?>" placeholder="<?php _e( 'Enter location', 'fwp-front' ); ?>" autocomplete="off" />
+            <input type="text" class="facetwp-location" value="<?php echo esc_attr( $location_name ); ?>" placeholder="<?php echo esc_attr( $placeholder ); ?>" autocomplete="off" />
             <div class="location-results facetwp-hidden"></div>
         </span>
 

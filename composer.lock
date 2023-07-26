@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "463d3e7a901b30e644031c1d4e01d16f",
+    "content-hash": "7207875346e20e8e8049cc838349f4c6",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -477,15 +477,15 @@
         },
         {
             "name": "wpackagist-plugin/publishpress",
-            "version": "3.10.2",
+            "version": "3.11.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/publishpress/",
-                "reference": "tags/3.10.2"
+                "reference": "tags/3.11.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/publishpress.3.10.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/publishpress.3.11.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -549,15 +549,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.11",
+            "version": "20.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.11"
+                "reference": "tags/20.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.12.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
