@@ -12,6 +12,9 @@ class FacetWP_Renderer
     /* (array) WP_Query arguments */
     public $query_args;
 
+    /* (array) WP_Query args when "facetwp_template_use_archive" is enabled */
+    public $archive_args;
+
     /* (array) Data used to build the pager */
     public $pager_args;
 
@@ -135,7 +138,7 @@ class FacetWP_Renderer
 
             // Update the SQL query
             if ( ! empty( $post_ids ) ) {
-                if ( FWP()->is_filtered ) {
+                if ( FWP()->is_filtered || FWP()->is_modified ) {
                     $query_args['post__in'] = $post_ids;
                 }
 
@@ -457,9 +460,11 @@ class FacetWP_Renderer
         // Store the final post IDs (after facet filtering has been applied)
         FWP()->filtered_post_ids = $post_ids;
 
-        // Set a flag for whether filtering is applied
-        // We're intentionally using $query->posts vs. FWP()->unfiltered_post_ids
-        FWP()->is_filtered = ( FWP()->filtered_post_ids !== $query->posts );
+        // Have any facets applied changes?
+        FWP()->is_filtered = ( FWP()->unfiltered_post_ids !== $post_ids );
+
+        // Have any hooks modified the unfiltered post IDs?
+        FWP()->is_modified = ( FWP()->unfiltered_post_ids !== $query->posts );
 
         // Return a zero array if no matches
         return empty( $post_ids ) ? [ 0 ] : $post_ids;

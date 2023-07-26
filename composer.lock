@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a1316d1d0a890e6e34208e20ec8a25b",
+    "content-hash": "7207875346e20e8e8049cc838349f4c6",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -368,24 +368,6 @@
             "homepage": "https://wordpress.org/plugins/activity-log-wp-seo/"
         },
         {
-            "name": "wpackagist-plugin/bbpress",
-            "version": "2.6.9",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/bbpress/",
-                "reference": "tags/2.6.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/bbpress.2.6.9.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/bbpress/"
-        },
-        {
             "name": "wpackagist-plugin/block-widgets-monster",
             "version": "1.0.4",
             "source": {
@@ -402,24 +384,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/block-widgets-monster/"
-        },
-        {
-            "name": "wpackagist-plugin/buddypress",
-            "version": "11.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/buddypress/",
-                "reference": "tags/11.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/buddypress.11.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/buddypress/"
         },
         {
             "name": "wpackagist-plugin/cookiebot",
@@ -513,15 +477,15 @@
         },
         {
             "name": "wpackagist-plugin/publishpress",
-            "version": "3.10.2",
+            "version": "3.11.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/publishpress/",
-                "reference": "tags/3.10.2"
+                "reference": "tags/3.11.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/publishpress.3.10.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/publishpress.3.11.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -585,15 +549,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.11",
+            "version": "20.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.11"
+                "reference": "tags/20.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.12.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
