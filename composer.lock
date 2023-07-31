@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7207875346e20e8e8049cc838349f4c6",
+    "content-hash": "82d0dbb162de187dfd6018a2c45aae5a",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.7.10",
+            "version": "2.7.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "e569a906ba6d81fedb8ceafaa9bba8ee3ee69fb2"
+                "reference": "a9dad0143903b7f91fb16c1ac94589f5cd4fe578"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/e569a906ba6d81fedb8ceafaa9bba8ee3ee69fb2",
-                "reference": "e569a906ba6d81fedb8ceafaa9bba8ee3ee69fb2",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/a9dad0143903b7f91fb16c1ac94589f5cd4fe578",
+                "reference": "a9dad0143903b7f91fb16c1ac94589f5cd4fe578",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.10"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.11"
             },
-            "time": "2023-07-13T10:06:58+00:00"
+            "time": "2023-07-28T10:05:04+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -476,24 +476,6 @@
             "homepage": "https://wordpress.org/plugins/instant-images/"
         },
         {
-            "name": "wpackagist-plugin/publishpress",
-            "version": "3.11.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/publishpress/",
-                "reference": "tags/3.11.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/publishpress.3.11.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/publishpress/"
-        },
-        {
             "name": "wpackagist-plugin/redirection",
             "version": "5.3.10",
             "source": {
@@ -513,15 +495,15 @@
         },
         {
             "name": "wpackagist-plugin/so-clean-up-wp-seo",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/so-clean-up-wp-seo/",
-                "reference": "tags/4.0.0"
+                "reference": "tags/4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-clean-up-wp-seo.4.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/so-clean-up-wp-seo.4.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -531,15 +513,15 @@
         },
         {
             "name": "wpackagist-plugin/speechkit",
-            "version": "3.10.5",
+            "version": "4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/speechkit/",
-                "reference": "tags/3.10.5"
+                "reference": "tags/4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/speechkit.3.10.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/speechkit.4.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
