@@ -212,3 +212,67 @@ function remove_media_upload_button() {
 	}
 }
 add_action('admin_head', 'remove_media_upload_button');
+
+/**
+ * Filter {@link get_avatar_url()} to use the BuddyPress user avatar URL.
+ *
+ * @since 2.9.0
+ *
+ * @param  string $retval      The URL of the avatar.
+ * @param  mixed  $id_or_email The Gravatar to retrieve. Accepts a user_id, gravatar md5 hash,
+ *                             user email, WP_User object, WP_Post object, or WP_Comment object.
+ * @param  array  $args        Arguments passed to get_avatar_data(), after processing.
+ * @return string
+ */
+function bp_core_get_avatar_url_filter( $retval, $id_or_email, $args ) {
+	$user = null;
+
+	// Ugh, hate duplicating code; process the user identifier.
+	if ( is_numeric( $id_or_email ) ) {
+		$user = get_user_by( 'id', absint( $id_or_email ) );
+	} elseif ( $id_or_email instanceof WP_User ) {
+		// User Object
+		$user = $id_or_email;
+	} elseif ( $id_or_email instanceof WP_Post ) {
+		// Post Object
+		$user = get_user_by( 'id', (int) $id_or_email->post_author );
+	} elseif ( $id_or_email instanceof WP_Comment ) {
+		if ( ! empty( $id_or_email->user_id ) ) {
+			$user = get_user_by( 'id', (int) $id_or_email->user_id );
+		}
+	} elseif ( is_email( $id_or_email ) ) {
+		$user = get_user_by( 'email', $id_or_email );
+	}
+
+	// No user, so bail.
+	if ( false === $user instanceof WP_User ) {
+		return $retval;
+	}
+
+	// Set BuddyPress-specific avatar args.
+	$user_id = $user->ID;
+
+	$upload_dir = wp_upload_dir();
+	$dir        = $upload_dir['basedir'] . '/avatars/' . $user_id;
+
+	if (is_dir($dir)) {
+		$files      = scandir( $dir );
+		$results    = array();
+
+		foreach ( $files as $file ) {
+			if ( '.' !== $file && '..' !== $file ) {
+				if ( is_file( $dir . '/' . $file ) ) {
+					if ( stristr( $file, 'bpfull' ) ) {
+						$results[] = $file;
+					}
+				}
+			}
+		}
+		if ( count( $results ) ) {
+			return site_url( '/wp-content/uploads/avatars/' . $user_id . '/' . $results[0] );
+		}
+	}
+
+	return $retval;
+}
+add_filter( 'get_avatar_url', 'bp_core_get_avatar_url_filter', 10, 3 );
