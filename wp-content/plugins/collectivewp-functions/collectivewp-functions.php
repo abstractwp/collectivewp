@@ -276,3 +276,80 @@ function bp_core_get_avatar_url_filter( $retval, $id_or_email, $args ) {
 	return $retval;
 }
 add_filter( 'get_avatar_url', 'bp_core_get_avatar_url_filter', 10, 3 );
+
+/**
+ * Use client logo on login page.
+ */
+function collectivewp_custom_login_logo() {
+	$logo_attachment_id = get_theme_mod( 'custom_logo' );
+
+	if ( $logo_attachment_id ) {
+		$logo_url_array = wp_get_attachment_image_src( $logo_attachment_id, 'full' );
+		$logo_url = $logo_url_array[0];
+
+		echo '<style type="text/css">
+			.login form {
+				border-width: 0!important;
+			}
+			.login h1 a {
+				background-image: url(' . $logo_url . ') !important;
+				background-size: contain !important;
+				width: 75% !important;
+			}
+			.login .button-primary {
+				line-height: 22px!important;
+				font-size: 16px;
+				border: 0;
+				cursor: pointer!important;
+				border-radius: 0.375rem!important;
+				background-color: rgb(205 109 80 / var(--tw-bg-opacity))!important;
+				--tw-bg-opacity: 0.5!important;
+				padding-left: 1rem!important;
+				padding-right: 1rem!important;
+				padding-top: 0.75rem!important;
+				padding-bottom: 0.75rem!important;
+				--tw-text-opacity: 1!important;
+				color: rgb(0 0 0 / var(--tw-text-opacity))!important;
+				text-decoration-line: none!important;
+				--tw-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.06)!important;
+				--tw-shadow-colored: 0 0.25rem 0.375rem -0.0625rem var(--tw-shadow-color), 0 0.125rem 0.25rem -0.0625rem var(--tw-shadow-color)!important;
+				box-shadow: 0 0 #0000, 0 0 #0000, var(--tw-shadow)!important;
+				box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)!important;
+			}
+			.login .button-primary:hover {
+				background-color: rgb(205 109 80 / var(--tw-bg-opacity))!important;
+				--tw-bg-opacity: 1!important;
+				--tw-text-opacity: 1!important;
+				color: rgb(253 251 246 / var(--tw-text-opacity))!important;
+			}
+			.login form .input,
+			.login input[type=password],
+			.login input[type=text] {
+				border-radius: 0.375rem!important;
+				border-width: 2px!important;
+				--tw-border-opacity: 1!important;
+				border-color: rgb(220 219 219 / var(--tw-border-opacity))!important;
+			}
+			.login input[type=password]:focus,
+			.login input[type=text]:focus {
+				--tw-border-opacity: 1;
+				border-color: rgb(81 80 80 / var(--tw-border-opacity))!important;
+				outline-style: solid;
+				outline-width: 2px;
+				outline-offset: 0px;
+				outline-color: #CD6D50;
+			}
+		</style>';
+	}
+}
+
+add_action( 'login_head', 'collectivewp_custom_login_logo' );
+
+/**
+ * Change url of login page logo url.
+ */
+function collectivewp_custom_login_logo_url() {
+	return home_url();
+}
+
+add_filter( 'login_headerurl', 'collectivewp_custom_login_logo_url' );
