@@ -295,6 +295,7 @@ function collectivewp_custom_login_logo() {
 				background-image: url(' . $logo_url . ') !important;
 				background-size: contain !important;
 				width: 75% !important;
+				height: 40px !important;
 			}
 			.login .button-primary {
 				line-height: 22px!important;
