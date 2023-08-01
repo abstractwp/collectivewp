@@ -276,3 +276,25 @@ function bp_core_get_avatar_url_filter( $retval, $id_or_email, $args ) {
 	return $retval;
 }
 add_filter( 'get_avatar_url', 'bp_core_get_avatar_url_filter', 10, 3 );
+
+/**
+ * Use client logo on login page.
+ */
+function collectivewp_custom_login_logo() {
+	$logo_attachment_id = get_theme_mod( 'custom_logo' );
+
+	if ( $logo_attachment_id ) {
+		$logo_url_array = wp_get_attachment_image_src( $logo_attachment_id, 'full' );
+		$logo_url = $logo_url_array[0];
+
+		echo '<style type="text/css">
+			.login h1 a {
+				background-image: url(' . $logo_url . ') !important;
+				background-size: contain !important;
+				width: 75% !important;
+			}
+		</style>';
+	}
+}
+
+add_action( 'login_head', 'collectivewp_custom_login_logo' );
