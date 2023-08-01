@@ -43,7 +43,7 @@ class Maint {
             $message = (is_wp_error($server_response)) ? $server_response->get_error_message() : '';
 
             if (empty($message)) {
-                throw new \Exception(__('An error occurred. Please try again or contact the support team.', 'capsman-enhanced'));
+                throw new \Exception(__('An error occurred. Please try again or contact the support team.', 'capabilities-pro'));
             } else {
                 throw new \Exception($message);
             }
@@ -56,7 +56,7 @@ class Maint {
 
         // Do we have empty data? Throw an error.
         if (empty($data) || ! is_object($data)) {
-            throw new \Exception(__('An error occurred. Please try again or contact the support team.', 'capsman-enhanced'));
+            throw new \Exception(__('An error occurred. Please try again or contact the support team.', 'capabilities-pro'));
         }
         } catch (\Exception $e) {
         return $e->getMessage();

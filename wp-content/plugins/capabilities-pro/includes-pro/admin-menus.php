@@ -347,13 +347,13 @@ $admin_child_menu_option = array_key_exists($default_role, $admin_child_menu_opt
             <div class="pp-column-right pp-capabilities-sidebar">
             <?php 
             $banner_messages = ['<p>'];
-            $banner_messages[] = esc_html__('Admin Menus allows you to block access to admin menu links.', 'capsman-enhanced');
+            $banner_messages[] = esc_html__('Admin Menus allows you to block access to admin menu links.', 'capabilities-pro');
             $banner_messages[] = '</p><p>';
-            $banner_messages[] = sprintf(esc_html__('%1$s = No change', 'capsman-enhanced'), '<input type="checkbox" title="'. esc_attr__('usage key', 'capsman-enhanced') .'" disabled>') . ' <br />';
-            $banner_messages[] = sprintf(esc_html__('%1$s = This feature is denied', 'capsman-enhanced'), '<input type="checkbox" title="'. esc_attr__('usage key', 'capsman-enhanced') .'" checked disabled>') . ' <br />';
+            $banner_messages[] = sprintf(esc_html__('%1$s = No change', 'capabilities-pro'), '<input type="checkbox" title="'. esc_attr__('usage key', 'capabilities-pro') .'" disabled>') . ' <br />';
+            $banner_messages[] = sprintf(esc_html__('%1$s = This feature is denied', 'capabilities-pro'), '<input type="checkbox" title="'. esc_attr__('usage key', 'capabilities-pro') .'" checked disabled>') . ' <br />';
             $banner_messages[] = '</p>';
-            $banner_messages[] = '<p><a class="button ppc-checkboxes-documentation-link" href="https://publishpress.com/knowledge-base/admin-menus-screen/"target="blank">' . esc_html__('View Documentation', 'capsman-enhanced') . '</a></p>';
-            $banner_title  = __('How to use Admin Menus', 'capsman-enhanced');
+            $banner_messages[] = '<p><a class="button ppc-checkboxes-documentation-link" href="https://publishpress.com/knowledge-base/admin-menus-screen/"target="blank">' . esc_html__('View Documentation', 'capabilities-pro') . '</a></p>';
+            $banner_title  = __('How to use Admin Menus', 'capabilities-pro');
             pp_capabilities_sidebox_banner($banner_title, $banner_messages);
             ?>
             </div><!-- .pp-column-right -->

@@ -84,7 +84,7 @@ class Pro_Settings_UI {
                     <label for="" title="<?php esc_attr_e('Control selection of custom post statuses.', 'capabilities-pro'); ?>">
                         <input type="checkbox" name="cme_custom_status_control" id="cme_custom_status_control" autocomplete="off" value="1" <?php echo $checked;?>>
                         <span class="description">
-                            <?php esc_html_e('Control selection of custom post statuses.', 'capsman-enhanced'); ?>
+                            <?php esc_html_e('Control selection of custom post statuses.', 'capabilities-pro'); ?>
                         </span>
                     </label>
                     <br>

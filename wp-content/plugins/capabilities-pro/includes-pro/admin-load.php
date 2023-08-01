@@ -48,14 +48,31 @@ class AdminFiltersPro {
         add_action('adminmenu', [$this, 'setCapabilitiesAdminMenu']);
         //translation
         add_action('init', [$this, 'register_textdomain']);
+
+        //Frontend features pages field
+        add_action('pp_capabilities_frontend_features_pages', [$this, 'frontendFeaturesPagesField']);
+
+        //Frontend features post types field
+        add_action('pp_capabilities_frontend_features_metabox_post_types', [$this, 'frontendFeaturesPostTypesField']);
     }
 
 	public function register_textdomain() {
         //load pro domain
-        load_textdomain(
-            'capabilities-pro', 
-            basename(dirname(__FILE__)) .'/includes-pro/languages' . sprintf('%s-%s.mo', 'capabilities-pro', get_user_locale())
-        );
+        $domain       = 'capabilities-pro';
+        $mofile_custom = sprintf('%s-%s.mo', $domain, get_user_locale());
+        $locations = [
+        trailingslashit(WP_LANG_DIR . '/' . $domain),
+        trailingslashit(WP_LANG_DIR . '/loco/plugins/'),
+        trailingslashit(WP_LANG_DIR),
+        trailingslashit(plugin_dir_path(CME_FILE) . 'languages'),
+            ];
+
+        // Try custom locations in WP_LANG_DIR.
+        foreach ($locations as $location) {
+            if (load_textdomain($domain, $location . $mofile_custom)) {
+                break;
+            }
+        }
 
         //load free domain
         $domain       = 'capsman-enhanced';
@@ -70,7 +87,7 @@ class AdminFiltersPro {
         // Try custom locations in WP_LANG_DIR.
         foreach ($locations as $location) {
             if (load_textdomain($domain, $location . $mofile_custom)) {
-                return true;
+                break;
             }
         }
 }
@@ -109,7 +126,7 @@ class AdminFiltersPro {
             $profile_features_offset = array_search('profile-features', array_keys($sub_menu_pages));
             $profile_features_menu   = [];
             $profile_features_menu['admin-menus'] = [
-                'title'             => __('Admin Menus', 'capsman-enhanced'),
+                'title'             => __('Admin Menus', 'capabilities-pro'),
                 'capabilities'      => (is_multisite() && is_super_admin()) ? 'read' : 'manage_capabilities_admin_menus',
                 'page'              => 'pp-capabilities-admin-menus',
                 'callback'          => [$this, 'ManageAdminMenus'],
@@ -132,8 +149,8 @@ class AdminFiltersPro {
             $profile_features_offset = array_search('profile-features', array_keys($features));
             $admin_menu_feature   = [];
             $admin_menu_feature['admin-menus'] = [
-                'label'        => esc_html__('Admin Menus', 'capsman-enhanced'),
-                'description'  => esc_html__('Admin Menus allows you to block access to admin menu links.', 'capsman-enhanced'),
+                'label'        => esc_html__('Admin Menus', 'capabilities-pro'),
+                'description'  => esc_html__('Admin Menus allows you to block access to admin menu links.', 'capabilities-pro'),
             ];
 
             $features = array_merge(
@@ -399,5 +416,60 @@ class AdminFiltersPro {
                 update_option('ppc_admin_menus_submenu', $submenu);
             }
         }
-}
+    }
+
+    /**
+     * Frontend features pages field
+     *
+     * @since 2.9.0
+     */
+    function frontendFeaturesPagesField()
+    {
+        $options = [
+          'homepage'      => esc_html__('Homepage', 'capabilities-pro'),
+          'archive_pages' => esc_html__('Archive Pages', 'capabilities-pro'),
+          'single_pages'  => esc_html__('Single Pages', 'capabilities-pro')
+        ];
+        ?>
+        <select class="frontend-element-new-element-pages chosen-cpt-select frontendelements-form-pages" data-placeholder="<?php esc_attr_e('Select pages...', 'capabilities-pro'); ?>" multiple>
+            <?php foreach ($options as $value => $label) : ?>
+                <option value="<?php echo esc_attr($value); ?>">
+                    <?php echo esc_html($label); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <br />
+        <small>
+            <?php esc_html_e('You can select page types where this element will be added.', 'capabilities-pro'); ?>
+        </small>
+    <?php 
+    }
+
+    /**
+     * Frontend features post types field
+     *
+     * @since 2.9.0
+     */
+    function frontendFeaturesPostTypesField()
+    { 
+        ?>
+        <select class="frontend-element-new-element-post-types chosen-cpt-select frontendelements-form-post-types"
+            data-placeholder="<?php esc_attr_e('Select post types...', 'capabilities-pro'); ?>"
+            multiple>
+            <?php foreach (get_post_types(['public' => true], 'objects') as $name => $post_type) :
+                if ($name === 'attachment') {
+                    continue;
+                } ?>
+                <option
+                    value="<?php echo esc_attr($name); ?>">
+                    <?php echo esc_html($post_type->label); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <br />
+         <small>
+            <?php esc_html_e('This will add a metabox on the post editing screen. You can use this feature to add body classes only for that post.', 'capabilities-pro'); ?>
+        </small>
+    <?php
+    }
 }
