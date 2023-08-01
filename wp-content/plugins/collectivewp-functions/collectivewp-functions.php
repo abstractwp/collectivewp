@@ -298,3 +298,12 @@ function collectivewp_custom_login_logo() {
 }
 
 add_action( 'login_head', 'collectivewp_custom_login_logo' );
+
+/**
+ * Change url of login page logo url.
+ */
+function collectivewp_custom_login_logo_url() {
+	return home_url();
+}
+
+add_filter( 'login_headerurl', 'collectivewp_custom_login_logo_url' );
