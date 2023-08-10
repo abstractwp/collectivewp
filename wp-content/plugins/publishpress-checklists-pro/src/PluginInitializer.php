@@ -16,6 +16,7 @@ use WPPF\WP\HooksHandlerInterface;
 use WPPF\WP\PluginsHandlerInterface;
 use WPPF\WP\TranslatorInterface;
 
+#[\AllowDynamicProperties]
 class PluginInitializer implements PluginInitializerInterface
 {
     const FREE_PLUGIN_NAME = 'publishpress-checklists';

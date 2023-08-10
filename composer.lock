@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f48300cf2016fc03c29734fe075d557c",
+    "content-hash": "d57da56c8b848314982bbbbd6a63bda1",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -513,15 +513,15 @@
         },
         {
             "name": "wpackagist-plugin/speechkit",
-            "version": "4.0.1",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/speechkit/",
-                "reference": "tags/4.0.1"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/speechkit.4.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/speechkit.4.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

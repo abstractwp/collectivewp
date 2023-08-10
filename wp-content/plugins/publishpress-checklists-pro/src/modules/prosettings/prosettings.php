@@ -23,6 +23,7 @@ use WPPF\WP\SettingsHandlerInterface;
  *
  * @todo Refactor this module and all the modules system to use DI.
  */
+#[\AllowDynamicProperties]
 class PPCH_ProSettings extends Module
 {
     const OPTIONS_GROUP_NAME = 'publishpress_checklists_settings_options';

@@ -35,6 +35,7 @@ use WPPF\WP\HooksHandlerInterface;
  *
  * @todo Refactor this module and all the modules system to use DI.
  */
+#[\AllowDynamicProperties]
 class PPCH_WooCommerce extends Module
 {
     const METADATA_TAXONOMY = 'pp_woocommerce_meta';

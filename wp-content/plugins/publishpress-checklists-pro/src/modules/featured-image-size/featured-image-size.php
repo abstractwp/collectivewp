@@ -22,6 +22,7 @@ use WPPF\WP\HooksHandlerInterface;
  *
  * @todo Refactor this module and all the modules system to use DI.
  */
+#[\AllowDynamicProperties]
 class PPCH_Featured_Image_Size extends Module
 {
     const SETTINGS_SLUG = 'pp-featured-image-size-prosettings';

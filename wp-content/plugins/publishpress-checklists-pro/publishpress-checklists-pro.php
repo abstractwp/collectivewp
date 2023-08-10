@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PublishPress Checklists Pro
  * Plugin URI:  https://publishpress.com/
- * Version: 2.8.0
+ * Version: 2.9.0
  * Description: Add support for checklists in WordPress
  * Author:      PublishPress
  * Author URI:  https://publishpress.com
@@ -33,6 +33,7 @@ global $wp_version;
 $min_php_version = '7.2.5';
 $min_wp_version  = '5.5';
 
+// If the PHP or WP version is not compatible, terminate the plugin execution.
 $invalid_php_version = version_compare(phpversion(), $min_php_version, '<');
 $invalid_wp_version = version_compare($wp_version, $min_wp_version, '<');
 
@@ -40,66 +41,75 @@ if ($invalid_php_version || $invalid_wp_version) {
     return;
 }
 
-$includeFileRelativePath = '/publishpress/publishpress-instance-protection/include.php';
-if (file_exists(__DIR__ . '/vendor' . $includeFileRelativePath)) {
-    require_once __DIR__ . '/vendor' . $includeFileRelativePath;
-} else if (defined('PP_AUTHORS_VENDOR_PATH') && file_exists(PP_AUTHORS_VENDOR_PATH . $includeFileRelativePath)) {
-    require_once PP_AUTHORS_VENDOR_PATH . $includeFileRelativePath;
-}
-
-if (class_exists('PublishPressInstanceProtection\\Config')) {
-    $pluginCheckerConfig = new PublishPressInstanceProtection\Config();
-    $pluginCheckerConfig->pluginSlug = 'publishpress-checklists-pro';
-    $pluginCheckerConfig->pluginName = 'PublishPress Checklists Pro';
-    $pluginCheckerConfig->isProPlugin = true;
-    $pluginCheckerConfig->freePluginName = 'PublishPress Checklists';
-
-    $pluginChecker = new PublishPressInstanceProtection\InstanceChecker($pluginCheckerConfig);
-}
-
 if (! defined('PPCHPRO_LOADED')) {
-    //composer autoload
-    $autoloadPath = __DIR__ . '/vendor/autoload.php';
-    if (file_exists($autoloadPath)) {
-        require_once $autoloadPath;
+    if (! defined('PPCHPRO_LIB_VENDOR_PATH')) {
+        define('PPCHPRO_LIB_VENDOR_PATH', __DIR__ . '/lib/vendor');
     }
 
-    require_once PUBLISHPRESS_CHECKLISTS_PRO_VENDOR_PATH . '/publishpress/psr-container/lib/include.php';
-    require_once PUBLISHPRESS_CHECKLISTS_PRO_VENDOR_PATH . '/publishpress/pimple-pimple/lib/include.php';
-    require_once PUBLISHPRESS_CHECKLISTS_PRO_VENDOR_PATH . '/publishpress/wordpress-edd-license/src/include.php';
+    if (! defined('PUBLISHPRESS_CHECKLISTS_PRO_VENDOR_PATH')) {
+        /**
+         * @deprecated 2.9.0 Use PPCHPRO_LIB_VENDOR_PATH instead.
+         */
+        define('PUBLISHPRESS_CHECKLISTS_PRO_VENDOR_PATH', PPCHPRO_LIB_VENDOR_PATH);
+    }
+
+    $instanceProtectionIncPath = PPCHPRO_LIB_VENDOR_PATH . '/publishpress/instance-protection/include.php';
+    if (is_file($instanceProtectionIncPath) && is_readable($instanceProtectionIncPath)) {
+        require_once $instanceProtectionIncPath;
+    }
+
+    if (class_exists('PublishPressInstanceProtection\\Config')) {
+        $pluginCheckerConfig = new PublishPressInstanceProtection\Config();
+        $pluginCheckerConfig->pluginSlug = 'publishpress-checklists-pro';
+        $pluginCheckerConfig->pluginName = 'PublishPress Checklists Pro';
+        $pluginCheckerConfig->isProPlugin = true;
+        $pluginCheckerConfig->freePluginName = 'PublishPress Checklists';
+
+        $pluginChecker = new PublishPressInstanceProtection\InstanceChecker($pluginCheckerConfig);
+    }
+
+    $autoloadFilePath = PPCHPRO_LIB_VENDOR_PATH . '/autoload.php';
+    if (! class_exists('ComposerAutoloaderInitPPChecklistsPro')
+        && is_file($autoloadFilePath)
+        && is_readable($autoloadFilePath)
+    ) {
+        require_once $autoloadFilePath;
+    }
 
     if (! defined('PUBLISHPRESS_CHECKLISTS_SKIP_VERSION_NOTICES')) {
         define('PUBLISHPRESS_CHECKLISTS_SKIP_VERSION_NOTICES', true);
     }
 
     if (! class_exists('PublishPress\\Checklists\\Core\\Autoloader')) {
-        require_once PUBLISHPRESS_CHECKLISTS_PRO_VENDOR_PATH . '/publishpress/publishpress-checklists/core/Autoloader.php';
+        require_once PPCHPRO_LIB_VENDOR_PATH . '/publishpress/publishpress-checklists/core/Autoloader.php';
     }
 
     // Initialize the free plugin.
-    require_once __DIR__ . '/vendor/publishpress/publishpress-checklists/publishpress-checklists.php';
+    require_once PPCHPRO_LIB_VENDOR_PATH . '/publishpress/publishpress-checklists/publishpress-checklists.php';
 
     add_action('plugins_loaded', function() {
-        define('PPCHPRO_VERSION', '2.8.0');
+        if (!defined('PPCHPRO_VERSION')) {
+            define('PPCHPRO_VERSION', '2.9.0');
 
-        define('PPCHPRO_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));
-        define('PPCHPRO_ITEM_ID', 6465);
+            define('PPCHPRO_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));
+            define('PPCHPRO_ITEM_ID', 6465);
 
-        if (! defined('WPPF_FRAMEWORK_LOADED')) {
-            require_once __DIR__ . '/lib/wppf/includes.php';
+            if (! defined('WPPF_FRAMEWORK_LOADED')) {
+                require_once __DIR__ . '/lib/wppf/includes.php';
+            }
+
+            Autoloader::register();
+            Autoloader::addNamespace('PublishPress\\ChecklistsPro\\FeaturedImageSize\\', __DIR__ . '/src/modules/featured-image-size/lib/');
+            Autoloader::addNamespace('PublishPress\\ChecklistsPro\\WooCommerce\\', __DIR__ . '/src/modules/woocommerce/lib/');
+            Autoloader::addNamespace('PublishPress\\ChecklistsPro\\', __DIR__ . '/src/');
+
+            $container = new DIContainer();
+            $container->register(new PluginServiceProvider());
+
+            $pluginInitializer = $container->get(ServicesAbstract::PLUGIN_INITIALIZER);
+            $pluginInitializer->init();
+
+            define('PPCHPRO_LOADED', 1);
         }
-
-        Autoloader::register();
-        Autoloader::addNamespace('PublishPress\\ChecklistsPro\\FeaturedImageSize\\', __DIR__ . '/src/modules/featured-image-size/lib/');
-        Autoloader::addNamespace('PublishPress\\ChecklistsPro\\WooCommerce\\', __DIR__ . '/src/modules/woocommerce/lib/');
-        Autoloader::addNamespace('PublishPress\\ChecklistsPro\\', __DIR__ . '/src/');
-
-        $container = new DIContainer();
-        $container->register(new PluginServiceProvider());
-
-        $pluginInitializer = $container->get(ServicesAbstract::PLUGIN_INITIALIZER);
-        $pluginInitializer->init();
-
-        define('PPCHPRO_LOADED', 1);
     }, -9);
 }
