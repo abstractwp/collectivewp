@@ -299,8 +299,12 @@ class FacetWP_Indexer
      * @since 4.1.8
      */
     function get_query_args( $post_id = false ) {
+        $post_types = get_post_types( [
+            'exclude_from_search' => false
+        ] );
+
         $args = [
-            'post_type'         => 'any',
+            'post_type'         => $post_types,
             'post_status'       => 'publish',
             'posts_per_page'    => -1,
             'fields'            => 'ids',

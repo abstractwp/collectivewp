@@ -373,6 +373,8 @@ class GFStripe extends GFPaymentAddOn {
 					'validate_form_nonce'             => wp_create_nonce( 'gfstripe_validate_form' ),
 					'delete_draft_nonce'              => wp_create_nonce( 'gfstripe_delete_draft_entry' ),
 					'rate_limiting_nonce'             => wp_create_nonce( 'gfstripe_payment_element_check_rate_limiting' ),
+					'get_stripe_coupon_nonce'         => wp_create_nonce( 'gfstripe_get_stripe_coupon' ),
+					'coupon_invalid'                  => esc_html__( 'You have entered an invalid coupon code.', 'gravityformsstripe' ),
 				),
 			),
 			array(
@@ -840,6 +842,9 @@ class GFStripe extends GFPaymentAddOn {
 		add_action( 'wp_ajax_gfstripe_get_country_code', array( $this, 'get_country_code' ) );
 		add_action( 'wp_ajax_gfstripe_capture_action', array( $this, 'ajax_capture_payment' ) );
 		add_action( 'wp_ajax_gfstripe_refund', array( $this, 'ajax_refund' ) );
+
+		add_action( 'wp_ajax_nopriv_gfstripe_get_stripe_coupon', array( $this->get_payment_element_handler(), 'get_stripe_coupon' ) );
+		add_action( 'wp_ajax_gfstripe_get_stripe_coupon', array( $this->get_payment_element_handler(), 'get_stripe_coupon' ) );
 
 		add_action( 'wp_ajax_nopriv_gfstripe_validate_form', array( $this->get_payment_element_handler(), 'start_checkout' ) );
 		add_action( 'wp_ajax_gfstripe_validate_form', array( $this->get_payment_element_handler(), 'start_checkout' ) );
@@ -2077,7 +2082,7 @@ class GFStripe extends GFPaymentAddOn {
 			'type'       => 'field_map',
 			'dependency' => array(
 				'field' => 'transactionType',
-				'value' => 'subscription',
+				'values' => array( 'subscription' ),
 			),
 			'field_map'  => array(
 				array(
@@ -2096,7 +2101,7 @@ class GFStripe extends GFPaymentAddOn {
 					'name'       => 'coupon',
 					'label'      => esc_html__( 'Coupon', 'gravityformsstripe' ),
 					'required'   => false,
-					'field_type' => array( 'coupon', 'text' ),
+					'field_type' => array( 'text' ),
 					'tooltip'    => '<h6>' . esc_html__( 'Coupon', 'gravityformsstripe' ) . '</h6><p>' . esc_html__( 'Select which field contains the coupon code to be applied to the recurring charge(s). The coupon must also exist in your Stripe Dashboard.', 'gravityformsstripe' ) . '</p><p>' . esc_html__( 'If you use Stripe Checkout, the coupon won\'t be applied to your first invoice.', 'gravityformsstripe' ) . '</p>',
 				),
 			),
@@ -2935,6 +2940,8 @@ class GFStripe extends GFPaymentAddOn {
 					'address_state'   => rgars( $feed, 'meta/billingInformation_address_state' ),
 					'address_zip'     => rgars( $feed, 'meta/billingInformation_address_zip' ),
 					'address_country' => rgars( $feed, 'meta/billingInformation_address_country' ),
+					'coupon'          => rgars( $feed, 'meta/customerInformation_coupon' ),
+					'hasTrial'        => rgars( $feed, 'meta/trial_enabled' ),
 				);
 
 				if ( rgars( $feed, 'meta/transactionType' ) === 'product' ) {
@@ -3397,10 +3404,7 @@ class GFStripe extends GFPaymentAddOn {
 	 * @return string
 	 */
 	public function stripe_elements_requires_action_message( $validation_message = '', $form = array() ) {
-		return $this->get_validation_error_markup(
-			esc_html__( 'There was a problem with your submission:', 'gravityformsstripe' ) . ' ' .  $this->get_authorization_error_message(),
-			$form
-		);
+		return $this->get_validation_error_markup( $this->get_authorization_error_message(), $form );
 	}
 
 	/**
@@ -3583,8 +3587,7 @@ class GFStripe extends GFPaymentAddOn {
 
 			// if status = requires_action, return validation error so we can do dynamic authentication on the front end.
 			if ( ! $payment_element_enabled && $result->status === 'requires_action' ) {
-
-				$error = $this->authorization_error( esc_html__( '3D Secure authentication is required for this payment. Please follow the instructions on the page to continue.', 'gravityformsstripe' ) );
+				$error = $this->authorization_error( esc_html__( 'This payment might require 3D Secure authentication, please wait while we communicate with Stripe.', 'gravityformsstripe' ) );
 
 				return array_merge( $error, array( 'requires_action' => true ) );
 
@@ -4800,16 +4803,29 @@ class GFStripe extends GFPaymentAddOn {
 	 */
 	private function should_complete_checkout_session( $session, $entry ) {
 		$subscription_id = rgar( $session, 'subscription' );
+		$is_session_paid = rgar( $session, 'payment_status' ) === 'paid';
 		if ( ! empty( $subscription_id ) ) {
-			$is_checkout_session_completed = $entry['payment_status'] === 'Active';
+			$is_checkout_session_completed = $is_session_paid && $entry['payment_status'] === 'Active';
 		} else {
-			$is_checkout_session_completed = $entry['payment_status'] === 'Paid' || $entry['payment_status'] === 'Authorized';
+			$is_checkout_session_completed = $is_session_paid && ( $entry['payment_status'] === 'Paid' || $entry['payment_status'] === 'Authorized' );
 		}
 
-		$is_paid = $session['payment_status'] == 'paid';
+		$capture_method = 'automatic';
+		$intent_status  = '';
+		if ( ! $subscription_id ) {
+			$intent = $this->api->get_payment_intent( $session['payment_intent'] );
+
+			if ( is_wp_error( $intent ) ) {
+				$this->log_error( __METHOD__ . '(): Could not retrieve intent from Stripe checkout session, Session should not be completed' );
+				return false;
+			}
+
+			$capture_method = $intent->capture_method;
+			$intent_status  = $intent->status;
+		}
 
 		$this->log_debug( __METHOD__ . '(): Stripe payment status: ' . $session['payment_status'] . '. Entry payment status: ' . $entry['payment_status'] );
-		if ( ! $is_checkout_session_completed && $is_paid ) {
+		if ( ! $is_checkout_session_completed || ( $capture_method === 'manual' && $intent_status === 'requires_capture' ) ) {
 			$this->log_debug( __METHOD__ . '(): Stripe checkout session should be completed.' );
 
 			return true;
@@ -5479,7 +5495,7 @@ class GFStripe extends GFPaymentAddOn {
 					)
 				);
 
-				$error = $this->authorization_error( esc_html__( '3D Secure authentication is required for this payment. Please follow the instructions on the page to continue.', 'gravityformsstripe' ) );
+				$error = $this->authorization_error( esc_html__( 'This payment might require 3D Secure authentication, please wait while we communicate with Stripe.', 'gravityformsstripe' ) );
 
 				return array_merge( $error, array( 'requires_action' => true ) );
 			}

@@ -268,30 +268,6 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 						apiKey = activeFeed.hasOwnProperty('apiKey') ? activeFeed.apiKey : GFStripeObj.apiKey;
 						GFStripeObj.activeFeed = activeFeed;
 
-						// Set priority to 51 so it will be triggered after the coupons add-on
-						gform.addFilter('gform_product_total', function (total, formId) {
-
-							if (GFStripeObj.activeFeed.paymentAmount !== 'form_total') {
-								var price = GFMergeTag.getMergeTagValue(formId, GFStripeObj.activeFeed.paymentAmount, ':price'),
-								    qty = GFMergeTag.getMergeTagValue(formId, GFStripeObj.activeFeed.paymentAmount, ':qty');
-
-								if (typeof price === 'string') {
-									price = GFMergeTag.getMergeTagValue(formId, GFStripeObj.activeFeed.paymentAmount + '.2', ':price');
-									qty = GFMergeTag.getMergeTagValue(formId, GFStripeObj.activeFeed.paymentAmount + '.3', ':qty');
-								}
-
-								window['gform_stripe_amount_' + formId] = price * qty;
-							} else if (GFStripeObj.activeFeed.paymentAmount === 'form_total') {
-								window['gform_stripe_amount_' + formId] = total;
-							}
-							// Update elements payment amount if payment element is enabled.
-							if (GFStripeObj.stripe_payment == 'payment_element' && GFStripeObj.stripePaymentHandler !== null && GFStripeObj.stripePaymentHandler.elements !== null && gforms_stripe_frontend_strings.stripe_connect_enabled === "1") {
-								GFStripeObj.stripePaymentHandler.updatePaymentAmount(window['gform_stripe_amount_' + formId]);
-							}
-
-							return window['gform_stripe_amount_' + formId];
-						}, 51);
-
 						gformCalculateTotalPrice(formId);
 
 						if (GFStripeObj.stripe_payment == 'payment_element') {
@@ -327,6 +303,22 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 								} else {
 									$('.ginput_container_creditcard').html('<p><strong>' + gforms_stripe_frontend_strings.requires_action + '</strong></p>');
 								}
+
+								// Add a spinner next to the validation message and disable the submit button until we are over with 3D Secure.
+								if (jQuery('#gform_' + formId + '_validation_container h2 .gform_ajax_spinner').length <= 0) {
+									jQuery('#gform_' + formId + '_validation_container h2').append('<img id="gform_ajax_spinner_' + formId + '"  class="gform_ajax_spinner" src="' + gf_global.spinnerUrl + '" alt="" />');
+									jQuery('#gform_submit_button_' + formId).prop('disabled', true);
+								}
+
+								// Update legacy close icon to an info icon.
+								const $iconSpan = jQuery('#gform_' + formId + '_validation_container h2 .gform-icon.gform-icon--close');
+								const isThemeFrameWork = jQuery('.gform-theme--framework').length;
+								console.log(isThemeFrameWork);
+								console.log($iconSpan);
+								if ($iconSpan.length && !isThemeFrameWork) {
+									$iconSpan.removeClass('gform-icon--close').addClass('gform-icon--info');
+								}
+
 								GFStripeObj.scaActionHandler(stripe, formId);
 							} else {
 								card.mount('#' + GFStripeObj.GFCCField.attr('id'));
@@ -368,6 +360,39 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 				}
 			});
 
+			// Set priority to 51 so it will be triggered after the coupons add-on
+			gform.addFilter('gform_product_total', function (total, formId) {
+
+				if (GFStripeObj.stripe_payment == 'payment_element' && GFStripeObj.stripePaymentHandler !== null) {
+					GFStripeObj.stripePaymentHandler.getOrderData(total, formId);
+				}
+
+				if (!GFStripeObj.activeFeed) {
+					window['gform_stripe_amount_' + formId] = 0;
+					return total;
+				}
+
+				if (GFStripeObj.activeFeed.paymentAmount !== 'form_total') {
+
+					const paymentAmountInfo = GFStripeObj.getProductFieldPrice(formId, GFStripeObj.activeFeed.paymentAmount);
+					window['gform_stripe_amount_' + formId] = paymentAmountInfo.price * paymentAmountInfo.qty;
+
+					if (GFStripeObj.activeFeed.hasOwnProperty('setupFee')) {
+						const setupFeeInfo = GFStripeObj.getProductFieldPrice(formId, GFStripeObj.activeFeed.setupFee);
+						window['gform_stripe_amount_' + formId] += setupFeeInfo.price * setupFeeInfo.qty;
+					}
+				} else {
+					window['gform_stripe_amount_' + formId] = total;
+				}
+
+				// Update elements payment amount if payment element is enabled.
+				if (GFStripeObj.stripe_payment == 'payment_element' && GFStripeObj.stripePaymentHandler !== null && GFStripeObj.stripePaymentHandler.elements !== null && gforms_stripe_frontend_strings.stripe_connect_enabled === "1") {
+					GFStripeObj.stripePaymentHandler.updatePaymentAmount(GFStripeObj.stripePaymentHandler.order.paymentAmount);
+				}
+
+				return total;
+			}, 51);
+
 			switch (this.stripe_payment) {
 				case 'elements':
 					var stripe = null,
@@ -388,7 +413,6 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 			// bind Stripe functionality to submit event
 			$('#gform_' + this.formId).on('submit', function (event) {
 
-				GFStripeObj.updatePaymentAmount();
 				// Don't proceed with payment logic if clicking on the Previous button.
 				let skipElementsHandler = false;
 				const sourcePage = parseInt($('#gform_source_page_number_' + GFStripeObj.formId).val(), 10);
@@ -450,6 +474,22 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 				const validationMessage = jQuery('<div class="gform_validation_errors" id="gform_' + GFStripeObj.formId + '_validation_container" data-js="gform-focus-validation-error" tabindex="-1"><h2 class="gform_submission_error hide_summary"><span class="gform-icon gform-icon--close"></span>' + gforms_stripe_frontend_strings.payment_element_intent_failure + '</h2></div>');
 				jQuery('#gform_wrapper_' + GFStripeObj.formId).prepend(validationMessage);
 			}
+		};
+
+		this.getProductFieldPrice = function (formId, fieldId) {
+
+			var price = GFMergeTag.getMergeTagValue(formId, fieldId, ':price'),
+			    qty = GFMergeTag.getMergeTagValue(formId, fieldId, ':qty');
+
+			if (typeof price === 'string') {
+				price = GFMergeTag.getMergeTagValue(formId, fieldId + '.2', ':price');
+				qty = GFMergeTag.getMergeTagValue(formId, fieldId + '.3', ':qty');
+			}
+
+			return {
+				price: price,
+				qty: qty
+			};
 		};
 
 		this.getBillingAddressMergeTag = function (field) {
@@ -628,8 +668,13 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 								$('#gf_stripe_response').val($.toJSON(currentResponse));
 
 								GFStripeObj.maybeAddSpinner();
+								// Enable the submit button, which was disabled before displaying the SCA warning message, so we can submit the form.
+								jQuery('#gform_submit_button_' + formId).prop('disabled', false);
 								$('#gform_' + formId).data('gfstripescaauth', false);
 								$('#gform_' + formId).data('gfstripesubmitting', true).submit();
+								// There are a couple of seconds delay where the button is available for clicking before the thank you page is displayed,
+								// Disable the button so the user will not think it needs to be clicked again.
+								jQuery('#gform_submit_button_' + formId).prop('disabled', true);
 							});
 						}
 					});
@@ -655,12 +700,36 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 			return true;
 		};
 
+		/**
+   * @function isConversationalForm
+   * @description Determines if we are on conversational form mode
+   *
+   * @since 5.1.0
+   *
+   * @returns {boolean}
+   */
+		this.isConversationalForm = function () {
+			const convoForm = $('[data-js="gform-conversational-form"]');
+
+			return convoForm.length > 0;
+		};
+
+		/**
+   * @function isCreditCardOnPage
+   * @description Determines if the credit card field is on the current page
+   *
+   * @since 5.1.0
+   *
+   * @returns {boolean}
+   */
 		this.isCreditCardOnPage = function () {
 
 			var currentPage = this.getCurrentPageNumber();
 
-			// if current page is false or no credit card page number, assume this is not a multi-page form
-			if (!this.ccPage || !currentPage) return true;
+			// if current page is false or no credit card page number or this is a convo form, assume this is not a multi-page form
+			if (!this.ccPage || !currentPage || this.isConversationalForm()) {
+				return true;
+			}
 
 			return this.ccPage == currentPage;
 		};
@@ -717,41 +786,8 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 			}
 		};
 
-		this.updatePaymentAmount = function () {
-			var formId = this.formId,
-			    activeFeed = this.activeFeed;
-			if (activeFeed === null) {
-				window['gform_stripe_amount_' + formId] = 0;
-				return;
-			}
-
-			if (activeFeed.paymentAmount !== 'form_total') {
-				var price = GFMergeTag.getMergeTagValue(formId, activeFeed.paymentAmount, ':price'),
-				    qty = GFMergeTag.getMergeTagValue(formId, activeFeed.paymentAmount, ':qty');
-
-				if (typeof price === 'string') {
-					price = GFMergeTag.getMergeTagValue(formId, activeFeed.paymentAmount + '.2', ':price');
-					qty = GFMergeTag.getMergeTagValue(formId, activeFeed.paymentAmount + '.3', ':qty');
-				}
-
-				window['gform_stripe_amount_' + formId] = price * qty;
-			}
-
-			if (activeFeed.hasOwnProperty('setupFee')) {
-				price = GFMergeTag.getMergeTagValue(formId, activeFeed.setupFee, ':price');
-				qty = GFMergeTag.getMergeTagValue(formId, activeFeed.setupFee, ':qty');
-
-				if (typeof price === 'string') {
-					price = GFMergeTag.getMergeTagValue(formId, activeFeed.setupFee + '.2', ':price');
-					qty = GFMergeTag.getMergeTagValue(formId, activeFeed.setupFee + '.3', ':qty');
-				}
-
-				window['gform_stripe_amount_' + formId] += price * qty;
-			}
-		};
-
 		this.createToken = function (stripe, card) {
-			console.log(this);
+
 			const GFStripeObj = this;
 			const activeFeed = this.activeFeed;
 			const cardholderName = $('#input_' + GFStripeObj.formId + '_' + GFStripeObj.ccFieldId + '_5').val();
@@ -1058,7 +1094,10 @@ class StripePaymentsHandler {
 		// A workaround so we can call validate method from outside this class while still accessing the correct scope.
 		this.validateForm = this.validate.bind(this);
 		this.handlelinkEmailFieldChange = this.reInitiateLinkWithEmailAddress.bind(this);
-
+		this.order = {
+			'recurringAmount': 0,
+			'paymentAmount': 0
+		};
 		// The object gets initialized everytime frontend feeds are evaluated so we need to clear any previous errors.
 		this.clearErrors();
 
@@ -1084,6 +1123,117 @@ class StripePaymentsHandler {
 		if (emailField && emailField.value) {
 			this.handlelinkEmailFieldChange({ target: { value: emailField.value } });
 		}
+	}
+
+	/**
+  * @function getStripeCoupon
+  * @description Retrieves the cached coupon associated with the entered coupon code.
+  *
+  * @since 5.1
+  * @returns {object} Returns the cached coupon object or null if the coupon is not found.
+  */
+	getStripeCoupon() {
+		var coupons = window.stripeCoupons || {};
+		return coupons[this.getStripeCouponCode()];
+	}
+
+	/**
+  * @function getStripeCouponInput
+  * @description Retrieves the coupon input associated with the active feed.
+  *
+  * @since 5.1
+  *
+  * @returns {HTMLInputElement} Returns the coupon input or null if the coupon input is not found.
+  */
+	getStripeCouponInput() {
+		return document.querySelector('#input_' + this.GFStripeObj.formId + '_' + this.GFStripeObj.activeFeed.coupon);
+	}
+
+	/**
+  * @function getStripeCouponCode
+  * @description Retrieves the coupon code from the coupon input associated with the active feed.
+  *
+  * @since 5.1
+  *
+  * @returns {string} Returns the coupon code or an empty string if the coupon input is not found.
+  */
+	getStripeCouponCode() {
+		const couponInput = this.getStripeCouponInput();
+
+		return couponInput ? couponInput.value : '';
+	}
+
+	/**
+  * @function bindStripeCoupon
+  * @description Binds the coupon input change event.
+  *
+  * @since 5.1
+  *
+  * @returns {void}
+  */
+	bindStripeCoupon() {
+
+		// Binding coupon input event if it has not been bound before.
+		const couponInput = this.getStripeCouponInput();
+		if (couponInput && !couponInput.getAttribute('data-listener-added')) {
+			couponInput.addEventListener('blur', this.handleCouponChange.bind(this));
+			couponInput.setAttribute('data-listener-added', true);
+		}
+	}
+
+	/**
+  * @function handleCouponChange
+  * @description Handles the coupon input change event.
+  *
+  * @since 5.1
+  *
+  * @param event The event object.
+  * @returns {Promise<void>}
+  */
+	async handleCouponChange(event) {
+
+		if (this.getStripeCouponInput() !== event.target) {
+			return;
+		}
+
+		await this.updateStripeCoupon(event.target.value);
+
+		gformCalculateTotalPrice(this.GFStripeObj.formId);
+	}
+
+	/**
+  * @function updateStripeCoupon
+  * @description Retrieves a coupon from Stripe based on the coupon_code specified and caches it in the window object.
+  *
+  * @since 5.1
+  *
+  * @param {string} coupon_code The coupon code
+  * @returns {Promise<void>}
+  */
+	async updateStripeCoupon(coupon_code) {
+
+		// If the coupon code is empty, we don't need to do anything.
+		if (!coupon_code) {
+			return;
+		}
+
+		// Initializing stripeCoupons object if it doesn't exist.
+		if (!window.stripeCoupons) {
+			window.stripeCoupons = {};
+		}
+
+		// If coupon has already been retrieved from Stripe, abort.
+		if (window.stripeCoupons[coupon_code]) {
+			return;
+		}
+
+		// Retreive coupon from Stripe and store it in the window object.
+		const response = await Object(_request__WEBPACK_IMPORTED_MODULE_0__["default"])(JSON.stringify({
+			'coupon': coupon_code,
+			'feed_id': this.GFStripeObj.activeFeed.feedId
+		}), true, 'gfstripe_get_stripe_coupon', gforms_stripe_frontend_strings.get_stripe_coupon_nonce);
+
+		window.stripeCoupons[coupon_code] = response.data;
 	}
 
 	/**
@@ -1147,6 +1297,9 @@ class StripePaymentsHandler {
 				this.paymentMethod = event;
 			});
 		}
+
+		// Binding events for Stripe Coupon.
+		this.bindStripeCoupon();
 
 		const emailField = document.querySelector('#input_' + this.GFStripeObj.formId + '_' + this.GFStripeObj.activeFeed.link_email_field_id);
 
@@ -1224,25 +1377,42 @@ class StripePaymentsHandler {
 			window.location.href = redirect_url.href;
 		}
 
-		setTimeout(() => {}, 5000);
-
 		if ('data' in response && 'is_valid' in response.data && response.data.is_valid && 'resume_token' in response.data && 'intent' in response.data && 'client_secret' in response.data.intent) {
 			// Reset any errors.
 			this.resetFormValidationErrors();
 			this.draftId = response.data.resume_token;
-			if ('total' in response.data) {
-				await this.updatePaymentAmount(response.data.total);
+			// Validate Stripe coupon, if there is a setup fee or trial, the coupon won't be applied to the current payment, so pass validation as it is all handled in the backend.
+			if (this.GFStripeObj.activeFeed.hasTrial !== '1' && !this.GFStripeObj.activeFeed.setupFee && !this.isValidCoupon(response.data.total)) {
+				this.failWithMessage(gforms_stripe_frontend_strings.coupon_invalid, this.GFStripeObj.formId);
+
+				return false;
 			}
 
 			// Confirm payment.
-			// Add a one-second delay to allow Stripe to update the payment amount, otherwise we get an error.
-			setTimeout(async () => {
-				await this.confirm(response.data.resume_token, response.data.intent.client_secret);
-			}, 1000);
+			this.confirm(response.data.resume_token, response.data.intent.client_secret);
 		} else {
 			// Form is not valid, do a normal submit to render the validation errors markup in backend.
 			event.target.submit();
 		}
+	}
+
+	/**
+  * @function isValidCoupon
+  * @description Validates the coupon code.
+  *
+  * @since 5.1
+  *
+  * @param {number} payment_amount Payment amount calculated by Stripe.
+  *
+  * @returns {boolean} Returns true if the coupon is valid, returns false otherwise.
+  */
+	isValidCoupon(payment_amount) {
+		const coupon = this.getStripeCoupon();
+		if (!coupon) {
+			return true;
+		}
+
+		return coupon.is_valid && payment_amount == this.order.paymentAmount;
 	}
 
 	/**
@@ -1291,6 +1461,31 @@ class StripePaymentsHandler {
 		total = Math.round(total * 100) / 100;
 
 		this.elements.update({ amount: total });
+	}
+
+	/**
+  * @function applyStripeCoupon
+  * @description Applies the coupon discount to the total.
+  *
+  * @since 5.1
+  *
+  * @param {number} total The payment amount.
+  * @returns {number} Returns the updated total.
+  */
+	applyStripeCoupon(total) {
+
+		const coupon = this.getStripeCoupon();
+		if (!coupon || !coupon.is_valid) {
+			return total;
+		}
+
+		if (coupon.percentage_off) {
+			total = total - total * (coupon.percentage_off / 100);
+		} else if (coupon.amount_off) {
+			total = total - coupon.amount_off;
+		}
+
+		return total;
 	}
 
 	/**
@@ -1380,7 +1575,11 @@ class StripePaymentsHandler {
   * @param {Object} paymentResult The result of confirming a payment intent or a setup intent.
   */
 	async handleFailedPayment(paymentResult) {
-		this.failWithMessage(paymentResult.error.message, this.GFStripeObj.formId);
+		let errorMessage = '';
+		if ('error' in paymentResult && 'message' in paymentResult.error) {
+			errorMessage = paymentResult.error.message;
+		}
+		this.failWithMessage(errorMessage, this.GFStripeObj.formId);
 		// Delete the draft entry created.
 		let response = Object(_request__WEBPACK_IMPORTED_MODULE_0__["default"])(JSON.stringify({ 'draft_id': this.draftId }), true, 'gfstripe_delete_draft_entry', gforms_stripe_frontend_strings.delete_draft_nonce);
 		// If rate limiting is enabled, increase the errors number at the backend side, and set the new count here.
@@ -1466,6 +1665,56 @@ class StripePaymentsHandler {
 		}
 
 		return '{:' + field + ':value}';
+	}
+
+	/**
+  * Gets the order data.
+  *
+  * The order contains the following properties
+  * 	paymentAmount: The amount of the payment that will be charged after form submission.
+  * 	recurringAmount: If this is a subscription, this is the recurring amount.
+  *
+  * @since 5.1
+  *
+  * @param total The form total.
+  * @param formId The current form id.
+  *
+  * @return {Object} The order data.
+  */
+	getOrderData(total, formId) {
+
+		if (!_gformPriceFields[formId]) {
+			return this.order;
+		}
+
+		const setUpFieldId = this.GFStripeObj.activeFeed.setupFee;
+		let setupFee = 0;
+		let productTotal = 0;
+		const isTrial = this.GFStripeObj.activeFeed.hasTrial;
+
+		// If this is the setup fee field, or the shipping field, don't add to total.
+		if (setUpFieldId) {
+			const setupFeeInfo = this.GFStripeObj.getProductFieldPrice(formId, this.GFStripeObj.activeFeed.setupFee);
+			setupFee = setupFeeInfo.price * setupFeeInfo.qty;
+			// If this field is a setup fee, subtract it from total, so it is not added to the recurring amount.
+			total -= setupFee;
+		}
+
+		if (this.GFStripeObj.activeFeed.paymentAmount === 'form_total') {
+			this.order.recurringAmount = total;
+		} else {
+			this.order.recurringAmount = gformCalculateProductPrice(formId, this.GFStripeObj.activeFeed.paymentAmount);
+		}
+
+		this.order.recurringAmount = this.applyStripeCoupon(this.order.recurringAmount);
+
+		if (isTrial === '1') {
+			this.order.paymentAmount = setupFee;
+		} else {
+			this.order.paymentAmount = this.order.recurringAmount + setupFee;
+		}
+
+		return this.order;
 	}
 }
 

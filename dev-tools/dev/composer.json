@@ -20,7 +20,7 @@
       "allow-plugins": true
   },
   "require": {
-      "wpackagist-plugin/custom-post-type-ui":"1.13.7",
+      "wpackagist-plugin/custom-post-type-ui":"1.14.0",
       "johnbillion/user-switching": "^1.7",
       "wpackagist-plugin/query-monitor":"3.13.1",
       "wpackagist-plugin/wp-debugging":"2.11.22",
@@ -31,7 +31,7 @@
       "wpackagist-plugin/redirection": "^5.3.10",
       "wpackagist-plugin/wordpress-seo":"20.12",
       "wpackagist-plugin/so-clean-up-wp-seo":"4.0.1",
-      "pronamic/gravityforms": "^2.7.11",
+      "pronamic/gravityforms": "^2.7.12",
       "wpackagist-plugin/email-templates":"1.4.2",
       "wpackagist-plugin/speechkit":"4.0.1",
       "wpackagist-plugin/instant-images":"6.0.0"
