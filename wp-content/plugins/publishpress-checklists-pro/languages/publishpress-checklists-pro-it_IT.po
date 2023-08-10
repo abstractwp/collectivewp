@@ -1,0 +1,287 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PublishPress Checklists Pro\n"
+"POT-Creation-Date: 2022-04-20 11:09-0300\n"
+"PO-Revision-Date: 2022-10-24 11:47+0200\n"
+"Last-Translator: \n"
+"Language-Team: Angelo Giammarresi - info@wocmultimedia.com\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: publishpress-checklists-pro.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2;getText;displayText;"
+"getTextN;getTextAndEscHtml\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: lib\n"
+
+#: src/PluginServiceProvider.php:61
+msgid "Checklists Pro"
+msgstr "Checklists Pro"
+
+#: src/modules/featured-image-size/featured-image-size.php:85
+msgid "Featured Image Size Support"
+msgstr "Compatibilità con la dimensione dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/featured-image-size.php:87
+#: src/modules/featured-image-size/featured-image-size.php:90
+msgid "Define tasks that verify the featured image size"
+msgstr ""
+"Definire le operazioni che verificano le dimensioni dell'immagine in "
+"evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:44
+msgid "Featured image height"
+msgstr "Altezza dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:46
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:50
+#, php-format
+msgid "Minimum %spx for the featured image height"
+msgstr "Minima %spx per l'altezza dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:54
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:58
+#, php-format
+msgid "Maximum %spx for the featured image height"
+msgstr "Massima %spx per l'altezza dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:61
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:62
+#, php-format
+msgid "Featured image height of %spx"
+msgstr "Altezza dell'immagine in evidenza di %spx"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageHeight.php:64
+#, php-format
+msgid "Featured image height between %spx and %spx"
+msgstr "Altezza dell'immagine in evidenza tra %spx e %spx"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:44
+msgid "Featured image width"
+msgstr "Larghezza dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:46
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:50
+#, php-format
+msgid "Minimum %spx for the featured image width"
+msgstr "Minima %spx per la larghezza dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:54
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:58
+#, php-format
+msgid "Maximum %spx for the featured image width"
+msgstr "Massima %spx per la larghezza dell'immagine in evidenza"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:61
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:62
+#, php-format
+msgid "Featured image width of %spx"
+msgstr "Larghezza dell'immagine in evidenza di %spx"
+
+#: src/modules/featured-image-size/lib/Requirement/FeaturedImageWidth.php:64
+#, php-format
+msgid "Featured image width between %spx and %spx"
+msgstr "Larghezza dell'immagine in evidenza tra %spx e %spx"
+
+#: src/modules/prosettings/prosettings.php:124
+msgid "Pro Settings"
+msgstr "Impostazioni Pro"
+
+#: src/modules/prosettings/prosettings.php:196
+msgid "License key:"
+msgstr "Chiave di licenza:"
+
+#: src/modules/prosettings/prosettings.php:204
+msgid "Display PublishPress branding in the admin:"
+msgstr "Mostra il marchio PublishPress nell'amministrazione:"
+
+#: src/modules/woocommerce/lib/Requirement/Backorder.php:168
+msgid "Do not allow"
+msgstr "Non permettere"
+
+#: src/modules/woocommerce/lib/Requirement/Backorder.php:175
+msgid "Allow"
+msgstr "Pemetti"
+
+#: src/modules/woocommerce/lib/Requirement/Backorder.php:182
+msgid "Allow, but notify customer"
+msgstr "Permetti, ma avvisa l'utente"
+
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:73
+msgid "Select some products for \"Cross-sells\""
+msgstr "Seleziona alcuni prodotti per \"Cross-sells\""
+
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:75
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:90
+#, php-format
+msgid "Min %s Max %s"
+msgstr "Min %s Max %s"
+
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:77
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:80
+#, php-format
+msgid "Minimum of %s products for \"Cross-sells\""
+msgstr "Minimo di %s prodotti per \"Cross-sells\""
+
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:83
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:86
+#, php-format
+msgid "Maximum of %s products for \"Cross-sells\""
+msgstr "Massimo di %s prodotti per \"Cross-sells\""
+
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:88
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:89
+#, php-format
+msgid "%s products for \"Cross-sells\""
+msgstr "%s prodotti per \"Cross-sells\""
+
+#: src/modules/woocommerce/lib/Requirement/Crosssell.php:91
+#, php-format
+msgid "%s to %s products for \"Cross-sells\""
+msgstr "%s a %s prodotti per \"Cross-sells\""
+
+#: src/modules/woocommerce/lib/Requirement/Discount.php:79
+msgid "Discount for the \"Sale price\""
+msgstr "Sconto per il \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/Discount.php:80
+#, php-format
+msgid "Min %s%% Max %s%%"
+msgstr "Min %s%% Max %s%%"
+
+#: src/modules/woocommerce/lib/Requirement/Discount.php:81
+#: src/modules/woocommerce/lib/Requirement/Discount.php:82
+#, php-format
+msgid "Min %s%% discount for the \"Sale price\""
+msgstr "Min %s%% sconto per il \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/Discount.php:83
+#: src/modules/woocommerce/lib/Requirement/Discount.php:84
+#, php-format
+msgid "Max %s%% discount for the \"Sale price\""
+msgstr "Max %s%% sconto per il \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/Discount.php:85
+#: src/modules/woocommerce/lib/Requirement/Discount.php:86
+#, php-format
+msgid "%s%% discount for the \"Sale price\""
+msgstr "%s%% sconto per il \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/Discount.php:87
+#, php-format
+msgid "%s%% to %s%% discount for the \"Sale price\""
+msgstr "%s%% a %s%% sconto per il \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/Downloadable.php:51
+#: src/modules/woocommerce/lib/Requirement/Downloadable.php:52
+msgid "Check the \"Downloadable\" box"
+msgstr "Seleziona la casella \"Scaricabile\""
+
+#: src/modules/woocommerce/lib/Requirement/Image.php:51
+#: src/modules/woocommerce/lib/Requirement/Image.php:52
+msgid "Product image"
+msgstr "Immagine del prodotto"
+
+#: src/modules/woocommerce/lib/Requirement/ManageStock.php:51
+#: src/modules/woocommerce/lib/Requirement/ManageStock.php:52
+msgid "Check the \"Manage stock?\" box"
+msgstr "Seleziona la casella \"Gestire il magazzino?\""
+
+#: src/modules/woocommerce/lib/Requirement/RegularPrice.php:50
+#: src/modules/woocommerce/lib/Requirement/RegularPrice.php:51
+msgid "Enter a \"Regular price\""
+msgstr "Immetti un \"Prezzo di listino\""
+
+#: src/modules/woocommerce/lib/Requirement/SalePrice.php:51
+#: src/modules/woocommerce/lib/Requirement/SalePrice.php:52
+msgid "Enter a \"Sale price\""
+msgstr "Immetti un \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/SalePriceScheduled.php:51
+#: src/modules/woocommerce/lib/Requirement/SalePriceScheduled.php:52
+msgid "Schedule the \"Sale price\""
+msgstr "Programma il \"Prezzo in offerta\""
+
+#: src/modules/woocommerce/lib/Requirement/Sku.php:51
+#: src/modules/woocommerce/lib/Requirement/Sku.php:52
+msgid "Enter a \"SKU\""
+msgstr "Immetti un \"COD\""
+
+#: src/modules/woocommerce/lib/Requirement/SoldIndividually.php:51
+#: src/modules/woocommerce/lib/Requirement/SoldIndividually.php:52
+msgid "Check the \"Sold individually\" box"
+msgstr "Seleziona la casella \"Venduto singolarmente\""
+
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:88
+msgid "Select some products for \"Upsells\""
+msgstr "Seleziona alcuni prodotti per \"Up-sells\""
+
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:92
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:95
+#, php-format
+msgid "Minimum of %s products for \"Upsells\""
+msgstr "Minimo di %s prodotti per \"Upsells\""
+
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:98
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:101
+#, php-format
+msgid "Maximum of %s products for \"Upsells\""
+msgstr "Massimo di %s prodotti per \"Upsells\""
+
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:103
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:104
+#, php-format
+msgid "%s products for \"Upsells\""
+msgstr "%s prodotti per \"Upsells\""
+
+#: src/modules/woocommerce/lib/Requirement/Upsell.php:105
+#, php-format
+msgid "%s to %s products for \"Upsells\""
+msgstr "%s a %s prodotti per \"Upsells\""
+
+#: src/modules/woocommerce/lib/Requirement/VirtualCheckbox.php:50
+#: src/modules/woocommerce/lib/Requirement/VirtualCheckbox.php:51
+msgid "Check the \"Virtual\" box"
+msgstr "Seleziona la casella \"Virtuale\""
+
+#: src/modules/woocommerce/woocommerce.php:117
+msgid "WooCommerce Support"
+msgstr "Compatibilità con WooCommerce"
+
+#: src/modules/woocommerce/woocommerce.php:119
+#: src/modules/woocommerce/woocommerce.php:122
+msgid ""
+"Define tasks that must be complete before a WooCommerce product is published"
+msgstr ""
+"Definisci le azioni che devono essere completate prima che un prodotto "
+"WooCommerce venga pubblicato"
+
+#. Plugin Name of the plugin/theme
+msgid "PublishPress Checklists Pro"
+msgstr "PublishPress Checklists Pro"
+
+#. Plugin URI of the plugin/theme
+msgid "https://publishpress.com/"
+msgstr "https://publishpress.com/"
+
+#. Description of the plugin/theme
+msgid "Add support for checklists in WordPress"
+msgstr "Aggiungi la compatibilità per le liste di controllo in WordPress"
+
+#. Author of the plugin/theme
+msgid "PublishPress"
+msgstr "PublishPress"
+
+#. Author URI of the plugin/theme
+msgid "https://publishpress.com"
+msgstr "https://publishpress.com"

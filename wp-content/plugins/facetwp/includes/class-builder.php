@@ -188,6 +188,39 @@ class FacetWP_Builder
                 $value = $post->$source;
             }
         }
+        elseif ( 0 === strpos( $source, 'cf/attribute_' ) && 'product' == get_post_type( $post->ID ) ) {
+            $value = '';
+            $product = wc_get_product( $post->ID );
+            $attr = substr( $source, 13 );
+            $attributes = array_filter( $product->get_attributes(), 'wc_attributes_array_filter_visible' );
+            if ( isset( $attributes[ $attr ] ) ) {
+                $attribute = $attributes[ $attr ];
+                if ( $attribute->is_taxonomy() ) {
+                    $attribute_taxonomy = $attribute->get_taxonomy_object();
+                    $attribute_values = wc_get_product_terms( $product->get_id(), $attribute->get_name(), [ 'fields' => 'all' ] );
+
+                    foreach ( $attribute_values as $attribute_value ) {
+                        $value_name = esc_html( $attribute_value->name );
+
+                        if ( $attribute_taxonomy->attribute_public ) {
+                            $values[] = '<a href="' . esc_url( get_term_link( $attribute_value->term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
+                        }
+                        else {
+                            $values[] = $value_name;
+                        }
+                    }
+                }
+                else {
+                    $values = $attribute->get_options();
+
+                    foreach ( $values as &$value ) {
+                        $value = make_clickable( esc_html( $value ) );
+                    }
+                }
+
+                $value = implode( ", ", $values );
+            }
+        }
         elseif ( 0 === strpos( $source, 'cf/' ) ) {
             $value = get_post_meta( $post->ID, substr( $source, 3 ), true );
             $value = $this->linkify( $value, $settings['link'] );

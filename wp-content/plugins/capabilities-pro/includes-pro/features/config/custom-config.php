@@ -26,7 +26,7 @@ class EditorFeaturesCustomConfig {
 
         <tr class="ppc-menu-row parent-menu ppc-add-custom-row-header">
             <td>
-                <p class="cme-subtext"><?php _e('You can remove other elements from the editor screen by adding their IDs or classes below:', 'capsman-enhanced');?>
+                <p class="cme-subtext"><?php _e('You can remove other elements from the editor screen by adding their IDs or classes below:', 'capabilities-pro');?>
                 </p>
             </td>
         </tr>
@@ -35,23 +35,23 @@ class EditorFeaturesCustomConfig {
             <td>
 
                 <div class="left">
-                <?php esc_html_e('Label', 'capsman-enhanced'); ?> <font color="red">*</font>
+                <?php esc_html_e('Label', 'capabilities-pro'); ?> <font color="red">*</font>
                 <input class="ppc-feature-classic-new-name" type="text"/>
                 <small><?php esc_html_e('Enter the name/label to identify the custom element on this screen.',
-                        'capsman-enhanced'); ?></small>
+                        'capabilities-pro'); ?></small>
                 </div>
 
                 <div class="right">
-                <?php esc_html_e('Element IDs or Classes', 'capsman-enhanced'); ?> <font color="red">*</font>
+                <?php esc_html_e('Element IDs or Classes', 'capabilities-pro'); ?> <font color="red">*</font>
                 <div><textarea class="ppc-feature-classic-new-ids"></textarea>
                     <input class="ppc-feature-submit-form-nonce" type="hidden"
                            value="<?php echo esc_attr(wp_create_nonce('ppc-custom-feature-nonce')); ?>"/>
-                    <button type="button" class="ppc-feature-classic-new-submit button button-secondary"><?php echo esc_html__('Add','capsman-enhanced'); ?></button>
+                    <button type="button" class="ppc-feature-classic-new-submit button button-secondary"><?php echo esc_html__('Add','capabilities-pro'); ?></button>
                     <span class="ppc-feature-post-loader spinner"></span>
                 </div>
                 <div>
                     <small><?php esc_html_e('IDs or classes to hide. Separate multiple values by comma (.custom-item-one, .custom-item-two, #new-item-id).',
-                            'capsman-enhanced'); ?></small>
+                            'capabilities-pro'); ?></small>
                 </div>
                 </div>
                 <div class="ppc-post-features-note"></div>
@@ -67,7 +67,7 @@ class EditorFeaturesCustomConfig {
         <table class="editor-features-custom editor-features-gutenberg-custom" <?php if (!empty($_REQUEST['ppc-tab']) && ('gutenberg' != $_REQUEST['ppc-tab'])):?>style="display:none"<?php endif;?>>
         <tr class="ppc-menu-row parent-menu ppc-add-custom-row-header">
             <td>
-                <p class="cme-subtext"><?php _e('You can remove other elements from the editor screen by adding their IDs or classes below:', 'capsman-enhanced');?>
+                <p class="cme-subtext"><?php _e('You can remove other elements from the editor screen by adding their IDs or classes below:', 'capabilities-pro');?>
                 </p>
             </td>
         </tr>
@@ -76,23 +76,23 @@ class EditorFeaturesCustomConfig {
             <td>
 
                 <div class="left">
-                <?php esc_html_e('Label', 'capsman-enhanced'); ?> <font color="red">*</font>
+                <?php esc_html_e('Label', 'capabilities-pro'); ?> <font color="red">*</font>
                 <input class="ppc-feature-gutenberg-new-name" type="text"/>
                 <small><?php esc_html_e('Enter the name/label to identify the custom element on this screen.',
-                        'capsman-enhanced'); ?></small>
+                        'capabilities-pro'); ?></small>
                 </div>
 
                 <div class="right">
-                <?php esc_html_e('Element IDs or Classes', 'capsman-enhanced'); ?> <font color="red">*</font>
+                <?php esc_html_e('Element IDs or Classes', 'capabilities-pro'); ?> <font color="red">*</font>
                 <div><textarea class="ppc-feature-gutenberg-new-ids"></textarea>
                     <input class="ppc-feature-submit-form-nonce" type="hidden"
                             value="<?php echo esc_attr(wp_create_nonce('ppc-custom-feature-nonce')); ?>"/>
-                    <button type="button" class="ppc-feature-gutenberg-new-submit button button-secondary"><?php esc_html_e('Add','capsman-enhanced'); ?></button>
+                    <button type="button" class="ppc-feature-gutenberg-new-submit button button-secondary"><?php esc_html_e('Add','capabilities-pro'); ?></button>
                     <span class="ppc-feature-post-loader spinner"></span>
                 </div>
                 <div>
                     <small><?php esc_html_e('IDs or classes to hide. Separate multiple values by comma (.custom-item-one, .custom-item-two, #new-item-id).',
-                            'capsman-enhanced'); ?></small>
+                            'capabilities-pro'); ?></small>
                 </div>
                 </div>
                 <div class="ppc-post-features-note"></div>
@@ -170,7 +170,7 @@ class EditorFeaturesCustomConfig {
     {
         $response = [];
         $response['status']  = 'error';
-        $response['message'] = __('An error occured!', 'capsman-enhanced');
+        $response['message'] = __('An error occured!', 'capabilities-pro');
         $response['content'] = '';
 
         $delete_id     = isset($_POST['delete_id']) ? sanitize_key($_POST['delete_id']) : '';
@@ -179,9 +179,9 @@ class EditorFeaturesCustomConfig {
 
         if (!wp_verify_nonce($security, 'ppc-custom-feature-nonce')) {
             $response['message'] = __('Invalid action. Reload this page and try again if occured in error.',
-                'capsman-enhanced');
+                'capabilities-pro');
         } elseif (empty(trim($delete_id)) || empty(trim($delete_parent))) {
-            $response['message'] = __('Invalid request!.', 'capsman-enhanced');
+            $response['message'] = __('Invalid request!.', 'capabilities-pro');
         } else {
 
             if ($delete_parent === 'gutenberg') {
@@ -200,7 +200,7 @@ class EditorFeaturesCustomConfig {
 
             if (!empty($delete_parent)) {
                 $response['status']  = 'success';
-                $response['message'] = __('Selected item deleted successfully', 'capsman-enhanced');
+                $response['message'] = __('Selected item deleted successfully', 'capabilities-pro');
             }
         }
 

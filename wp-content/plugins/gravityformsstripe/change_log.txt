@@ -1,3 +1,15 @@
+### 5.1.0 | 2023-08-02
+- Updated the verbiage and look of the validation message that appears when SCA modal is triggered.
+- Fixed an issue where the Credit Card field is not initialized on multi page forms when running in Conversational Forms mode.
+- Fixed an issue which causes duplicate entries to be created when the SCA modal is triggered.
+- Fixed an issue with the Payment Element which creates an error when Apple Pay is used as a payment method.
+- Fixed an issue where the Customer Information inputs are not being populated when creating a subscription feed.
+- Fixed an issue where notifications are not sent when using manual capture with Stripe Checkout.
+- Fixed an issue where the total field can be incorrectly calculated when conditional logic is configured for a Stripe feed.
+- Fixed an issue where the total field can be incorrectly calculated when a product is set as a setup fee in the Stripe feed settings.
+- Fixed an issue where a coupon is applied to the setup fee along with the recurring amount of a subscription.
+
+
 ### 5.0 | 2023-06-14
 - Added support for the theme framework.
 - Added support for the Stripe Payment Element.
@@ -11,6 +23,7 @@
 - Updated the `gform_stripe_elements_style` filter to include a parameter indicating whether or not the Payment Element is being used for a given form.
 - Fixed an issue with Stripe Checkout when a customer is manually created via a hook.
 - Fixed an issue where the inline block styles are rendered for forms without a Stripe card field.
+
 
 ### 4.3 | 2023-01-19
 - Added support for changes in the Stripe API.

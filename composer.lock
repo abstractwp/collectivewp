@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82d0dbb162de187dfd6018a2c45aae5a",
+    "content-hash": "d57da56c8b848314982bbbbd6a63bda1",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.7.11",
+            "version": "2.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "a9dad0143903b7f91fb16c1ac94589f5cd4fe578"
+                "reference": "9dca2039f2ac8923a28ca84d68a1fa6f0a70ec99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/a9dad0143903b7f91fb16c1ac94589f5cd4fe578",
-                "reference": "a9dad0143903b7f91fb16c1ac94589f5cd4fe578",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/9dca2039f2ac8923a28ca84d68a1fa6f0a70ec99",
+                "reference": "9dca2039f2ac8923a28ca84d68a1fa6f0a70ec99",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.11"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.12"
             },
-            "time": "2023-07-28T10:05:04+00:00"
+            "time": "2023-08-09T10:06:24+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -387,15 +387,15 @@
         },
         {
             "name": "wpackagist-plugin/cookiebot",
-            "version": "4.2.12",
+            "version": "4.2.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.2.12"
+                "reference": "tags/4.2.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.12.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.13.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -405,15 +405,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.13.7",
+            "version": "1.14.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.13.7"
+                "reference": "tags/1.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.13.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.14.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -513,15 +513,15 @@
         },
         {
             "name": "wpackagist-plugin/speechkit",
-            "version": "4.0.1",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/speechkit/",
-                "reference": "tags/4.0.1"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/speechkit.4.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/speechkit.4.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -531,15 +531,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.12",
+            "version": "20.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.12"
+                "reference": "tags/20.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.12.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.13.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

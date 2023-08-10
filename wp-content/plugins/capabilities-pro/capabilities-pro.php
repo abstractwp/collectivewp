@@ -5,7 +5,7 @@
  * Description: Manage WordPress role definitions, per-site or network-wide. Organizes post capabilities by post type and operation.
  * Author: PublishPress
  * Author URI: https://publishpress.com/
- * Version: 2.8.1
+ * Version: 2.9.1
  * Text Domain: capabilities-pro
  * Domain Path: /languages/
  * Min WP Version: 4.9.7
@@ -45,7 +45,7 @@ if (class_exists('PublishPressInstanceProtection\\Config')) {
 }
 
 if (!defined('CAPSMAN_VERSION')) {
-	define('CAPSMAN_VERSION', '2.8.1');
+	define('CAPSMAN_VERSION', '2.9.1');
 	define('PUBLISHPRESS_CAPS_VERSION', CAPSMAN_VERSION);
 	define('PUBLISHPRESS_CAPS_PRO_VERSION', CAPSMAN_VERSION);
 	define('PUBLISHPRESS_CAPS_EDD_ITEM_ID', 44811);
