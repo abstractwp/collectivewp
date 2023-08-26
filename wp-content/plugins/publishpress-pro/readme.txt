@@ -5,8 +5,8 @@ Author URI: https://publishpress.com
 Tags: notifications, Editorial Calendar, workflow, statuses, permissions
 Requires at least: 5.5
 Requires PHP: 7.2.5
-Tested up to: 6.0
-Stable tag: 3.11.0
+Tested up to: 6.3
+Stable tag: 3.12.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +127,15 @@ Not at all. You can set up everything your team needs without any coding knowled
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+= [3.12.0] - 15 Aug 2023 =
+
+* Changed: Replaced Pimple library with a prefixed version of the library to avoid conflicts with other plugins;
+* Changed: Replaced Psr/Container library with a prefixed version of the library to avoid conflicts with other plugins;
+* Changed: Change min PHP version to 7.2.5. If not compatible, the plugin will not execute;
+* Changed: Change min WP version to 5.5. If not compatible, the plugin will not execute;
+* Changed: Updated internal libraries to latest versions;
+* Changed: Refactor some occurrences of "plugins_loaded" replacing it by a new action: "plublishpress_<name>_loaded" which runs after the requirements and libraries are loaded, but before the plugin is initialized;
 
 = [3.11.0] - 20 June 2023 =
 

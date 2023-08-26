@@ -5,7 +5,7 @@
  * Description: PublishPress Planner helps you plan and publish content with WordPress. Features include a content calendar, notifications, and custom statuses.
  * Author: PublishPress
  * Author URI: https://publishpress.com
- * Version: 3.11.0
+ * Version: 3.12.0
  * Text Domain: publishpress-pro
  * Domain Path: /languages
  * Requires at least: 5.5
@@ -58,19 +58,31 @@ if ($invalid_php_version || $invalid_wp_version) {
     return;
 }
 
-$includeFileRelativePath = '/publishpress/publishpress-instance-protection/include.php';
-if (file_exists(__DIR__ . '/vendor' . $includeFileRelativePath)) {
-    require_once __DIR__ . '/vendor' . $includeFileRelativePath;
+if (! defined('PPPRO_LIB_VENDOR_PATH')) {
+    define('PPPRO_LIB_VENDOR_PATH', __DIR__ . '/lib/vendor');
+}
+
+$instanceProtectionIncPath = PPPRO_LIB_VENDOR_PATH . '/publishpress/instance-protection/include.php';
+if (is_file($instanceProtectionIncPath) && is_readable($instanceProtectionIncPath)) {
+    require_once $instanceProtectionIncPath;
 }
 
 if (class_exists('PublishPressInstanceProtection\\Config')) {
     $pluginCheckerConfig = new PublishPressInstanceProtection\Config();
     $pluginCheckerConfig->pluginSlug     = 'publishpress-pro';
-    $pluginCheckerConfig->pluginName     = 'PublishPress Pro';
-    $pluginCheckerConfig->freePluginName = 'PublishPress';
+    $pluginCheckerConfig->pluginName     = 'PublishPress Planner Pro';
+    $pluginCheckerConfig->freePluginName = 'PublishPress Planner';
     $pluginCheckerConfig->isProPlugin    = true;
 
     $pluginChecker = new PublishPressInstanceProtection\InstanceChecker($pluginCheckerConfig);
+}
+
+$autoloadFilePath = PPPRO_LIB_VENDOR_PATH . '/autoload.php';
+if (! class_exists('ComposerAutoloaderInitPublishPressPlannerPro')
+    && is_file($autoloadFilePath)
+    && is_readable($autoloadFilePath)
+) {
+    require_once $autoloadFilePath;
 }
 
 if (! defined('PUBLISHPRESS_PRO_ACTION_LOAD_BASE_PLUGIN')) {
@@ -81,26 +93,24 @@ if (! defined('PUBLISHPRESS_PRO_ACTION_HALT')) {
     define('PUBLISHPRESS_PRO_ACTION_HALT', 'publishpress_pro_halt');
 }
 
+
 if (! defined('PUBLISHPRESS_PRO_INTERNAL_VENDORPATH')) {
-    define('PUBLISHPRESS_PRO_INTERNAL_VENDORPATH', __DIR__ . '/libraries/internal-vendor');
+    /**
+     * @deprecated 3.12.0 Use PPPRO_LIB_VENDOR_PATH instead.
+     */
+    define('PUBLISHPRESS_PRO_INTERNAL_VENDORPATH', PPPRO_LIB_VENDOR_PATH);
 }
 
-// Composer's autoload.
-
-if (! class_exists('ComposerAutoloaderInitPublishPressPro')
-    && file_exists(PUBLISHPRESS_PRO_INTERNAL_VENDORPATH . '/autoload.php')
-) {
-    require_once PUBLISHPRESS_PRO_INTERNAL_VENDORPATH . '/autoload.php';
-}
-
-function checkupRanSuccessfully()
-{
-    return require 'checkup.php';
+if (!function_exists('checkupRanSuccessfully')) {
+    function checkupRanSuccessfully()
+    {
+        return require 'checkup.php';
+    }
 }
 
 if (checkupRanSuccessfully() && ! defined('PUBLISHPRESS_PRO_LOADED')) {
 
-    define('PUBLISHPRESS_PRO_VERSION', '3.11.0');
+    define('PUBLISHPRESS_PRO_VERSION', '3.12.0');
 
     define('PUBLISHPRESS_PRO_DIR_PATH', plugin_dir_path(__FILE__));
 
@@ -110,15 +120,15 @@ if (checkupRanSuccessfully() && ! defined('PUBLISHPRESS_PRO_LOADED')) {
 
     define('PUBLISHPRESS_SKIP_VERSION_NOTICES', true);
 
-    add_action('plugins_loaded', function () {
+    // Initialize the free plugin.
+    if (defined('PUBLISHPRESS_FREE_PLUGIN_PATH')) {
+        require_once PUBLISHPRESS_FREE_PLUGIN_PATH . '/publishpress.php';
+        do_action(PUBLISHPRESS_PRO_ACTION_LOAD_BASE_PLUGIN);
+    } else {
+        require_once PPPRO_LIB_VENDOR_PATH . '/publishpress/publishpress/publishpress.php';
+    }
 
-        // Initialize the free plugin.
-        if (defined('PUBLISHPRESS_FREE_PLUGIN_PATH')) {
-            require_once PUBLISHPRESS_FREE_PLUGIN_PATH . '/publishpress.php';
-            do_action(PUBLISHPRESS_PRO_ACTION_LOAD_BASE_PLUGIN);
-        } else {
-            require_once PUBLISHPRESS_PRO_INTERNAL_VENDORPATH . '/publishpress/publishpress/publishpress.php';
-        }
+    add_action('plugins_loaded', function () {
         
         // Initialize the framework
         require_once PUBLISHPRESS_PRO_DIR_PATH . '/lib/wppf2/includes.php';
@@ -133,7 +143,9 @@ if (checkupRanSuccessfully() && ! defined('PUBLISHPRESS_PRO_LOADED')) {
 
         $pluginInitializer = $container->get(ServicesAbstract::PLUGIN_INITIALIZER);
         $pluginInitializer->init();
-    }, -7);
+
+        do_action('publishpress_planner_pro_loaded');
+    }, -9);
 
     define('PUBLISHPRESS_PRO_LOADED', 1);
 }
