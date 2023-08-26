@@ -32,6 +32,7 @@ if (! class_exists('PP_Slack')) {
     /**
      * class PP_Slack
      */
+    #[\AllowDynamicProperties]
     class PP_Slack extends PP_Module
     {
 

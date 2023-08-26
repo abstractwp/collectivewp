@@ -15,10 +15,18 @@ class Local implements StorageInterface
     /**
      * @inheritDoc
      */
-    public function has($path)
+    public function exists($path)
     {
         global $wp_filesystem;
 
         return $wp_filesystem->exists($path);
+    }
+
+    /**
+     * @deprecated 3.12.0 Use exists() method instead.
+     */
+    public function has($path)
+    {
+        return $this->exists($path);
     }
 }

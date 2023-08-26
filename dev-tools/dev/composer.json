@@ -29,11 +29,11 @@
       "wpackagist-plugin/fluent-smtp":"2.2.5",
       "wpackagist-plugin/wp-security-audit-log":"4.5.3",
       "wpackagist-plugin/redirection": "^5.3.10",
-      "wpackagist-plugin/wordpress-seo":"20.12",
+      "wpackagist-plugin/wordpress-seo":"21.0",
       "wpackagist-plugin/so-clean-up-wp-seo":"4.0.1",
-      "pronamic/gravityforms": "^2.7.12",
+      "pronamic/gravityforms": "^2.7.13",
       "wpackagist-plugin/email-templates":"1.4.2",
-      "wpackagist-plugin/speechkit":"4.0.3",
+      "wpackagist-plugin/speechkit":"4.0.5",
       "wpackagist-plugin/instant-images":"6.0.0"
   },
   "extra": {

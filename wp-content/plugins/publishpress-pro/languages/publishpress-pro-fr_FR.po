@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Pro\n"
 "POT-Creation-Date: 2022-11-03 08:38+0000\n"
-"PO-Revision-Date: 2022-11-04 14:55+0100\n"
+"PO-Revision-Date: 2023-08-15 14:39+0000\n"
 "Last-Translator: \n"
-"Language-Team: Angelo Giammarresi - info@wocmultimedia.com\n"
+"Language-Team: French (France)\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: publishpress-pro.php\n"
@@ -22,13 +22,13 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: modules/reminders/reminders.php:217
+#: modules/reminders/reminders.php:218
 #, php-format
 msgid "%s seconds"
 msgstr "%s secondes"
 
-#: modules/slack/slack.php:948 modules/slack/slack.php:998
-#: modules/slack/slack.php:1018
+#: modules/slack/slack.php:955 modules/slack/slack.php:1005
+#: modules/slack/slack.php:1025
 msgid "Access denied"
 msgstr "Accès refusé"
 
@@ -40,12 +40,12 @@ msgstr "Après la publication du contenu"
 msgid "Amount"
 msgstr "Montant"
 
-#: modules/slack/slack.php:320
+#: modules/slack/slack.php:321
 msgid "Authentication info and cache were deleted successfully."
 msgstr ""
 "Les informations d’authentification et le cache ont bien été supprimés."
 
-#: modules/slack/slack.php:395
+#: modules/slack/slack.php:396
 msgid "Authentication:"
 msgstr "Authentification :"
 
@@ -53,31 +53,31 @@ msgstr "Authentification :"
 msgid "Before the selected publish date"
 msgstr "Avant la date de publication sélectionnée"
 
-#: modules/slack/slack.php:294
+#: modules/slack/slack.php:295
 msgid "Cancel"
 msgstr "Annuler"
 
-#: modules/slack/slack.php:450
+#: modules/slack/slack.php:451
 msgid "Clean - Only the notification body"
 msgstr "Effacer - Uniquement le corps de notification"
 
-#: modules/slack/slack.php:325
+#: modules/slack/slack.php:326
 msgid "Click for sending a test message to the default channel on Slack"
 msgstr "Cliquez pour envoyer un message de test au canal par défaut sur Slack"
 
-#: modules/reminders/reminders.php:237
+#: modules/reminders/reminders.php:238
 msgid "Click here for more information."
 msgstr "Cliquez ici pour en savoir plus."
 
-#: modules/slack/slack.php:291
+#: modules/slack/slack.php:292
 msgid "Click to connect to Slack"
 msgstr "Cliquez pour vous connecter à Slack"
 
-#: modules/slack/slack.php:292
+#: modules/slack/slack.php:293
 msgid "Click to reconnect to Slack"
 msgstr "Cliquez pour vous reconnecter à Slack"
 
-#: modules/slack/slack.php:299
+#: modules/slack/slack.php:300
 msgid ""
 "Clicking to connect, a new window will open so you can authorize the "
 "PublishPress App on Slack."
@@ -85,21 +85,21 @@ msgstr ""
 "En cliquant pour vous connecter, une nouvelle fenêtre s’ouvrira pour que "
 "vous puissiez autoriser l’application PublishPress sur Slack."
 
-#: modules/slack/slack.php:561
+#: modules/slack/slack.php:562
 msgid "Comment"
 msgstr "Commentaire"
 
-#: modules/slack/slack.php:335
+#: modules/slack/slack.php:336
 #, php-format
 msgid "Congrats! A test message was sent to the channel %s."
 msgstr "Félicitations ! Un message de test a été envoyé sur le canal %s."
 
-#: modules/slack/slack.php:316
+#: modules/slack/slack.php:317
 msgid "Congrats! Slack authentication info is stored."
 msgstr ""
 "Félicitations ! Les informations d’authentification de Slack sont stockées."
 
-#: modules/slack/slack.php:293
+#: modules/slack/slack.php:294
 msgid "Continue"
 msgstr "Continuer"
 
@@ -107,29 +107,34 @@ msgstr "Continuer"
 msgid "Days"
 msgstr "Jours"
 
-#: modules/slack/slack.php:489
+#: modules/slack/slack.php:490
+#, fuzzy
+#| msgid ""
+#| "Default Slack channel in which notifications will be sent to. For example "
+#| "#general, @username, or user@email.com. Users can override this on their "
+#| "profile."
 msgid ""
 "Default Slack channel in which notifications will be sent to. For example "
-"#general, @username, or user@email.com. Users can override this on their "
-"profile."
+"#general, @username, user@email.com, or the channel ID. Users can override "
+"this on their profile."
 msgstr ""
 "Canal Slack par défaut dans lequel les notifications seront envoyées. Par "
 "exemple #accueil, @compte, ou compte@e-mail.com. Les utilisateurs peuvent "
 "modifier cette option dans leur profil."
 
-#: modules/slack/slack.php:403
+#: modules/slack/slack.php:404
 msgid "Default Slack Channel/User:"
 msgstr "Canal Slack/compte par défaut:"
 
-#: modules/prosettings/prosettings.php:159
+#: modules/prosettings/prosettings.php:193
 msgid "Display PublishPress branding in the admin:"
 msgstr "Afficher la marque PublishPress dans l’administration :"
 
-#: modules/slack/slack.php:572
+#: modules/slack/slack.php:573
 msgid "Edit"
 msgstr "Modifier"
 
-#: modules/slack/slack.php:298
+#: modules/slack/slack.php:299
 msgid "Elapsed time"
 msgstr "Temps écoulé"
 
@@ -137,35 +142,39 @@ msgstr "Temps écoulé"
 msgid "Elementor Integration"
 msgstr "Intégration avec Elementor"
 
-#: modules/slack/slack.php:296
+#: lib/vendor/publishpress/wordpress-edd-license/src/classes/Setting/Field/License_key.php:193
+msgid "Enter the license key for being able to update the plugin."
+msgstr ""
+
+#: modules/slack/slack.php:297
 msgid "Error"
 msgstr "Erreur"
 
-#: modules/slack/slack.php:1082
+#: modules/slack/slack.php:1089
 msgid "Error from PublshPress.com: "
 msgstr "Erreur de PublshPress.com : "
 
-#: modules/slack/slack.php:974
+#: modules/slack/slack.php:981
 msgid "Error from Slack: "
 msgstr "Erreur de Slack : "
 
-#: modules/reminders/reminders.php:288
+#: modules/reminders/reminders.php:289
 msgid "Every 10 minutes"
 msgstr "Toutes les 10 minutes"
 
-#: modules/reminders/reminders.php:289
+#: modules/reminders/reminders.php:290
 msgid "Every 15 minutes"
 msgstr "Toutes les 15 minutes"
 
-#: modules/reminders/reminders.php:290
+#: modules/reminders/reminders.php:291
 msgid "Every 20 minutes"
 msgstr "Toutes les 20 minutes"
 
-#: modules/reminders/reminders.php:291
+#: modules/reminders/reminders.php:292
 msgid "Every 30 minutes"
 msgstr "Toutes les 30 minutes"
 
-#: modules/reminders/reminders.php:292
+#: modules/reminders/reminders.php:293
 msgid "Every 45 minutes"
 msgstr "Toutes les 45 minutes"
 
@@ -173,11 +182,11 @@ msgstr "Toutes les 45 minutes"
 msgid "For content in this status"
 msgstr "Pour le contenu de cet état"
 
-#: modules/slack/slack.php:446
+#: modules/slack/slack.php:447
 msgid "Full - Notification body with action buttons"
 msgstr "Complet - Corps de la notification avec boutons d’action"
 
-#: modules/slack/slack.php:962
+#: modules/slack/slack.php:969
 msgid ""
 "Hey, congrats! Everything looks good on PublishPress Pro's Slack settings."
 msgstr ""
@@ -188,7 +197,7 @@ msgstr ""
 msgid "Hours"
 msgstr "Heures"
 
-#: modules/reminders/reminders.php:235
+#: modules/reminders/reminders.php:236
 msgid ""
 "How often should we check for scheduled posts? This enables PublishPress to "
 "process notifications for scheduled content."
@@ -205,19 +214,19 @@ msgstr "https://publishpress.com"
 msgid "https://publishpress.com/"
 msgstr "https://publishpress.com/"
 
-#: modules/reminders/reminders.php:192
+#: modules/reminders/reminders.php:193
 msgid "Interval to look for scheduled posts:"
 msgstr "Intervalle pour rechercher les publications programmées :"
 
-#: modules/slack/slack.php:334
+#: modules/slack/slack.php:335
 msgid "Invalid nonce or referer."
 msgstr "Nonce ou referer invalide."
 
-#: modules/slack/slack.php:957
+#: modules/slack/slack.php:964
 msgid "Invalid OAuth token"
 msgstr "Jeton OAuth invalide"
 
-#: checkup.php:88
+#: checkup.php:77
 msgid ""
 "It seems like you have multiple PublishPress Pro running. Please, deactivate "
 "and remove one of them."
@@ -225,7 +234,11 @@ msgstr ""
 "Il semble que vous ayez plusieurs PublishPress Pro en cours d’exécution. "
 "Veuillez désactiver et supprimer une d’entre elles."
 
-#: modules/prosettings/prosettings.php:151
+#: modules/prosettings/prosettings.php:102
+msgid "License"
+msgstr ""
+
+#: modules/prosettings/prosettings.php:185
 msgid "License key:"
 msgstr "Clé de licence :"
 
@@ -234,11 +247,11 @@ msgstr "Clé de licence :"
 msgid "Network Administrator"
 msgstr "Administrateur ou administratrice du réseau"
 
-#: modules/reminders/reminders.php:233
+#: modules/reminders/reminders.php:234
 msgid "Next run"
 msgstr "Prochaine exécution"
 
-#: modules/slack/slack.php:691
+#: modules/slack/slack.php:692
 msgid ""
 "No token found. Please, go to PublishPress > Settings > Slack and reconnect "
 "to Slack."
@@ -246,15 +259,15 @@ msgstr ""
 "Aucun jeton trouvé. Veuillez aller dans PublishPress > Réglages > Slack et "
 "vous reconnecter à Slack."
 
-#: modules/slack/slack.php:411
+#: modules/slack/slack.php:412
 msgid "Notification theme:"
 msgstr "Thème des notifications :"
 
-#: modules/notifynetworkadmin/notifynetworkadmin.php:57
+#: modules/notifynetworkadmin/notifynetworkadmin.php:58
 msgid "Notify Network Admin"
 msgstr "Notifier l’administrateur ou administratrice du réseau"
 
-#: modules/slack/slack.php:303
+#: modules/slack/slack.php:304
 msgid ""
 "Paste below the temporary authentication code you received on the page that "
 "loaded, and click on Continue."
@@ -262,14 +275,7 @@ msgstr ""
 "Collez ci-dessous le code d’authentification temporaire que vous avez reçu "
 "sur la page qui s’est chargée, et cliquez sur « Continuer »."
 
-#: checkup.php:78
-msgid ""
-"Please, deactivate and remove PublishPress before using PublishPress Pro."
-msgstr ""
-"Veuillez désactiver et supprimer PublishPress avant d’utiliser PublishPress "
-"Pro."
-
-#: checkup.php:67
+#: checkup.php:64
 msgid ""
 "Please, deactivate and remove PublishPress Reminders before using "
 "PublishPress Pro."
@@ -277,7 +283,7 @@ msgstr ""
 "Veuillez désactiver et supprimer PublishPress Reminders avant d’utiliser "
 "PublishPress Pro."
 
-#: checkup.php:59
+#: checkup.php:56
 msgid ""
 "Please, deactivate and remove PublishPress Slack before using PublishPress "
 "Pro."
@@ -285,47 +291,47 @@ msgstr ""
 "Veuillez désactiver et supprimer PublishPress Slack avant d’utiliser "
 "PublishPress Pro."
 
-#: modules/slack/slack.php:871
+#: modules/slack/slack.php:872
 msgid "Please, go to PublishPress > Settings > Slack and reconnect to Slack"
 msgstr ""
 "Veuillez aller dans PublishPress > Réglages > Slack et vous reconnecter à "
 "Slack"
-
-#: modules/prosettings/prosettings.php:100
-msgid "Pro Settings"
-msgstr "Réglages Pro"
 
 #. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
 #. Description of the plugin
+#, fuzzy
+#| msgid ""
+#| "PublishPress helps you plan and publish content with WordPress. Features "
+#| "include a content calendar, notifications, and custom statuses."
 msgid ""
-"PublishPress helps you plan and publish content with WordPress. Features "
-"include a content calendar, notifications, and custom statuses."
+"PublishPress Planner helps you plan and publish content with WordPress. "
+"Features include a content calendar, notifications, and custom statuses."
 msgstr ""
 "PublishPress vous aide à planifier et publier du contenu avec WordPress. Les "
 "fonctionnalités incluent un calendrier de contenu, des notifications et des "
 "états personnalisés."
 
 #. Name of the plugin
-msgid "PublishPress Pro"
-msgstr "PublishPress Pro"
+msgid "PublishPress Planner Pro"
+msgstr ""
 
-#: modules/reminders/reminders.php:53
+#: modules/reminders/reminders.php:54
 msgid "Reminders"
 msgstr "Rappels"
 
-#: modules/slack/slack.php:297
+#: modules/slack/slack.php:298
 msgid "seconds"
 msgstr "secondes"
 
-#: modules/slack/slack.php:73
+#: modules/slack/slack.php:74
 #: modules/slack/library/Workflow/Step/Channel/Slack.php:27
 msgid "Slack"
 msgstr "Slack"
 
-#: modules/slack/slack.php:307
+#: modules/slack/slack.php:308
 msgid "Slack authentication info is stored."
 msgstr "Les informations d’authentification de Slack sont stockées."
 
@@ -337,15 +343,11 @@ msgstr ""
 "Canal Slack par défaut dans lequel les notifications seront envoyées. Par "
 "exemple #accueil, @compte, ou compte@e-mail.com"
 
-#: modules/slack/slack.php:895
-msgid "Slack channel not found."
-msgstr "Le canal Slack n’a pas été trouvé."
-
 #: modules/slack/library/Workflow/Step/Channel/Slack.php:188
 msgid "Slack channel:"
 msgstr "Canal Slack :"
 
-#: modules/slack/slack.php:312
+#: modules/slack/slack.php:313
 msgid ""
 "Slack has a new API and you have a legacy configuration that might stop "
 "working soon. Please, reconnect to Slack to avoid having the notifications "
@@ -355,17 +357,17 @@ msgstr ""
 "pourrait cesser de fonctionner bientôt. Veuillez vous reconnecter à Slack "
 "pour éviter que les notifications soient interrompues."
 
-#: modules/slack/slack.php:878
+#: modules/slack/slack.php:879
 msgid "Slack OAuth token not found on PublishPress. Please, reconnect to Slack"
 msgstr ""
 "Le jeton OAuth de Slack n’a pas été trouvé sur PublishPress. Veuillez vous "
 "reconnecter à Slack"
 
-#: modules/slack/slack.php:295
+#: modules/slack/slack.php:296
 msgid "Success"
 msgstr "Succès"
 
-#: modules/slack/slack.php:329
+#: modules/slack/slack.php:330
 msgid "Trying to send the message to Slack..."
 msgstr "En cours d’envoyer le message à Slack…"
 
@@ -373,15 +375,15 @@ msgstr "En cours d’envoyer le message à Slack…"
 msgid "Unit of time"
 msgstr "Unité de temps"
 
-#: modules/slack/slack.php:333
+#: modules/slack/slack.php:334
 msgid "Unknown error found."
 msgstr "Une erreur inconnue a été détectée."
 
-#: modules/slack/slack.php:583
+#: modules/slack/slack.php:584
 msgid "View"
 msgstr "Voir"
 
-#: checkup.php:45
+#: checkup.php:42
 msgid "Warning"
 msgstr "Avertissement"
 
