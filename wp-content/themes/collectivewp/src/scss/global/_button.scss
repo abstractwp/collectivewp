@@ -1,0 +1,31 @@
+//----------------------------------------
+// Button style
+//----------------------------------------
+
+.button,
+button:not( .off-canvas-open ):not( .components-button ) {
+	@apply bg-primary bg-opacity-50 text-contrast cursor-pointer no-underline px-16 py-12 rounded-md shadow-md;
+
+	&:hover,
+	&:focus,
+	&:active {
+		@apply bg-primary bg-opacity-100 text-base;
+	}
+
+	&.linkedin {
+		@apply text-white relative;
+		background-color: #0077b5;
+		padding-left: 45px;
+
+		&::before {
+			@apply w-24 h-24 top-12 left-12 absolute bg-cover;
+
+			content: '';
+			background-image: url( ../images/icons/linkedin-square-w.svg );
+		}
+
+		&:hover {
+			background-color: #04669A;
+		}
+	}
+}

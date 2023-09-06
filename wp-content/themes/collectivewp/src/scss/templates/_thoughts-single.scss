@@ -1,0 +1,70 @@
+@keyframes moveVertical {
+	0% {
+		transform: translateY( 0 );
+	}
+
+	40% {
+		transform: translateY( 25px );
+	}
+
+	to {
+		transform: translateY( 0 );
+	}
+}
+
+.avatar-container {
+	@apply w-76 absolute top-0 left-0 h-76;
+}
+
+.avatar-bubble-outer {
+	@apply absolute;
+}
+
+.avatar-bubble {
+	@apply w-72 h-72;
+	animation: moveVertical 5s linear infinite;
+
+	img {
+		@apply rounded-full;
+	}
+}
+
+.single-post {
+	article.category-thoughts {
+		.entry-title {
+			@apply text-left;
+		}
+
+		.entry-meta {
+			@apply mx-auto text-left w-full relative;
+
+			max-width: theme( 'layout.contentSize' );
+			min-height: 80px;
+
+			.avatar-container {
+				@apply float-left;
+			}
+
+			.posted-on,
+			.post-author {
+				@apply block;
+
+				margin-left: 92px;
+			}
+
+			.post-time-to-read {
+				@apply block absolute right-0 top-24;
+
+				@screen max-tablet-portrait {
+					@apply relative top-0 left-0;
+
+					margin-left: 92px;
+				}
+			}
+		}
+
+		.author-box {
+			@apply p-16 border-2 rounded-md border-gray-100;
+		}
+	}
+}

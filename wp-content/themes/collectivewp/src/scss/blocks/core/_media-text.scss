@@ -1,0 +1,76 @@
+//----------------------------------------
+// Media and Text Block
+//----------------------------------------
+.wp-block-media-text {
+	.wp-block-media-text {
+		&__media {
+			@apply mb-gap;
+
+			@screen tablet-portrait {
+				@apply mb-0;
+			}
+		}
+
+		&__content {
+			@apply px-0;
+
+			@screen tablet-portrait {
+				@apply pl-gap;
+			}
+		}
+	}
+
+	&.has-media-on-the-right {
+		.wp-block-media-text {
+			&__content {
+				@apply px-0;
+
+				@screen tablet-portrait {
+					@apply pr-gap;
+				}
+			}
+		}
+	}
+}
+
+/* stylelint-disable */
+.is-layout-constrained.alignfull {
+	.wp-block-media-text {
+		&.alignwide {
+			&.has-background {
+				&.has-media-on-the-right .wp-block-media-text__content,
+				.wp-block-media-text__content {
+					@apply px-16 pb-gap;
+				}
+
+				@screen desktop {
+					@apply container px-0;
+
+					// Override wp inline css.
+					margin-left: calc(
+						50% - ( ( theme( 'screens.desktop' ) - 32px ) / 2 )
+					) !important;
+					margin-right: calc(
+						50% - ( ( theme( 'screens.desktop' ) - 32px ) / 2 )
+					) !important;
+
+					&.has-media-on-the-right .wp-block-media-text__content,
+					.wp-block-media-text__content {
+						@apply px-gap pb-0;
+					}
+				}
+
+				@screen tablet-portrait {
+					padding-left: 0 !important;
+					padding-right: 0 !important;
+				}
+			}
+
+			@media screen and ( min-width: theme('screens.tablet-portrait') ) and ( max-width: theme('screens.desktop') ) {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+}
+/* stylelint-enable */

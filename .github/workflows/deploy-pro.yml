@@ -24,9 +24,6 @@ jobs:
       - name: Move plugins
         run: mv -f dev-tools/pro/wp-content/plugins/* wp-content/plugins/
 
-      - name: Move theme
-        run: mv -f dev-tools/pro/wp-content/themes/* wp-content/themes/
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.2.0
         with:

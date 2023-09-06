@@ -1,0 +1,45 @@
+{
+	"key": "group_63b2d002a2254",
+	"title": "Resources Advanced",
+	"fields": [
+		{
+			"key": "field_63b2d00283a9f",
+			"label": "Upload PDF file",
+			"name": "pdf-url",
+			"aria-label": "",
+			"type": "file",
+			"instructions": "Upload PDF file instead of resource content.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "url",
+			"library": "all",
+			"min_size": "",
+			"max_size": "",
+			"mime_types": "pdf"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "resources"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "acf_after_title",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1672664598
+}

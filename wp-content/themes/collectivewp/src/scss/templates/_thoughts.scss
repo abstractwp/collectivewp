@@ -1,0 +1,146 @@
+.category .site-main {
+	.thoughts-container {
+		@apply grid grid-cols-1 gap-48 py-48;
+
+		.thoughts-right {
+			@apply grid grid-cols-1 gap-32;
+
+			@screen tablet-portrait {
+				@apply grid-cols-2;
+			}
+
+			align-self: flex-start;
+
+			.throught {
+				@apply border border-contrast rounded-md relative;
+
+				.entry-header {
+					@apply px-12;
+
+					.entry-title {
+						@apply mt-16 mb-8 text-2xl font-normal;
+					}
+
+					.post-author {
+						@apply text-sm mb-16 block;
+					}
+				}
+
+				.entry-content {
+					@apply px-12 py-16 border border-b-0 border-l-0 border-r-0 border-contrast mb-64;
+
+					.meta-desc {
+						@apply px-0;
+					}
+
+					.readmore {
+						@apply absolute bottom-32 right-16;
+					}
+				}
+
+				.entry-footer {
+					@apply px-12 mt-0 bottom-0 left-0 w-full border border-b-0 border-l-0 border-r-0 border-contrast inline-flex rounded-b-md absolute;
+
+					.date {
+						@apply pr-12 border-r border-contrast;
+					}
+				}
+
+				a {
+					@apply no-underline;
+				}
+			}
+		}
+
+		.thoughts-left {
+			.throught {
+				@apply sticky overflow-hidden rounded-md;
+
+				top: 120px;
+
+				.entry-header {
+					.wp-post-image,
+					.placeholder-img {
+						min-height: 250px;
+						max-height: 250px;
+
+						@screen tablet-portrait {
+							min-height: 450px;
+							max-height: 450px;
+						}
+					}
+				}
+
+				.entry-content {
+					@apply p-12;
+
+					@screen tablet-portrait {
+						@apply p-32;
+					}
+
+					.meta-desc {
+						@apply float-left px-0;
+
+						@screen tablet-landscape {
+							width: 90%;
+						}
+
+						.excerpt {
+							@apply inline-block;
+						}
+
+						.readmore {
+							@apply float-right no-underline mt-24;
+
+							@screen max-tablet-portrait {
+								@apply mt-16;
+							}
+						}
+					}
+
+					.date {
+						@apply px-6 py-2 bg-white border-contrast border;
+					}
+
+					.entry-title {
+						@apply border-contrast border-b my-16 text-3xl py-16 px-0;
+
+						a {
+							@apply no-underline;
+						}
+					}
+
+					.post-author {
+						@apply block border-contrast border-t border-b my-16 py-4;
+
+						a {
+							@apply no-underline;
+						}
+					}
+				}
+
+				&.pbg-secondary {
+					.entry-title,
+					.meta-desc {
+						@apply text-gray-100;
+					}
+
+					.entry-content {
+						.entry-title,
+						.post-author {
+							@apply border-gray-100;
+						}
+					}
+				}
+			}
+		}
+
+		@screen tablet-landscape {
+			@apply grid-cols-2;
+		}
+
+		.pagination-container {
+			grid-column: span 2;
+		}
+	}
+}

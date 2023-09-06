@@ -1,0 +1,85 @@
+{
+	"key": "group_644142be93177",
+	"title": "Gate fields",
+	"fields": [
+		{
+			"key": "field_644142c0b9df1",
+			"label": "Gravity form ID",
+			"name": "gwsa_form_ids",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_64414301b9df2",
+			"label": "Require Submit to Access?",
+			"name": "gwsa_require_submission",
+			"aria-label": "",
+			"type": "true_false",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 0,
+			"ui": 0,
+			"ui_on_text": "",
+			"ui_off_text": ""
+		},
+		{
+			"key": "field_64414375b9df3",
+			"label": "The gateway URL",
+			"name": "gwsa_requires_submission_redirect",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "page"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1682009424
+}

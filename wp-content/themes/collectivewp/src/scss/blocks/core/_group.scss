@@ -1,0 +1,5 @@
+.wp-block-group.alignwide {
+	> * {
+		@apply max-w-full px-0;
+	}
+}

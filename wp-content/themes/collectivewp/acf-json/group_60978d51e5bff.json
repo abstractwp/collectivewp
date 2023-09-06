@@ -1,0 +1,132 @@
+{
+	"key": "group_60978d51e5bff",
+	"title": "Block: Testimonials slider",
+	"fields": [
+		{
+			"key": "field_64ebff38aed17",
+			"label": "Title",
+			"name": "title",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_60978d67b0fad",
+			"label": "Testimonials",
+			"name": "testimonials",
+			"aria-label": "",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "row",
+			"pagination": 0,
+			"min": 0,
+			"max": 0,
+			"collapsed": "",
+			"button_label": "Add Row",
+			"rows_per_page": 20,
+			"sub_fields": [
+				{
+					"key": "field_64ebfedfaed14",
+					"label": "Author Name",
+					"name": "author",
+					"aria-label": "",
+					"type": "text",
+					"instructions": "",
+					"required": 1,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"parent_repeater": "field_60978d67b0fad"
+				},
+				{
+					"key": "field_64ebff19aed16",
+					"label": "Job title",
+					"name": "job_title",
+					"aria-label": "",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"parent_repeater": "field_60978d67b0fad"
+				},
+				{
+					"key": "field_64ebfef6aed15",
+					"label": "Content",
+					"name": "content",
+					"aria-label": "",
+					"type": "textarea",
+					"instructions": "",
+					"required": 1,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"maxlength": "",
+					"rows": "",
+					"placeholder": "",
+					"new_lines": "",
+					"parent_repeater": "field_60978d67b0fad"
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/testimonials-slider-block"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1693188856
+}

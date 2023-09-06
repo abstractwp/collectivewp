@@ -1,0 +1,54 @@
+//----------------------------------------
+// Gravity form Styles.
+//----------------------------------------
+/* stylelint-disable */
+.gform_wrapper.gravity-theme {
+	.gform-body {
+		input[type='color'],
+		input[type='date'],
+		input[type='datetime-local'],
+		input[type='datetime'],
+		input[type='email'],
+		input[type='month'],
+		input[type='number'],
+		input[type='password'],
+		input[type='search'],
+		input[type='tel'],
+		input[type='text'],
+		input[type='time'],
+		input[type='url'],
+		input[type='week'],
+		select,
+		textarea {
+			@extend .input-field;
+		}
+
+		input[type='checkbox'] {
+			@apply bg-tertiary;
+		}
+
+		input[type='submit'] {
+			@extend .button;
+		}
+
+		legend,
+		.gfield_label,
+		.ginput_complex label {
+			@apply font-normal text-sm;
+		}
+
+		.gfield_validation_message,
+		.validation_message {
+			@apply px-0 text-sm border-none bg-transparent py-4;
+		}
+	}
+
+	&.gform_validation_error {
+		@screen tablet-portrait {
+			#field_submit input {
+				@apply self-start mt-32;
+			}
+		}
+	}
+}
+/* stylelint-enable */

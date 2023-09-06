@@ -49,6 +49,5 @@
             "path": "wp-content/plugins/theme-test-data",
             "ignore": ["vendor", ".*"]
         }
-        }
     }
 }

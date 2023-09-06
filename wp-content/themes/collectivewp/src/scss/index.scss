@@ -1,0 +1,15 @@
+// @layer base {
+// // Custom base styles if necessary.
+// // See https://tailwindcss.com/docs/adding-base-styles.
+// }
+
+//----------------------------------------
+// Theme Styles.
+//----------------------------------------
+@import 'global/index';
+@import 'blocks/index';
+@import 'blocks/core/index';
+@import 'template-tags/index';
+@import 'templates/index';
+@import 'wordpress-global/index';
+@import 'plugins/index';

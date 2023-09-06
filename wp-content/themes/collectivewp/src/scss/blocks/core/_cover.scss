@@ -1,0 +1,42 @@
+//----------------------------------------
+// Cover Block
+//----------------------------------------
+/* stylelint-disable */
+.wp-block-cover {
+	&.alignwide {
+		@apply mx-16;
+		max-width: calc( 100% - 32px );
+
+		@screen desktop {
+			@apply container px-0;
+			max-width: calc( theme( 'screens.desktop' ) - 32px );
+
+			// Override wp inline css.
+			margin-left: calc(
+				50% - ( ( theme( 'screens.desktop' ) - 32px ) / 2 )
+			) !important;
+			margin-right: calc(
+				50% - ( ( theme( 'screens.desktop' ) - 32px ) / 2 )
+			) !important;
+		}
+	}
+
+	.wp-block-cover__inner-container
+		*:not( .has-text-align-center ):not( .has-text-align-right ) {
+		@apply text-left;
+	}
+}
+
+.is-layout-constrained {
+	.wp-block-cover {
+		&.alignwide {
+			max-width: calc( theme( 'screens.desktop' ) - 32px );
+
+			@media screen and ( min-width: 783px ) and ( max-width: theme('screens.desktop') ) {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+}
+/* stylelint-enable */

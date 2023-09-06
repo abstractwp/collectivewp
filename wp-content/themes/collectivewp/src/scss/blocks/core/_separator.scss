@@ -1,0 +1,11 @@
+//----------------------------------------
+// Core Separator Block
+//----------------------------------------
+
+.wp-block-separator {
+	@apply mb-gap mx-16 block clear-both border-b-0;
+
+	@screen tablet-landscape {
+		@apply mx-0;
+	}
+}

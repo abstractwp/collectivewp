@@ -47,11 +47,6 @@
         "url": "https://github.com/abstractwp/theme-test-data/releases/download/1.0.2/theme-test-data.zip",
         "path": "wp-content/plugins/theme-test-data",
         "ignore": ["vendor", ".*"]
-      },
-      "collectivewp": {
-        "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/collectivewp.zip",
-        "path": "wp-content/themes/collectivewp",
-        "ignore": []
       }
     }
   }
