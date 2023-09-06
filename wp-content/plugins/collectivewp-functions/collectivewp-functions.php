@@ -354,3 +354,21 @@ function collectivewp_custom_login_logo_url() {
 }
 
 add_filter( 'login_headerurl', 'collectivewp_custom_login_logo_url' );
+
+/**
+ * Hide the cookeibot form on gravity admin pages.
+ * The style didn't load on those page then show the form html without styles.
+ */
+function collectivewp_hide_cookie_bot_on_gform() {
+	global $pagenow;
+
+	// Check if we are on the admin side and the page is "admin.php"
+	if (is_admin() && $pagenow === 'admin.php') {
+		// Check if the "page" query parameter is set and its value starts with "gf_"
+		if (isset($_GET['page']) && strpos($_GET['page'], 'gf_') === 0) {
+			echo '<style>.cookiebot-popup-container{display:none}</style>';
+		}
+	}
+}
+
+add_action( 'admin_init', 'collectivewp_hide_cookie_bot_on_gform' );
