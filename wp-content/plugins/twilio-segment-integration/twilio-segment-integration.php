@@ -18,8 +18,6 @@ if (!defined('ABSPATH')) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-define('SEGMENT_WRITE_KEY', 'h9Ac7yFl5POSCQhvI1HFZLsKeqBlGnwp'); // TODO: create settings page.
-
 use Segment\Client;
 
 class TwilioSegmentIntegration {
@@ -31,7 +29,11 @@ class TwilioSegmentIntegration {
 		}
 
 		public function initialize() {
-			$write_key = defined('SEGMENT_WRITE_KEY') ? SEGMENT_WRITE_KEY : '';
+			$write_key = '';
+
+			if ( get_option( 'options_segment_write_key' ) ) {
+				$write_key = get_option( 'options_segment_write_key' );
+			}
 
 			$this->client = new Client($write_key, [
 				'ssl' => true,
