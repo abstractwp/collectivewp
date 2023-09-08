@@ -39,6 +39,10 @@
 					@screen desktop-min {
 						@apply right-0;
 					}
+
+					@media (max-width: 1300px) and (min-width: 1199px) {
+						@apply right-48;
+					}
 				}
 
 				&.menu .menu-item:not(.button) a:hover {
