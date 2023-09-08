@@ -34,7 +34,8 @@
       "pronamic/gravityforms": "^2.7.13",
       "wpackagist-plugin/email-templates":"1.4.2",
       "wpackagist-plugin/speechkit":"4.0.5",
-      "wpackagist-plugin/instant-images":"6.0.0"
+      "wpackagist-plugin/instant-images":"6.0.0",
+      "wpackagist-plugin/basic-user-avatars":"1.0.7"
   },
   "extra": {
     "downloads": {
