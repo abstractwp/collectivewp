@@ -1,0 +1,13 @@
+{
+    "name": "collectivewp/twilio-segment-integration",
+    "description": "A WordPress plugin to integrate the Twilio Segment PHP SDK",
+    "type": "wordpress-plugin",
+    "require": {
+        "segmentio/analytics-php": "^3.6"
+    },
+    "autoload": {
+      "psr-4": {
+        "TwilioSegmentIntegration\\": "src/"
+      }
+    }
+}

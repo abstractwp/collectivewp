@@ -1,0 +1,14 @@
+//----------------------------------------
+// Pagination
+// Styles for print-numeric-pagination.php.
+//----------------------------------------
+
+.pagination-container,
+.facetwp-facet-paging {
+	@apply container text-center;
+
+	.page-numbers,
+	.facetwp-page {
+		@apply p-4 no-underline leading-7;
+	}
+}

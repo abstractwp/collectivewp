@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_64f89837b4f87",
+    "title": "Segment settings",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Segment settings",
+    "menu_slug": "segment-settings",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Segment settings",
+    "position": 10,
+    "redirect": 0,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1694013528
+}

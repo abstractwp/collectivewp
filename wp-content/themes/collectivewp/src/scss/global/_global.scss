@@ -1,0 +1,97 @@
+//--------------------------------------------------------------
+// Global Resets/Overrides
+//--------------------------------------------------------------
+*,
+::after,
+::before {
+	@apply box-border break-words;
+
+	word-wrap: break-word;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+pre {
+	@apply overflow-auto;
+}
+
+//-----------------------------------------
+// Admin Overrides
+//-----------------------------------------
+.block-editor-writing-flow {
+	@apply text-base leading-normal;
+}
+
+//-----------------------------------------
+// Page Template Containers
+//-----------------------------------------
+.site-main {
+	@apply pb-32;
+
+	margin-top: 63px; /* sticky header height */
+
+	@screen wp-admin-bar {
+		margin-top: 67px;
+	}
+
+	@screen desktop {
+		margin-top: 72px;
+	}
+
+	> .entry-header,
+	> .page-header,
+	&.no-header-footer,
+	&.has-padding-top,
+	&.right-sidebar,
+	&.left-sidebar {
+		@apply pt-32;
+	}
+
+	.entry-header,
+	.entry-footer {
+		@apply mx-auto px-0;
+		max-width: theme( 'layout.contentSize' );
+
+		@screen max-tablet-portrait {
+			@apply px-16;
+		}
+	}
+
+	min-height: calc( 100vh - 463px );
+
+	.admin-bar & {
+		min-height: calc( 100vh - 495px );
+	}
+}
+
+.page-template-no-title {
+	.site-main {
+		@apply pb-0;
+	}
+}
+
+.page-header {
+	@apply container;
+}
+
+.more-link {
+	@apply container block;
+}
+
+// This is for blog image placeholder
+.pbg-primary {
+	@apply bg-primary;
+}
+
+.pbg-secondary {
+	@apply bg-secondary;
+}
+
+.pbg-tertiary {
+	@apply bg-tertiary;
+}
+.pbg-contrast {
+	@apply bg-contrast;
+}

@@ -34,7 +34,8 @@
       "pronamic/gravityforms": "^2.7.13",
       "wpackagist-plugin/email-templates":"1.4.2",
       "wpackagist-plugin/speechkit":"4.0.5",
-      "wpackagist-plugin/instant-images":"6.0.0"
+      "wpackagist-plugin/instant-images":"6.0.0",
+      "wpackagist-plugin/basic-user-avatars":"1.0.7"
   },
   "extra": {
     "downloads": {
@@ -47,11 +48,6 @@
         "url": "https://github.com/abstractwp/theme-test-data/releases/download/1.0.2/theme-test-data.zip",
         "path": "wp-content/plugins/theme-test-data",
         "ignore": ["vendor", ".*"]
-      },
-      "collectivewp": {
-        "url": "https://github.com/abstractwp/abstractwp_s/archive/refs/heads/collectivewp.zip",
-        "path": "wp-content/themes/collectivewp",
-        "ignore": []
       }
     }
   }

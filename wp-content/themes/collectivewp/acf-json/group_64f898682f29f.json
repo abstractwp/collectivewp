@@ -1,0 +1,45 @@
+{
+    "key": "group_64f898682f29f",
+    "title": "Segment settings",
+    "fields": [
+        {
+            "key": "field_64f898682ff06",
+            "label": "Write Key",
+            "name": "segment_write_key",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Use this write key to send data to this source from our partners, plugins, libraries or REST API.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "segment-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1694013625
+}

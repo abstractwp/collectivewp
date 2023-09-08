@@ -1,0 +1,15 @@
+//----------------------------------------
+// Pullquote - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-pullquote {
+	@apply py-24 m-gap;
+
+	blockquote > p {
+		@apply mb-16;
+	}
+
+	blockquote > cite {
+		@apply not-italic;
+	}
+}

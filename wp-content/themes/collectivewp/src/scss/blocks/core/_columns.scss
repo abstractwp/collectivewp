@@ -1,0 +1,16 @@
+//----------------------------------------
+// Columns Block
+//----------------------------------------
+/* stylelint-disable */
+.is-layout-constrained {
+	.wp-block-columns {
+		&.alignwide {
+			@media screen and ( min-width: theme('screens.tablet-portrait') ) and ( max-width: theme('screens.desktop') ) {
+				max-width: calc( theme( 'screens.desktop' ) - 32px );
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+}
+/* stylelint-enable */

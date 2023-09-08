@@ -1,0 +1,184 @@
+//--------------------------------------------------------------
+// Admin Overrides & Styles
+//--------------------------------------------------------------
+
+.block-editor-writing-flow {
+	@apply text-base leading-normal;
+}
+
+.wp-block-post-content {
+	.alignfull {
+		@screen tablet-landscape {
+			@apply w-full mx-0;
+		}
+
+		@screen max-tablet-portrait {
+			.alignwide {
+				@apply px-0;
+			}
+		}
+	}
+
+	.wp-block-group.has-background.alignfull,
+	.wp-block-group.is-layout-flow.alignfull,
+	.wp-block-cover.alignfull {
+		@apply px-16;
+
+		padding-block: calc( theme( 'spacing.gap' ) * 3 );
+
+		@screen max-tablet-portrait {
+			> .alignfull,
+			> .alignwide {
+				@apply px-0;
+			}
+		}
+	}
+
+	.wp-block-group.has-background.alignwide,
+	.wp-block-group.is-layout-flow.alignwide,
+	.wp-block-cover.alignwide {
+		@apply px-16;
+
+		padding-block: calc( theme( 'spacing.gap' ) * 2.5 );
+	}
+
+	.wp-block-group.has-background:not( .alignfull ),
+	.wp-block-group.alignfull:not( .has-background ),
+	.wp-block-group.is-layout-flow:not( .alignfull ),
+	.wp-block-cover:not( .alignfull ) {
+		@apply px-16;
+
+		padding-block: calc( theme( 'spacing.gap' ) * 1.75 );
+
+		@screen max-tablet-portrait {
+			@apply px-16;
+		}
+	}
+
+	.wp-block-cover {
+		&.alignwide {
+			/* stylelint-disable */
+			max-width: calc( theme( 'screens.desktop' ) - 32px ) !important;
+			@media screen and ( min-width: 783px ) and ( max-width: theme('screens.desktop') ) {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+			/* stylelint-enable */
+		}
+	}
+
+	/* stylelint-disable */
+	.gform_wrapper.gravity-theme {
+		.gform-body {
+			input[type='color'],
+			input[type='date'],
+			input[type='datetime-local'],
+			input[type='datetime'],
+			input[type='email'],
+			input[type='month'],
+			input[type='number'],
+			input[type='password'],
+			input[type='search'],
+			input[type='tel'],
+			input[type='text'],
+			input[type='time'],
+			input[type='url'],
+			input[type='week'],
+			select,
+			textarea {
+				@apply border-none;
+			}
+
+			input[type='checkbox'] {
+				@apply bg-tertiary;
+			}
+		}
+	}
+	/* stylelint-enable */
+	.button,
+	button {
+		@apply border-none p-12 h-48 font-normal;
+	}
+
+	.components-button {
+		@apply w-auto;
+
+		font-size: 13px;
+		height: 36px;
+
+		&.block-editor-button-block-appender {
+			@apply w-full h-auto;
+		}
+
+		&.is-primary {
+			@apply text-white;
+			background: var( --wp-admin-theme-color );
+
+			&:hover {
+				background: var( --wp-admin-theme-color-darker-10 );
+			}
+		}
+
+		&.is-secondary,
+		&.is-tertiary {
+			white-space: nowrap;
+			color: var( --wp-admin-theme-color );
+			background: transparent;
+
+			&:hover:not( :disabled ) {
+				color: var( --wp-admin-theme-color-darker-10 );
+				box-shadow: inset 0 0 0 1px
+					var( --wp-admin-theme-color-darker-10 );
+			}
+		}
+	}
+
+	/* stylelint-disable */
+	.wp-block-buttons {
+		.wp-block-button {
+			.wp-element-button {
+				@apply bg-primary bg-opacity-50 text-contrast cursor-pointer no-underline px-16 py-12 rounded-md shadow-md text-normal flex items-center;
+
+				&:hover,
+				&:focus,
+				&:active {
+					@apply bg-primary bg-opacity-100 text-base;
+				}
+			}
+
+			&.is-style-outline {
+				.wp-element-button {
+					@apply bg-transparent border-2 border-gray-600 border-solid text-contrast;
+
+					&:hover {
+						@apply bg-gray-100;
+					}
+				}
+			}
+		}
+	}
+	/* stylelint-enable */
+
+	.wp-block.is-selected {
+		margin-bottom: 1rem;
+	}
+}
+
+// For adminbar.
+body.admin-bar {
+	.site-header.sticky-header {
+		top: 32px;
+	}
+
+	@media screen and ( max-width: 782px ) {
+		.site-header.sticky-header {
+			top: 46px;
+		}
+	}
+
+	@screen max-tablet-portrait {
+		#wpadminbar {
+			@apply fixed;
+		}
+	}
+}

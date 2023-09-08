@@ -1,0 +1,40 @@
+//--------------------------------------------------------------
+// Global Site Footer
+//--------------------------------------------------------------
+.site-footer {
+	@apply bg-gray-600 bg-opacity-80 py-30 float-left w-full;
+
+	@screen tablet-landscape {
+		padding-left: calc( ( 100% - theme( 'screens.desktop' ) ) / 2 );
+		padding-right: calc( ( 100% - theme( 'screens.desktop' ) ) / 2 );
+	}
+
+	.footer-navigation .menu {
+		@apply mb-24;
+		li {
+			a {
+				@apply text-white;
+
+				&:hover {
+					@apply text-contrast;
+				}
+			}
+		}
+	}
+
+	.site-info {
+		@apply mx-auto my-0 flex justify-between px-16 text-white;
+	}
+
+	.social-icons {
+		@apply flex mb-0;
+
+		.social-icon {
+			@apply mr-6;
+
+			&:last-child {
+				@apply mr-0;
+			}
+		}
+	}
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0a098e32a10ca32bcfd385794f5dde2",
+    "content-hash": "358133f13332e7d92808ecf5a48554e2",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -366,6 +366,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/activity-log-wp-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/basic-user-avatars",
+            "version": "1.0.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/basic-user-avatars/",
+                "reference": "tags/1.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/basic-user-avatars.1.0.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/basic-user-avatars/"
         },
         {
             "name": "wpackagist-plugin/block-widgets-monster",

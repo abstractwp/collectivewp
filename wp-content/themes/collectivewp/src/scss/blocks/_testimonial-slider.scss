@@ -1,0 +1,259 @@
+//----------------------------------------
+// Testimonials slider - Custom Block
+//----------------------------------------
+
+.testimonial-block {
+	@apply flex flex-col;
+
+	/* stylelint-disable */
+	max-width: theme( 'screens.desktop' ) !important;
+	/* stylelint-enable */
+
+	.left-container {
+		@apply text-center mb-48 z-50 relative;
+
+		.left-content {
+			@apply justify-center flex flex-col z-10 relative bg-white;
+			height: calc( 100% + 60px );
+		}
+	}
+
+	.testimonial-slider-container {
+		.slick-list {
+			max-width: 690px;
+			overflow: visible;
+
+			.slick-slide {
+				transform: translate( -7% ) scale( 0.8 );
+				transition: transform 0.3s ease-in-out;
+
+				&.slick-current {
+					transform: translate( 0% ) scale( 1 );
+				}
+			}
+		}
+
+		.testimonial-container {
+			@apply relative flex mt-0;
+
+			height: calc( 100% + 60px );
+
+			.bg-cover {
+				@apply top-0 right-0 absolute;
+				width: 148px;
+				height: 60px;
+				border-top-right-radius: 20px;
+				background: url( ../images/testimonial-bg-top.png ) 50% 50%
+					no-repeat transparent;
+				background-size: contain;
+			}
+
+			.t-content {
+				@apply relative z-10 p-40;
+				margin-top: 40px;
+				background: #fdfbf7;
+				border-top-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				border-bottom-left-radius: 20px;
+				box-shadow: 0 30px 20px 0 #14353c1f;
+
+				&::before {
+					@apply absolute;
+					content: '';
+					width: 70px;
+					height: 60px;
+					background: url( ../images/quote.svg ) 50% 50% no-repeat
+						transparent;
+					background-size: contain;
+				}
+			}
+
+			.t-description {
+				@apply z-10 relative;
+
+				margin-top: 80px;
+			}
+			.t-meta {
+				@apply z-10 mt-20;
+
+				.title {
+					@apply font-bold mb-6;
+				}
+			}
+		}
+	}
+
+	@screen tablet-portrait {
+		@apply flex-row container;
+
+		.left-container {
+			@apply w-2/5 text-left mb-0;
+
+			&::before {
+				@apply bg-white absolute top-0 left-0 z-0;
+				content: '';
+				width: 100vw;
+				height: calc( 100% + 60px );
+				margin-left: -80vw;
+			}
+
+			.left-content {
+				max-width: 450px;
+			}
+		}
+
+		.testimonial-slider-container {
+			@apply w-3/5;
+
+			.testimonial-container {
+				.t-content {
+					@apply p-40;
+				}
+			}
+		}
+	}
+
+	button.slick-arrow {
+		@apply rounded-full;
+
+		box-shadow: 0 10px 10px 0 #0000001f;
+
+		background-color: #fdfbf7;
+		width: 64px;
+		height: 64px;
+
+		&:hover,
+		&:active,
+		&:focus {
+			@apply bg-primary;
+			svg {
+				path {
+					stroke: #fdfbf7;
+				}
+			}
+		}
+
+		&.slick-next {
+			@apply ml-24;
+		}
+
+		&.slick-disabled {
+			@apply cursor-default;
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: #fdfbf7;
+			}
+			svg {
+				path {
+					stroke: #dbdbdb;
+				}
+			}
+		}
+	}
+}
+
+.has-tertiary-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-tertiary;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-tertiary;
+		}
+	}
+}
+
+.has-primary-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-primary;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-primary;
+		}
+	}
+}
+
+.has-secondary-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-secondary;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-secondary;
+		}
+	}
+}
+
+.has-contrast-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-contrast;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-contrast;
+		}
+	}
+}
+
+.has-yellow-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-yellow;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-yellow;
+		}
+	}
+}
+
+.has-base-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-base;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-base;
+		}
+	}
+}
+
+.has-gray-600-background-color {
+	.testimonial-block {
+		@screen tablet-portrait {
+			.left-container {
+				&::before {
+					@apply bg-gray-600;
+				}
+			}
+		}
+		.left-content {
+			@apply bg-gray-600;
+		}
+	}
+}
