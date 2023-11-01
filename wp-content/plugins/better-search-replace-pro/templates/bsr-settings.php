@@ -39,6 +39,29 @@ if ( '' === get_option( 'bsr_enable_gzip' ) ) {
         </div>
 	<?php endif; ?>
 
+	<?php if ( 'no_activations_left' === $status ) : ?>
+        <div class="notice notice-warning bsr-updated">
+            <p>
+				<?php echo sprintf(
+					__( 'The license key you entered has no remaining activations. To manage the active sites associated with this key, please log in to your %s', 'better-search-replace' ), 
+					BSR_Utils::external_link(
+						BSR_Utils::bsr_url(
+							'my-account/',
+							[
+								'utm_source'   => 'bsr_pro',
+								'utm_medium'   => 'insideplugin',
+								'utm_campaign' => 'plugin_notice',
+								'utm_content'  => 'no_activations'
+							]
+						),
+						'account'
+					)
+				); 
+				?>
+            </p>
+        </div>
+	<?php endif; ?>
+
 	<!--Settings Panel-->
 	<div class="panel">
 

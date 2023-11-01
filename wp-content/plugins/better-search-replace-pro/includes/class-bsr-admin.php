@@ -517,9 +517,13 @@ class BSR_Admin {
 		if ( ! isset( $license_data->license ) ) {
 			return false;
 		}
+		$status = $license_data->license;
 
+		if ( property_exists( $license_data, 'error' ) && 'no_activations_left' === $license_data->error ) {
+			$status = $license_data->error;
+		}
 		// $license_data->license will be either "valid" or "invalid"
-		update_option( 'bsr_license_status', $license_data->license );
+		update_option( 'bsr_license_status', $status );
 
         return $license_data->license === 'valid';
 	}
@@ -548,22 +552,17 @@ class BSR_Admin {
 				'item_name' => urlencode( BSR_NAME ), // the name of our product in EDD
 				'url'       => home_url()
 			);
-
+			delete_option( 'bsr_license_status' );
+			delete_option( 'bsr_license_key' );
 			// Call the custom API.
 			$response = wp_remote_post( BSR_API_URL, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
 
 			// make sure the response came back okay
-			if ( is_wp_error( $response ) )
+			if ( is_wp_error( $response ) ) {
 				return false;
-
-			// decode the license data
-			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-			// $license_data->license will be either "deactivated" or "failed"
-			if ( $license_data->license == 'deactivated' ) {
-				delete_option( 'bsr_license_status' );
-				delete_option( 'bsr_license_key' );
 			}
+
+			return true;
 		}
 	}
 

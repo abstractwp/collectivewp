@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "358133f13332e7d92808ecf5a48554e2",
+    "content-hash": "5163a3e2d1254fcafdc77ccb45d18581",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.7.13",
+            "version": "2.7.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "996932ce7e2bb5239ee8ca89e615cbc084c95135"
+                "reference": "2599f454acff9ad87c43beae7cb41dfbe655126f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/996932ce7e2bb5239ee8ca89e615cbc084c95135",
-                "reference": "996932ce7e2bb5239ee8ca89e615cbc084c95135",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/2599f454acff9ad87c43beae7cb41dfbe655126f",
+                "reference": "2599f454acff9ad87c43beae7cb41dfbe655126f",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.13"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.16"
             },
-            "time": "2023-08-24T10:05:01+00:00"
+            "time": "2023-10-26T10:05:30+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -405,15 +405,15 @@
         },
         {
             "name": "wpackagist-plugin/cookiebot",
-            "version": "4.2.14",
+            "version": "4.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.2.14"
+                "reference": "tags/4.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.3.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -549,15 +549,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "21.0",
+            "version": "21.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/21.0"
+                "reference": "tags/21.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -567,15 +567,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-security-audit-log",
-            "version": "4.5.3",
+            "version": "4.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-security-audit-log/",
-                "reference": "tags/4.5.3"
+                "reference": "tags/4.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.5.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.6.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -592,5 +592,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.6.0"
 }

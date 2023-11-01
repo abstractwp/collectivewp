@@ -131,8 +131,9 @@ class FacetWP_Request
                 $query_vars['paged'] = 1;
             }
 
-            // Only intercept the identical query
-            if ( $query_vars === $this->query_vars ) {
+            // Only intercept the same query
+            // We're using "==", which doesn't care if assoc order is different
+            if ( $query_vars == $this->query_vars ) {
                 $posts = FWP()->facet->query->posts;
                 $query->found_posts = FWP()->facet->query->found_posts;
                 $query->max_num_pages = FWP()->facet->query->max_num_pages;
@@ -255,10 +256,10 @@ class FacetWP_Request
 
     /**
      * On initial pageload, preload the data
-     * 
+     *
      * This gets called twice; once in the template shortcode (to grab only the template)
      * and again in FWP()->display->front_scripts() to grab everything else.
-     * 
+     *
      * Two calls are needed for timing purposes; the template shortcode often renders
      * before some or all of the other FacetWP-related shortcodes.
      */
@@ -320,10 +321,10 @@ class FacetWP_Request
     /**
      * This gets called from FWP()->display->front_scripts(), when we finally
      * know which shortcodes are on the page.
-     * 
+     *
      * Since we already got the template HTML on the first process_preload_data() call,
      * this time we're grabbing everything but the template.
-     * 
+     *
      * The return value of this method gets passed into the 2nd argument of
      * process_preload_data().
      */
