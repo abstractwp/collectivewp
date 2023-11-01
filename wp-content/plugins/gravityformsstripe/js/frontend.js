@@ -132,7 +132,7 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 
 		gform.extensions.styles.gravityformsstripe[this.formId] = gform.extensions.styles.gravityformsstripe[this.formId] || {};
 
-		const componentStyles = gform.extensions.styles.gravityformsstripe[this.formId][this.pageInstance] || {};
+		const componentStyles = Object.keys(this.cardStyle).length > 0 ? JSON.parse(JSON.stringify(this.cardStyle)) : gform.extensions.styles.gravityformsstripe[this.formId][this.pageInstance] || {};
 
 		this.setComponentStyleValue = function (key, value, themeFrameworkStyles, manualElement) {
 			let resolvedValue = '';
@@ -1031,6 +1031,8 @@ gform.extensions.styles.gravityformsstripe = gform.extensions.styles.gravityform
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const request = async (data, isJson = false, action = false, nonce = false) => {
+	// Remove the ajax input to prevent Gravity Forms ajax submission handler from handling the submission in the backend.
+	data.delete('gform_ajax');
 	const options = {
 		method: 'POST',
 		credentials: 'same-origin',
@@ -1354,6 +1356,13 @@ class StripePaymentsHandler {
   * @return {Promise<boolean>}
   */
 	async validate(event) {
+		// If this is an ajax form submission, we just need to submit the form as everything has already been handled.
+		const form = jQuery('#gform_' + this.GFStripeObj.formId);
+		if (form.data('isAjaxSubmitting')) {
+			form.submit();
+			return;
+		}
+
 		// Make sure the required information are entered.
 		// Link stays incomplete even when email is entered, and it will fail with a friendly message when the confirmation request fails, so skip its frontend validation.
 		if (!this.paymentMethod.complete && this.paymentMethod.value.type !== 'link') {
@@ -1503,7 +1512,7 @@ class StripePaymentsHandler {
 		// Prepare the return URL.
 		const redirect_url = new URL(window.location.href);
 		redirect_url.searchParams.append('resume_token', resume_token);
-
+		const isAjaxEmbed = this.isAjaxEmbed(this.GFStripeObj.formId);
 		const { error: submitError } = await this.elements.submit();
 		if (submitError) {
 			this.failWithMessage(submitError.message, this.GFStripeObj.formId);
@@ -1526,7 +1535,8 @@ class StripePaymentsHandler {
 						}
 					}
 				}
-			}
+			},
+			redirect: isAjaxEmbed ? 'if_required' : 'always'
 		};
 
 		// Confirm payment or setup.
@@ -1549,7 +1559,7 @@ class StripePaymentsHandler {
 
 		// If we have a paymentIntent in the result, the process was successful.
 		if ('paymentIntent' in paymentResult) {
-			this.handlePayment(paymentResult);
+			this.handlePayment(paymentResult, redirect_url);
 		} else {
 			await this.handleFailedPayment(paymentResult);
 		}
@@ -1559,13 +1569,32 @@ class StripePaymentsHandler {
   * Perform any required actions before redirecting the user to the redirect URL after a successful payment.
   *
   * @since 5.0
+  * @since 5.2 Added the redirect_url parameter.
   *
-  * @param {Object} paymentResult The result of confirming a payment intent or a setup intent.
+  * @param {Object}      paymentResult The result of confirming a payment intent or a setup intent.
+  * @param {null|string} redirect_url  If provided, The redirect URL the user will be taken to after confirmation, currently used only to be submitted in the AJAX IFrame.
   */
-	handlePayment(paymentResult) {}
-	// User will be redirected to confirmation page as provided while calling confirmPayment().
-	// Halt redirect and do anything required before it here.
+	handlePayment(paymentResult, redirect_url) {
 
+		// If redirect_url is null, this means the user will be redirected to confirmation page as provided while calling confirmPayment().
+		// Halt redirect and do anything required before it here.
+
+		// If this is not an AJAX form, nothing to do here.
+		if (!this.isAjaxEmbed(this.GFStripeObj.formId) || !redirect_url) {
+			return;
+		}
+
+		// If this is an AJAX form, update its action and add the redirect args to the url that will be submitted in the AJAX IFrame.
+		redirect_url.searchParams.append('payment_intent', paymentResult.paymentIntent.id);
+		redirect_url.searchParams.append('payment_intent_client_secret', paymentResult.paymentIntent.client_secret);
+		redirect_url.searchParams.append('redirect_status', paymentResult.paymentIntent.status ? 'succeeded' : 'pending');
+		jQuery('#gform_' + this.GFStripeObj.formId).attr('action', redirect_url.toString());
+		// Prevent running same logic again after submitting the form.
+		jQuery('#gform_' + this.GFStripeObj.formId).data('isAjaxSubmitting', true);
+		// Keeping this input makes the backend thinks it is not an ajax form.
+		jQuery('#gform_' + this.GFStripeObj.formId).find('[name="gform_submit"]').remove();
+		jQuery('#gform_' + this.GFStripeObj.formId).submit();
+	}
 
 	/**
   * Handles a failed payment attempt.
@@ -1715,6 +1744,18 @@ class StripePaymentsHandler {
 		}
 
 		return this.order;
+	}
+
+	/**
+  * Decides whether the form is embedded with the AJAX option on or not.
+  *
+  * Since 5.2
+  *
+  * @param {integer} formId The form ID.
+  * @returns {boolean}
+  */
+	isAjaxEmbed(formId) {
+		return jQuery('#gform_ajax_frame_' + formId).length >= 1;
 	}
 }
 

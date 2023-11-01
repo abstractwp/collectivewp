@@ -67,6 +67,7 @@ WP_MAX_MEMORY_LIMIT:        <?php echo WP_MAX_MEMORY_LIMIT; ?>
         }
 
         $output = ob_get_clean();
+        $output = str_replace( '.php', '-php', $output );
         $output = preg_replace( "/[ ]{2,}/", ' ', trim( $output ) );
         $output = str_replace( "\n", '{n}', $output );
         $output = urlencode( $output );

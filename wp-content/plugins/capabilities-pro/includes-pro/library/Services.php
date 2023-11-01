@@ -8,58 +8,11 @@
 
 namespace PublishPress\Capabilities;
 
-foreach([
-    'ContainerExceptionInterface',
-    'ContainerInterface',
-    'NotFoundExceptionInterface',
-] as $class) {
-    if (!interface_exists('\Psr\Container\\' . $class)) {
-        require_once(PUBLISHPRESS_CAPS_ABSPATH . "/vendor/psr/container/src/$class.php");
-    }
-}
-
-foreach([
-    'Container',
-    'Exception/ExpectedInvokableException',
-    'Exception/FrozenServiceException',
-    'Exception/InvalidServiceIdentifierException',
-    'Exception/UnknownIdentifierException',
-] as $class) {
-    if (!class_exists('\Pimple\\' . str_replace('/', '\\', $class))) {
-        require_once(PUBLISHPRESS_CAPS_ABSPATH . "/vendor/pimple/pimple/src/Pimple/$class.php");
-    }
-}
-
-foreach([
-    'ServiceProviderInterface',
-] as $interface) {
-    if (!interface_exists('\Pimple\\' . str_replace('/', '\\', $interface))) {
-        require_once(PUBLISHPRESS_CAPS_ABSPATH . "/vendor/pimple/pimple/src/Pimple/$interface.php");
-    }
-}
-
-if (!class_exists('\PublishPress\EDD_SL_Plugin_Updater')) {
-    require_once(PUBLISHPRESS_CAPS_ABSPATH . '/includes-pro/library/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php');
-}
-
-foreach([
-    'Container',
-    'Services',
-    'ServicesConfig',
-    'License',
-    'Language',
-] as $class) {
-    if (!class_exists('\PublishPress\EDD_License\Core\\' . $class)) {
-        require_once(PUBLISHPRESS_CAPS_ABSPATH . "/includes-pro/library/wordpress-edd-license-integration/src/core/$class.php");
-    }
-}
-
-use Pimple\Container as Pimple;
-use Pimple\ServiceProviderInterface;
-use \PublishPress\Capabilities;
-use PublishPress\EDD_License\Core\Container as EDDContainer;
-use PublishPress\EDD_License\Core\Services as EDDServices;
-use PublishPress\EDD_License\Core\ServicesConfig as EDDServicesConfig;
+use PublishPress\Pimple\Container as Pimple;
+use PublishPress\Pimple\ServiceProviderInterface;
+use PublishPress\WordPressEDDLicense\Container as EDDContainer;
+use PublishPress\WordPressEDDLicense\Services as EDDServices;
+use PublishPress\WordPressEDDLicense\ServicesConfig as EDDServicesConfig;
 
 defined('ABSPATH') or die('No direct script access allowed.');
 

@@ -67,8 +67,9 @@ window.FWP = (($) => {
 
                     var selections = '';
                     var skipped = ['pager', 'reset', 'sort'];
+                    var selected_facets = ! FWP.loaded && ! FWP.is_bfcache && $.isset(FWP_HTTP.url_vars) ? Object.assign(FWP.facets, FWP_HTTP.url_vars): FWP.facets;
 
-                    $.each(FWP.facets, (val, key) => {
+                    $.each(selected_facets, (val, key) => {
                         if (val.length < 1 || ! $.isset(FWP.settings.labels[key]) || skipped.includes(FWP.facet_type[key])) {
                             return true; // skip facet
                         }

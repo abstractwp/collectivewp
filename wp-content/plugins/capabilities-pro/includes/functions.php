@@ -297,10 +297,11 @@ function ppc_roles_login_redirect($redirect_to, $request, $user) {
                 break;
             } else if (is_array($role_option) && !empty($role_option) 
                 && !empty($role_option['referer_redirect']) && (int)$role_option['referer_redirect'] > 0
-                && wp_get_referer()
+                && !empty(!empty($_COOKIE['ppc_last_visited_page']))
             ) {
                 //referer url redirect
-                $redirect_to = esc_url_raw(wp_get_referer());
+                // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
+                $redirect_to = esc_url_raw($_COOKIE['ppc_last_visited_page']);
                 break;
             }
         }
@@ -309,6 +310,36 @@ function ppc_roles_login_redirect($redirect_to, $request, $user) {
     return $redirect_to;
 }
 add_filter('login_redirect', 'ppc_roles_login_redirect', 10, 3);
+
+/**
+ * We can no longer relied on wp_get_referer() due to it non
+ * reliability and cons. so, we'll be saving last visited page
+ * using cookies
+ *
+ * @return void
+ */
+function ppc_roles_last_visited_page_cookie() {
+	?>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the full current URL
+            var currentURL = window.location.href;
+
+            // Check if the path includes /wp-login.php or /wp-admin/
+            if (currentURL.indexOf('/wp-login.php') === -1 && currentURL.indexOf('/wp-admin') === -1) {
+                // Set expiration time to 1 hour from the current time
+                var expirationDate = new Date();
+                expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000); // 1 hour in milliseconds
+
+                // Get the current domain and set the cookie with domain, path, and expiration time
+                var currentDomain = window.location.hostname;
+                document.cookie = 'ppc_last_visited_page=' + currentURL + '; path=/; domain=' + currentDomain + '; expires=' + expirationDate.toUTCString();
+            }
+        });
+    </script>
+	<?php
+}
+add_action( 'wp_footer', 'ppc_roles_last_visited_page_cookie' );
 
 /**
  * Redirect user to configured role logout redirect
@@ -447,7 +478,7 @@ function pp_capabilities_sidebox_banner($banner_title, $banner_messages)
     //funtion is used which will no longer be true after removing the banner.
     wp_enqueue_style(
         'pp-wordpress-banners-style',
-        plugin_dir_url(CME_FILE) . 'vendor/publishpress/wordpress-banners/assets/css/style.css',
+        plugin_dir_url(CME_FILE) . 'lib/vendor/publishpress/wordpress-banners/assets/css/style.css',
         false,
         PP_WP_BANNERS_VERSION
     );
@@ -487,7 +518,7 @@ function pp_capabilities_pro_sidebox()
     //funtion is used which will no longer be true after removing the banner.
     wp_enqueue_style(
         'pp-wordpress-banners-style',
-        plugin_dir_url(CME_FILE) . 'vendor/publishpress/wordpress-banners/assets/css/style.css',
+        plugin_dir_url(CME_FILE) . 'lib/vendor/publishpress/wordpress-banners/assets/css/style.css',
         false,
         PP_WP_BANNERS_VERSION
     );

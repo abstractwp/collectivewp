@@ -1,3 +1,13 @@
+### 5.2.0 | 2023-09-20
+- Added the [gform_stripe_payment_element_initial_payment_information](https://docs.gravityforms.com/gform_stripe_payment_element_initial_payment_information/) filter to override the initial payment information used to render the payment element.
+- Fixed an issue where a payment method can't be attached to a customer when the Payment Element is enabled.
+- Fixed an issue where the gform_stripe_elements_style filter is not being correctly applied.
+- Fixed an issue that prevents the gform_stripe_webhook filter from being fired in some cases.
+- Fixed an issue where using a list field with columns enabled on a form with the Stripe Payment Element can cause a fatal error.
+- Fixed an issue where list field values are not saved to the entry when the Payment Element is enabled.
+- Fixed an issue where the Payment Element doesn't work on ajax-enabled forms.
+
+
 ### 5.1.0 | 2023-08-02
 - Updated the verbiage and look of the validation message that appears when SCA modal is triggered.
 - Fixed an issue where the Credit Card field is not initialized on multi page forms when running in Conversational Forms mode.

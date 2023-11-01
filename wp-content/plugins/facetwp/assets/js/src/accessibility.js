@@ -41,8 +41,8 @@
                 $(this).attr('aria-label', $(this).find('option:selected').text());
             });
 
-            // search, date
-            $('.facetwp-search, .facetwp-date').each(function() {
+            // search, date, number range
+            $('.facetwp-search, .facetwp-date, .facetwp-number').each(function() {
                 $(this).attr('aria-label', $(this).attr('placeholder'));
             });
 

@@ -4,43 +4,8 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa
+class ComposerStaticInit612c459b713c484eebf367dd9f194beb
 {
-    public static $files = array (
-        'c92bf23a32412037ecdc51806b458c36' => __DIR__ . '/..' . '/alledia/edd-sl-plugin-updater/EDD_SL_Plugin_Updater.php',
-        '0078757fbd019a5f202f2be6585c3626' => __DIR__ . '/..' . '/publishpress/wordpress-banners/BannersMain.php',
-        '41c664bd04a95c2d6a2f2a3e00f06593' => __DIR__ . '/..' . '/publishpress/wordpress-reviews/ReviewsController.php',
-    );
-
-    public static $prefixLengthsPsr4 = array (
-        'P' => 
-        array (
-            'PublishPress\\EDD_License\\Core\\' => 30,
-            'Psr\\Container\\' => 14,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'PublishPress\\EDD_License\\Core\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/alledia/wordpress-edd-license-integration/src/core',
-        ),
-        'Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'Pimple' => 
-            array (
-                0 => __DIR__ . '/..' . '/pimple/pimple/src',
-            ),
-        ),
-    );
-
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -48,10 +13,7 @@ class ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit69abdf2c5bf99b63f82ccf0707921afa::$classMap;
+            $loader->classMap = ComposerStaticInit612c459b713c484eebf367dd9f194beb::$classMap;
 
         }, null, ClassLoader::class);
     }

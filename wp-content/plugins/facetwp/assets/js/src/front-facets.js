@@ -1005,7 +1005,7 @@
             let $this = $(this);
             let $wrap = $this.closest('.facetwp-facet');
             let facets = $this.nodes[0]._facets;
-            let all_empty = facets.every(val => FWP.facets[val].length < 1);
+            let all_empty = facets.every(val => 'undefined' === typeof FWP.facets[val] || FWP.facets[val].length < 1);
             all_empty ? $wrap.addClass('facetwp-hidden') : $wrap.removeClass('facetwp-hidden');
         });
     });
