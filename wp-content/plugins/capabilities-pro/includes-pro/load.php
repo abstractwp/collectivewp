@@ -15,13 +15,6 @@ add_action('init', function(){
     }
 });
 
-if (is_admin()) {
-	$autoloadPath = PUBLISHPRESS_CAPS_ABSPATH . '/vendor/autoload.php';
-	if (file_exists($autoloadPath)) {
-		require_once $autoloadPath;
-	}
-}
-
 if (class_exists('BuddyPress')) {
 	add_filter(
 		'bp_user_can_create_groups', 

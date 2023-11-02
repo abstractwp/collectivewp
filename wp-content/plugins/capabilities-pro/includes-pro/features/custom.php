@@ -67,7 +67,7 @@ class EditorFeaturesCustom {
             }
         }
 
-        $elements[__('Custom Gutenberg Items', 'capsman-enhanced')] = $added_element;
+        $elements[__('Custom Gutenberg Items', 'capabilities-pro')] = $added_element;
 
         return $elements;
     }
@@ -91,7 +91,7 @@ class EditorFeaturesCustom {
             }
         }
 
-        $elements[__('Custom Classic Editor Items', 'capsman-enhanced')] = $added_element;
+        $elements[__('Custom Classic Editor Items', 'capabilities-pro')] = $added_element;
 
         return $elements;
     }

@@ -1,0 +1,19 @@
+//----------------------------------------
+// Quote - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-quote {
+	@apply my-32 py-24;
+
+	.wp-block-paragraph {
+		@apply px-0 pb-0;
+	}
+
+	p {
+		@apply mb-16;
+	}
+
+	cite {
+		@apply not-italic;
+	}
+}

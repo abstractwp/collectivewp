@@ -15,6 +15,7 @@ class FacetWP_Integration_SearchWP
         add_filter( 'posts_results', [ $this, 'posts_results' ], 10, 2 );
         add_filter( 'facetwp_facet_filter_posts', [ $this, 'search_facet' ], 10, 2 );
         add_filter( 'facetwp_facet_search_engines', [ $this, 'search_engines' ] );
+        add_filter( 'searchwp\native\short_circuit', [ $this, 'short_circuit' ], 100, 2 );
     }
 
 
@@ -22,7 +23,7 @@ class FacetWP_Integration_SearchWP
      * Run and cache the \SWP_Query
      */
     function is_main_query( $is_main_query, $query ) {
-        if ( $is_main_query && $query->is_search() && ! empty( $query->get( 's' ) ) ) {
+        if ( $is_main_query && $query->is_search() ) {
             $args = stripslashes_deep( $this->get_valid_args( $query ) );
             $this->keywords = $args['s'];
             $this->swp_query = $this->run_query( $args );
@@ -49,7 +50,7 @@ class FacetWP_Integration_SearchWP
 
         foreach ( $valid as $arg ) {
             $val = $query->get( $arg );
-            if ( ! empty( $val ) ) {
+            if ( ! empty( $val ) || 's' == $arg ) {
                 $output[ $arg ] = $val;
             }
         }
@@ -206,6 +207,24 @@ class FacetWP_Integration_SearchWP
         }
 
         return $engines;
+    }
+
+
+    /**
+     * Short-circuit SearchWP when "s" is empty and a search facet is in use
+     * @since 4.2.6
+     */
+    function short_circuit( $bool, $query ) {
+        if ( $query->is_search() && '' == $query->get( 's' ) ) {
+            $facets = FWP()->facet->facets ?? FWP()->ajax->url_vars;
+            foreach ( $facets AS $name => $value ) {
+                if ( FWP()->helper->facet_is( $name, 'type', 'search' ) ) {
+                    return true;
+                }
+            }
+        }
+
+        return $bool;
     }
 }
 

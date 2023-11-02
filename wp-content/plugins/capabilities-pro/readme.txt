@@ -3,10 +3,10 @@ Contributors: publishpress, kevinB, stevejburge, andergmartins, olatechpro
 Author: PublishPress
 Author URI: https://publishpress.com
 Tags: user roles, capabilities, permissions, authors, editors, post types, taxonomies
-Requires at least: 4.9.7
-Tested up to: 6.2
-Requires PHP: 5.6.20
-Stable tag: 2.8.1
+Requires at least: 5.5
+Requires PHP: 7.2.5
+Tested up to: 6.3
+Stable tag: 2.10.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -116,6 +116,34 @@ Fixed : Non-administrators with user editing capabilities could add new Administ
 Fixed : Security issue. Please update.
 
 == Changelog ==
+
+= 2.10.1 - 23 Oct 2023 =
+  * Fixed: Login redirect not working, #843
+  * Fixed: Redirect user loop, #849
+  * Fixed: Alignment for menu items, #780
+  * Update: Update Capabilities old-fashioned tooltips, #818
+  * Fixed: Negate could not be removed, #873
+  * Update: Add a tooltip for manage_post_tags, #919
+  * Update: Remove add_users from the basic Capabilities, install #918
+  * Update: Update Body Class description, #893
+  * Fixed: Profile Features conflict with Advanced Custom Fields: Extended plugin, #910
+  * Fixed: Function pp_capabilities_sub_menu_lists has wrong return type in the function docs, #848
+  * Fixed: Admin loosing Access to Capabilities after role reset, #834
+
+= 2.10.0 - 6 Sep 2023 =
+  * Changed: Replaced Pimple library with a prefixed version of the library to avoid conflicts with other plugins;
+  * Changed: Replaced Psr/Container library with a prefixed version of the library to avoid conflicts with other plugins;
+  * Changed: Change min PHP version to 7.2.5. If not compatible, the plugin will not execute;
+  * Changed: Change min WP version to 5.5. If not compatible, the plugin will not execute;
+  * Changed: Updated internal libraries to latest versions;
+  * Changed: Refactor some occurrences of "plugins_loaded" replacing it by a new action: "plublishpress_capabilities_loaded" which runs after the requirements and libraries are loaded, but before the plugin is initialized;
+
+= 2.9.1 - 1 Aug 2023 =
+  * Fixed : Fatal error: Uncaught Error: Call to a member function has_cap() on null in Installer class, #880
+
+= 2.9.0 - 31 Jul 2023 =
+  * Feature : Allow people to target CSS to user roles (Frontend Features), #4
+  * Fixed : Error on Backup > Reset Roles, #856
 
 = 2.8.1 - 17 May 2023 =
   * Fixed : Undefined variable $cap_name, #822

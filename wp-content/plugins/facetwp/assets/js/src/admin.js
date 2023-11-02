@@ -1726,10 +1726,12 @@
             created() {
                 this.ui_fields = FWP.facet_types[this.facet.type].ui_fields || [];
                 this.sorted = Object.keys(this.ui_fields).reverse();
+                if ('undefined' === typeof this.facet['ui_type'] || this.facet['ui_type'].length < 1) {
+                    this.facet['ui_type'] = this.sorted[0];
+                }
             },
             template: `
             <select class="facet-ui-type" v-model="facet.ui_type">
-                <option value="">{{ 'None' | i18n }}</option>
                 <option v-for="name in sorted" :value="name" :selected="facet.ui_type == name">{{ FWP.facet_types[name].label }}</option>
             </select>
             `
@@ -1819,6 +1821,71 @@
                 setName(row, e) {
                     row.name = this.$root.sanitizeName(e.target.innerHTML);
                 }
+            }
+        });
+
+        Vue.component('color-picker', {
+            props: {
+                facet: Object,
+                settingName: {
+                    type: String,
+                    default: 'color'
+                },
+                defaultColor: {
+                    type: String,
+                    default: '#000'
+                },
+            },
+            template: `
+            <div class="color-wrap">
+                <div class="color-canvas">
+                    <span class="color-preview"></span>
+                    <input type="text" :class="className" v-model="facet[settingName]" :placeholder="colorName" />
+                </div>
+                <span class="color-clear">X</span>
+            </div>`,
+            created() {
+                if ('undefined' === typeof this.facet[this.settingName]) {
+                    this.facet[this.settingName] = this.defaultColor;
+                }
+            },
+            computed: {
+                className() {
+                    return 'facet-' + this.settingName.replace(/_/g, '-') + ' color-input';
+                },
+                colorName() {
+                    return this.defaultColor;
+                }
+            },
+            mounted() {
+                let self = this;
+                let $canvas = self.$el.getElementsByClassName('color-canvas')[0];
+                let $preview = self.$el.getElementsByClassName('color-preview')[0];
+                let $input = self.$el.getElementsByClassName('color-input')[0];
+                let $clear = self.$el.getElementsByClassName('color-clear')[0];
+                $preview.style.backgroundColor = $input.value;
+
+                let picker = new Picker({
+                    parent: $canvas,
+                    popup: 'right',
+                    alpha: false,
+                    onDone(color) {
+                        let hex = color.hex().substr(0, 7);
+                        self.facet[self.settingName] = hex;
+                        $input.value = hex;
+                        $preview.style.backgroundColor = hex;
+                    }
+                });
+
+                picker.onOpen = function(color) {
+                    picker.setColor($input.value);
+                };
+
+                $clear.addEventListener('click', function() {
+                    self.facet[self.settingName] = self.defaultColor;
+                    $input.value = self.defaultColor;
+                    $preview.style.backgroundColor = $input.value;
+                });
             }
         });
 
@@ -1969,8 +2036,8 @@
                                     window.setStatus('ok', FWP.__('Indexing complete'));
 
                                     // Update the row counts
-                                    $.each(data.rows, function(count, facet_name) {
-                                        Vue.set(self.row_counts, facet_name, count);
+                                    $.each(self.$root.app.facets, function(facet) {
+                                        Vue.set(self.row_counts, facet.name, data.rows[facet.name]);
                                     });
                                 }
                             }

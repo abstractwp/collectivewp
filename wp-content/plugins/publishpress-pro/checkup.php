@@ -6,7 +6,6 @@ use function defined;
 use function add_action;
 use function sprintf;
 use function is_admin;
-use function error_log;
 use function current_user_can;
 use function esc_html__;
 use function esc_html;
@@ -34,8 +33,6 @@ function deprecatedRemindersAddonIsRunning()
 
 function showAdminNoticeAndLogError($message)
 {
-    error_log($message);
-
     if (is_admin() && current_user_can('activate_plugins')) {
         add_action(
             'admin_notices',
@@ -53,7 +50,7 @@ function showAdminNoticeAndLogError($message)
     }
 }
 
-add_action('plugins_loaded', function () {
+add_action('publishpress_planner_pro_loaded', function () {
     if (deprecatedSlackAddonIsRunning()) {
         showAdminNoticeAndLogError(
             __('Please, deactivate and remove PublishPress Slack before using PublishPress Pro.', 'publishpress-pro')
@@ -72,15 +69,7 @@ add_action('plugins_loaded', function () {
 
         do_action(PUBLISHPRESS_PRO_ACTION_HALT);
     }
-
-    if (freePluginIsRunningAsStandAlone()) {
-        showAdminNoticeAndLogError(
-            __('Please, deactivate and remove PublishPress before using PublishPress Pro.', 'publishpress-pro')
-        );
-
-        do_action(PUBLISHPRESS_PRO_ACTION_HALT);
-    }
-}, -8);
+});
 
 
 if (proPluginIsRunning()) {

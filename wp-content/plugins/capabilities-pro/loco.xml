@@ -6,10 +6,10 @@
         <directory>includes-pro</directory>
       </source>
       <target>
-        <directory>includes-pro/languages</directory>
+        <directory>languages</directory>
       </target>
       <template>
-        <file>includes-pro/languages/capabilities-pro.pot</file>
+        <file>languages/capabilities-pro.pot</file>
       </template>
     </project>
   </domain>
@@ -27,7 +27,6 @@
     </project>
   </domain>
   <exclude>
-    <directory>includes-pro</directory>
     <directory>vendor</directory>
   </exclude>
 </bundle>

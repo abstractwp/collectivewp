@@ -34,6 +34,7 @@ if (!class_exists('PP_Notifynetworkadmin')) {
     /**
      * class PP_Notifynetworkadmin
      */
+    #[\AllowDynamicProperties]
     class PP_Notifynetworkadmin extends PP_Module
     {
 

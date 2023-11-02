@@ -223,6 +223,10 @@ Thumbs.db
 !wp-content/plugins/wordpress-seo-premium/**
 !wp-content/plugins/publishpress-pro/
 !wp-content/plugins/publishpress-pro/**
+!wp-content/plugins/publishpress-checklists-pro/
+!wp-content/plugins/publishpress-checklists-pro/**
+!wp-content/plugins/twilio-segment-integration/
+!wp-content/plugins/twilio-segment-integration/**
 
 # Theme
 

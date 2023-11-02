@@ -2,10 +2,10 @@
 # This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Better Search Replace Pro 1.4.2\n"
+"Project-Id-Version: Better Search Replace Pro 1.4.3\n"
 "Report-Msgid-Bugs-To: "
 "http://wordpress.org/support/plugin/better-search-replace\n"
-"POT-Creation-Date: 2023-01-10 10:18:07+00:00\n"
+"POT-Creation-Date: 2023-09-05 13:26:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,21 +31,21 @@ msgid ""
 "Better Search Replace (free version) to be deactivated."
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:201
+#: includes/EDD_SL_Plugin_Updater.php:202
 msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:209
+#: includes/EDD_SL_Plugin_Updater.php:210
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s "
 "or %5$supdate now%6$s."
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:399
+#: includes/EDD_SL_Plugin_Updater.php:400
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: includes/EDD_SL_Plugin_Updater.php:399
+#: includes/EDD_SL_Plugin_Updater.php:400
 msgid "Error"
 msgstr ""
 
@@ -148,6 +148,24 @@ msgstr ""
 msgid "Error updating row: %d."
 msgstr ""
 
+#: includes/class-bsr-plugin-footer.php:51
+#. translators: %1$s is a link to BSR's website, and %2$s is a link to WP
+#. Engine's website.
+msgid "%1$s is developed and maintained by %2$s."
+msgstr ""
+
+#: includes/class-bsr-plugin-footer.php:79
+msgid "Documentation"
+msgstr ""
+
+#: includes/class-bsr-plugin-footer.php:82
+msgid "Support"
+msgstr ""
+
+#: includes/class-bsr-plugin-footer.php:89
+msgid "Feedback"
+msgstr ""
+
 #: templates/bsr-backup-import.php:28 templates/bsr-backup-import.php:65
 msgid "Backup Database"
 msgstr ""
@@ -202,7 +220,7 @@ msgstr ""
 msgid "Backup/Import"
 msgstr ""
 
-#: templates/bsr-dashboard.php:49 templates/bsr-settings.php:46
+#: templates/bsr-dashboard.php:49 templates/bsr-settings.php:69
 msgid "Settings"
 msgstr ""
 
@@ -318,45 +336,51 @@ msgid ""
 "your license key and try activating it again."
 msgstr ""
 
-#: templates/bsr-settings.php:54
+#: templates/bsr-settings.php:46
+msgid ""
+"The license key you entered has no remaining activations. To manage the "
+"active sites associated with this key, please log in to your %s"
+msgstr ""
+
+#: templates/bsr-settings.php:77
 msgid "License Key"
 msgstr ""
 
-#: templates/bsr-settings.php:67
+#: templates/bsr-settings.php:90
 msgid "Remove"
 msgstr ""
 
-#: templates/bsr-settings.php:70
+#: templates/bsr-settings.php:93
 msgid "Activate License"
 msgstr ""
 
-#: templates/bsr-settings.php:74
+#: templates/bsr-settings.php:97
 msgid "Enter your license key for support and updates."
 msgstr ""
 
-#: templates/bsr-settings.php:83
+#: templates/bsr-settings.php:106
 msgid "Max Page Size"
 msgstr ""
 
-#: templates/bsr-settings.php:87
+#: templates/bsr-settings.php:110
 msgid ""
 "If you notice timeouts or are unable to backup/import the database, try "
 "decreasing this value."
 msgstr ""
 
-#: templates/bsr-settings.php:98
+#: templates/bsr-settings.php:121
 msgid "Max Results"
 msgstr ""
 
-#: templates/bsr-settings.php:102
+#: templates/bsr-settings.php:125
 msgid "The maximum amount of results to store when running a search/replace."
 msgstr ""
 
-#: templates/bsr-settings.php:115
+#: templates/bsr-settings.php:138
 msgid "Enable Gzip?"
 msgstr ""
 
-#: templates/bsr-settings.php:116
+#: templates/bsr-settings.php:139
 msgid "If enabled, backups will be compressed to reduce file size."
 msgstr ""
 

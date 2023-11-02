@@ -1,0 +1,53 @@
+//----------------------------------------
+// Contents slider - Custom Block
+//----------------------------------------
+.content-block {
+	@apply flex mb-64;
+	.contents-slider {
+		@apply mx-0;
+		width: calc( 100% - 80px );
+	}
+
+	@screen tablet-landscape {
+		.contents-slider {
+			@apply mx-12;
+			width: calc( 100% - 104px );
+		}
+
+		/* stylelint-disable */
+		max-width: calc( 100% - 80px ) !important;
+		margin-left: 40px !important;
+		margin-right: 40px !important;
+		/* stylelint-enable */
+	}
+
+	.content-slick-prev,
+	.content-slick-next {
+		width: 40px;
+		height: 40px;
+		/* stylelint-disable */
+		background-color: transparent !important;
+		box-shadow: none !important;
+		padding: 4px 12px !important;
+		/* stylelint-enable */
+
+		&:hover,
+		&:active,
+		&:focus {
+			svg {
+				path {
+					stroke: theme( 'colors.primary' );
+				}
+			}
+		}
+
+		&.slick-disabled {
+			@apply cursor-default;
+			svg {
+				path {
+					stroke: #dbdbdb;
+				}
+			}
+		}
+	}
+}

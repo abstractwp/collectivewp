@@ -1,0 +1,53 @@
+.vendors-facets-list {
+	@apply grid grid-cols-1 gap-x-24 gap-y-32 px-0;
+
+	@screen tablet-portrait {
+		@apply grid-cols-1;
+	}
+
+	@screen tablet-landscape {
+		@apply grid-cols-1;
+	}
+}
+
+.site-main {
+	.vendors-facets-list {
+		.vendor-item {
+			@apply grid grid-cols-1 gap-x-24 gap-y-32 px-0 pb-32 border-b;
+
+			@screen tablet-landscape {
+				grid-template-columns: 1fr 50% 1fr;
+			}
+
+			a {
+				@apply no-underline;
+			}
+		}
+	}
+}
+
+.vendor-body {
+	.vendor-term {
+		@apply mb-8;
+
+		span {
+			@apply mr-4 mb-4 px-8 py-4 border border-gray-100 rounded;
+		}
+	}
+}
+
+.single-vendors {
+	.vendor-item {
+		@apply container;
+	}
+
+	.vendor-body {
+		.entry-title {
+			@apply mt-32;
+		}
+	}
+
+	.meta-field {
+		@apply my-32;
+	}
+}

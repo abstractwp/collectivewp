@@ -33,6 +33,7 @@ if (!class_exists('PP_Reminders')) {
     /**
      * class PP_Reminders
      */
+    #[\AllowDynamicProperties]
     class PP_Reminders extends PP_Module
     {
         public $module_name = 'reminders';

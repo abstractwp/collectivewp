@@ -47,6 +47,14 @@ class GF_Payment_Element_Payment {
 	 */
 	public $invoice_id;
 
+	/**
+	 * The customer related to the payment being made.
+	 *
+	 * @since 5.1
+	 *
+	 * @var \Stripe\Customer
+	 */
+	public $customer;
 
 	/**
 	 * GF_Stripe_Payment_Element_Intent constructor.
@@ -216,19 +224,10 @@ class GF_Payment_Element_Payment {
 		$form           = GFAPI::get_form( $form_id );
 		$currency       = rgar( $temp_entry, 'currency' );
 		$plan           = $this->addon->get_plan_for_feed( $feed, $order_data['total'], $order_data['trial_days'], $currency );
-		$customer       = $this->get_customer( $feed, $form, $api, $temp_entry );
+		$setup_fee      = $this->addon->get_amount_export( rgar( $order_data, 'setup_fee', 0 ), $currency );
+		$customer       = $this->get_customer( $feed, $form, $api, $temp_entry, $setup_fee );
 		$payment_method = rgar( $order_data, 'payment_method' );
-		if ( rgar( $order_data, 'setup_fee' ) ) {
-			// If a setup fee is required, add an invoice item.
-			$setup_fee = array(
-				'amount'      => $this->addon->get_amount_export( $order_data['setup_fee'], $currency ),
-				'currency'    => $currency,
-				'customer'    => $customer,
-				'description' => __( 'Setup Fee', 'gravityformsstripe' ),
-			);
 
-			$result = $api->add_invoice_item( $setup_fee );
-		}
 
 		$subscription_data = array(
 			'description'      => $this->addon->get_payment_description( $temp_entry, $order_data['submission'], $feed ),
@@ -242,6 +241,17 @@ class GF_Payment_Element_Payment {
 			'payment_settings' => array( 'save_default_payment_method' => 'on_subscription' ),
 			'expand'           => array( 'latest_invoice.payment_intent' ),
 		);
+
+		$coupon_field_id = rgar( $feed['meta'], 'customerInformation_coupon' );
+		$coupon          = $this->addon->maybe_override_field_value( rgar( $temp_entry, $coupon_field_id ), $form, $temp_entry, $coupon_field_id );
+		if ( $coupon ) {
+			$stripe_coupon = $api->get_coupon( $coupon );
+			if ( ! is_wp_error( $stripe_coupon ) ) {
+				$subscription_data['coupon'] = $coupon;
+			} else {
+				$this->addon->log_error( __METHOD__ . '(): Unable to add the coupon to the customer; ' . $stripe_coupon->get_error_message() );
+			}
+		}
 
 		// Some payment methods work by sending an invoice to the customer and not charging automatically.
 		$automatic_charge_methods = $this->get_subscriptions_automatic_charge_methods( $feed, $form );
@@ -273,15 +283,17 @@ class GF_Payment_Element_Payment {
 	 * Creates or gets a customer.
 	 *
 	 * @since 5.0
+	 * @since 5.1 Added the balance param.
 	 *
-	 * @param array         $feed  The current feed being processed.
-	 * @param array         $form  The current form being processed.
-	 * @param GF_Stripe_API $api   An instance of the Stripe API.
-	 * @param array         $entry The current entry being processed.
+	 * @param array         $feed       The current feed being processed.
+	 * @param array         $form       The current form being processed.
+	 * @param GF_Stripe_API $api        An instance of the Stripe API.
+	 * @param array         $entry      The current entry being processed.
+	 * @param float         $balance    Balance to be credited or debited from customer, used to add one time fees like a setup fee.
 	 *
 	 * @return \Stripe\Customer
 	 */
-	public function get_customer( $feed, $form, $api, $entry ) {
+	public function get_customer( $feed, $form, $api, $entry, $balance = 0 ) {
 
 		$customer_meta = array(
 			'description' => $this->addon->get_field_value( $form, $entry, rgar( $feed['meta'], 'customerInformation_description' ) ),
@@ -297,21 +309,12 @@ class GF_Payment_Element_Payment {
 				'state'       => $this->addon->get_field_value( $form, $entry, rgar( $feed['meta'], 'billingInformation_address_state' ) ),
 			),
 		);
-		// Get coupon for feed.
-		$coupon_field_id = rgar( $feed['meta'], 'customerInformation_coupon' );
-		$coupon          = $this->addon->maybe_override_field_value( rgar( $entry, $coupon_field_id ), $form, $entry, $coupon_field_id );
 
-		// If coupon is set, add it to customer metadata.
-		if ( $coupon ) {
-			$stripe_coupon = $api->get_coupon( $coupon );
-			if ( ! is_wp_error( $stripe_coupon ) ) {
-				$customer_meta['coupon'] = $coupon;
-			} else {
-				$this->addon->log_error( __METHOD__ . '(): Unable to add the coupon to the customer; ' . $stripe_coupon->get_error_message() );
-			}
+		if ( $balance ) {
+			$customer_meta['balance'] = $balance;
 		}
 
-		$customer = $this->addon->get_customer( '', $feed, $entry, $form );
+		$customer = $this->addon->get_customer( $this->customer ? $this->customer->id : '' , $feed, $entry, $form );
 
 		if ( $customer ) {
 			$api->update_customer( $customer->id, $customer_meta );
@@ -323,7 +326,9 @@ class GF_Payment_Element_Payment {
 			$customer = $api->create_customer( array() );
 		}
 
-		return $customer;
+		$this->customer = $customer;
+
+		return $this->customer;
 	}
 
 	/**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82d0dbb162de187dfd6018a2c45aae5a",
+    "content-hash": "7c3c20844ee958132a781b10929d00c3",
     "packages": [
         {
             "name": "civicrm/composer-downloads-plugin",
@@ -275,24 +275,24 @@
         },
         {
             "name": "pronamic/gravityforms",
-            "version": "2.7.11",
+            "version": "2.7.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pronamic/gravityforms.git",
-                "reference": "a9dad0143903b7f91fb16c1ac94589f5cd4fe578"
+                "reference": "2599f454acff9ad87c43beae7cb41dfbe655126f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/a9dad0143903b7f91fb16c1ac94589f5cd4fe578",
-                "reference": "a9dad0143903b7f91fb16c1ac94589f5cd4fe578",
+                "url": "https://api.github.com/repos/pronamic/gravityforms/zipball/2599f454acff9ad87c43beae7cb41dfbe655126f",
+                "reference": "2599f454acff9ad87c43beae7cb41dfbe655126f",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/pronamic/gravityforms/tree/2.7.11"
+                "source": "https://github.com/pronamic/gravityforms/tree/2.7.16"
             },
-            "time": "2023-07-28T10:05:04+00:00"
+            "time": "2023-10-26T10:05:30+00:00"
         },
         {
             "name": "togos/gitignore",
@@ -368,6 +368,24 @@
             "homepage": "https://wordpress.org/plugins/activity-log-wp-seo/"
         },
         {
+            "name": "wpackagist-plugin/basic-user-avatars",
+            "version": "1.0.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/basic-user-avatars/",
+                "reference": "tags/1.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/basic-user-avatars.1.0.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/basic-user-avatars/"
+        },
+        {
             "name": "wpackagist-plugin/block-widgets-monster",
             "version": "1.0.4",
             "source": {
@@ -377,7 +395,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/block-widgets-monster.zip?timestamp=1680786140"
+                "url": "https://downloads.wordpress.org/plugin/block-widgets-monster.zip?timestamp=1692003433"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -387,15 +405,15 @@
         },
         {
             "name": "wpackagist-plugin/cookiebot",
-            "version": "4.2.12",
+            "version": "4.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.2.12"
+                "reference": "tags/4.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.2.12.zip"
+                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.3.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -405,15 +423,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.13.7",
+            "version": "1.14.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.13.7"
+                "reference": "tags/1.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.13.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.14.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -513,15 +531,15 @@
         },
         {
             "name": "wpackagist-plugin/speechkit",
-            "version": "4.0.1",
+            "version": "4.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/speechkit/",
-                "reference": "tags/4.0.1"
+                "reference": "tags/4.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/speechkit.4.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/speechkit.4.1.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -531,15 +549,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.12",
+            "version": "21.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.12"
+                "reference": "tags/21.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.12.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -549,15 +567,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-security-audit-log",
-            "version": "4.5.3",
+            "version": "4.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-security-audit-log/",
-                "reference": "tags/4.5.3"
+                "reference": "tags/4.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.5.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.4.6.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -574,5 +592,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.6.0"
 }

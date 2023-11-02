@@ -96,6 +96,9 @@ class GF_Payment_Element_Submission {
 	 * @return bool
 	 */
 	public function validate( $form_id ) {
+		// Modify the entry values as necessary before creating the draft.
+		add_filter( 'gform_save_field_value', array( $this, 'stripe_payment_element_save_draft_values' ), 10, 5 );
+
 		$result = GFAPI::validate_form( $form_id );
 		return rgar( $result, 'is_valid', false );
 	}
@@ -475,5 +478,50 @@ class GF_Payment_Element_Submission {
 		}
 
 		return $result;
+	}
+
+	/**
+	 * Filter the values that get saved to the draft entry when using the Payment Element.
+	 *
+	 * @since 5.2
+	 *
+	 * @param string|array $value    The fields input value.
+	 * @param array        $lead     The current entry object.
+	 * @param GF_Field     $field    The current field object.
+	 * @param array        $form     The current form object.
+	 * @param string       $input_id The ID of the input being saved or the field ID for single input field types.
+	 *
+	 * @return string|array
+	 */
+	public function stripe_payment_element_save_draft_values( $value, $lead, $field, $form, $input_id ) {
+
+		// Only modify the values if this is the Stripe validation submission.
+		if ( rgpost( 'action' ) === 'gfstripe_validate_form' ) {
+
+			// Modify list field values to have the expected format.
+			if ( $field->type === 'list' ) {
+				$value = maybe_unserialize( $value );
+
+				if ( ! is_array( $value ) || ! $field->enableColumns ) {
+					return $value;
+				}
+
+				if ( ! is_array( $value[0] ) ) {
+					return $value;
+				}
+
+				$modified_value = array();
+				array_walk_recursive(
+					$value,
+					function( $val, $key ) use ( &$modified_value ) {
+						$modified_value = array_merge( $modified_value, is_array( $val ) ? array_values( $val ) : array( $val ) );
+					}
+				);
+
+				return $modified_value;
+			}
+		}
+
+		return $value;
 	}
 }

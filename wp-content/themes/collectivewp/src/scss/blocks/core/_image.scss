@@ -1,0 +1,21 @@
+//----------------------------------------
+// Image - Core Gutenberg Block
+//----------------------------------------
+
+.wp-block-image {
+	@apply relative;
+
+	&.alignfull,
+	.is-resized,
+	.aligncenter,
+	.alignleft,
+	.alignright {
+		@apply relative;
+	}
+
+	&.alignfull {
+		figcaption {
+			max-width: 100vw;
+		}
+	}
+}

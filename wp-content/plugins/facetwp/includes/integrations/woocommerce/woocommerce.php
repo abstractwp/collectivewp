@@ -15,6 +15,7 @@ class FacetWP_Integration_WooCommerce
         add_filter( 'facetwp_facet_sources', [ $this, 'facet_sources' ] );
         add_filter( 'facetwp_facet_display_value', [ $this, 'translate_hardcoded_choices' ], 10, 2 );
         add_filter( 'facetwp_indexer_post_facet', [ $this, 'index_woo_values' ], 10, 2 );
+        add_filter( 'facetwp_facet_sources', [ $this, 'exclude_data_sources' ] );
 
         // Support WooCommerce product variations
         $is_enabled = ( 'yes' === FWP()->helper->get_setting( 'wc_enable_variations', 'no' ) );
@@ -132,9 +133,6 @@ class FacetWP_Integration_WooCommerce
         else {
             $pt = (array) $args['post_type'];
 
-            if ( in_array( 'any', $pt ) ) {
-                $pt = get_post_types();
-            }
             if ( in_array( 'product', $pt ) ) {
                 $pt[] = 'product_variation';
             }
@@ -481,6 +479,16 @@ class FacetWP_Integration_WooCommerce
         }
 
         return $return;
+    }
+
+
+    /**
+     * Exclude specific WC custom fields
+     * @since 4.2.3
+     */
+    function exclude_data_sources( $sources ) {
+        unset( $sources['custom_fields']['choices']['cf/_product_attributes'] );
+        return $sources;
     }
 
 

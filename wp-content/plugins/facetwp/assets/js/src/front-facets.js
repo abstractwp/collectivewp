@@ -880,7 +880,7 @@
         FWP.facets[facet_name] = selected_values;
     });
 
-    $().on('mouseover', '.facetwp-star', function() {
+    $().on('mouseover', '.facetwp-star:not(.disabled)', function() {
         var $facet = $(this).closest('.facetwp-facet');
 
         if ($(this).hasClass('selected')) {
@@ -893,13 +893,13 @@
         }
     });
 
-    $().on('mouseout', '.facetwp-star', function() {
+    $().on('mouseout', '.facetwp-star:not(.disabled)', function() {
         var $facet = $(this).closest('.facetwp-facet');
         $facet.find('.facetwp-star-label').text('');
         $facet.find('.facetwp-counter').text('');
     });
 
-    $().on('click', '.facetwp-star', function() {
+    $().on('click', '.facetwp-star:not(.disabled)', function() {
         var $facet = $(this).closest('.facetwp-facet');
         var is_selected = $(this).hasClass('selected');
         $facet.find('.facetwp-star').removeClass('selected');
@@ -1005,7 +1005,7 @@
             let $this = $(this);
             let $wrap = $this.closest('.facetwp-facet');
             let facets = $this.nodes[0]._facets;
-            let all_empty = facets.every(val => FWP.facets[val].length < 1);
+            let all_empty = facets.every(val => 'undefined' === typeof FWP.facets[val] || FWP.facets[val].length < 1);
             all_empty ? $wrap.addClass('facetwp-hidden') : $wrap.removeClass('facetwp-hidden');
         });
     });

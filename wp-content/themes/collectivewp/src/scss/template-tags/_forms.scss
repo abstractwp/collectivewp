@@ -1,0 +1,47 @@
+//--------------------------------------------------------------
+// Forms
+//--------------------------------------------------------------
+.input-field {
+	@apply px-12 py-10 text-base bg-transparent text-black border-2 rounded-md border-gray-100;
+
+	&:focus {
+		@apply outline outline-primary outline-offset-0 outline-2 border-gray-600;
+	}
+}
+
+textarea,
+input:not( .button ),
+input[type='search'] {
+	/* stylelint-disable */
+	@extend .input-field;
+	/* stylelint-enable */
+}
+
+form {
+	@apply pb-gap;
+}
+
+label {
+	@apply block mb-16 text-gray-600 text-sm font-normal;
+}
+
+.error-label {
+	@apply block text-primary text-sm font-normal;
+}
+
+//-----------------------------------------
+// Search Form
+//-----------------------------------------
+.search-form {
+	@apply mt-6;
+
+	/* stylelint-disable */
+	.search-field {
+		@extend .input-field;
+	}
+
+	.button {
+		@extend .button;
+	}
+	/* stylelint-enable */
+}

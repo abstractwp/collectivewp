@@ -1,0 +1,23 @@
+//----------------------------------------
+// Template Styles
+// Import partials for WordPress templates and template parts.
+// See https://developer.wordpress.org/themes/basics/template-files/.
+//----------------------------------------
+
+@import 'facetwp';
+@import 'comments';
+@import 'footer';
+@import 'posts';
+@import 'scaffolding';
+@import 'left-sidebar';
+@import 'right-sidebar';
+@import 'widget';
+@import 'resources';
+@import '404';
+@import 'bbpress';
+@import 'thoughts';
+@import 'thoughts-single';
+@import 'vendor';
+@import 'search-results';
+@import 'custom';
+@import 'landing-page';

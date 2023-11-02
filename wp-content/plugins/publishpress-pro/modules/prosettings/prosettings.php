@@ -18,6 +18,7 @@ use WPPF2\Plugin\ServicesAbstract;
  *
  * @todo Refactor this module and all the modules system to use DI.
  */
+#[\AllowDynamicProperties]
 class PP_ProSettings extends PP_Module
 {
     const OPTIONS_GROUP_NAME = 'publishpress_prosettings_options';

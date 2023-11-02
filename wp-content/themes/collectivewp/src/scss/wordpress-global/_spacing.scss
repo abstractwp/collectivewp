@@ -1,0 +1,45 @@
+//--------------------------------------------------------------
+// Spacing Styles
+//--------------------------------------------------------------
+
+.entry-content {
+	.wp-block-group.has-background.alignfull,
+	.wp-block-cover.alignfull,
+	.wp-block-group.is-layout-flow.alignfull {
+		@apply px-16;
+
+		padding-block: calc( theme( 'spacing.gap' ) * 3 );
+
+		@screen max-tablet-portrait {
+			> .alignfull,
+			> .alignwide {
+				@apply px-0;
+
+				&.has-background {
+					@apply px-16;
+				}
+			}
+		}
+	}
+
+	.wp-block-group.has-background.alignwide,
+	.wp-block-cover.alignwide,
+	.wp-block-group.is-layout-flow.alignwide {
+		@apply px-16;
+
+		padding-block: calc( theme( 'spacing.gap' ) * 2.5 );
+	}
+
+	.wp-block-group.has-background:not( .alignfull ),
+	.wp-block-group.alignfull:not( .has-background ),
+	.wp-block-cover:not( .alignfull ),
+	.wp-block-group.is-layout-flow:not( .alignfull ) {
+		@apply px-16;
+
+		padding-block: calc( theme( 'spacing.gap' ) * 1.75 );
+
+		@screen max-tablet-portrait {
+			@apply px-16;
+		}
+	}
+}

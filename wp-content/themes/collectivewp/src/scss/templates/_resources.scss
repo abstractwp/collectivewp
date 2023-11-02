@@ -1,0 +1,88 @@
+//--------------------------------------------------------------
+// Resource Archives
+//--------------------------------------------------------------
+.tax-resources-topic,
+.tax-resources-industry,
+.tax-resources-type,
+.post-type-archive {
+	.site-main {
+		@apply block;
+
+		.page-header {
+			padding-bottom: calc( theme( 'spacing.gap' ) * 2 );
+
+			*:last-child {
+				@apply mb-0;
+			}
+		}
+	}
+}
+
+.resources-facets-list {
+	@apply px-16 mb-32;
+
+	.entry-title {
+		a {
+			@apply no-underline;
+		}
+	}
+
+	.entry-header {
+		@apply px-0;
+	}
+
+	.resource-container {
+		@apply relative;
+
+		.entry-header {
+			@apply relative rounded-md;
+
+			.resource-img {
+				@apply w-full object-cover rounded-md;
+
+				max-height: none;
+
+				@screen tablet-landscape {
+					max-width: 378px;
+				}
+			}
+
+			&::after {
+				@apply absolute w-full h-full bg-contrast top-0 left-0 bg-opacity-30 rounded-md;
+
+				content: '';
+			}
+		}
+
+		.entry-content {
+			@apply absolute px-16 py-24 text-base overflow-hidden;
+
+			height: 95%;
+
+			.types {
+				@apply block;
+
+				a {
+					@apply no-underline;
+				}
+			}
+
+			.entry-title {
+				@apply text-3xl;
+			}
+		}
+	}
+
+	.no-results {
+		grid-column: 1 / -1;
+	}
+}
+
+//--------------------------------------------------------------
+// Resource Single
+//--------------------------------------------------------------
+.single-resources {
+	.wp-post-image {
+		padding-bottom: calc( theme( 'spacing.gap' ) * 1.5 );
+	}
+}

@@ -1,0 +1,53 @@
+//--------------------------------------------------------------
+// WordPress Alignments
+//--------------------------------------------------------------
+.alignleft {
+	@apply float-left mr-16;
+}
+
+.alignright {
+	@apply float-right ml-16;
+}
+
+.aligncenter {
+	@apply mx-auto;
+}
+
+.alignwide {
+	@apply container;
+}
+
+.alignfull {
+	@screen tablet-landscape {
+		@apply w-full;
+	}
+
+	@screen max-tablet-portrait {
+		.alignwide {
+			@apply px-0;
+		}
+	}
+}
+
+.entry-content
+	> *:not( .alignwide ):not( .alignfull ):not( .alignleft ):not( .alignright ) {
+	@apply px-16;
+
+	@screen tablet-landscape {
+		@apply mx-auto px-0;
+		max-width: theme( 'layout.contentSize' );
+
+		&.has-background {
+			@apply px-16;
+		}
+	}
+}
+
+.site-main {
+	&.left-sidebar .entry-content,
+	&.right-sidebar .entry-content {
+		.alignfull {
+			@apply w-full max-w-full mx-0;
+		}
+	}
+}
