@@ -227,6 +227,8 @@ Thumbs.db
 !wp-content/plugins/publishpress-checklists-pro/**
 !wp-content/plugins/twilio-segment-integration/
 !wp-content/plugins/twilio-segment-integration/**
+!wp-content/plugins/gravityformscoupons/
+!wp-content/plugins/gravityformscoupons/**
 
 # Theme
 
