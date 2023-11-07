@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Plugins - PublishPress Capabilities &#8211; User Role "
 "Access, Editor Permissions, Admin Menus - Stable Readme (latest release)\n"
 "POT-Creation-Date: 2022-04-19 14:31-0400\n"
-"PO-Revision-Date: 2023-07-24 12:56+0000\n"
+"PO-Revision-Date: 2023-08-03 21:56+0200\n"
 "Last-Translator: Kevin Behrens <kevin@publishpress.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es_ES\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Loco https://localise.biz/\n"
+"X-Generator: Poedit 3.3\n"
 "X-Poedit-KeywordsList: __;_e;_c;_x;_n;_ex;__ngettext;esc_html__;esc_html_e\n"
 "X-Poedit-Basepath: ../includes-pro\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -21,12 +21,12 @@ msgstr ""
 #: includes-pro/admin-menus.php:352
 #, php-format
 msgid "%1$s = No change"
-msgstr ""
+msgstr "%1$s = Sin cambios"
 
 #: includes-pro/admin-menus.php:353
 #, php-format
 msgid "%1$s = This feature is denied"
-msgstr ""
+msgstr "%1$s = Esta característica está denegada"
 
 #: includes-pro/admin.php:242 includes-pro/admin.php:312
 #, php-format
@@ -68,15 +68,17 @@ msgstr "Restricciones del menú de administración"
 #: includes-pro/settings-ui.php:33 includes-pro/admin-load.php:129
 #: includes-pro/admin-load.php:152
 msgid "Admin Menus"
-msgstr "Menú de administración"
+msgstr "Menús de administración"
 
 #: includes-pro/admin-menus.php:350 includes-pro/admin-load.php:153
 msgid "Admin Menus allows you to block access to admin menu links."
 msgstr ""
+"Menús de administración te permiten bloquear el acceso a los enlaces de los "
+"menús de administración."
 
 #: includes-pro/settings-ui.php:299
 msgid "Admin Menus: treatment of multiple roles"
-msgstr ""
+msgstr "Menús de administración: tratamiento de perfiles múltiples"
 
 #: includes-pro/features/admin-features-css-hide.php:166
 #: includes-pro/features/admin-features-block-url.php:169
@@ -91,11 +93,13 @@ msgstr "Todos los campos son obligatorios."
 #: includes-pro/features/config/custom-config.php:114
 #: includes-pro/features/config/custom-config.php:173
 msgid "An error occured!"
-msgstr "Se ha producido un error."
+msgstr "¡Se ha producido un error!"
 
 #: includes-pro/pro-maint.php:46 includes-pro/pro-maint.php:59
 msgid "An error occurred. Please try again or contact the support team."
 msgstr ""
+"Se ha producido un error. Inténtalo de nuevo o contactate con el equipo de "
+"soporte."
 
 #: includes-pro/settings-ui.php:47
 msgid "An unidentified error occurred."
@@ -111,7 +115,7 @@ msgstr "Se ha producido un error de desactivación no identificado."
 
 #: includes-pro/admin-load.php:430
 msgid "Archive Pages"
-msgstr ""
+msgstr "Páginas de archivo"
 
 #: includes-pro/features/admin-features-block-url.php:91
 msgid "Blocked by URL"
@@ -150,22 +154,20 @@ msgid "Connecting to publishpress.com server..."
 msgstr "Conectando con el servidor de publishpress.com…"
 
 #: includes-pro/settings-ui.php:82
-#, fuzzy
-#| msgid "Control Custom Statuses"
 msgid "Control custom statuses"
 msgstr "Control de los estados personalizados"
 
 #: includes-pro/settings-ui.php:84 includes-pro/settings-ui.php:87
 msgid "Control selection of custom post statuses."
-msgstr ""
+msgstr "Control de la selección de estados de entrada personalizados."
 
 #: includes-pro/features/custom.php:94
 msgid "Custom Classic Editor Items"
-msgstr ""
+msgstr "Elementos personalizados del editor clásico"
 
 #: includes-pro/features/custom.php:70
 msgid "Custom Gutenberg Items"
-msgstr ""
+msgstr "Elementos personalizados del editor Gutenberg"
 
 #: includes-pro/admin.php:128
 msgid "Custom Status Capabilities"
@@ -228,46 +230,41 @@ msgid "Enter URL to be blocked by role:"
 msgstr "Introduce la URL que debe ser bloqueada por el perfil:"
 
 #: includes-pro/admin.php:437
-#, fuzzy, php-format
-#| msgid ""
-#| "For more control, <br />enable the PublishPress Permissions <br />"
-#| "%sStatus Control module%s"
+#, php-format
 msgid ""
 "For more control, enable the PublishPress Permissions %sStatus Control "
 "module%s"
 msgstr ""
-"Para un mayor control, <br />habilita en PublishPress Permissions<br />el "
-"%sMódulo de control de estado%s"
+"Para un mayor control, activa en PublishPress Permissions el %sMódulo de "
+"control de estado%s"
 
 #: includes-pro/features/admin-features-css-hide.php:91
-#, fuzzy
-#| msgid "Hide Css Element"
 msgid "Hide CSS Element"
-msgstr "Oculta el elemento Css"
+msgstr "Oculta el elemento CSS"
 
 #: includes-pro/settings-ui.php:279
 msgid "Hide the PublishPress footer and other branding."
-msgstr ""
+msgstr "Oculta el pie de página de PublishPress y otras marcas."
 
 #: includes-pro/admin-load.php:429
 msgid "Homepage"
-msgstr ""
+msgstr "Página de inicio"
 
 #: includes-pro/admin-menus.php:356
 msgid "How to use Admin Menus"
-msgstr ""
+msgstr "Cómo usar los menús de administración"
 
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://publishpress.com/"
-msgstr ""
+msgstr "https://publishpress.com/"
 
 #: includes-pro/features/admin-features-css-hide.php:134
 #: includes-pro/features/config/custom-config.php:53
 #: includes-pro/features/config/custom-config.php:94
 msgid ""
-"IDs or classes to hide. Separate multiple values by comma (.custom-item-one, "
-".custom-item-two, #new-item-id)."
+"IDs or classes to hide. Separate multiple values by comma (.custom-item-"
+"one, .custom-item-two, #new-item-id)."
 msgstr ""
 "IDs o classes de ocultar. Separa los valores múltiples con una coma (.custom-"
 "item-one, .custom-item-two, #new-item-id)."
@@ -322,6 +319,9 @@ msgid ""
 "Manage WordPress role definitions, per-site or network-wide. Organizes post "
 "capabilities by post type and operation."
 msgstr ""
+"Gestiona las definiciones de perfiles de WordPress, por sitio o en toda la "
+"red. Organiza las capacidades de las entradas por tipo de contenido y "
+"operación."
 
 #: includes-pro/features/metaboxes.php:154
 msgid "Metaboxes"
@@ -330,10 +330,14 @@ msgstr "Cajas meta"
 #: includes-pro/settings-ui.php:302
 msgid "Most permissive: Any non-restricted user role allows access"
 msgstr ""
+"El más permisivo: Permite el acceso a cualquier perfil de usuario no "
+"restringido"
 
 #: includes-pro/settings-ui.php:305
 msgid "Most restrictive: Any restricted user role prevents access"
 msgstr ""
+"El más restrictivo: Impide el acceso a cualquier perfil de usuario "
+"restringido"
 
 #: includes-pro/features/admin-features-css-hide.php:174
 msgid "New CSS element added. Save changes to apply restrictions."
@@ -375,23 +379,23 @@ msgstr "Precios"
 
 #. Author of the plugin
 msgid "PublishPress"
-msgstr ""
+msgstr "PublishPress"
 
 #. Name of the plugin
 msgid "PublishPress Capabilities Pro"
-msgstr ""
+msgstr "PublishPress Capabilities Pro"
 
 #: includes-pro/admin-menus.php:65 includes-pro/admin-menus.php:339
 msgid "Save Changes"
-msgstr ""
+msgstr "Guardar cambios"
 
 #: includes-pro/admin-load.php:434
 msgid "Select pages..."
-msgstr ""
+msgstr "Seleccionar páginas…"
 
 #: includes-pro/admin-load.php:457
 msgid "Select post types..."
-msgstr ""
+msgstr "Seleccionar tipos de contenido…"
 
 #: includes-pro/features/admin-features-css-hide.php:225
 #: includes-pro/features/admin-features-block-url.php:227
@@ -400,11 +404,9 @@ msgid "Selected item deleted successfully"
 msgstr "El elemento seleccionado se ha borrado correctamente"
 
 #: includes-pro/features/admin-features-block-url.php:137
-#, fuzzy, php-format
-#| msgid "Separate multiple urls by comma. (e.g, %1$s, %2$s, %3$s)."
+#, php-format
 msgid "Separate multiple urls by comma. (e.g, %1$s, %2$s)."
-msgstr ""
-"Separa las urls múltiples con una coma. (por ejemplo, %1$s, %2$s, %3$s)."
+msgstr "Separa las urls múltiples con una coma. (por ejemplo, %1$s, %2$s)."
 
 #: includes-pro/admin-load.php:224
 msgid "Settings updated."
@@ -413,11 +415,11 @@ msgstr "Ajustes actualizados."
 #: includes-pro/admin.php:330
 #, php-format
 msgid "shared capability: %s"
-msgstr ""
+msgstr "capacidad compartida: %s"
 
 #: includes-pro/admin-load.php:431
 msgid "Single Pages"
-msgstr ""
+msgstr "Páginas individuales"
 
 #: includes-pro/settings-ui.php:58
 msgid "The key has already been activated on the allowed number of sites."
@@ -466,6 +468,8 @@ msgid ""
 "This controls whether the most permissive or restrictive permissions are "
 "applied if a user has multiple roles."
 msgstr ""
+"Esto controla si se aplican los permisos más permisivos o restrictivos "
+"cuando un usuario tiene varios perfiles."
 
 #: includes-pro/admin-menus.php:236 includes-pro/admin-menus.php:291
 msgid "This option is disabled to prevent complete lockout"
@@ -484,6 +488,9 @@ msgid ""
 "This will add a metabox on the post editing screen. You can use this feature "
 "to add body classes only for that post."
 msgstr ""
+"Esto añadirá una caja meta en la pantalla de edición de la entrada. Puedes "
+"utilizar esta característica para añadir clases de cuerpo solo para esa "
+"entrada."
 
 #: includes-pro/admin-menus.php:88 includes-pro/admin-menus.php:106
 msgid "Toggle all"
@@ -507,7 +514,7 @@ msgstr "URLs"
 
 #: includes-pro/admin-menus.php:352 includes-pro/admin-menus.php:353
 msgid "usage key"
-msgstr ""
+msgstr "clave de utilización"
 
 #: includes-pro/settings-ui.php:230
 #, php-format
@@ -516,7 +523,7 @@ msgstr "Revisa los detalles de %s&nbsp;"
 
 #: includes-pro/admin-menus.php:355
 msgid "View Documentation"
-msgstr ""
+msgstr "Ver la documentación"
 
 #: includes-pro/features/admin-features-css-hide.php:110
 msgid ""
@@ -532,15 +539,18 @@ msgid ""
 "You can remove other elements from the editor screen by adding their IDs or "
 "classes below:"
 msgstr ""
+"Puedes quitar otros elementos de la pantalla del editor añadiendo sus IDs o "
+"clases a continuación:"
 
 #: includes-pro/admin-load.php:443
 msgid "You can select page types where this element will be added."
 msgstr ""
+"Puedes seleccionar los tipos de página en los que se añadirá este elemento."
 
 #: includes-pro/functions-admin.php:356
 #: includes-pro/features/admin-features-block-url.php:294
 msgid "You do not have permission to access this page."
-msgstr ""
+msgstr "No tienes permisos para acceder a esta página."
 
 #: includes-pro/admin-load.php:177 includes-pro/admin-load.php:201
 msgid "You do not have permission to manage menu restrictions."
@@ -556,7 +566,7 @@ msgstr ""
 "soporte prioritario, <a href=\"%s\">por favor, renueva</a>."
 
 #: includes-pro/settings-ui.php:167
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Your PublishPress license key will expire in %d day. For updates and "
 "priority support, <a href=\"%s\">please renew</a>."
@@ -567,6 +577,8 @@ msgstr[0] ""
 "Tu clave de licencia de PublishPress caducará en %d día. Para continuar con "
 "el soporte prioritario, <a href=\"%s\">por favor, renueva</a>."
 msgstr[1] ""
+"Tu clave de licencia de PublishPress caducará en %d días. Para continuar con "
+"el soporte prioritario, <a href=\"%s\">por favor, renueva</a>."
 
 #: includes-pro/settings-ui.php:161
 #, php-format

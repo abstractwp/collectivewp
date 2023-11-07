@@ -85,7 +85,7 @@ class Cornerstone_Column_Integration implements Integration_Interface {
 		\add_filter( 'posts_clauses', [ $this, 'order_by_cornerstone' ], 1, 2 );
 		\add_action( 'admin_init', [ $this, 'register_init_hooks' ] );
 
-		// // Adds a filter to exclude the attachments from the cornerstone column.
+		// Adds a filter to exclude the attachments from the cornerstone column.
 		\add_filter( 'wpseo_cornerstone_column_post_types', [ 'WPSEO_Post_Type', 'filter_attachment_post_type' ] );
 
 		\add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
@@ -132,6 +132,7 @@ class Cornerstone_Column_Integration implements Integration_Interface {
 		$columns[ self::CORNERSTONE_COLUMN_NAME ] = \sprintf(
 			'<span class="yoast-column-cornerstone yoast-column-header-has-tooltip" data-tooltip-text="%1$s"><span class="screen-reader-text">%2$s</span></span>',
 			\esc_attr__( 'Is this cornerstone content?', 'wordpress-seo-premium' ),
+			/* translators: Hidden accessibility text. */
 			\esc_html__( 'Cornerstone content', 'wordpress-seo-premium' )
 		);
 

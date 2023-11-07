@@ -1726,10 +1726,12 @@
             created() {
                 this.ui_fields = FWP.facet_types[this.facet.type].ui_fields || [];
                 this.sorted = Object.keys(this.ui_fields).reverse();
+                if ('undefined' === typeof this.facet['ui_type'] || this.facet['ui_type'].length < 1) {
+                    this.facet['ui_type'] = this.sorted[0];
+                }
             },
             template: `
             <select class="facet-ui-type" v-model="facet.ui_type">
-                <option value="">{{ 'None' | i18n }}</option>
                 <option v-for="name in sorted" :value="name" :selected="facet.ui_type == name">{{ FWP.facet_types[name].label }}</option>
             </select>
             `

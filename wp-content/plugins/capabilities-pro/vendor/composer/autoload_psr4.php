@@ -6,6 +6,4 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PublishPress\\EDD_License\\Core\\' => array($vendorDir . '/alledia/wordpress-edd-license-integration/src/core'),
-    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
 );

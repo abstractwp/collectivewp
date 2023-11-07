@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6
+class ComposerStaticInit0c422f20871bcbf1c73c1006dcf06201
 {
     public static $prefixLengthsPsr4 = array (
         'C' => 
@@ -148,7 +148,6 @@ class ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6
         'Yoast\\WP\\SEO\\Premium\\Config\\Badge_Group_Names' => __DIR__ . '/../..' . '/src/config/badge-group-names.php',
         'Yoast\\WP\\SEO\\Premium\\Config\\Migrations\\AddIndexOnIndexableIdAndStem' => __DIR__ . '/../..' . '/src/config/migrations/20210827093024_AddIndexOnIndexableIdAndStem.php',
         'Yoast\\WP\\SEO\\Premium\\Database\\Migration_Runner_Premium' => __DIR__ . '/../..' . '/src/database/migration-runner-premium.php',
-        'Yoast\\WP\\SEO\\Premium\\Deprecated\\Integrations\\Admin\\Inclusive_Language_Notification_Integration' => __DIR__ . '/../..' . '/src/deprecated/integrations/admin/inclusive-language-notification-integration.php',
         'Yoast\\WP\\SEO\\Premium\\Exceptions\\Forbidden_Property_Mutation_Exception' => __DIR__ . '/../..' . '/src/exceptions/forbidden-property-mutation-exception.php',
         'Yoast\\WP\\SEO\\Premium\\Exceptions\\Remote_Request\\Bad_Request_Exception' => __DIR__ . '/../..' . '/src/exceptions/remote-request/bad-request-exception.php',
         'Yoast\\WP\\SEO\\Premium\\Exceptions\\Remote_Request\\Forbidden_Exception' => __DIR__ . '/../..' . '/src/exceptions/remote-request/forbidden-exception.php',
@@ -204,7 +203,7 @@ class ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Front_End\\Crawl_Cleanup_Basic' => __DIR__ . '/../..' . '/src/deprecated/integrations/front-end/crawl-cleanup-basic.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Front_End\\Crawl_Cleanup_Rss' => __DIR__ . '/../..' . '/src/deprecated/integrations/front-end/crawl-cleanup-rss.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Front_End\\Crawl_Cleanup_Searches' => __DIR__ . '/../..' . '/src/deprecated/integrations/front-end/crawl-cleanup-searches.php',
-        'Yoast\\WP\\SEO\\Premium\\Integrations\\Front_End\\Robots_Txt_Integration' => __DIR__ . '/../..' . '/src/deprecated/integrations/front-end/robots-txt-integration.php',
+        'Yoast\\WP\\SEO\\Premium\\Integrations\\Front_End\\Robots_Txt_Integration' => __DIR__ . '/../..' . '/src/integrations/front-end/robots-txt-integration.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Frontend_Inspector' => __DIR__ . '/../..' . '/src/integrations/frontend-inspector.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Index_Now_Ping' => __DIR__ . '/../..' . '/src/integrations/index-now-ping.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Missing_Indexables_Count_Integration' => __DIR__ . '/../..' . '/src/integrations/missing-indexables-count-integration.php',
@@ -251,9 +250,9 @@ class ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit38716b2ef90e0121b1f7fcecc0dcc4f6::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0c422f20871bcbf1c73c1006dcf06201::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0c422f20871bcbf1c73c1006dcf06201::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0c422f20871bcbf1c73c1006dcf06201::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -110,14 +110,6 @@ height: 5px;
     border-bottom: none;
 }
 
-#pp-capability-menu-wrapper table td,
-#pp-capability-menu-wrapper table th {
-    padding: 10px;
-    padding-bottom: 10px;
-    font-size: 13px;
-    line-height: 20px;
-}
-
 #pp-capability-menu-wrapper table td h4.ppc-menu-row-section {
     margin-bottom: 0;
 }
@@ -138,16 +130,6 @@ height: 5px;
     border-color: #eee;
 }
 
-
-body.capabilities_page_pp-capabilities-admin-menus .pp-capability-menus-select .restrict-column {
-    width: 70px !important;
-}
-
-table#akmin .pp-capability-menus-select .restrict-column {
-    text-align: center;
-    display: table-cell !important;
-    clear: none !important;
-}
 
 .pp-capability-menus .menu-item-link {
     display: inline;

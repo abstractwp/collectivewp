@@ -229,6 +229,11 @@ class FacetWP_Settings
                 'label' => __( 'UI type', 'fwp' ),
                 'html' => '<ui-type :facet="facet"></ui-type>'
             ],
+            'ui_ghosts' => [
+                'type' => 'toggle',
+                'label' => __( 'Show ghosts', 'fwp' ),
+                'notes' => 'Show choices that would return zero results?'
+            ],
             'reset_text' => [
                 'label' => __( 'Reset text', 'fwp' ),
                 'default' => 'Reset'

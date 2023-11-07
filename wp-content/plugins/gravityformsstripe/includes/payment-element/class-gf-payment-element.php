@@ -86,7 +86,7 @@ class GF_Stripe_Payment_Element {
 	 * @since 5.1
 	 *
 	 * @param array $feed The current feed object being processed.
-	 * @param arrar $form  The current form object being processed.
+	 * @param arrar $form The current form object being processed.
 	 *
 	 * @return \Stripe\SetupIntent|\Stripe\PaymentIntent|WP_Error
 	 */
@@ -114,6 +114,17 @@ class GF_Stripe_Payment_Element {
 		} else {
 			$intent_information['capture_method'] = $this->addon->get_payment_element_capture_method( $form, $feed );
 		}
+
+		/**
+		 * Allow the initial payment information used to render the payment element to be overridden.
+		 *
+		 * @param array $intent_information The initial payment information.
+		 * @param array $feed               The feed object currently being processed.
+		 * @param array $form               The form object currently being processed.
+		 *
+		 * @since 5.2
+		 */
+		$intent_information = apply_filters( 'gform_stripe_payment_element_initial_payment_information', $intent_information, $feed, $form );
 
 		return $intent_information;
 	}
