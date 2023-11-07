@@ -42,7 +42,50 @@ class TwilioSegmentIntegration {
 
 		public function hooks() {
 			add_action('init', [$this, 'load_textdomain']);
-			add_action('wp_footer', [$this, 'track_page_load']);
+
+			if (isset($_COOKIE["CookieConsent"])) {
+				switch ($_COOKIE["CookieConsent"]) {
+					case "-1":
+						//The user is not within a region that requires consent - all cookies are accepted
+
+						add_action('wp_footer', [$this, 'track_page_load']);
+						break;
+
+					default: //The user has given their consent
+
+						//Read current user consent in encoded JavaScript format
+						$valid_php_json = preg_replace('/\s*:\s*([a-zA-Z0-9_]+?)([}\[,])/', ':"$1"$2', preg_replace('/([{\[,])\s*([a-zA-Z0-9_]+?):/', '$1"$2":', str_replace("'", '"',stripslashes($_COOKIE["CookieConsent"]))));
+						$CookieConsent = json_decode($valid_php_json);
+
+						if (!filter_var($CookieConsent->preferences, FILTER_VALIDATE_BOOLEAN)
+						&& !filter_var($CookieConsent->statistics, FILTER_VALIDATE_BOOLEAN) && !
+						filter_var($CookieConsent->marketing, FILTER_VALIDATE_BOOLEAN)) {
+							//The user has opted out of cookies, set strictly necessary cookies only
+						} else {
+
+						if (filter_var($CookieConsent->preferences, FILTER_VALIDATE_BOOLEAN)) {
+							//Current user accepts preference cookies
+						} else {
+							//Current user does NOT accept preference cookies
+						}
+
+						if (filter_var($CookieConsent->statistics, FILTER_VALIDATE_BOOLEAN)) {
+							//Current user accepts statistics cookies
+							add_action('wp_footer', [$this, 'track_page_load']);
+						} else {
+							//Current user does NOT accept statistics cookies
+						}
+
+						if (filter_var($CookieConsent->marketing, FILTER_VALIDATE_BOOLEAN)) {
+							//Current user accepts marketing cookies
+						} else {
+							//Current user does NOT accept marketing cookies
+						}
+					}
+				}
+			} else {
+				//The user has not accepted cookies - set strictly necessary cookies only
+			}
 		}
 
 		public function load_textdomain() {
