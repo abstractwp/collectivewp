@@ -41,7 +41,7 @@
 					$image          = '<img src="' . esc_url( get_parent_theme_file_uri( '/build/images/bookmarks-logo.png' ) ) . '" class="bookmarks-logo" alt="bookmarks" width="300" />';
 					$wd_s_logo_html = sprintf(
 						'<a href="%1$s" class="bookmarks-logo-link" rel="bookmarks">%2$s</a>',
-						esc_url( home_url( '/blog/' ) ),
+						esc_url( home_url() ),
 						$image
 					);
 
@@ -50,7 +50,7 @@
 					$image          = '<img src="' . esc_url( get_parent_theme_file_uri( '/build/images/thoughts-logo.png' ) ) . '" class="thoughts-logo" alt="thoughts" width="300" />';
 					$wd_s_logo_html = sprintf(
 						'<a href="%1$s" class="thoughts-logo-link" rel="thoughts">%2$s</a>',
-						esc_url( home_url( '/thoughts/' ) ),
+						esc_url( home_url() ),
 						$image
 					);
 
