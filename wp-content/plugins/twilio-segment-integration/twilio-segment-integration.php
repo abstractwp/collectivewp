@@ -107,6 +107,11 @@ class TwilioSegmentIntegration {
 				$page_title = get_the_archive_title();
 			}
 
+			if ( !is_front_page() && is_home() ) {
+				$page_title = esc_html__( 'Bookmarks', 'collectivewp' );
+				$page_url = site_url( '/blog/' );
+			}
+
 			if (is_category() || is_tag()) {
 				$page_url = get_term_link( get_queried_object() );
 
